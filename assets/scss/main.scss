@@ -1,0 +1,19 @@
+$font-size-base: 0.8rem;
+
+$theme-colors: (
+  "primary": #2c4256
+);
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+html {
+  background-color: #CDD6E7;
+}
+
+body {
+  background-color: #CDD6E7;
+}
+
+div.container {
+  margin-top: 1rem;
+}

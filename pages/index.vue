@@ -1,65 +1,133 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        website-kaliatech-2
-      </h1>
-      <h2 class="subtitle">
-        Personal website of Josh S.
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+  <div class="container mt-0">
+    <div class="jumbotron">
+      <img
+        style="float:left; margin-left:0rem"
+        src="~/assets/i/spaceman.gif"
+        width="117"
+        alt="spaceman">
+
+      <div style="margin-left:150px">
+        <h1 class="display-4">Kaliatech</h1>
+        <p class="lead">Online space for Josh's random interests.</p>
+
+        <hr class="my-4">
+
+        <div class="row">
+          <div class="col">
+            <div class="home-btns">
+              <b-btn
+                variant="primary"
+                class="home-btns"
+                to="/blog/">Blog
+              </b-btn>
+            </div>
+            <div class="home-btns">
+              <b-btn
+                variant="primary"
+                class="home-btns"
+                to="/projects/">Projects
+              </b-btn>
+            </div>
+            <div class="home-btns">
+              <b-btn
+                variant="primary"
+                class="home-btns"
+                to="/photos/">Photos
+              </b-btn>
+            </div>
+            <div class="home-btns">
+              <b-btn
+                variant="primary"
+                class="home-btns"
+                to="/bookmarks/">Bookmarks
+              </b-btn>
+            </div>
+            <div class="home-btns">
+              <b-btn
+                variant="primary"
+                class="home-btns"
+                to="/archive/">Archive
+              </b-btn>
+            </div>
+            <div class="home-btns">
+              <b-btn
+                variant="primary"
+                class="home-btns"
+                to="/contact/">Contact
+              </b-btn>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
+  data () {
+    return {}
+  },
+  head () {
+    return {
+      title: 'Kaliatech',
+      meta: [
+        {hid: 'description', name: 'description', content: 'Online space.'}
+      ]
+    }
+  },
+  mounted () {
   }
 }
 </script>
+<style lang="scss">
+  @import '~/assets/scss/main.scss';
 
-<style>
-.container
-{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
-}
+  .bg {
+    background-color: rgb(90, 90, 100);
+  }
+
+  div.card-body {
+    color: #2C4256;
+    padding: 0.25em;
+    background-color: transparent;
+  }
+
+  div.card {
+    background-color: #e1ebff;
+  }
+
+  div.experience-card {
+    margin-bottom: 2.5rem;
+  }
+
+  .card-title {
+    background-color: #2C4256;
+    color: #eceeef;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  .jumbotron {
+    margin-bottom: 1em;
+  }
+
+  a.home-btns {
+    width: 7rem;
+    padding-right: 1rem;
+  }
+
+  div.home-btns {
+    display: inline;
+  }
+
+  a.home-btns {
+    margin-bottom: 0.5rem;
+  }
+
+  /*  @include media-breakpoint-down(xs) {
+      .jumbotron h1 {
+        font-size: $font-size-base * 2;
+      }
+    }*/
 </style>
