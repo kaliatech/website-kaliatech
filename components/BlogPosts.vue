@@ -22,7 +22,7 @@ export default {
       blogPages: []
     }
   },
-  mounted () {
+  created () {
     this.$router.options.routes.forEach((routeOption) => {
       // console.log('routeOption', routeOption)
       let matchPath = '/blog' + (this.year ? '/' : '') + this.year
