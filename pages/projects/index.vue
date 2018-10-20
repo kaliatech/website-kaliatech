@@ -1,10 +1,31 @@
 <template>
-  <div class="container">
+  <div class="container projects">
     <div class="row">
       <div class="col-12">
+        <h1>Projects</h1>
         <p class="lead">
-          Projects, Experiments, Etc
+          Miscellaneous projects, experiments, etc.
         </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th/>
+              <th>Last Updated</th>
+              <th/>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="project in projects" :key="project.title">
+              <td><strong><a :href="project.link" class="text-primary">{{ project.title }}</a></strong></td>
+              <td>{{ project.updated }}</td>
+              <td>{{ project.descr }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -18,9 +39,66 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      projects: [
+        {
+          title: 'Web Audio Recording',
+          link: 'https://kaliatech.github.io/web-audio-recording-tests/dist/',
+          updated: '2018-03',
+          descr: 'Web audio recording tests for all web browsers.'
+        },
+        {
+          title: 'AR with Browser',
+          link: '/projects/2017/1000-marker-ar',
+          updated: '2017-10',
+          descr: 'Marker based augmented reality with web browsers.'
+        },
+        {
+          title: 'Particle.io Photon',
+          link: '/projects/2017/0700-experimenting-with-a-particle-photon',
+          updated: '2017-07',
+          descr: 'Demo of the particle.io photon MCU and platform.'
+        },
+        {
+          title: 'Pan/Tilt with OpenCV',
+          link: '/projects/2016/0400-pantilt-with-opencv',
+          updated: '2016-04',
+          descr: 'Using face detection to drive pan/tilt camera.'
+        }
+      ]
+    }
   },
   mounted () {
+    //
+    // Web Audio Recording 2018-03 Audio recording on mobile web browsers.
+    // AR with Browser 2017-10 Marked based augmented reality with web browsers.
+    // tParicle.io Photon 2017-07 Demo of the particle.io photon MCU and platform.
+    // OpenCV and Pan/Tilt 2016-04 Using face detection to drive pan/tilt camera.
+    // Pan/Tilt Device (v4) 2013-11 Remote servo controlled pan/tilt and video.
+    // Dynamic Loading w/ Dygraphs 2013-09 Example code and demos showing how to use Dygraphs for loading downsampled
+    // datasets while zooming.
+    // Flight Viz w/ Google Earth 2011-12 Flight accident visualization with Google Earth.
+    // Software Framework for Robotics
+    // 2011-08 Basis for experimentation with concepts that come in to play when interfacing a computer to the physical
+    // world.
+    // RGB LED w/ Joystick
+    // 2011-05 Simple project showing control of an RGB LED with a joystick.
+    // Stance Robot v2 2010-11 Experiments around microcontroller communication and smooth servo movements.
+    // Projects - Archived
+    // Last Updated
+    // Stance Robot v1 2008-05 Initial experiments with Lynxmotion BRAT robot chassis.
+    // Rocking Horse 2007-12 A wooden rocking horse that I built.
+    // Flash Curves 2006-08 Experiment with Bezier curves in Flash.
+    // Pan/Tilt Device (v2) 2006-07 Remote pan/tilt web camera. Version 2.
+    // Flash Colorization 2004-10 Dynamic photo colorization with Flash.
+    // Pan/Tilt Device (v1) 2003-11 Remote pan/tilt web camera. Version 1.
+
+
   }
 }
 </script>
+<style>
+  .projects a {
+    text-decoration: underline;
+  }
+</style>

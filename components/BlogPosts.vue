@@ -1,8 +1,8 @@
 <template>
-  <div class="row">
+  <div class="row blog-posts">
     <div class="col-12">
       <ul>
-        <li v-for="blogPage in blogPages" :key="blogPage.path">
+        <li v-for="blogPage in blogPages" :key="blogPage.path" class="mt-2">
           <nuxt-link :to="blogPage.path">{{ blogPage.title }}</nuxt-link>
         </li>
       </ul>
@@ -24,12 +24,17 @@ export default {
   },
   created () {
     this.$router.options.routes.forEach((routeOption) => {
-      // console.log('routeOption', routeOption)
+
       let matchPath = '/blog' + (this.year ? '/' : '') + this.year
+      // console.log(matchPath)
+      // console.log(routeOption.path)
+
       if (routeOption.path.startsWith(matchPath)) {
         let title = routeOption.path.replace(matchPath, '')
+        console.log('title', title)
         let fsCount = (title.match(/\//g) || []).length;
-        if (fsCount > 1 && title.trim().length > 0 && !title.endsWith('/')) {
+        console.log('fsCount', fsCount)
+        if (fsCount > (this.year ? '0' : 1) && title.trim().length > 0 && !title.endsWith('/')) {
           this.blogPages.push({
             path: routeOption.path,
             title: title
@@ -51,3 +56,8 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+  .blog-posts a:link, .blog-posts a:visited {
+    font-weight: bold;
+  }
+</style>

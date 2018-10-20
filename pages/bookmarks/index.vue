@@ -1,11 +1,11 @@
 <template>
   <div class="container">
+    <h1>Bookmarks</h1>
     <p class="lead">
-      Recent Bookmarks
+      Links to items on the Internet I've found interesting for whatever reason.
     </p>
     <p>
-      Links to items on the Internet I've found interesting for whatever reason. For more, including ability to search
-      and filter, use <a href="https://pinboard.in/u:kaliatech">https://pinboard.in/u:kaliatech</a>.</p>
+      To search and filter entire set, use <a href="https://pinboard.in/u:kaliatech">https://pinboard.in/u:kaliatech</a>.</p>
     <p v-if="!pinboardPosts">
       Loading...
     </p>
@@ -84,6 +84,3 @@ export default {
 
 }
 </script>
-<style>
-  /*body  {overflow-y:scroll;}*/
-</style>

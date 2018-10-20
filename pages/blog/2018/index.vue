@@ -1,27 +1,25 @@
 <template>
-  <div>
+  <div class="container">
     <div class="row">
       <div class="col-12">
-        2018
+        <h2>2018</h2>
       </div>
     </div>
-
+    <blog-posts year="2018"/>
   </div>
 </template>
 <script>
+import BlogPosts from '~/components/BlogPosts'
+
 export default {
-  data () {
+  components: {BlogPosts},
+  head () {
     return {
-      blogPages: []
+      title: 'Blog - 2018 | Kaliatech'
     }
   },
-  mounted () {
-    this.$router.options.routes.forEach((routeOption) => {
-      console.log(routeOption.path)
-      if (routeOption.path.startsWith('/blog/2018')) {
-        this.blogPages.push(routeOption)
-      }
-    })
+  data () {
+    return {}
   }
 }
 </script>

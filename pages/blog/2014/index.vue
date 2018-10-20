@@ -1,21 +1,25 @@
 <template>
   <div class="container">
-    <p class="lead">
-      20181013-TestBlogItem1
-    </p>
     <div class="row">
       <div class="col-12">
-        hmmm 1
+        <h2>2014</h2>
       </div>
     </div>
+    <blog-posts year="2014"/>
   </div>
 </template>
 <script>
-export default {
-  data () {
-    return {
+import BlogPosts from '~/components/BlogPosts'
 
+export default {
+  components: {BlogPosts},
+  head () {
+    return {
+      title: 'Blog - 2014 | Kaliatech'
     }
+  },
+  data () {
+    return {}
   }
 }
 </script>

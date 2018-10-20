@@ -4,6 +4,8 @@ $theme-colors: (
   "primary": #2c4256
 );
 
+//$link-color: #CCCCCC !default;
+
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
 html {
@@ -17,3 +19,56 @@ body {
 div.container {
   margin-top: 1rem;
 }
+
+p a {
+  text-decoration: underline;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  margin-bottom: 3rem;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+//.project-page a:link, .project-page a:visited {
+//  font-weight: bold;
+//}
+
+// anti-scrollbar jump
+// https://aykevl.nl/2014/09/fix-jumping-scrollbar
+// Almost worked, but not quite, I think due to timing of content loading in an SPA.
+/*
+@media screen and (min-width: 960px) {
+  html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+  }
+
+  .navbar {
+    margin-left: calc(-1 * calc(100vw - 100%));
+  }
+}
+*/
+
+@media screen and (min-width: 960px) {
+  body {
+    //height: 100%;
+    //margin-bottom: 1px;
+    overflow-y: scroll
+  }
+}
+
+.table th {
+  border-top: none;
+}
+

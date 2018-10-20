@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <h1>Contact</h1>
+
     <p class="lead">
       Social Links
     </p>
@@ -47,7 +49,7 @@
     </div>
 
     <p class="lead mt-3">
-      Contact Info
+      Details
     </p>
 
     <div class="row">

@@ -2,8 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <h1>Blog</h1>
         <p class="lead">
-          Blog - Required Reading, IMO
+          Required reading, IMO
         </p>
       </div>
     </div>
