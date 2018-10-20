@@ -12,5 +12,7 @@ dist
 
 # IDE
 .idea
+/*.iml
 
 env
+/civetweb

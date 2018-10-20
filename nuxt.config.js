@@ -2,6 +2,12 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
+  env: {
+    /* This did not work, even when NODE_ENV was set.  AFAICT, there's currently no solution for multiple envs in Nuxt. */
+    /* NUXT_ENV_PHOTOSURL: process.env.NODE_ENV !== 'production' ? 'https://localhost:8443' : 'https://photos.kaliatech.com'*/
+    /* NUXT_ENV_PHOTOSURL: 'https://localhost:8443'*/
+    NUXT_ENV_PHOTOSURL: 'https://photos.kaliatech.com'
+  },
   /*
   ** Headers of the page
   */
@@ -47,7 +53,9 @@ module.exports = {
   */
   generate: {
     routes: [
-      '/photos/Videos'
+      '/photos/Rides',
+      '/photos/Random',
+      '/photos/Projects'
     ]
   },
 
@@ -60,7 +68,7 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org/docs/
     //'bootstrap-vue/nuxt'
     ['bootstrap-vue/nuxt', {css: false}],
-    'nuxt-fontawesome',
+    'nuxt-fontawesome'
   ],
   /*
   ** Axios module configuration

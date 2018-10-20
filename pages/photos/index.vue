@@ -1,14 +1,10 @@
 <template>
   <div class="container">
+    <h1 v-if="breadcrumbs.length === 0">Photos</h1>
     <p v-if="breadcrumbs.length === 0" class="lead">
-      Photos and Videos
+      Random photos and videos
     </p>
-
-    <div class="row">
-      <div class="col-12">
-        <b-breadcrumb v-if="breadcrumbs.length > 0" :items="breadcrumbs"/>
-      </div>
-    </div>
+    <b-breadcrumb v-if="breadcrumbs.length > 0" :items="breadcrumbs"/>
 
     <div v-if="!album">
       loading...
@@ -19,7 +15,7 @@
       <div class="row">
         <div class="col-12">
           <h2 v-if="album.name && album.name !== '.'">{{ album.name }}</h2>
-          <p v-if="album.descr">{{ album.descr }}</p>
+          <p v-if="album.descr"> <span v-html="album.descr"/></p>
         </div>
       </div>
 
@@ -40,10 +36,10 @@
       </div>
 
       <div class="row">
-        <div v-for="album in subalbums" :key="album.name" class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+        <div v-for="album in subalbums" :key="album.name" class="col-12 col-md-6 col-lg-4 mb-3">
           <div>
             <nuxt-link :to="album.urlModified">
-              {{ album.name }}
+              <strong>{{ album.name }}</strong>
             </nuxt-link>
           </div>
           <div>
@@ -51,6 +47,7 @@
               <img :src="photosUrl + '/'+ album.thumbnail"
                    :alt="album.name"
                    :title="album.name"
+                   class="album"
                    width="280"
                    height="210">
             </nuxt-link>
@@ -62,7 +59,9 @@
   </div>
 </template>
 <script>
-const basePhotosUrl = 'http://localhost:8080'
+//const basePhotosUrl = 'http://localhost:8080'
+const basePhotosUrl = process.env.NUXT_ENV_PHOTOSURL
+
 export default {
   head () {
     return {
@@ -120,12 +119,12 @@ export default {
       let lastToken = tokens[tokens.length - 1]
       this.photosUrl = basePhotosUrl + this.$route.path.replace('/photos', '')
     }
-    //console.log('route', this.$route)
-
     const opts = {
       //responseType: 'json'
     }
-    this.$axios.get(this.photosUrl, opts)
+
+    let indexJsonUrl = this.photosUrl.endsWith('/') ? this.photosUrl + 'index.json' : this.photosUrl + '/index.json'
+    this.$axios.get(indexJsonUrl, opts)
       .then((resp) => {
         //let modifiedHtml = resp.data.replace('../static', 'http://localhost:8080/static')
         //let modifiedHtml = resp.data.replace('href="../static', 'href="http://localhost:8080/static')
@@ -134,20 +133,18 @@ export default {
         //let gallery = JSON.parse(galleryJson)
 
         // For debugging purposes only:
-        console.log(resp)
-        if (typeof galleryJson === 'string' || galleryJson instanceof String) {
-          try {
-            JSON.parse(resp.data)
-          }
-          catch (err) {
-            console.log(err)
-          }
-
-        }
+        // if (typeof galleryJson === 'string' || galleryJson instanceof String) {
+        //   try {
+        //     JSON.parse(resp.data)
+        //   }
+        //   catch (err) {
+        //     console.log(err)
+        //   }
+        // }
 
         this.medias = galleryJson.medias
         this.album = galleryJson.album
-        this.subalbums = galleryJson.subalbums
+        this.subalbums = galleryJson.subalbums.filter((album) => album.title !== 'Temp' && album.title !== 'Personal')
 
         this.subalbums.forEach((album, idx) => {
           let basePath = '/photos' + this.$route.path.replace('/photos', '')
@@ -177,9 +174,16 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
+  @import 'assets/scss/stacked-effect.sass';
+
   html, body {
 
+  }
+
+  .album {
+    box-shadow: sheets-effect();
+    @include border-radius (3px);
   }
 
   /*#photos-container {*/
