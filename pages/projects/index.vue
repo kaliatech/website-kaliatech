@@ -70,7 +70,26 @@ export default {
           link: '/projects/2013/1113-pantilt-v4',
           updated: '2013-11',
           descr: 'Remote servo controlled pan/tilt and video.'
+        },
+        {
+          title: 'Dynamic Loading w/ Dygraphs',
+          link: 'http://kaliatech.github.io/dygraphs-dynamiczooming-example/',
+          updated: '2013-09',
+          descr: 'Example code and demos showing how to use Dygraphs for loading downsampled datasets while zooming.'
+        },
+        {
+          title: 'Flight Viz w/ Google Earth',
+          link: 'http://www.flightgression.com',
+          updated: '2011-12',
+          descr: 'Flight accident visualization with Google Earth.'
+        },
+        {
+          title: 'Software Framework for Robotics',
+          link: '/projects/2011/0805-software-framework-for-robotics',
+          updated: '2011-08',
+          descr: 'Basis for experimentation with concepts that come in to play when interfacing a computer to the physical world.'
         }
+
       ]
     }
   },
