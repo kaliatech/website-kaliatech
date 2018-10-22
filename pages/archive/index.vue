@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col">
         <h3>~2010-2018
-          <small>(these are snapshots, so not all links and functionality will work)</small>
+          <small>(snapshots, so not all links and functionality will work)</small>
         </h3>
         <ul>
           <li>
@@ -20,11 +20,11 @@
           </li>
           <li>
             <a href="https://archive.kaliatech.com/2018/websites/www.kaliatech.com/index.html">kaliatech.com</a> -
-            Previous personal website. Wordpress with custom themes and plugins.
+            Previous personal website. Wordpress with custom theme and plugins.
             <ul>
               <li>
                 <a href="https://archive.kaliatech.com/2018/websites/blog.kaliatech.com/index.html">blog</a> - I
-                stored links I found particular interesting here for years.
+                mostly stored links that I found interesting here.
               </li>
               <li>
                 <!--@formatter:off-->
