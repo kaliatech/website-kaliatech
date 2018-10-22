@@ -12,9 +12,9 @@
       sensor</a> is connected to the Photon. There&#8217;s also a <a href="https://www.adafruit.com/product/1426">NeoPixel
       8xRGB LED stick</a> connected:</p>
     <div class="text-center">
-      <a href="http://blog.kaliatech.com/wp-content/uploads/2017/07/P1080779-1920.jpg">
+      <a href="/i/projects/2017/photon/P1080779-1920.jpg">
         <figure class="figure">
-          <img src="https://blog.kaliatech.com/wp-content/uploads/2017/07/P1080779-1920-1024x576.jpg"
+          <img src="/i/projects/2017/photon/P1080779-1920.jpg"
                class="figure-img img-fluid rounded">
           <figcaption class="figure-caption text-center">Photon breadboarded with RHT03 and RGB LED Stick
           </figcaption>
@@ -25,9 +25,9 @@
       All programming, compiling, and updates were done using the browser based IDE:
     </p>
     <div class="text-center">
-      <a href="http://blog.kaliatech.com/wp-content/uploads/2017/07/particle-build-001.png">
+      <a href="/i/projects/2017/photon/particle-build-001.png">
         <figure class="figure">
-          <img src="http://blog.kaliatech.com/wp-content/uploads/2017/07/particle-build-001.png"
+          <img src="/i/projects/2017/photon/particle-build-001.png"
                class="figure-img img-fluid rounded">
           <figcaption class="figure-caption text-center">Particle Build IDE</figcaption>
         </figure>
@@ -40,9 +40,9 @@
     </p>
 
     <div class="text-center">
-      <a href="http://blog.kaliatech.com/wp-content/uploads/2017/07/particle-console-001.png">
+      <a href="/i/projects/2017/photon/particle-console-001.png">
         <figure class="figure">
-          <img src="http://blog.kaliatech.com/wp-content/uploads/2017/07/particle-console-001.png"
+          <img src="/i/projects/2017/photon/particle-console-001.png"
                class="figure-img img-fluid rounded">
           <figcaption class="figure-caption text-center">Particle Console WebUI</figcaption>
         </figure>
