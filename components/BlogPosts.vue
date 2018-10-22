@@ -31,9 +31,8 @@ export default {
 
       if (routeOption.path.startsWith(matchPath)) {
         let title = routeOption.path.replace(matchPath, '')
-        console.log('title', title)
+
         let fsCount = (title.match(/\//g) || []).length;
-        console.log('fsCount', fsCount)
         if (fsCount > (this.year ? '0' : 1) && title.trim().length > 0 && !title.endsWith('/')) {
           this.blogPages.push({
             path: routeOption.path,

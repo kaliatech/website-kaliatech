@@ -1,12 +1,12 @@
 <template>
   <div class="container project-detail">
-    <nuxt-link to="/projects">&lt;&lt; back to project list</nuxt-link>
     <div class="row">
-      <div class="col-lg-8 offset-lg-2">
+      <div class="col-lg-8">
         <h1>{{ title }}</h1>
         <slot/>
       </div>
     </div>
+    <nuxt-link to="/projects">&lt;&lt; back to project list</nuxt-link>
   </div>
 </template>
 <script>

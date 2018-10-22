@@ -1,12 +1,12 @@
 <template>
   <div class="container blog-post">
-    <nuxt-link to="/blog">&lt;&lt; back to blog index</nuxt-link>
     <div class="row">
-      <div class="col-lg-8 offset-lg-2">
+      <div class="col-lg-8">
         <h1>{{ title }}</h1>
         <slot/>
       </div>
     </div>
+    <nuxt-link to="/blog">&lt;&lt; back to blog index</nuxt-link>
   </div>
 </template>
 <script>
