@@ -79,7 +79,7 @@ export default {
         },
         {
           title: 'Flight Viz w/ Google Earth',
-          link: 'http://www.flightgression.com',
+          link: 'http://www.flightregression.com',
           updated: '2011-12',
           descr: 'Flight accident visualization with Google Earth.'
         },
