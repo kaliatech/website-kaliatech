@@ -64,6 +64,12 @@ export default {
           link: '/projects/2016/0400-pantilt-with-opencv',
           updated: '2016-04',
           descr: 'Using face detection to drive pan/tilt camera.'
+        },
+        {
+          title: 'Pan/Tilt Device (v4)',
+          link: '/projects/2013/1113-pantilt-v4',
+          updated: '2013-11',
+          descr: 'Remote servo controlled pan/tilt and video.'
         }
       ]
     }
