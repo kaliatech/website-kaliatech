@@ -22,7 +22,7 @@
       <div class="row">
         <div v-for="media in medias" :key="media.filename" class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
           <a :href="photosUrl + media.filename">
-            <img :src="photosUrl + '/'+ media.thumbnail"
+            <img :src="photosUrl + media.thumbnail"
                  :alt="media.filename"
                  :title="media.title"
                  width="280"
@@ -44,7 +44,7 @@
           </div>
           <div>
             <nuxt-link :to="album.urlModified">
-              <img :src="photosUrl + '/'+ album.thumbnail"
+              <img :src="photosUrl + album.thumbnail"
                    :alt="album.name"
                    :title="album.name"
                    class="album"
@@ -123,7 +123,12 @@ export default {
       //responseType: 'json'
     }
 
-    let indexJsonUrl = this.photosUrl.endsWith('/') ? this.photosUrl + 'index.json' : this.photosUrl + '/index.json'
+    if (!this.photosUrl.endsWith('/')) {
+      this.photosUrl += '/'
+    }
+
+
+    let indexJsonUrl = this.photosUrl.endsWith('index.json') ? '' : this.photosUrl + 'index.json'
     this.$axios.get(indexJsonUrl, opts)
       .then((resp) => {
         //let modifiedHtml = resp.data.replace('../static', 'http://localhost:8080/static')
