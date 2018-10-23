@@ -1,12 +1,16 @@
 <template>
-  <div class="container blog-post">
-    <div class="row">
-      <div class="col-lg-8">
-        <h1>{{ title }}</h1>
-        <slot/>
+  <div>
+    <div class="container blog-post">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="mb-3">{{ title }}</h1>
+          <slot/>
+        </div>
       </div>
     </div>
-    <nuxt-link to="/blog">&lt;&lt; back to blog index</nuxt-link>
+    <div class="container mt-5">
+      <nuxt-link to="/blog">&lt;&lt; back to blog index</nuxt-link>
+    </div>
   </div>
 </template>
 <script>
