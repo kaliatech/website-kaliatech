@@ -88,8 +88,13 @@ export default {
           link: '/projects/2011/0805-software-framework-for-robotics',
           updated: '2011-08',
           descr: 'Basis for experimentation with concepts that come in to play when interfacing a computer to the physical world.'
+        },
+        {
+          title: 'RGB LED w/ Joystick',
+          link: '/projects/2011/0500-blinkm-rgb',
+          updated: '2011-05',
+          descr: 'Joystick control of a BlinkM RGB LED.'
         }
-
       ]
     }
   },
