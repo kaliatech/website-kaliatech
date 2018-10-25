@@ -94,6 +94,12 @@ export default {
           link: '/projects/2011/0500-blinkm-rgb',
           updated: '2011-05',
           descr: 'Joystick control of a BlinkM RGB LED.'
+        },
+        {
+          title: 'Stance Robot v2',
+          link: 'https://www.kaliatech.com/photos/Projects/RobotWalker2/',
+          updated: '2010-11',
+          descr: 'Experiments around microcontroller communication and smooth servo movements.'
         }
       ]
     }
