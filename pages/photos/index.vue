@@ -15,7 +15,6 @@
       <div class="row">
         <div class="col-12">
           <h2 v-if="album.name && album.name !== '.'">{{ album.name }}</h2>
-          <p v-if="album.descr"> <span v-html="album.descr"/></p>
         </div>
       </div>
 
@@ -54,6 +53,14 @@
           </div>
         </div>
       </div>
+
+      <div v-if="album.descr" class="row mt-3">
+        <div class="col-12">
+          <h3>Description</h3>
+          <p v-if="album.descr"> <span v-html="album.descr"/></p>
+        </div>
+      </div>
+
 
     </div>
   </div>
