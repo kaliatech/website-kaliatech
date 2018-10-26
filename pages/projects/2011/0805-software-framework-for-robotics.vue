@@ -17,15 +17,16 @@
     <h3>Layers</h3>
 
     <div class="text-center">
-      <a href="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png">
-        <figure class="figure">
+      <figure class="figure">
+        <a href="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png">
+
           <img src="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png"
-               class="figure-img img-fluid rounded">
-          <figcaption class="figure-caption text-center">(Graphic created on the iPad using
-            <a href="https://www.omnigroup.com/omnigraffle/ios/">Omnigraffle</a>.)
-          </figcaption>
-        </figure>
-      </a>
+               class="figure-img img-fluid rounded"> </a>
+        <figcaption class="figure-caption text-center">(Graphic created on the iPad using
+          <a href="https://www.omnigroup.com/omnigraffle/ios/">Omnigraffle</a>.)
+        </figcaption>
+      </figure>
+
     </div>
 
     <h3>Purpose</h3>
@@ -192,13 +193,13 @@
 
     <div class="row">
       <div class="col-6 offset-3">
-        <a href="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg">
-          <figure class="figure">
+        <figure class="figure">
+          <a href="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg">
+
             <img src="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg"
-                 class="figure-img img-fluid rounded img-thumbnail">
-            <figcaption class="figure-caption text-center">PropStickUSB</figcaption>
-          </figure>
-        </a>
+                 class="figure-img img-fluid rounded img-thumbnail"> </a>
+          <figcaption class="figure-caption text-center">PropStickUSB</figcaption>
+        </figure>
       </div>
     </div>
     <p>
