@@ -20,7 +20,7 @@
           </thead>
           <tbody>
             <tr v-for="project in projects" :key="project.title">
-              <td><strong><a :href="project.link" class="text-primary">{{ project.title }}</a></strong></td>
+              <td><strong> <a :href="project.link" class="text-primary"> {{ project.title }} </a> </strong></td>
               <td>{{ project.updated }}</td>
               <td>{{ project.descr }}</td>
             </tr>

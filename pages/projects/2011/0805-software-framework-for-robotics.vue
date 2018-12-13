@@ -1,6 +1,8 @@
 <template>
   <ProjectDetail title="Software Framework for Robotics" date="2018-08-05">
-    <p class="lead"> Basis for experimentation around interfacing a computer to the physical world. </p>
+    <p class="lead">
+      Basis for experimentation around interfacing a computer to the physical world.
+    </p>
 
     <p>
       This post describes the current state a software framework I have been working on randomly over the past year. It
@@ -22,8 +24,8 @@
 
           <img src="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png"
                class="figure-img img-fluid rounded"> </a>
-        <figcaption class="figure-caption text-center">(Graphic created on the iPad using
-          <a href="https://www.omnigroup.com/omnigraffle/ios/">Omnigraffle</a>.)
+        <figcaption class="figure-caption text-center">
+          Graphic created on the iPad using <a href="https://www.omnigroup.com/omnigraffle/ios/">Omnigraffle</a>.)
         </figcaption>
       </figure>
 
@@ -78,13 +80,18 @@
         <a href="http://netbeans.org/features/platform/">Netbeans Platform</a> (Swing. Not same thing as the Netbeans
         IDE.)
       </li>
-      <li><a href="https://nwjs.io/">HTML/JavaScript with NodeWebkit.js</a> (or possibly wrapped in
+      <li>
+        <a href="https://nwjs.io/">HTML/JavaScript with NodeWebkit.js</a> (or possibly wrapped in
         <a href="https://wiki.qt.io/QtWebEngine">QtWebEngine Window</a>)
       </li>
-      <li><a href="https://www.qt.io/">Qt Framework</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Apache_Flex">
-        <del>Flash/Flex/AIR</del>
-      </a></li>
+      <li>
+        <a href="https://www.qt.io/">Qt Framework</a>
+      </li>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Apache_Flex">
+          <del>Flash/Flex/AIR</del>
+        </a>
+      </li>
       <li><a href="https://wiki.eclipse.org/Rich_Client_Platform">Eclipse RCP</a></li>
     </ul>
     <p>
@@ -219,16 +226,19 @@
       The only technical difficulty I’ve run in to so far with the propellor that I probably wouldn’t have with the
       Arduino, is that the Propellor is 3.3v, whereas the Arduino is 5.0v. Because of that I had to be careful with the
       power rails to the servos. (I think I need to redo my current power connection setup regardless. I didn’t count on
-      how just how much amperage could be needed if all servos are active at the same time.)</p>
+      how just how much amperage could be needed if all servos are active at the same time.)
+    </p>
     <p>
       A key feature of the Propellor design is the notion of &quot;Cogs&quot; …a paradigm for multithreaded like
-      programming:</p>
+      programming:
+    </p>
 
     <a href="/i/projects/2011/robotics-framework/PropellerBlock-L.jpg">
       <figure class="figure">
         <img src="/i/projects/2011/robotics-framework/PropellerBlock-L.jpg"
              class="figure-img img-fluid rounded img-thumbnail">
-        <figcaption class="figure-caption text-center">Propeller Block Diagram courtesy of Parallax (click to enlarge)
+        <figcaption class="figure-caption text-center">
+          Propeller Block Diagram courtesy of Parallax (click to enlarge)
         </figcaption>
       </figure>
     </a>
@@ -238,22 +248,24 @@
       The cog design is similar to having 8 CPUs each being given a slice of (real)time to operate with relatively safe
       access to shared resources. I have used this capability to simplify the programming such that one cog handles
       communications to/from the serial connection, two more cogs are used to track and drive PWM signals to the
-      connected servos.</p>
+      connected servos.
+    </p>
     <p>
-      On the robot/device there could be other components and addons, such as a dedicated servo controller like the <a
-      href="http://www.lynxmotion.com/p-1032-ssc-32u-usb-servo-controller.aspx">Lynxmotion SSC-32</a>, sensors, motor
-      drivers, and other hardware interfacing components. The expectation as that my custom microcontroller brokers all
-      of these devices to the higher level layers of the framework. Common protocols and related terms at this level
-      include PWM, I2C, RS232, RS485, TTL, SPI, 2-wire, Relays, H-Bridges, MOSFET, ESCs, BECs, etc.</p>
+      On the device there could be other components and addons, such as a dedicated servo controller like the
+      <a href="http://www.lynxmotion.com/p-1032-ssc-32u-usb-servo-controller.aspx"> Lynxmotion SSC-32 </a>, sensors,
+      motor drivers, and other hardware interfacing components. The expectation as that my custom microcontroller
+      brokers all of these devices to the higher level layers of the framework. Common protocols and related terms at
+      this level include PWM, I2C, RS232, RS485, TTL, SPI, 2-wire, Relays, H-Bridges, MOSFET, ESCs, BECs, etc.
+    </p>
 
 
     <h2>Next</h2>
-    <em><p>
-      UPDATE [2018] - This was written up a long time ago. Things have evolved. Myself included. I often wondered why I
-      didn't mention why I chose not to use <a href="http://www.ros.org/">ROS</a> when I wrote this.</p></em>
+    <p><em> UPDATE [2018] - This was written up a long time ago. Things have evolved. Myself included. I often wondered
+    why I didn't mention why I chose not to use <a href="http://www.ros.org/">ROS</a> when I wrote this. </em>
+    </p>
 
     <p><em> My latest evolution of this idea was started in 2017 and is named <a href="https://github.com/kaliatech/r7">R7</a>.
-    </em></p>
-
+    </em>
+    </p>
   </ProjectDetail>
 </template>

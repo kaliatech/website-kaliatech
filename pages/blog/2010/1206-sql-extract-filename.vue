@@ -16,7 +16,6 @@
           FROM Table
         </code>
     </pre>
-
   </BlogPost>
 </template>
 <script>

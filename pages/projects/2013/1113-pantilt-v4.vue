@@ -10,8 +10,13 @@
     </p>
     <p>
       This is my fourth iteration creating a pan/tilt video demo to test out new software ideas. The construction (and
-      availability of the off-the-shelf components) has changed quite a bit since the days of <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/html/randd/roboticservo/index.html">version 1</a> & <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/html/randd/roboticservo2/index.html">version 2</a>. I
-      don’t know what happened to version 3.
+      availability of the off-the-shelf components) has changed quite a bit since the days of
+      <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/html/randd/roboticservo/index.html">
+        version 1
+      </a> &
+      <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/html/randd/roboticservo2/index.html">
+        version 2
+      </a>. I don’t know what happened to version 3.
     </p>
 
     <h2>Photos</h2>
@@ -73,9 +78,7 @@
           </figure>
         </a>
       </div>
-
     </div>
-
 
     <h2>Video</h2>
 
@@ -84,8 +87,8 @@
               height="360"
               src="https://www.youtube.com/embed/TxmF578vKdI?feature=oembed"
               frameborder="0"
-              allowfullscreen/>
+              allowfullscreen
+      />
     </div>
-
   </ProjectDetail>
 </template>

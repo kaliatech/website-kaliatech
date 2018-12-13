@@ -11,11 +11,11 @@
       <b-collapse
         id="nav_collapse"
         is-nav>
-
         <b-navbar-nav>
           <b-nav-item
             to="/"
-            exact>Home
+            exact>
+            Home
           </b-nav-item>
           <b-nav-item to="/blog/">Blog</b-nav-item>
           <b-nav-item to="/projects/">Projects</b-nav-item>
@@ -32,7 +32,6 @@
             <b-button size="sm" variant="" class="my-2 my-sm-0" type="submit">Search</b-button>
           </b-nav-form> -->
         </b-navbar-nav>
-
       </b-collapse>
     </b-container>
   </b-navbar>

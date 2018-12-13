@@ -66,7 +66,5 @@
     </ul>
     <p>
       I did the video mainly to experiment shooting video in the dark.</p>
-
-
   </ProjectDetail>
 </template>

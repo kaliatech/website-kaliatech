@@ -35,17 +35,17 @@
       </div>
 
       <div class="row">
-        <div v-for="album in subalbums" :key="album.name" class="col-12 col-md-6 col-lg-4 mb-3">
+        <div v-for="subalbum in subalbums" :key="subalbum.name" class="col-12 col-md-6 col-lg-4 mb-3">
           <div>
-            <nuxt-link :to="album.urlModified">
-              <strong>{{ album.name }}</strong>
+            <nuxt-link :to="subalbum.urlModified">
+              <strong>{{ subalbum.name }}</strong>
             </nuxt-link>
           </div>
           <div>
-            <nuxt-link :to="album.urlModified">
-              <img :src="photosUrl + album.thumbnail"
-                   :alt="album.name"
-                   :title="album.name"
+            <nuxt-link :to="subalbum.urlModified">
+              <img :src="photosUrl + subalbum.thumbnail"
+                   :alt="subalbum.name"
+                   :title="subalbum.name"
                    class="album"
                    width="280"
                    height="210">

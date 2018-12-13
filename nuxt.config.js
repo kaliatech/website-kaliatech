@@ -1,7 +1,7 @@
 const pkg = require('./package')
 
-// //const basePhotosUrl = 'http://localhost:8080'
-const basePhotosUrl = 'https://photos.kaliatech.com'
+const basePhotosUrl = 'http://localhost:8080'
+//const basePhotosUrl = 'https://photos.kaliatech.com'
 
 // // Works, but not used. See notes in generate config
 // const routes = []
