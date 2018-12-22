@@ -57,6 +57,7 @@
       <div v-if="album.descr" class="row mt-3">
         <div class="col-12">
           <h3>Description</h3>
+          <!-- eslint-disable-next-line -->
           <p v-if="album.descr"> <span v-html="album.descr"/></p>
         </div>
       </div>
