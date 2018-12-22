@@ -19,18 +19,6 @@
           <li>
             <a href="https://archive.kaliatech.com/2018/websites/www.kaliatech.com/index.html">kaliatech.com (2018)</a> -
             Previous personal website. Wordpress with custom theme and plugins.
-            <ul>
-              <li>
-                <a href="https://archive.kaliatech.com/2018/websites/blog.kaliatech.com/index.html">blog</a> - I
-                mostly stored links that I found interesting here.
-              </li>
-              <li>
-                <!--@formatter:off-->
-                <a href="https://archive.kaliatech.com/2018/websites/blog.kaliatech.com/music-videos/index.html">music
-                videos</a> - Favorite music videos
-                <!--@formatter:on-->
-              </li>
-            </ul>
           </li>
           <li>
             <a href="http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html">flightregression.com (2011)</a>
