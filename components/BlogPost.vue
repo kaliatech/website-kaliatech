@@ -3,6 +3,7 @@
     <div class="container blog-post">
       <div class="row">
         <div class="col-lg-8">
+          <small class="dateline">{{ date }}</small>
           <h1 class="mb-3">{{ title }}</h1>
           <slot/>
         </div>
@@ -36,4 +37,8 @@ export default {
   .blog-post a:link, .blog-post a:visited {
     font-weight: bold;
   }
+
+  .blog-post .dateline {
+  }
+
 </style>
