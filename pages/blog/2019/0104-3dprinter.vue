@@ -14,7 +14,7 @@
 
     <h2>Photos</h2>
     <div class="row">
-      <div v-for="n in 7" :key="n" class="col-4">
+      <div v-for="n in 10" :key="n" class="col-4">
         <a :href="'/i/blog/2019/3dprinter_' + n + '.jpg'">
           <figure class="figure">
             <img :src="'/i/blog/2019/3dprinter_' + n + '.jpg'"
