@@ -4,7 +4,10 @@
       <div class="col-12">
         <h1>Archive</h1>
         <p class="lead">
-          Old websites & projects. More of these are snapshots, so not all links and functionality will work.
+          Old websites & projects.
+        </p>
+        <p>
+          Most of these are snapshots in time, so not all links and functionality will work.
         </p>
       </div>
     </div>
@@ -13,15 +16,15 @@
         <h3>~2010-2018</h3>
         <ul>
           <li>
-            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/index.html">jgstechnical.com (2018)</a>
+            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/index.html">jgstechnical.com (Replaced 2018)</a>
             - Previous business website
           </li>
           <li>
-            <a href="https://archive.kaliatech.com/2018/websites/www.kaliatech.com/index.html">kaliatech.com (2018)</a> -
+            <a href="https://archive.kaliatech.com/2018/websites/www.kaliatech.com/index.html">kaliatech.com (Replaced 2018)</a> -
             Previous personal website. Wordpress with custom theme and plugins.
           </li>
           <li>
-            <a href="http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html">flightregression.com (2011)</a>
+            <a href="http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html">flightregression.com (Created 2011)</a>
             - Old project website. Became defunct once google decided to discontinue their Google Earth Plugin.
           </li>
         </ul>
@@ -32,7 +35,7 @@
         <h3>~2002-2009</h3>
         <ul>
           <li>
-            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/index.html">jgstechnical.com (2009)</a>
+            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/index.html">jgstechnical.com (Replaced 2009)</a>
             - Previous business website
           </li>
         </ul>

@@ -4,10 +4,11 @@
       <div class="row">
         <div class="col-12">
           <h1 class="mb-3">Music Videos</h1>
-
+          <p class="lead">
+            An ongoing collection of music videos that I like.
+          </p>
           <p>
-            An ongoing collection of music videos that I like. I like them for many different reasons. A ‘*’ indicates
-            an exceptionally good video.
+            I like them for many different reasons. A ‘*’ indicates an exceptionally good video.
           </p>
           <p>
             These are roughly listed in order as I come across them, with the most recent at the top.

@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Bookmarks</h1>
     <p class="lead">
-      Links to items on the Internet I've found interesting for whatever reason.
+      Running list of items on the Internet I've found interesting for whatever reason. Most recent at the top.
     </p>
     <p>
       To search and filter entire set, use <a href="https://pinboard.in/u:kaliatech">https://pinboard.in/u:kaliatech</a>.</p>
