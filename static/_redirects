@@ -1,1 +1,4 @@
 /photos/*   /photos/index.html   200
+
+https://blog.kaliatech.com/* https://www.kaliatech.com/blog/ 301!
+https://gallery.kaliatech.com/* https://www.kaliatech.com/photos/ 301!
