@@ -4,7 +4,7 @@
       <div class="col mb-3">
         <p>
           Here are my first tests using the <a href="https://www.theupsstore.com/print/3d-printing">3D printing
-          services</a> now offered at the local UPS store.
+            services</a> now offered at the local UPS store.
         </p>
         <p>
           <img src="~assets/i/blog/2014/3dprint-L2L.jpg" class="img-fluid">
@@ -12,11 +12,11 @@
         <p>
           These objects are connectors for combining Legos and Lincoln Logs. Many more similar type connectors are
           available for download as part of the <a href="http://fffff.at/free-universal-construction-kit/">Free
-          Universal Construction Set</a>.
+            Universal Construction Set</a>.
         </p>
         <p>
           The UPS stores are using <a href="http://www.stratasys.com/3d-printers/uprint-se-plus">Stratus uPrint Plus
-          SE</a> printers. Maximum print size is 8 x 8 x 6 inches.
+            SE</a> printers. Maximum print size is 8 x 8 x 6 inches.
         </p>
         <p>
           The UPS stores take .STL files. I use <a href="https://www.alibre.com/">Alibre Parameteric CAD</a> for

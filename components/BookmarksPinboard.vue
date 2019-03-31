@@ -1,13 +1,13 @@
 <template>
   <div>
-<p v-if="!pinboardPosts">
-  Loading...
-</p>
-<div>
-  <ul class="list-group">
-    <li v-for="post in pinboardPosts"  :key="post.time" class="list-group-item">{{post.description}}</li>
-  </ul></div>
-</div>
+    <p v-if="!pinboardPosts">
+      Loading...
+    </p>
+    <div>
+      <ul class="list-group">
+        <li v-for="post in pinboardPosts" :key="post.time" class="list-group-item">{{ post.description }}</li>
+      </ul></div>
+  </div>
 </template>
 <script>
 const axios = require('axios');

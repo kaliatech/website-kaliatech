@@ -4,7 +4,7 @@
       The PC reads the joystick position and communicates messages to a
       <a href="https://www.parallax.com/catalog/microcontrollers/propeller">Parallax Propellor microcontroller</a>. The
       microcontroller processes the messages and then controls the <a href="https://www.sparkfun.com/products/8579">BlinkM
-      RGB LED</a> using its I2C interface.
+        RGB LED</a> using its I2C interface.
     </p>
     <div class="video-responsive">
       <iframe width="640"
@@ -15,7 +15,7 @@
     </div>
     <p class="small">
       I also created a <a href="https://www.youtube.com/watch?v=bumZ124N_Jc&feature=youtu.be&hd=1">much longer
-      explanation video</a>. It even has a background soundtrack. I finished it, watched it, and then realized it was so
+        explanation video</a>. It even has a background soundtrack. I finished it, watched it, and then realized it was so
       boring and inane that I would feel bad asking anyone to watch it. </p>
 
     <h2>Photos</h2>

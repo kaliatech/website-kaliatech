@@ -12,7 +12,7 @@
     <p>
       In this experiment, an <a href="https://www.sparkfun.com/products/10167">RHT03 humidity and temperature sensor</a>
       is connected to the Photon. There&#8217;s also a <a href="https://www.adafruit.com/product/1426">NeoPixel 8xRGB
-      LED stick</a> connected:</p>
+        LED stick</a> connected:</p>
     <div class="text-center">
       <a href="/i/projects/2017/photon/P1080779-1920.jpg">
         <figure class="figure">
@@ -72,7 +72,7 @@
     <p>
       I started following Particle when it was
       <a href="https://techcrunch.com/2015/05/14/spark-io-is-now-particle-io-because-there-were-too-many-sparks/"> still
-      named &#8220;spark.io&#8221;</a>, and I was fortunate enough to have a beer with their lead developer
+        named &#8220;spark.io&#8221;</a>, and I was fortunate enough to have a beer with their lead developer
       in San Francisco during their early days. I bought a photon soon after their first kick starter where they
       garnered
       ~$500k from backers. Since then they have released a similar cellular enabled device called

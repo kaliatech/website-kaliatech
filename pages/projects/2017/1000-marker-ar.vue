@@ -17,7 +17,7 @@
     </p>
     <p>
       Everything in this demo is being done in browser using the <a href="https://github.com/jeromeetienne/AR.js">AR.js
-      library</a> and newer HTML5 camera APIs. I am using an iPad at the beginning of the video to show the marker
+        library</a> and newer HTML5 camera APIs. I am using an iPad at the beginning of the video to show the marker
       image, but then towards the end I switched to a print out of the marker to make clear there is no technology
       component from the ipad. The demo would be more compelling if shown using a phone/mobile device (which would use
       the camera as a pass-through to the display containing the 3D image), but my android device camera is dying.

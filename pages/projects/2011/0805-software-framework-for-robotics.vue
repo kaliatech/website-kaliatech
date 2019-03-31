@@ -145,7 +145,7 @@
       type of programming involved, you can see snippets of my code in a question I posted to StackOverflow while
       working on this a while ago:
       &ldquo;<a href="http://stackoverflow.com/questions/4466573/how-should-i-delete-a-child-object-from-within-a-parents-slot-possibly-boosta">How
-      should I delete a child from parent’s slot?</a>&rdquo;.</p>
+        should I delete a child from parent’s slot?</a>&rdquo;.</p>
     <p>
       The C++ server is very generic in its base from. As part of the initial setup protocol when a client connects (all
       of which is custom), the client instructs the server which serial port to open and provides port configuration
@@ -261,7 +261,7 @@
 
     <h2>Next</h2>
     <p><em> UPDATE [2018] - This was written up a long time ago. Things have evolved. Myself included. I often wondered
-    why I didn't mention why I chose not to use <a href="http://www.ros.org/">ROS</a> when I wrote this. </em>
+      why I didn't mention why I chose not to use <a href="http://www.ros.org/">ROS</a> when I wrote this. </em>
     </p>
 
     <p><em> My latest evolution of this idea was started in 2017 and is named <a href="https://github.com/kaliatech/r7">R7</a>.
