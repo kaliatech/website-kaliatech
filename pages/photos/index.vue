@@ -19,14 +19,15 @@
       </div>
 
       <div class="row">
-        <div v-for="media in medias" :key="media.filename" class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
-          <a :href="photosUrl + media.filename">
-            <img :src="photosUrl + media.thumbnail"
-                 :alt="media.filename"
-                 :title="media.title"
-                 width="280"
-                 height="210">
-          </a>
+        <div v-for="media in medias"
+             :key="media.filename"
+             class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3"
+             @click="showLightbox(media)">
+          <img :src="photosUrl + media.thumbnail"
+               :alt="media.filename"
+               :title="media.title"
+               width="280"
+               height="210">
         </div>
       </div>
 
@@ -86,7 +87,7 @@ export default {
       ]
     }
   },
-  data () {
+  data() {
     return {
       breadcrumbs: [],
       photosUrl: basePhotosUrl,
@@ -95,9 +96,9 @@ export default {
       subalbums: []
     }
   },
-  created () {
+  created() {
   },
-  mounted () {
+  mounted() {
 
     if (this.$route.name === 'photos-catch-all') {
       let tokens = this.$route.path.split('/')
@@ -111,7 +112,7 @@ export default {
         if (idx === 1) {
           this.breadcrumbs.push({
             text: 'Photos',
-            to: {name: 'photos'}
+            to: { name: 'photos' }
           })
           return
         }
@@ -167,23 +168,33 @@ export default {
           this.subalbums[idx].urlModified = basePath + album.url
         })
 
-        let items = galleryJson.medias.map((media) => {
+        this.mfpItems = this.medias.map((media) => {
           return {
-            src: this.photosUrl + '/' + media.filename,
+            filename: media.filename,
+            src: this.photosUrl + media.filename,
             type: media.type
+            // src: $('<img src="' + this.photosUrl + media.filename + '"/><a class="download" href="' + this.photosUrl + media.filename + '">Download me</a>'),
+            // type: 'inline'
           }
         })
-
-        // $.magnificPopup.open({
-        //   // delegate: 'a', // child items selector, by clicking on it popup will open
-        //   type: 'image',
-        //   items: items,
-        //   gallery: {
-        //     // options for gallery
-        //     enabled: true
-        //   }
-        // });
       })
+  },
+  methods: {
+    showLightbox(media) {
+      $.magnificPopup.open({
+        items: this.mfpItems,
+        image: {
+          titleSrc: function (item) {
+            return '<div><a href="' + item.src + '"><small>Download</small></a></div>'
+          }
+        },
+        gallery: {
+          // options for gallery
+          enabled: true,
+          preload: [0, 2]
+        }
+      }, this.mfpItems.findIndex(i => i.filename == media.filename));
+    }
   }
 }
 </script>
