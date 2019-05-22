@@ -6,14 +6,14 @@ $theme-colors: (
 
 //$link-color: #CCCCCC !default;
 
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 
 html {
-  background-color: #CDD6E7;
+  background-color: #cdd6e7;
 }
 
 body {
-  background-color: #CDD6E7;
+  background-color: #cdd6e7;
 }
 
 div.container {
@@ -24,12 +24,16 @@ p a {
   text-decoration: underline;
 }
 
+h4 {
+  margin-top: 2rem;
+}
+
 .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .video-responsive iframe {
@@ -64,7 +68,7 @@ p a {
   body {
     //height: 100%;
     //margin-bottom: 1px;
-    overflow-y: scroll
+    overflow-y: scroll;
   }
 }
 
@@ -72,9 +76,8 @@ p a {
   border-top: none;
 }
 
-
 @include media-breakpoint-down(sm) {
-  .jumbotron  h1.display-4 {
-    font-size: $display4-size * .9;
+  .jumbotron h1.display-4 {
+    font-size: $display4-size * 0.9;
   }
 }

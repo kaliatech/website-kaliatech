@@ -18,8 +18,10 @@
         <li>
           <nuxt-link :to="'/music-videos'">Music Videos</nuxt-link> - Collected favorites
         </li>
+        <li>
+          <nuxt-link :to="'/projects'">Projects</nuxt-link> - Various projects of mine
+        </li>
       </ul>
-
     </div>
   </div>
 </template>

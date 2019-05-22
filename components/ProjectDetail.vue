@@ -1,12 +1,14 @@
 <template>
   <div class="container project-detail">
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-xl-10">
         <h1>{{ title }}</h1>
-        <slot/>
+        <slot />
       </div>
     </div>
-    <nuxt-link to="/projects">&lt;&lt; back to project list</nuxt-link>
+    <div class="mt-3">
+      <nuxt-link to="/projects">&lt;&lt; back to project list</nuxt-link>
+    </div>
   </div>
 </template>
 <script>
@@ -14,23 +16,23 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Project'
+      default: "Project"
     },
     date: {
       type: String,
-      default: ''
+      default: ""
     }
   },
-  head () {
+  head() {
     return {
-      title: this.title + ' | Kaliatech'
-    }
+      title: this.title + " | Kaliatech"
+    };
   }
-
-}
+};
 </script>
 <style lang="scss">
-  .project-detail a:link, .blog-post a:visited {
-    font-weight: bold;
-  }
+.project-detail a:link,
+.blog-post a:visited {
+  font-weight: bold;
+}
 </style>

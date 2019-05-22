@@ -2,7 +2,7 @@
   <div>
     <div class="container blog-post">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-xl-10">
           <small class="dateline">{{ date }}</small>
           <h1 class="mb-3">{{ title }}</h1>
           <slot/>
