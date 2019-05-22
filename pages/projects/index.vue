@@ -42,13 +42,25 @@ export default {
     return {
       projects: [
         {
+          title: 'AR Experiments on Android',
+          link: '/projects/2018/1031-android-ar',
+          updated: '2018-10',
+          descr: 'Experiments with ARCore on Android.'
+        },
+        {
+          title: 'AR Based Positioning & Navigation',
+          link: '/projects/2018/0830-ar-nav',
+          updated: '2018-08',
+          descr: 'Using augmented images & AR for positioning.'
+        },
+        {
           title: 'Web Audio Recording',
           link: 'https://kaliatech.github.io/web-audio-recording-tests/dist/',
           updated: '2018-03',
           descr: 'Web audio recording tests for all web browsers.'
         },
         {
-          title: 'AR with Browser',
+          title: 'Marker AR with Browser',
           link: '/projects/2017/1000-marker-ar',
           updated: '2017-10',
           descr: 'Marker based augmented reality with web browsers.'
