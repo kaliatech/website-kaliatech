@@ -42,6 +42,12 @@ export default {
     return {
       projects: [
         {
+          title: 'Tank Robot - FPV Edition (WIP)',
+          link: '/projects/2019/0301-tankrobot-fpv',
+          updated: '2019-03',
+          descr: 'Small robot with FPV setup'
+        },
+        {
           title: 'AR Experiments on Android',
           link: '/projects/2018/1031-android-ar',
           updated: '2018-10',
