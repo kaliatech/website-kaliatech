@@ -1,7 +1,7 @@
 <template>
-  <ProjectDetail title="Marker Based AR" date="2017-10-00">
+  <ProjectDetail title="Marker Based AR in Browser" date="2017-10-00">
     <p>
-      Video showing an quick experiment with marker based augmented reality using browser only technologies.
+      Video showing a quick experiment with marker image based augmented reality in standard web browers. (Not <a href="https://www.w3.org/TR/webxr/">WebXR</a>).
     </p>
     <div class="video-responsive">
       <iframe width="640"
