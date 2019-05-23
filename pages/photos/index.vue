@@ -73,12 +73,20 @@
 const basePhotosUrl = process.env.NUXT_ENV_PHOTOSURL
 
 export default {
-  head () {
+
+  // The script defer/body properties are an attempt to make sure scripts always get loaded in correct order. Seemed
+  // to be random otherwise.
+
+  head() {
     return {
       title: 'Photos | Kaliatech',
       script: [
-        {src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js'},
-        {src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'}
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', defer: '', body: false },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js',
+          defer: '',
+          body: true
+        }
       ],
       link: [
         {
@@ -211,11 +219,11 @@ html, body {
   @include border-radius (3px);
 }
 
-  /*#photos-container {*/
-  /*display: flex;*/
-  /*border: 1px solid red;*/
-  /*min-height: 70vh;*/
-  /*}*/
+/*#photos-container {*/
+/*display: flex;*/
+/*border: 1px solid red;*/
+/*min-height: 70vh;*/
+/*}*/
 
 /*#test2 {*/
 /*display: flex;*/
