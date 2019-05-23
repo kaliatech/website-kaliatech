@@ -4,7 +4,7 @@
     <p v-if="breadcrumbs.length === 0" class="lead">
       Random photos and videos
     </p>
-    <b-breadcrumb v-if="breadcrumbs.length > 0" :items="breadcrumbs"/>
+    <b-breadcrumb v-if="breadcrumbs.length > 0" :items="breadcrumbs" />
 
     <div v-if="!album">
       loading...
@@ -24,11 +24,11 @@
              class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3"
              style="cursor:pointer"
              @click="showLightbox(media)">
-          <img :src="photosUrl + media.thumbnail"
-               :alt="media.filename"
+          <img :alt="media.filename"
+               :src="photosUrl + media.thumbnail"
                :title="media.title"
-               width="280"
-               height="210">
+               height="210"
+               width="280">
         </div>
       </div>
 
@@ -45,12 +45,12 @@
           </div>
           <div>
             <nuxt-link :to="subalbum.urlModified">
-              <img :src="photosUrl + subalbum.thumbnail"
-                   :alt="subalbum.name"
+              <img :alt="subalbum.name"
+                   :src="photosUrl + subalbum.thumbnail"
                    :title="subalbum.name"
                    class="album"
-                   width="280"
-                   height="210">
+                   height="210"
+                   width="280">
             </nuxt-link>
           </div>
         </div>
@@ -60,7 +60,7 @@
         <div class="col-12">
           <h3>Description</h3>
           <!-- eslint-disable-next-line -->
-          <p v-if="album.descr"> <span v-html="album.descr"/></p>
+          <p v-if="album.descr"><span v-html="album.descr" /></p>
         </div>
       </div>
 
@@ -200,16 +200,16 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import 'assets/scss/stacked-effect.sass';
+@import 'assets/scss/stacked-effect.sass';
 
-  html, body {
+html, body {
 
-  }
+}
 
-  .album {
-    box-shadow: sheets-effect();
-    @include border-radius (3px);
-  }
+.album {
+  box-shadow: sheets-effect();
+  @include border-radius (3px);
+}
 
   /*#photos-container {*/
   /*display: flex;*/
@@ -217,27 +217,27 @@ export default {
   /*min-height: 70vh;*/
   /*}*/
 
-  /*#test2 {*/
-  /*display: flex;*/
-  /*border: 1px solid red;*/
-  /*}*/
+/*#test2 {*/
+/*display: flex;*/
+/*border: 1px solid red;*/
+/*}*/
 
-  /*#galleria {*/
-  /*flex: 1;*/
-  /*background: #000;*/
-  /*}*/
+/*#galleria {*/
+/*flex: 1;*/
+/*background: #000;*/
+/*}*/
 
-  /*#gallery {*/
-  /*flex: 1;*/
-  /*background: #000;*/
-  /*min-height: 70vh;*/
-  /*}*/
+/*#gallery {*/
+/*flex: 1;*/
+/*background: #000;*/
+/*min-height: 70vh;*/
+/*}*/
 
-  #gallery {
-    flex: 1;
-    background: #000;
-    min-height: 70vh;
-  }
+#gallery {
+  flex: 1;
+  background: #000;
+  min-height: 70vh;
+}
 
 
 </style>

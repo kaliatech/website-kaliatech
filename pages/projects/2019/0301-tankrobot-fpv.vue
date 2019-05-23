@@ -87,7 +87,5 @@
     <div>
       <img src="/i/blog/2019/0521-3dprinter-update/fusion-tank-assembly.png" class="img-fluid rounded">
     </div>
-
-
   </ProjectDetail>
 </template>
