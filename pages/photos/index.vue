@@ -167,7 +167,21 @@ export default {
 
         this.medias = galleryJson.medias
         this.album = galleryJson.album
-        this.subalbums = galleryJson.subalbums.filter((album) => album.title !== 'Temp' && album.title !== 'Personal')
+
+        // Filter out hidden subalbums
+        const subalbumsJson = galleryJson.subalbums.filter(album => album.title !== 'Temp' && album.title !== 'Personal')
+
+        // Manual sorting of main album. Note sure how else to do this. Should eventually look in to
+        // alternative to sigal, or perhaps develop plugin that allows per album sorting config.
+        if (this.album && this.album.name === '.') {
+          this.subalbums = []
+          this.subalbums.push(subalbumsJson.find(el => el.name === 'Random'))
+          this.subalbums.push(subalbumsJson.find(el => el.name === 'Rides'))
+          this.subalbums.push(subalbumsJson.find(el => el.name === 'Projects'))
+        }
+        else {
+          this.subalbums = subalbumsJson
+        }
 
         this.subalbums.forEach((album, idx) => {
           let basePath = '/photos' + this.$route.path.replace('/photos', '')
