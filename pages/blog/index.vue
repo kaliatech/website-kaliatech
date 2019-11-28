@@ -13,11 +13,18 @@
       <h4>Miscellaneous</h4>
       <ul>
         <li>
-          <nuxt-link :to="'/books'">Books</nuxt-link> - Reading, and recently read
+          <nuxt-link :to="'/blog/books'">Books</nuxt-link> - Reading, and recently read
         </li>
         <li>
-          <nuxt-link :to="'/music-videos'">Music Videos</nuxt-link> - Collected favorites
+          <nuxt-link :to="'/blog/music-videos'">Music Videos</nuxt-link> - Collected favorites
         </li>
+        <li>
+          <nuxt-link :to="'/blog/movies'">Movies</nuxt-link> - Favorite movies
+        </li>
+
+<!--        <li>-->
+<!--          <nuxt-link :to="'/blog/music/spotify-playlist'">Music</nuxt-link> - Spotify playlist-->
+<!--        </li>-->
         <li>
           <nuxt-link :to="'/projects'">Projects</nuxt-link> - Various projects of mine
         </li>

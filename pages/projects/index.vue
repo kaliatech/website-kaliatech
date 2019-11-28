@@ -97,7 +97,7 @@ export default {
         },
         {
           title: 'Flight Viz w/ Google Earth',
-          link: 'http://www.flightregression.com',
+          link: 'http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html',
           updated: '2011-12',
           descr: 'Flight accident visualization with Google Earth.'
         },

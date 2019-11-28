@@ -41,6 +41,46 @@ export default {
     return {
       videos: [
         {
+          title: 'Something About You',
+          artist: 'Elderbrook & Rudimental',
+          url: 'https://www.youtube.com/watch?v=N1EhXF1lskA',
+          comment: '**',
+        },
+        {
+          title: 'Beautiful People (feat. Khalid)',
+          artist: 'Ed Sheeran',
+          url: 'https://www.youtube.com/watch?v=mj0XInqZMHY',
+		      comment: '*',
+        },
+        {
+          title: 'This Is America',
+          artist: 'Childish Gambino',
+          url: 'https://www.youtube.com/watch?v=VYOjWnS4cMY',
+        },
+        {
+          title: 'Circles',
+          artist: 'Post Malone',
+          url: 'https://www.youtube.com/watch?v=wXhTHyIgQ_U',
+          break: true
+        },
+        {
+          title: 'Wicked Game',
+          artist:'Theory of a Deadman',
+          url: 'https://www.youtube.com/watch?v=h3itLccui18'
+        },
+        {
+          title: 'Dear Winter',
+          artist: 'AJR',
+          url: 'https://www.youtube.com/watch?v=ZUSI4n_74LA'
+        },
+        {
+          title: 'Move On',
+          artist: 'Mike Posner',
+          url: 'https://www.youtube.com/watch?v=A2CwZ1UTSSA',
+          break: true
+        },
+
+        {
           title: 'Someone I Used To Know',
           artist: 'Zac Brown Band',
           url: 'https://www.youtube.com/watch?v=IdqEaU0uSPI',
