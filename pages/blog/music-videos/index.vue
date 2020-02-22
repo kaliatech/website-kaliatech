@@ -41,6 +41,11 @@ export default {
     return {
       videos: [
         {
+          title: 'Ze Huilt Maar Ze Lacht',
+          artist: 'Maan',
+          url: 'https://www.youtube.com/watch?v=j-HkuKxTYEU',
+        },
+        {
           title: 'Something About You',
           artist: 'Elderbrook & Rudimental',
           url: 'https://www.youtube.com/watch?v=N1EhXF1lskA',
