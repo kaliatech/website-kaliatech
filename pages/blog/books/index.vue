@@ -76,9 +76,9 @@ export default {
 .gr_grid_book_container {
   /* customize book cover container div here */
   float: left;
-  width: 98px;
+  width: 102px;
   height: 160px;
-  padding: 0px 0px;
+  margin: 2px 2px;
   overflow: hidden;
 }
 </style>
