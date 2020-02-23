@@ -36,17 +36,21 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    {src: "~/plugins/global.js"}  
+    { src: "~/plugins/global.js" }
   ],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-8344371-5',
+      dev: false
+    }]
   ],
   router: {
-    extendRoutes (routes, resolve) {
+    extendRoutes(routes, resolve) {
       routes.push({
         name: 'photos-catch-all',
         path: '/photos/*',
@@ -54,21 +58,17 @@ export default {
       })
     }
   },
-  
+
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://bootstrap-vue.js.org
     //'bootstrap-vue/nuxt'
-    ['bootstrap-vue/nuxt', {css: false}],
+    ['bootstrap-vue/nuxt', { css: false }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'nuxt-fontawesome',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-8344371-5',
-      dev: false
-    }]
+    'nuxt-fontawesome'
   ],
   /*
    ** Axios module configuration
@@ -101,6 +101,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+    }
   }
 }
