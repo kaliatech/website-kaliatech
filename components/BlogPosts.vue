@@ -2,7 +2,7 @@
   <div class="row blog-posts">
     <div class="col-12">
       <ul>
-        <li v-for="blogPage in blogPages" :key="blogPage.path" class="mt-2">
+        <li :key="blogPage.path" class="mt-2" v-for="blogPage in blogPages">
           <nuxt-link :to="blogPage.path">{{ blogPage.title }}</nuxt-link>
         </li>
       </ul>
@@ -17,30 +17,29 @@ export default {
       default: ''
     }
   },
-  data () {
+  data() {
     return {
       blogPages: []
     }
   },
-  created () {
+  created() {
     this.$router.options.routes.forEach((routeOption) => {
-
-      let matchPath = '/blog' + (this.year ? '/' : '') + this.year
+      const matchPath = '/blog' + (this.year ? '/' : '') + this.year
       // console.log(matchPath)
       // console.log(routeOption.path)
 
       if (routeOption.path.startsWith(matchPath)) {
-        let title = routeOption.path.replace(matchPath, '')
+        const title = routeOption.path.replace(matchPath, '')
 
-        let fsCount = (title.match(/\//g) || []).length;
+        const fsCount = (title.match(/\//g) || []).length
         if (fsCount > (this.year ? '0' : 1) && title.trim().length > 0 && !title.endsWith('/')) {
           this.blogPages.push({
             path: routeOption.path,
-            title: title
+            title
           })
           this.blogPages.sort((a, b) => {
-            let A = a.title.toUpperCase()
-            let B = b.title.toUpperCase()
+            const A = a.title.toUpperCase()
+            const B = b.title.toUpperCase()
             if (A > B) {
               return -1
             }
@@ -56,7 +55,8 @@ export default {
 }
 </script>
 <style lang="scss">
-  .blog-posts a:link, .blog-posts a:visited {
-    font-weight: bold;
-  }
+.blog-posts a:link,
+.blog-posts a:visited {
+  font-weight: bold;
+}
 </style>

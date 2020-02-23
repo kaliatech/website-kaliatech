@@ -13,17 +13,17 @@
           <p>
             These are roughly listed in order as I come across them, with the most recent at the top.
           </p>
-
         </div>
       </div>
 
       <div class="row">
         <div class="col-12">
-          <div v-for="vid in videos" :key="vid.title" class="mt-2">
+          <div :key="vid.title" class="mt-2" v-for="vid in videos">
             <a :href="vid.url"><span v-text="vid.title"/></a>
-            - <span v-text="vid.artist"/>
+            - <span v-text="vid.artist" />
             <!-- eslint-disable-next-line -->
-            <span v-if="vid.comment" v-html="vid.comment"/> <br v-if="vid.break"/> <br v-if="vid.break"/>
+            <span v-html="vid.comment" v-if="vid.comment" /> <br v-if="vid.break" />
+            <br v-if="vid.break" />
           </div>
         </div>
       </div>
@@ -32,35 +32,30 @@
 </template>
 <script>
 export default {
-  head () {
-    return {
-      title: 'Music Videos | Kaliatech'
-    }
-  },
-  data () {
+  data() {
     return {
       videos: [
         {
           title: 'Ze Huilt Maar Ze Lacht',
           artist: 'Maan',
-          url: 'https://www.youtube.com/watch?v=j-HkuKxTYEU',
+          url: 'https://www.youtube.com/watch?v=j-HkuKxTYEU'
         },
         {
           title: 'Something About You',
           artist: 'Elderbrook & Rudimental',
           url: 'https://www.youtube.com/watch?v=N1EhXF1lskA',
-          comment: '**',
+          comment: '**'
         },
         {
           title: 'Beautiful People (feat. Khalid)',
           artist: 'Ed Sheeran',
           url: 'https://www.youtube.com/watch?v=mj0XInqZMHY',
-		      comment: '*',
+          comment: '*'
         },
         {
           title: 'This Is America',
           artist: 'Childish Gambino',
-          url: 'https://www.youtube.com/watch?v=VYOjWnS4cMY',
+          url: 'https://www.youtube.com/watch?v=VYOjWnS4cMY'
         },
         {
           title: 'Circles',
@@ -70,7 +65,7 @@ export default {
         },
         {
           title: 'Wicked Game',
-          artist:'Theory of a Deadman',
+          artist: 'Theory of a Deadman',
           url: 'https://www.youtube.com/watch?v=h3itLccui18'
         },
         {
@@ -89,7 +84,7 @@ export default {
           title: 'Someone I Used To Know',
           artist: 'Zac Brown Band',
           url: 'https://www.youtube.com/watch?v=IdqEaU0uSPI',
-          comment: '*',
+          comment: '*'
         },
         {
           title: 'Shallow (A Star Is Born)',
@@ -107,11 +102,11 @@ export default {
         {
           title: 'Burn Out',
           artist: 'Midland',
-          url: 'https://www.youtube.com/watch?v=YBCrkFB8nvc',
+          url: 'https://www.youtube.com/watch?v=YBCrkFB8nvc'
         },
         {
           title: 'Irish Way',
-          artist: 'The O\'Reillys and the Paddyhats',
+          artist: "The O'Reillys and the Paddyhats",
           url: 'https://www.youtube.com/watch?v=c2bEwZR7g1Y',
           break: true
         },
@@ -129,7 +124,8 @@ export default {
           title: 'Quien Sabe',
           artist: 'Natti Natasha',
           url: 'https://www.youtube.com/watch?v=mG0b8IAJvts',
-          comment: '(<a href="https://lyricstranslate.com/en/%C2%BFquien-sabe-who-knows.html">lyrics</a> w/ English translation)'
+          comment:
+            '(<a href="https://lyricstranslate.com/en/%C2%BFquien-sabe-who-knows.html">lyrics</a> w/ English translation)'
         },
         {
           url: 'https://www.youtube.com/a?v=QPTnMVvfH-w',
@@ -139,7 +135,7 @@ export default {
         },
         {
           url: 'https://www.youtube.com/watch?v=Nhn0hcwGzTE',
-          title: 'Cold Ain\'t For Me',
+          title: "Cold Ain't For Me",
           artist: 'Oceans'
         },
         {
@@ -364,15 +360,14 @@ export default {
         },
         {
           url: 'http://www.youtube.com/watch?v=2zNSgSzhBfM',
-          title: 'Can\'t Hold Us',
+          title: "Can't Hold Us",
           artist: 'Macklemore & Ryan Lewis ft. Ray Dalton'
         },
         {
           url: 'http://www.youtube.com/watch?v=8PLifPUIuic',
           title: 'White Walls',
           artist: 'Macklemore & Ryan Lews ft. ScHoolboy Q and Hollis',
-          break: true,
-
+          break: true
         },
         {
           url: 'http://www.youtube.com/watch?v=sxDdEPED0h8',
@@ -393,8 +388,7 @@ export default {
         {
           url: 'http://www.youtube.com/watch?v=TdrL3QxjyVw',
           title: 'Summertime Sadness',
-          artist: 'Lana Del Ray',
-
+          artist: 'Lana Del Ray'
         },
         {
           url: 'http://www.youtube.com/watch?v=JRWox-i6aAk',
@@ -629,7 +623,7 @@ export default {
         },
         {
           url: 'http://www.youtube.com/watch?v=1y6smkh6c-0',
-          title: 'Don\'t You Worry Child',
+          title: "Don't You Worry Child",
           artist: 'Swedish House Mafia ft. John Martin *'
         },
         {
@@ -718,12 +712,17 @@ export default {
         }
       ]
     }
+  },
+  head() {
+    return {
+      title: 'Music Videos | Kaliatech'
+    }
   }
 }
 </script>
 <style lang="scss">
-  .music-videos a:link, .music-videos a:visited {
-    font-weight: bold;
-  }
+.music-videos a:link,
+.music-videos a:visited {
+  font-weight: bold;
+}
 </style>
-

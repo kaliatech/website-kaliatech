@@ -13,14 +13,18 @@
         <table class="table">
           <thead>
             <tr>
-              <th/>
+              <th />
               <th>Last Updated</th>
-              <th/>
+              <th />
             </tr>
           </thead>
           <tbody>
-            <tr v-for="project in projects" :key="project.title">
-              <td><strong> <a :href="project.link" class="text-primary"> {{ project.title }} </a> </strong></td>
+            <tr :key="project.title" v-for="project in projects">
+              <td>
+                <strong>
+                  <a :href="project.link" class="text-primary"> {{ project.title }}</a>
+                </strong>
+              </td>
               <td>{{ project.updated }}</td>
               <td>{{ project.descr }}</td>
             </tr>
@@ -33,12 +37,7 @@
 <script>
 export default {
   components: {},
-  head () {
-    return {
-      title: 'Projects | Kaliatech'
-    }
-  },
-  data () {
+  data() {
     return {
       projects: [
         {
@@ -105,7 +104,8 @@ export default {
           title: 'Software Framework for Robotics',
           link: '/projects/2011/0805-software-framework-for-robotics',
           updated: '2011-08',
-          descr: 'Basis for experimentation with concepts that come in to play when interfacing a computer to the physical world.'
+          descr:
+            'Basis for experimentation with concepts that come in to play when interfacing a computer to the physical world.'
         },
         {
           title: 'RGB LED w/ Joystick',
@@ -122,7 +122,7 @@ export default {
       ]
     }
   },
-  mounted () {
+  mounted() {
     //
     // Web Audio Recording 2018-03 Audio recording on mobile web browsers.
     // AR with Browser 2017-10 Marked based augmented reality with web browsers.
@@ -146,13 +146,16 @@ export default {
     // Pan/Tilt Device (v2) 2006-07 Remote pan/tilt web camera. Version 2.
     // Flash Colorization 2004-10 Dynamic photo colorization with Flash.
     // Pan/Tilt Device (v1) 2003-11 Remote pan/tilt web camera. Version 1.
-
-
+  },
+  head() {
+    return {
+      title: 'Projects | Kaliatech'
+    }
   }
 }
 </script>
 <style>
-  .projects a {
-    text-decoration: underline;
-  }
+.projects a {
+  text-decoration: underline;
+}
 </style>

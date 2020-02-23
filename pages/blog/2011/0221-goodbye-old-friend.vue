@@ -1,5 +1,5 @@
 <template>
-  <BlogPost title="Goodbye to an Old Friend" date="2011-02-21">
+  <BlogPost date="2011-02-21" title="Goodbye to an Old Friend">
     <div class="row">
       <div class="col">
         <p>
@@ -20,10 +20,10 @@
           I get attached to my hardware. I suppose it won’t be missed, but it was definitely part of my history.
         </p>
         <p style="text-align: center">
-          <img src="~assets/i/blog/2011/P10001662s.jpg" class="rounded">
+          <img class="rounded" src="~assets/i/blog/2011/P10001662s.jpg" />
         </p>
       </div>
     </div>
-    <hr>
+    <hr />
   </BlogPost>
 </template>

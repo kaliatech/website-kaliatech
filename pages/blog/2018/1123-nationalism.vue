@@ -1,5 +1,5 @@
 <template>
-  <BlogPost title="George Orwell on Nationalism" date="2014-10-17">
+  <BlogPost date="2014-10-17" title="George Orwell on Nationalism">
     <div class="row">
       <div class="col">
         <blockquote class="blockquote">
@@ -15,14 +15,13 @@
             belief even when the facts are overwhelmingly against him.&rdquo;
           </p>
           <footer class="blockquote-footer">
-            George Orwell in <a href="http://orwell.ru/library/essays/nationalism/english/e_nat">
-              <cite title="Notes on Nationalism"> Notes on Nationalism </cite> </a>
+            George Orwell in
+            <a href="http://orwell.ru/library/essays/nationalism/english/e_nat">
+              <cite title="Notes on Nationalism"> Notes on Nationalism </cite></a
+            >
           </footer>
         </blockquote>
       </div>
-
     </div>
   </BlogPost>
 </template>
-
-

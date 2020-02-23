@@ -11,8 +11,9 @@
     <p>
       Google recently promoted an
       <a href="https://www.theverge.com/2019/2/10/18219325/google-maps-augmented-reality-ar-feature-app-prototype-test">
-        experimental maps navigation feature</a
-      >, which I believe uses similar techniques.
+        experimental maps navigation feature
+      </a>
+      , which I believe uses similar techniques.
     </p>
     <h4>Augmented Images</h4>
     <p>
@@ -88,36 +89,38 @@
     <p>
       Separately, Apple has an interesting capability in ARKit2 whereby they are
       <a href="https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects">
-        detecting 3D objects </a
-      >, not just 2D images. I haven't used it enough to say how well it works.
+        detecting 3D objects
+      </a>
+      , not just 2D images. I haven't used it enough to say how well it works.
     </p>
 
     <h4>Note on AR for Browser & Cross Platform</h4>
     <p>
       The state of AR support in browsers is in flux and future unclear. I tried hard to make various AR ideas work in
       browser, but in the end, had to give it up. The leading standard at this time is
-      <a href="https://www.w3.org/TR/webxr/">WebXR</a>, but it's not fully or consistently supported. Chrome had a
-      decent implementation for a while, but it was then removed. Firefox seems to be the current leader. Who knows
-      if/when Safari will ever support it. Regarding the premise above, the WebXR standard does not yet include support
-      for augmented images.
+      <a href="https://www.w3.org/TR/webxr/">WebXR</a>
+      , but it's not fully or consistently supported. Chrome had a decent implementation for a while, but it was then
+      removed. Firefox seems to be the current leader. Who knows if/when Safari will ever support it. Regarding the
+      premise above, the WebXR standard does not yet include support for augmented images.
     </p>
     <p>
       There are a few options for cross platform AR apps, but no good ones. The best so far seems to be
-      <a href="https://viromedia.com/viroreact">ViroReact</a>. However, my initial experiments with it were frustrating,
-      to say the least.
+      <a href="https://viromedia.com/viroreact">ViroReact</a>
+      . However, my initial experiments with it were frustrating, to say the least.
     </p>
     <p>
       Screenshots from the SpawnAtCamera and Graffiti demos by
-      <a href="https://github.com/google-ar/">three.ar.js</a> with the no longer maintained
-      <a href="https://github.com/google-ar/WebARonARCore">WebARonARCore</a>. I traced a path while walking down a
-      residential sidewalk using a Pixel 2 phone.
+      <a href="https://github.com/google-ar/">three.ar.js</a>
+      with the no longer maintained
+      <a href="https://github.com/google-ar/WebARonARCore">WebARonARCore</a>
+      . I traced a path while walking down a residential sidewalk using a Pixel 2 phone.
     </p>
     <div class="row">
       <div class="col-6">
-        <img src="/i/projects/2018/0830-ar-nav/webxr-1.png" class="img-fluid rounded">
+        <img class="img-fluid rounded" src="/i/projects/2018/0830-ar-nav/webxr-1.png" />
       </div>
       <div class="col-6">
-        <img src="/i/projects/2018/0830-ar-nav/webxr-2.png" class="img-fluid rounded">
+        <img class="img-fluid rounded" src="/i/projects/2018/0830-ar-nav/webxr-2.png" />
       </div>
     </div>
   </ProjectDetail>

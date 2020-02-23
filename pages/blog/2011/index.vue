@@ -5,23 +5,22 @@
         <h2>2011</h2>
       </div>
     </div>
-    <blog-posts year="2011"/>
+    <blog-posts year="2011" />
   </div>
 </template>
 <script>
 import BlogPosts from '~/components/BlogPosts'
 
 export default {
-  components: {BlogPosts},
-  head () {
+  components: { BlogPosts },
+  data() {
+    return {}
+  },
+  head() {
     return {
       title: 'Blog - 2011 | Kaliatech'
     }
-  },
-  data () {
-    return {}
   }
 }
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

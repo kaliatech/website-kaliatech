@@ -1,20 +1,13 @@
 <template>
-  <b-navbar
-    toggleable="md"
-    type="dark"
-    variant="primary">
+  <b-navbar toggleable="md" type="dark" variant="primary">
     <b-container class="mt-0">
-      <b-navbar-toggle target="nav_collapse"/>
+      <b-navbar-toggle target="nav_collapse" />
 
       <b-navbar-brand to="/">Kaliatech</b-navbar-brand>
 
-      <b-collapse
-        id="nav_collapse"
-        is-nav>
+      <b-collapse id="nav_collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item
-            to="/"
-            exact>
+          <b-nav-item exact to="/">
             Home
           </b-nav-item>
           <b-nav-item to="/blog/">Blog</b-nav-item>
@@ -47,19 +40,17 @@
 </template>
 
 <script>
-
 export default {
   components: {},
-  data () {
+  data() {
     return {
       routes: []
     }
   },
-  created () {
-    //const currentLink = this.$page.path
+  created() {
+    // const currentLink = this.$page.path
     this.routes = this.$router.options.routes
   }
 }
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

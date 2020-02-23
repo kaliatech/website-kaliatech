@@ -5,7 +5,7 @@
         <div class="col-xl-10">
           <small class="dateline">{{ date }}</small>
           <h1 class="mb-3">{{ title }}</h1>
-          <slot/>
+          <slot />
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@ export default {
       default: ''
     }
   },
-  head () {
+  head() {
     return {
       title: this.title + ' | Kaliatech'
     }
@@ -34,11 +34,11 @@ export default {
 }
 </script>
 <style lang="scss">
-  .blog-post a:link, .blog-post a:visited {
-    font-weight: bold;
-  }
+.blog-post a:link,
+.blog-post a:visited {
+  font-weight: bold;
+}
 
-  .blog-post .dateline {
-  }
-
+.blog-post .dateline {
+}
 </style>

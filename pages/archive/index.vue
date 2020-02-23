@@ -16,15 +16,21 @@
         <h3>~2010-2018</h3>
         <ul>
           <li>
-            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/index.html">jgstechnical.com (Replaced 2018)</a>
+            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/index.html"
+              >jgstechnical.com (Replaced 2018)
+            </a>
             - Previous business website
           </li>
           <li>
-            <a href="https://archive.kaliatech.com/2018/websites/www.kaliatech.com/index.html">kaliatech.com (Replaced 2018)</a> -
-            Previous personal website. Wordpress with custom theme and plugins.
+            <a href="https://archive.kaliatech.com/2018/websites/www.kaliatech.com/index.html"
+              >kaliatech.com (Replaced 2018)
+            </a>
+            - Previous personal website. Wordpress with custom theme and plugins.
           </li>
           <li>
-            <a href="http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html">flightregression.com (Created 2011)</a>
+            <a href="http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html">
+              flightregression.com (Created 2011)
+            </a>
             - Old project website. Became defunct once google decided to discontinue their Google Earth Plugin.
           </li>
         </ul>
@@ -35,7 +41,9 @@
         <h3>~2002-2009</h3>
         <ul>
           <li>
-            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/index.html">jgstechnical.com (Replaced 2009)</a>
+            <a href="https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/index.html">
+              jgstechnical.com (Replaced 2009)
+            </a>
             - Previous business website
           </li>
         </ul>
@@ -46,20 +54,20 @@
 <script>
 export default {
   components: {},
-  head () {
+  data() {
+    return {}
+  },
+  mounted() {},
+  head() {
     return {
       title: 'Archive | Kaliatech'
     }
-  },
-  data () {
-    return {}
-  },
-  mounted () {
   }
 }
 </script>
 <style lang="scss">
-  .page-archive a:link, .page-archive a:visited {
-    font-weight: bold;
-  }
+.page-archive a:link,
+.page-archive a:visited {
+  font-weight: bold;
+}
 </style>

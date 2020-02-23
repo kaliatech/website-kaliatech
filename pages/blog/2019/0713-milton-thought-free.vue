@@ -1,21 +1,20 @@
 <template>
-  <BlogPost title="They Thought They Were Free" date="2019-07-13">
+  <BlogPost date="2019-07-13" title="They Thought They Were Free">
     <div class="row">
       <div class="col">
         <blockquote class="blockquote">
           <p>
-            &ldquo;
-            ...Each act, each occasion, is worse than the last, but only a little worse. You wait for the next and the
-            next. You wait for one great shocking occasion, thinking that others, when such a shock comes, will join
-            with you in resisting somehow. You don't want to act, or even talk, alone; you don't want to 'go out of your
-            way to make trouble.' Why not?-Well, you are not in the habit of doing it. And it is not just fear, fear of
-            standing alone, that restrains you; it is also genuine uncertainty. Uncertainty is a very important factor,
-            and, instead of decreasing as time goes on, it grows. Outside, in the streets, in the general community,
-            'everyone' is happy. One hears no protest, and certainly sees none. You know, in France or Italy there would
-            be slogans against the government painted on walls and fences; in Germany, outside the great cities,
-            perhaps, there is not even this. In the university community, in your own community, you speak privately to
-            your colleagues, some of whom certainly feel as you do; but what do they say? They say, 'It's not so bad' or
-            'You're seeing things' or 'You're an alarmist.'
+            &ldquo; ...Each act, each occasion, is worse than the last, but only a little worse. You wait for the next
+            and the next. You wait for one great shocking occasion, thinking that others, when such a shock comes, will
+            join with you in resisting somehow. You don't want to act, or even talk, alone; you don't want to 'go out of
+            your way to make trouble.' Why not?-Well, you are not in the habit of doing it. And it is not just fear,
+            fear of standing alone, that restrains you; it is also genuine uncertainty. Uncertainty is a very important
+            factor, and, instead of decreasing as time goes on, it grows. Outside, in the streets, in the general
+            community, 'everyone' is happy. One hears no protest, and certainly sees none. You know, in France or Italy
+            there would be slogans against the government painted on walls and fences; in Germany, outside the great
+            cities, perhaps, there is not even this. In the university community, in your own community, you speak
+            privately to your colleagues, some of whom certainly feel as you do; but what do they say? They say, 'It's
+            not so bad' or 'You're seeing things' or 'You're an alarmist.'
           </p>
           <p>
             And you are an alarmist. You are saying that this must lead to this, and you can't prove it. These are the
@@ -49,7 +48,8 @@
           <footer class="blockquote-footer">
             Milton Mayer in
             <a href="https://www.press.uchicago.edu/Misc/Chicago/511928.html">
-              <cite title="They Thought They Were Free"> They Thought They Were Free </cite></a>
+              <cite title="They Thought They Were Free"> They Thought They Were Free </cite></a
+            >
           </footer>
         </blockquote>
       </div>

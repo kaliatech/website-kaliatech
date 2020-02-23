@@ -1,5 +1,5 @@
 <template>
-  <BlogPost title="Matlab Integration and Alternatives, such as SciPy" date="2013-02-20">
+  <BlogPost date="2013-02-20" title="Matlab Integration and Alternatives, such as SciPy">
     <p>
       This post contains informal notes collected while researching options and techniques for using Matlab to do
       complex numerical programming work while integrating with existing code bases. Also includes notes and links on
@@ -7,7 +7,7 @@
       project.
     </p>
     <h3>Using Java from within Matlab</h3>
-    <hr>
+    <hr />
     <p>
       The java integration with Matlab is straightforward and works well.&nbsp; (The same seems to be true for .NET
       integration, although I didn’t test it.) &nbsp;&nbsp;No additional toolboxes or addons are required, beyond the
@@ -48,7 +48,7 @@
       could be running on a different machine than the server code base.
     </p>
     <h3>Using .NET from within Matlab</h3>
-    <hr>
+    <hr />
     <p>
       Similar to Java integration, no additional toolboxes or addons are required in order to call .NET assemblies from
       within Matlab.
@@ -61,7 +61,7 @@
       </li>
     </ul>
     <h3>Calling Matlab from Java/.NET</h3>
-    <hr>
+    <hr />
     <p>
       Calling in to matlab from Java/.NET requires addons. The official approach to is to purchase the matlab compiler
       and then a standalone toolbox specific to each platform. This combination lets you compile standalone executables
@@ -79,7 +79,8 @@
     </ul>
     <p>
       The initial pricing I received would’ve required &gt;$10k to get started. There are no runtime distribution costs
-      though.</p>
+      though.
+    </p>
     <h4>Alternative Unofficial Approaches</h4>
     <ul>
       <li>
@@ -103,12 +104,13 @@
       </li>
     </ul>
     <h3>Additional Research</h3>
-    <hr>
+    <hr />
     <p>The remaining part of this post is primarily a collection of links and notes I generated while researching.</p>
     <p>
       I don’t have much experience using external math engines in recent projects, however, based on what I’ve
       researched, I would not lean towards using Matlab for my own projects these days. It might be different if I had
-      extensive knowledge of Matlab already, or lots of code that depended on it.</p>
+      extensive knowledge of Matlab already, or lots of code that depended on it.
+    </p>
     <h4>Matlab Alternatives</h4>
     <ul>
       <li>
@@ -119,9 +121,7 @@
         GNU Octave :
         <a href="http://en.wikipedia.org/wiki/GNU_Octave">http://en.wikipedia.org/wiki/GNU_Octave</a>
       </li>
-      <li>
-        Scilab:&nbsp;<a href="http://www.scilab.org/">http://www.scilab.org/</a>
-      </li>
+      <li>Scilab:&nbsp;<a href="http://www.scilab.org/">http://www.scilab.org/</a></li>
       <li>
         Sage:&nbsp;<a href="http://www.sagemath.org/">http://www.sagemath.org/</a>&nbsp;(more symbolic math oriented?
         e.g. More like Mathematica vs. Matlab)
@@ -153,7 +153,7 @@
       </li>
     </ul>
     <h3>NumPy/SciPy Development</h3>
-    <hr>
+    <hr />
     <h4>Dedicated SciPy IDEs</h4>
     <ul>
       <li>
@@ -184,7 +184,9 @@
         <a href="http://matplotlib.org/">http://matplotlib.org/</a>
       </li>
       <li>
-        <a href="http://www.packtpub.com/matplotlib-python-development/book?utm_source=matplotlib.sourceforge.net&amp;utm_medium=link&amp;utm_content=pod&amp;utm_campaign=mdb_002124">
+        <a
+          href="http://www.packtpub.com/matplotlib-python-development/book?utm_source=matplotlib.sourceforge.net&amp;utm_medium=link&amp;utm_content=pod&amp;utm_campaign=mdb_002124"
+        >
           http://www.packtpub.com/matplotlib-python-development/book?utm_source=matplotlib.sourceforge.net&amp;utm_medium=link&amp;utm_content=pod&amp;utm_campaign=mdb_002124
         </a>
       </li>
@@ -193,7 +195,7 @@
       </li>
     </ul>
     <h3>Misc Links &amp; Articles</h3>
-    <hr>
+    <hr />
     <h4>Matlab vs PySci</h4>
     <ul>
       <li>
@@ -277,7 +279,7 @@
       </li>
     </ul>
     <h3>Matlab, Misc</h3>
-    <hr>
+    <hr />
     <ul>
       <li>
         <a href="http://stackoverflow.com/questions/2326609/how-to-organize-matlab-code">
@@ -302,7 +304,9 @@
             </a>
           </li>
           <li>
-            <a href="http://www.mathworks.com/support/solutions/en/data/1-15NDN/index.html?product=ML&amp;solution=1-15NDN">
+            <a
+              href="http://www.mathworks.com/support/solutions/en/data/1-15NDN/index.html?product=ML&amp;solution=1-15NDN"
+            >
               http://www.mathworks.com/support/solutions/en/data/1-15NDN/index.html?product=ML&amp;solution=1-15NDN
             </a>
           </li>
@@ -346,7 +350,7 @@
   </BlogPost>
 </template>
 <style scoped="true">
-  h3 {
-    margin-top: 3rem;
-  }
+h3 {
+  margin-top: 3rem;
+}
 </style>

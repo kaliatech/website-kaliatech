@@ -57,7 +57,9 @@
         </a>
       </li>
       <li>
-        Spektrum <a href="https://www.horizonhobby.com/SPM8800">DX8 (Gen 1) transmitter</a> and
+        Spektrum
+        <a href="https://www.horizonhobby.com/SPM8800">DX8 (Gen 1) transmitter</a>
+        and
         <a href="https://www.spektrumrc.com/Products/Default.aspx?ProdID=SPMAR620">AR620 6 Channel Sport Receiver</a>
       </li>
       <li>
@@ -73,19 +75,19 @@
       Chassis platform and mounts 3D printed. More images and video coming soon.
     </p>
     <div>
-      <img src="~assets/i/projects/2019/0301-tankrobot-fpv/tank-robot-001.jpg" class="img-fluid rounded">
+      <img class="img-fluid rounded" src="~assets/i/projects/2019/0301-tankrobot-fpv/tank-robot-001.jpg" />
     </div>
-    <br>
+    <br />
     <div>
-      <img src="~assets/i/projects/2019/0301-tankrobot-fpv/tank-robot-002.jpg" class="img-fluid rounded">
+      <img class="img-fluid rounded" src="~assets/i/projects/2019/0301-tankrobot-fpv/tank-robot-002.jpg" />
     </div>
-    <br>
+    <br />
     <div>
-      <img src="~assets/i/projects/2019/0301-tankrobot-fpv/tank-robot-003.jpg" class="img-fluid rounded">
+      <img class="img-fluid rounded" src="~assets/i/projects/2019/0301-tankrobot-fpv/tank-robot-003.jpg" />
     </div>
-    <br>
+    <br />
     <div>
-      <img src="/i/blog/2019/0521-3dprinter-update/fusion-tank-assembly.png" class="img-fluid rounded">
+      <img class="img-fluid rounded" src="/i/blog/2019/0521-3dprinter-update/fusion-tank-assembly.png" />
     </div>
   </ProjectDetail>
 </template>

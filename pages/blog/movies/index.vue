@@ -12,11 +12,12 @@
 
       <div class="row">
         <div class="col-12">
-          <div v-for="vid in videos" :key="vid.title" class="mt-2">
-            <a :href="vid.url"><span v-text="vid.title" /></a>
+          <div :key="vid.title" class="mt-2" v-for="vid in videos">
+            <a :href="vid.url"><span v-text="vid.title"/></a>
             (<span v-text="vid.artist" />)
             <!-- eslint-disable-next-line -->
-            <span v-if="vid.comment" v-html="vid.comment" /> <br v-if="vid.break" /> <br v-if="vid.break" />
+            <span v-html="vid.comment" v-if="vid.comment" /> <br v-if="vid.break" />
+            <br v-if="vid.break" />
           </div>
         </div>
       </div>
@@ -39,7 +40,8 @@
           Hero,
           Reality Bites,
           Last of the Mohicans
-        </pre>
+        </pre
+          >
         </div>
       </div>
     </div>
@@ -47,42 +49,42 @@
 </template>
 <script>
 export default {
-  head() {
-    return {
-      title: 'Movies | Kaliatech'
-    }
-  },
   data() {
     return {
       videos: [
         {
           title: 'Lost in Translation',
           artist: '2003',
-          url: 'https://www.rottentomatoes.com/m/lost_in_translation/',
+          url: 'https://www.rottentomatoes.com/m/lost_in_translation/'
         },
         {
           title: 'The Secret Life of Walter Mitty',
           artist: '2015',
-          url: 'https://www.rottentomatoes.com/m/the_secret_life_of_walter_mitty_2013/',
+          url: 'https://www.rottentomatoes.com/m/the_secret_life_of_walter_mitty_2013/'
         },
         {
           title: 'Casshern',
           artist: '2004',
-          url: 'https://www.rottentomatoes.com/m/10004734_casshern/',
+          url: 'https://www.rottentomatoes.com/m/10004734_casshern/'
         },
         {
           title: 'Gladiator',
           artist: '2000',
-          url: 'https://www.rottentomatoes.com/m/gladiator/',
+          url: 'https://www.rottentomatoes.com/m/gladiator/'
         }
       ]
+    }
+  },
+  head() {
+    return {
+      title: 'Movies | Kaliatech'
     }
   }
 }
 </script>
 <style lang="scss">
-.music-videos a:link, .music-videos a:visited {
+.music-videos a:link,
+.music-videos a:visited {
   font-weight: bold;
 }
 </style>
-

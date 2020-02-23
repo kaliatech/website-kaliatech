@@ -9,41 +9,36 @@
     <div class="row">
       <div class="col-12">
         <div class="social-btns-cont">
-          <a
-            class="btn btn-primary"
-            href="https://www.linkedin.com/in/jgsanderson/">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/jgsanderson/">
             <span class="icon">
-              <fa :icon="['fab', 'linkedin']"/>
+              <fa :icon="['fab', 'linkedin']" />
             </span>
-            LinkedIn Profile</a>
-          <a
-            class="btn btn-primary"
-            href="https://stackoverflow.com/users/123378/kaliatech">
+            LinkedIn Profile
+          </a>
+          <a class="btn btn-primary" href="https://stackoverflow.com/users/123378/kaliatech">
             <span class="icon">
-              <fa :icon="['fab', 'stack-overflow']"/>
+              <fa :icon="['fab', 'stack-overflow']" />
             </span>
-            StackOverflow Profile</a>
-          <a
-            class="btn btn-primary"
-            href="https://github.com/kaliatech">
+            StackOverflow Profile
+          </a>
+          <a class="btn btn-primary" href="https://github.com/kaliatech">
             <span class="icon">
-              <fa :icon="['fab', 'github']"/>
+              <fa :icon="['fab', 'github']" />
             </span>
-            GitHub Profile</a>
-          <a
-            class="btn btn-primary"
-            href="https://twitter.com/jgstech">
+            GitHub Profile
+          </a>
+          <a class="btn btn-primary" href="https://twitter.com/jgstech">
             <span class="icon">
-              <fa :icon="['fab', 'twitter']"/>
+              <fa :icon="['fab', 'twitter']" />
             </span>
-            Twitter</a>
-          <a
-            class="btn btn-primary"
-            href="https://www.jgstechnical.com">
+            Twitter
+          </a>
+          <a class="btn btn-primary" href="https://www.jgstechnical.com">
             <span class="icon">
-              <fa :icon="['fas', 'globe']"/>
+              <fa :icon="['fas', 'globe']" />
             </span>
-            Professional Website</a>
+            Professional Website
+          </a>
         </div>
       </div>
     </div>
@@ -54,31 +49,32 @@
 
     <div class="row">
       <div class="col-12">
-        email <a href="mailto:info@jgstechnical.com" title="Email Josh">info@jgstechnical.com</a> <br>
-        phone +1 814.359.9317 USA <br>
+        email
+        <a href="mailto:info@jgstechnical.com" title="Email Josh">info@jgstechnical.com</a>
+        <br />
+        phone +1 814.359.9317 USA <br />
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
-
         <div class="map-responsive">
           <iframe
-            src="https://www.google.com/maps/d/u/0/embed?mid=1TEsi5IaoFPmjnznqwtNBm1w95vwimlqv"
-            width="640"
-            height="480"
+            allowfullscreen
             frameborder="0"
+            height="480"
+            src="https://www.google.com/maps/d/u/0/embed?mid=1TEsi5IaoFPmjnznqwtNBm1w95vwimlqv"
             style="border:0"
-            allowfullscreen/>
+            width="640"
+          />
         </div>
-
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  head () {
+  head() {
     return {
       title: 'Contact | Kaliatech'
     }
@@ -86,29 +82,28 @@ export default {
 }
 </script>
 <style lang="scss">
-  a svg {
-    margin-right: 0.5rem;
-  }
+a svg {
+  margin-right: 0.5rem;
+}
 
-  .map-responsive {
-    overflow: hidden;
-    padding-bottom: 480px;
-    position: relative;
-    height: 0;
-    margin: 2rem 0;
-  }
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 480px;
+  position: relative;
+  height: 0;
+  margin: 2rem 0;
+}
 
-  .map-responsive iframe {
-    left: 0;
-    top: 0;
-    width: 100%;
-    position: absolute;
-  }
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+}
 
-  .social-btns-cont a.btn {
-    width: 11rem;
-    text-align: left;
-    margin: 0 0.5rem 0.5rem 0;
-
-  }
+.social-btns-cont a.btn {
+  width: 11rem;
+  text-align: left;
+  margin: 0 0.5rem 0.5rem 0;
+}
 </style>

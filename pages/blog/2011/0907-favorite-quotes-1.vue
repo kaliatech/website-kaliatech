@@ -1,11 +1,9 @@
 <template>
-  <BlogPost title="Favorite Quotes #1" date="2011-09-07">
+  <BlogPost date="2011-09-07" title="Favorite Quotes #1">
     <div class="row">
-      <div class="col">
-        Collected over the past 20 years.<br>
-      </div>
+      <div class="col">Collected over the past 20 years.<br /></div>
     </div>
-    <hr>
+    <hr />
     <div class="row">
       <div class="col">
         <div class="quote-block">
@@ -17,21 +15,23 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
-            Live a good life.<br> If there are gods and they are just, then they will not care how devout you have been,
-            but will welcome you based on the virtues you have lived by. <br> If there are gods, but unjust, then you
-            should not want to worship them. <br> If there are no gods, then you will be gone, but will have lived a
-            noble life that will live on in the memories of your loved ones.
+            Live a good life.<br />
+            If there are gods and they are just, then they will not care how devout you have been, but will welcome you
+            based on the virtues you have lived by. <br />
+            If there are gods, but unjust, then you should not want to worship them. <br />
+            If there are no gods, then you will be gone, but will have lived a noble life that will live on in the
+            memories of your loved ones.
           </p>
           <p class="quote-sig">
             — Marcus Aurelius
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -42,7 +42,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -54,7 +54,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -68,7 +68,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -82,9 +82,7 @@
           </p>
         </div>
 
-
-        <hr>
-
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -95,7 +93,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -107,14 +105,17 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
-            Is God willing to prevent evil, but not able?<br>
-            &nbsp;&nbsp;Then he is not omnipotent.<br> Is he able, but not willing?<br>
-            &nbsp;&nbsp;Then he is malevolent.<br> Is he both able and willing?<br>
-            &nbsp;&nbsp;Then whence cometh evil?<br> Is he neither able nor willing?<br>
+            Is God willing to prevent evil, but not able?<br />
+            &nbsp;&nbsp;Then he is not omnipotent.<br />
+            Is he able, but not willing?<br />
+            &nbsp;&nbsp;Then he is malevolent.<br />
+            Is he both able and willing?<br />
+            &nbsp;&nbsp;Then whence cometh evil?<br />
+            Is he neither able nor willing?<br />
             &nbsp;&nbsp;Then why call him God?
           </p>
           <p class="quote-sig">
@@ -122,7 +123,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -137,7 +138,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -150,7 +151,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -167,7 +168,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -178,48 +179,53 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
             May the bridges I burn light the way.
           </p>
           <p class="quote-sig">
-            — Marko Rakar, a Croatian data activist <br> (But used previously by others, including Bass Clef & Dylan on
-            the TV show 90210)
+            — Marko Rakar, a Croatian data activist <br />
+            (But used previously by others, including Bass Clef & Dylan on the TV show 90210)
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
-            European car companies build cars with the driver in mind.<br> Japanese car companies build cars with the
-            car in mind.<br> American car companies build cars with themselves in mind.
+            European car companies build cars with the driver in mind.<br />
+            Japanese car companies build cars with the car in mind.<br />
+            American car companies build cars with themselves in mind.
           </p>
           <p class="quote-sig">
             — Unknown
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
-            On Going Dutch: “When you pay for just yourself, you usually get what you pay for.”<br> <br> On Language:
-            “Unless our whole conversation is to be in Spanish, don’t lead off with ‘hola’.”<br> <br> On Lady Luck: “Be
-            wary of a woman who only shows up when you are winning.”<br> <br> On Pick-Up Lines: “There’s a time and
-            place for them. The time is never. You can figure out the place on your own.”
+            On Going Dutch: “When you pay for just yourself, you usually get what you pay for.”<br />
+            <br />
+            On Language: “Unless our whole conversation is to be in Spanish, don’t lead off with ‘hola’.”<br />
+            <br />
+            On Lady Luck: “Be wary of a woman who only shows up when you are winning.”<br />
+            <br />
+            On Pick-Up Lines: “There’s a time and place for them. The time is never. You can figure out the place on
+            your own.”
           </p>
           <p class="quote-sig">
-            — The Most Interesting Man in the World<br> (Produced by the marketing firm Euro RSCG for Cuauhtémoc
-            Moctezuma Brewery.)
+            — The Most Interesting Man in the World<br />
+            (Produced by the marketing firm Euro RSCG for Cuauhtémoc Moctezuma Brewery.)
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -230,7 +236,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -241,7 +247,7 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -252,18 +258,19 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
             Life is simply shades of grey. War is the greyest conceivable shade.
           </p>
           <p class="quote-sig">
-            — Iain<br> (A commentor on James Altucher’s blog post “Name a Single War that was Worth It”.)
+            — Iain<br />
+            (A commentor on James Altucher’s blog post “Name a Single War that was Worth It”.)
           </p>
         </div>
 
-        <hr>
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -274,8 +281,7 @@
           </p>
         </div>
 
-        <hr>
-
+        <hr />
 
         <div class="quote-block">
           <p class="quote">
@@ -286,16 +292,15 @@
           </p>
         </div>
 
-        <hr>
+        <hr />
       </div>
     </div>
   </BlogPost>
 </template>
 <style lang="scss">
-  div.quote-block {
-    p.quote {
-      font-style: italic;
-    }
+div.quote-block {
+  p.quote {
+    font-style: italic;
   }
-
+}
 </style>

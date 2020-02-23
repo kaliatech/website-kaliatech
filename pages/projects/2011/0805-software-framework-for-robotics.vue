@@ -1,5 +1,5 @@
 <template>
-  <ProjectDetail title="Software Framework for Robotics" date="2018-08-05">
+  <ProjectDetail date="2018-08-05" title="Software Framework for Robotics">
     <p class="lead">
       Basis for experimentation around interfacing a computer to the physical world.
     </p>
@@ -21,14 +21,17 @@
     <div class="text-center">
       <figure class="figure">
         <a href="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png">
+          <img
+            class="figure-img img-fluid rounded"
+            src="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png"
+        /></a>
 
-          <img src="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png"
-               class="figure-img img-fluid rounded"> </a>
         <figcaption class="figure-caption text-center">
-          Graphic created on the iPad using <a href="https://www.omnigroup.com/omnigraffle/ios/">Omnigraffle</a>.)
+          Graphic created on the iPad using
+          <a href="https://www.omnigroup.com/omnigraffle/ios/">Omnigraffle</a>
+          .)
         </figcaption>
       </figure>
-
     </div>
 
     <h3>Purpose</h3>
@@ -38,11 +41,14 @@
       with some of things I hope to accomplish eventually. My constant goal has been to keep things as simple as
       possible, but no simpler. Some of my ideas involve doing things that aren’t easily possible when using
       off-the-shelf components. For example, I want to have enough control that I can custom program ease-in/out
-      movements of servos (both <a href="https://www.servocity.com/servos">RC Servos</a> and
-      <a href="http://www.robotis.us/dynamixel/">Dynamixel Servos</a>). Most of the servo controllers on the market do
-      not have that capability. In earlier experiments I tried programming these custom movements in the PC layer using
-      an SSC-32 for actual servo control, but the communications latency (RS232, buffers, microcontroller, etc) made the
-      end result unreliable and not as smooth as I had hoped for.
+      movements of servos (both
+      <a href="https://www.servocity.com/servos">RC Servos</a>
+      and
+      <a href="http://www.robotis.us/dynamixel/">Dynamixel Servos</a>
+      ). Most of the servo controllers on the market do not have that capability. In earlier experiments I tried
+      programming these custom movements in the PC layer using an SSC-32 for actual servo control, but the
+      communications latency (RS232, buffers, microcontroller, etc) made the end result unreliable and not as smooth as
+      I had hoped for.
     </p>
 
     <h2>
@@ -53,17 +59,17 @@
       <div class="col-9">
         <p>
           A controller could be a joystick, a mouse, a
-          <a href="https://www.google.com/search?q=belkin+n52te&source=lnms&tbm=isch">Belkin Nostroma n52te</a>, a test
-          computer keyboard, or any combination. The controller layer could also eventually include a head tracking
-          device like the <a href="http://www.naturalpoint.com/trackir/">Natural Point TrackIR</a>.
+          <a href="https://www.google.com/search?q=belkin+n52te&source=lnms&tbm=isch">Belkin Nostroma n52te</a>
+          , a test computer keyboard, or any combination. The controller layer could also eventually include a head
+          tracking device like the
+          <a href="http://www.naturalpoint.com/trackir/">Natural Point TrackIR</a>
+          .
         </p>
       </div>
       <div class="col-3">
-        <img src="/i/projects/2011/robotics-framework/Belkin-n52te.png"
-             class="figure-img img-fluid rounded">
+        <img class="figure-img img-fluid rounded" src="/i/projects/2011/robotics-framework/Belkin-n52te.png" />
       </div>
     </div>
-
 
     <h2>User Interface</h2>
     <p>
@@ -73,16 +79,18 @@
     </p>
     <ul>
       <li>
-        <a href="https://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX 2.0 </a>(very different from
-        JavaFX 1.0)
+        <a href="https://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX 2.0</a>
+        (very different from JavaFX 1.0)
       </li>
       <li>
-        <a href="http://netbeans.org/features/platform/">Netbeans Platform</a> (Swing. Not same thing as the Netbeans
-        IDE.)
+        <a href="http://netbeans.org/features/platform/">Netbeans Platform</a>
+        (Swing. Not same thing as the Netbeans IDE.)
       </li>
       <li>
-        <a href="https://nwjs.io/">HTML/JavaScript with NodeWebkit.js</a> (or possibly wrapped in
-        <a href="https://wiki.qt.io/QtWebEngine">QtWebEngine Window</a>)
+        <a href="https://nwjs.io/">HTML/JavaScript with NodeWebkit.js</a>
+        (or possibly wrapped in
+        <a href="https://wiki.qt.io/QtWebEngine">QtWebEngine Window</a>
+        )
       </li>
       <li>
         <a href="https://www.qt.io/">Qt Framework</a>
@@ -92,7 +100,9 @@
           <del>Flash/Flex/AIR</del>
         </a>
       </li>
-      <li><a href="https://wiki.eclipse.org/Rich_Client_Platform">Eclipse RCP</a></li>
+      <li>
+        <a href="https://wiki.eclipse.org/Rich_Client_Platform">Eclipse RCP</a>
+      </li>
     </ul>
     <p>
       I keep holding off because I only have so much time to learn new things. The state of GUI development for business
@@ -105,10 +115,10 @@
     </p>
     <p>
       Most recently I’ve been experimenting by creating a Java wrapper with an embedded
-      <a href="http://groovy-lang.org/">Groovy</a> engine. This lets me prototype console applications quickly using a
-      dynamic language, but with all the power of the JDK and many available Java libraries.
+      <a href="http://groovy-lang.org/">Groovy</a>
+      engine. This lets me prototype console applications quickly using a dynamic language, but with all the power of
+      the JDK and many available Java libraries.
     </p>
-
 
     <h2>High Level Logic on PC</h2>
     <p>
@@ -130,7 +140,6 @@
       possibilities.
     </p>
 
-
     <h2>TCP/IP Server and Serial Port Proxy</h2>
     <p>
       The TCP/IP server is a custom C++ server that listens on a generic network socket for clients. Its primary purpose
@@ -138,49 +147,61 @@
     </p>
     <p>
       The C++ server was written in cross-platform C++, making significant use of
-      <a href="http://www.boost.org/">Boost</a>. Boost provides the cross-platform threading, network socket
-      abstraction, and serial port abstraction. (The network and serial port programming share the same paradigm in the
-      <a href="http://think-async.com/">Boost::ASIO library</a>). Everything in Boost is impressive, but the ASIO
-      library especially strikes me as being written by the elite of C++ craftsmen.) If you want to get a feel for the
-      type of programming involved, you can see snippets of my code in a question I posted to StackOverflow while
-      working on this a while ago:
-      &ldquo;<a href="http://stackoverflow.com/questions/4466573/how-should-i-delete-a-child-object-from-within-a-parents-slot-possibly-boosta">How
-        should I delete a child from parent’s slot?</a>&rdquo;.</p>
+      <a href="http://www.boost.org/">Boost</a>
+      . Boost provides the cross-platform threading, network socket abstraction, and serial port abstraction. (The
+      network and serial port programming share the same paradigm in the
+      <a href="http://think-async.com/">Boost::ASIO library</a>
+      ). Everything in Boost is impressive, but the ASIO library especially strikes me as being written by the elite of
+      C++ craftsmen.) If you want to get a feel for the type of programming involved, you can see snippets of my code in
+      a question I posted to StackOverflow while working on this a while ago: &ldquo;<a
+        href="http://stackoverflow.com/questions/4466573/how-should-i-delete-a-child-object-from-within-a-parents-slot-possibly-boosta"
+      >
+        How should I delete a child from parent’s slot? </a
+      >&rdquo;.
+    </p>
     <p>
       The C++ server is very generic in its base from. As part of the initial setup protocol when a client connects (all
       of which is custom), the client instructs the server which serial port to open and provides port configuration
       parameters. The server is meant to be an executable piece of code requiring little to no configuration that can be
       run almost anywhere to provide network to serial conversion. The ability to run it almost anywhere is important
       because it means that the server can be run on the PC workstation, or it can be run on an on-board computer
-      (perhaps even one as small as a <a href="http://www.gumstix.com/">Linux Gumstix</a>.) C/C++ is not the easiest of
-      languages, but it can be one of the most cross-platform in source code form. After developing the C++ server, I
-      came across a few open source projects that are essentially doing the same thing. (i.e. TCP/IP to Serial
-      proxying). However, I didn’t see anything open source that could be easily made cross-platform or that looked as
-      robust and as flexible as the server I developed myself using ASIO.</p>
+      (perhaps even one as small as a
+      <a href="http://www.gumstix.com/">Linux Gumstix</a>
+      .) C/C++ is not the easiest of languages, but it can be one of the most cross-platform in source code form. After
+      developing the C++ server, I came across a few open source projects that are essentially doing the same thing.
+      (i.e. TCP/IP to Serial proxying). However, I didn’t see anything open source that could be easily made
+      cross-platform or that looked as robust and as flexible as the server I developed myself using ASIO.
+    </p>
     <p>
-      Instead of C++, I could have used Java. I have used <a href="http://rxtx.qbang.org">RXTX</a> for serial port
-      access and <a href="http://bluecove.org/">Bluecove</a> for Bluetooth access in Java successfully. However, there
-      were minor issues with both. (RXTX wasn’t super reliable. Bluecove experienced random delays when connecting.)
-      More importantly though, using Java would have severely limited options for running the serial port proxy on
-      embedded devices.</p>
+      Instead of C++, I could have used Java. I have used
+      <a href="http://rxtx.qbang.org">RXTX</a>
+      for serial port access and
+      <a href="http://bluecove.org/">Bluecove</a>
+      for Bluetooth access in Java successfully. However, there were minor issues with both. (RXTX wasn’t super
+      reliable. Bluecove experienced random delays when connecting.) More importantly though, using Java would have
+      severely limited options for running the serial port proxy on embedded devices.
+    </p>
     <h3>Native Capabilities</h3>
     <p>
       Another benefit to using a custom C++ server is that it provides the option to write very low-level routines if
       needed. Most of the better GUI frameworks and platforms I’m familiar with (Java, Flex/Flash/AIR, Java) have
       limited capabilities for interacting with low-level OS functions and hardware directly. (Java provides
-      <a href="http://blog.frankel.ch/jna-meets-jni">JNI/JNA</a>, but that would mean yet another conversion layer.)
-      There are ways of integrating native C/C++ code with these platforms, but the techniques and/or libraries are
-      specific to each platform. By providing a smartly designed network interface, the native interfacing layer is
-      common and sharable with all the front-end platforms.</p>
+      <a href="http://blog.frankel.ch/jna-meets-jni">JNI/JNA</a>
+      , but that would mean yet another conversion layer.) There are ways of integrating native C/C++ code with these
+      platforms, but the techniques and/or libraries are specific to each platform. By providing a smartly designed
+      network interface, the native interfacing layer is common and sharable with all the front-end platforms.
+    </p>
     <p>
       If needed, I can implement C/C++ routines when and where needed, which can then be easily called by any client via
       the uniform network interface. The network latency might be a problem for certain types of problems, but this is
-      still a great addition to the framework’s capabilities.</p>
+      still a great addition to the framework’s capabilities.
+    </p>
 
     <h1>Microcontroller</h1>
     <p>
       The microcontroller is where the programming hits the metal. This type of programming is often referred to as
-      embedded programming or realtime programming.</p>
+      embedded programming or realtime programming.
+    </p>
     <p>
       There are significant differences in the various types of microcontrollers and related programming distinctions,
       but these differences would seem arcane to anyone outside of the embedded space. Keep in mind that a company might
@@ -188,23 +209,30 @@
       microcontroller that costs even a few cents less at bulk quantities can be a significant cost difference. For this
       reason many microcontrollers are highly specialized and limited in their capabilities. Luckily, hobbyists don’t
       have to make the same trade-offs and the sorts-of microcontrollers I’m interested in tend to be more powerful and
-      feature rich.</p>
+      feature rich.
+    </p>
     <p>
-      One of the more popular microcontroller platforms for hobbyists currently is the <a href="http://www.arduino.cc/">Aurdino</a>.
-      However, I wanted something more powerful, so my baseline is a
-      <a href="http://en.wikipedia.org/wiki/Parallax_Propeller">Parallax Propeller </a>microcontroller.
-      (<a href="http://www.parallax.com/">Parallax</a> is probably best known for creating the BasicStamp line of
-      microcontrollers.) The propellor is available in various forms. I started with the
-      <a href="https://www.parallax.com/product/32210">education kit (breadboard and 40-pin DIP) </a> so I could learn
-      the Propellor’s Spin language. I then purchased a PropStick USB:</p>
+      One of the more popular microcontroller platforms for hobbyists currently is the
+      <a href="http://www.arduino.cc/">Aurdino</a>
+      . However, I wanted something more powerful, so my baseline is a
+      <a href="http://en.wikipedia.org/wiki/Parallax_Propeller">Parallax Propeller</a>
+      microcontroller. (
+      <a href="http://www.parallax.com/">Parallax</a>
+      is probably best known for creating the BasicStamp line of microcontrollers.) The propellor is available in
+      various forms. I started with the
+      <a href="https://www.parallax.com/product/32210">education kit (breadboard and 40-pin DIP)</a>
+      so I could learn the Propellor’s Spin language. I then purchased a PropStick USB:
+    </p>
 
     <div class="row">
       <div class="col-6 offset-3">
         <figure class="figure">
           <a href="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg">
+            <img
+              class="figure-img img-fluid rounded img-thumbnail"
+              src="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg"
+          /></a>
 
-            <img src="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg"
-                 class="figure-img img-fluid rounded img-thumbnail"> </a>
           <figcaption class="figure-caption text-center">PropStickUSB</figcaption>
         </figure>
       </div>
@@ -212,12 +240,15 @@
     <p>
       This is a smaller version of the chip with supporting voltage regulators and USB interface already soldered on. I
       put this onto a custom board where I soldered headers for connecting servos. The end result is quite powerful (for
-      a microcontroller), easy to program (via USB), and yet is smaller than most dedicated servo controllers.</p>
+      a microcontroller), easy to program (via USB), and yet is smaller than most dedicated servo controllers.
+    </p>
 
     <a href="/i/projects/2011/robotics-framework/CustomPropBoard.jpg">
       <figure class="figure">
-        <img src="/i/projects/2011/robotics-framework/CustomPropBoard.jpg"
-             class="figure-img img-fluid rounded img-thumbnail">
+        <img
+          class="figure-img img-fluid rounded img-thumbnail"
+          src="/i/projects/2011/robotics-framework/CustomPropBoard.jpg"
+        />
         <figcaption class="figure-caption text-center">My custom board compared to SSC-32</figcaption>
       </figure>
     </a>
@@ -235,8 +266,10 @@
 
     <a href="/i/projects/2011/robotics-framework/PropellerBlock-L.jpg">
       <figure class="figure">
-        <img src="/i/projects/2011/robotics-framework/PropellerBlock-L.jpg"
-             class="figure-img img-fluid rounded img-thumbnail">
+        <img
+          class="figure-img img-fluid rounded img-thumbnail"
+          src="/i/projects/2011/robotics-framework/PropellerBlock-L.jpg"
+        />
         <figcaption class="figure-caption text-center">
           Propeller Block Diagram courtesy of Parallax (click to enlarge)
         </figcaption>
@@ -252,20 +285,29 @@
     </p>
     <p>
       On the device there could be other components and addons, such as a dedicated servo controller like the
-      <a href="http://www.lynxmotion.com/p-1032-ssc-32u-usb-servo-controller.aspx"> Lynxmotion SSC-32 </a>, sensors,
-      motor drivers, and other hardware interfacing components. The expectation as that my custom microcontroller
-      brokers all of these devices to the higher level layers of the framework. Common protocols and related terms at
-      this level include PWM, I2C, RS232, RS485, TTL, SPI, 2-wire, Relays, H-Bridges, MOSFET, ESCs, BECs, etc.
+      <a href="http://www.lynxmotion.com/p-1032-ssc-32u-usb-servo-controller.aspx"> Lynxmotion SSC-32</a>
+      , sensors, motor drivers, and other hardware interfacing components. The expectation as that my custom
+      microcontroller brokers all of these devices to the higher level layers of the framework. Common protocols and
+      related terms at this level include PWM, I2C, RS232, RS485, TTL, SPI, 2-wire, Relays, H-Bridges, MOSFET, ESCs,
+      BECs, etc.
     </p>
-
 
     <h2>Next</h2>
-    <p><em> UPDATE [2018] - This was written up a long time ago. Things have evolved. Myself included. I often wondered
-      why I didn't mention why I chose not to use <a href="http://www.ros.org/">ROS</a> when I wrote this. </em>
+    <p>
+      <em>
+        UPDATE [2018] - This was written up a long time ago. Things have evolved. Myself included. I often wondered why
+        I didn't mention why I chose not to use
+        <a href="http://www.ros.org/">ROS</a>
+        when I wrote this.
+      </em>
     </p>
 
-    <p><em> My latest evolution of this idea was started in 2017 and is named <a href="https://github.com/kaliatech/r7">R7</a>.
-    </em>
+    <p>
+      <em>
+        My latest evolution of this idea was started in 2017 and is named
+        <a href="https://github.com/kaliatech/r7">R7</a>
+        .
+      </em>
     </p>
   </ProjectDetail>
 </template>

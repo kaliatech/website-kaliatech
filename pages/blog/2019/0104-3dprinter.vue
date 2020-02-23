@@ -1,5 +1,5 @@
 <template>
-  <BlogPost title="3D Printer" date="2019-01-04">
+  <BlogPost date="2019-01-04" title="3D Printer">
     <div class="row">
       <div class="col">
         <p>
@@ -8,17 +8,18 @@
           . Purchased as a kit and had to be assembled. Hard to justify practically, but it's <i>really</i> interesting.
         </p>
         <p>
-          For more photos, see update: <nuxt-link to="/blog/2019/0521-3dprinter-update">2019/0521-3dprinter-update</nuxt-link>
+          For more photos, see update:
+          <nuxt-link to="/blog/2019/0521-3dprinter-update">2019/0521-3dprinter-update</nuxt-link>
         </p>
       </div>
     </div>
 
     <h2>Photos</h2>
     <div class="row">
-      <div v-for="n in 10" :key="n" class="col-sm-4">
+      <div :key="n" class="col-sm-4" v-for="n in 10">
         <a :href="'/i/blog/2019/0104-3dprinter/3dprinter_' + n + '.jpg'">
           <figure class="figure">
-            <img :src="'/i/blog/2019/0104-3dprinter/3dprinter_' + n + '.jpg'" class="figure-img img-fluid rounded">
+            <img :src="'/i/blog/2019/0104-3dprinter/3dprinter_' + n + '.jpg'" class="figure-img img-fluid rounded" />
           </figure>
         </a>
       </div>

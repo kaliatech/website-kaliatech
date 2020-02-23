@@ -1,5 +1,5 @@
 <template>
-  <ProjectDetail title="Pan/Tilt with OpenCV" date="2016-04">
+  <ProjectDetail date="2016-04" title="Pan/Tilt with OpenCV">
     <p class="lead">
       Face Tracking to a Drive Pan/Tilt
     </p>
@@ -22,24 +22,27 @@
     <h2>Behind the Scenes</h2>
 
     <div class="video-responsive">
-      <iframe width="640"
-              height="360"
-              src="https://www.youtube.com/embed/An6dyd8HZPk?feature=oembed"
-              frameborder="0"
-              allowfullscreen
+      <iframe
+        allowfullscreen
+        frameborder="0"
+        height="360"
+        src="https://www.youtube.com/embed/An6dyd8HZPk?feature=oembed"
+        width="640"
       />
     </div>
 
     <p>
-      <strong>Resulting video from webcam: <a href="https://youtu.be/3FT468u_prM">https://youtu.be/3FT468u_prM</a>
+      <strong
+        >Resulting video from webcam:
+        <a href="https://youtu.be/3FT468u_prM">https://youtu.be/3FT468u_prM</a>
       </strong>
     </p>
 
     <p>
       To improve on this, servo movements could be smoothed and averaging applied to the face detection results. Also,
       these particular servos were really noisy, especially when working to hold a position. In a real world scenario, a
-      <a href="https://www.trossenrobotics.com/p/WidowX-robot-turret.aspx">Dynamixel based pan/tilt platform</a> might
-      be quieter.
+      <a href="https://www.trossenrobotics.com/p/WidowX-robot-turret.aspx">Dynamixel based pan/tilt platform</a>
+      might be quieter.
     </p>
 
     <h4>
@@ -51,11 +54,13 @@
       classifier.
     </p>
     <p>
-      A near best case scenario:<br> <a href="https://www.youtube.com/watch?v=Cki-OF_ozCQ&hd=1">opencv-test-008-good</a>
+      A near best case scenario:<br />
+      <a href="https://www.youtube.com/watch?v=Cki-OF_ozCQ&hd=1">opencv-test-008-good</a>
     </p>
     <p>
       A near worst case scenario due to over exposed lighting, glasses, mic in front face, and frequent 3/4 face profile
-      presentation:<br> <a href="https://www.youtube.com/watch?v=KgAG0cWsWDw">opencv-test-011-bad</a>
+      presentation:<br />
+      <a href="https://www.youtube.com/watch?v=KgAG0cWsWDw">opencv-test-011-bad</a>
     </p>
   </ProjectDetail>
 </template>
