@@ -193,12 +193,13 @@ export default {
     }
   },
   head() {
+    // Using non-minified version of magnific-popup causes issues with nuxt when photos page is not the first load
     return {
       title: 'Photos | Kaliatech',
       script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', defer: '', body: false },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', defer: '', body: true },
         {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js',
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js',
           defer: '',
           body: true
         }
