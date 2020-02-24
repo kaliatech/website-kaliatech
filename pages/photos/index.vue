@@ -116,7 +116,11 @@ export default {
       this.photosUrl += '/'
     }
 
-    const indexJsonUrl = this.photosUrl.endsWith('index.json') ? '' : this.photosUrl + 'index.json'
+    let indexJsonUrl = this.photosUrl.endsWith('index.json') ? '' : this.photosUrl + 'index.json'
+
+    // Break cache until correct s3/cloudfront cache-controls headers are in place
+    indexJsonUrl += '?noCache=' + new Date().getTime() / 1000 / 3600
+
     this.$axios.get(indexJsonUrl, opts).then((resp) => {
       // let modifiedHtml = resp.data.replace('../static', 'http://localhost:8080/static')
       // let modifiedHtml = resp.data.replace('href="../static', 'href="http://localhost:8080/static')
@@ -174,22 +178,28 @@ export default {
   },
   methods: {
     showLightbox(media) {
-      $.magnificPopup.open(
-        {
-          items: this.mfpItems,
-          image: {
-            titleSrc(item) {
-              return '<div><a href="' + item.src + '"><small>Download</small></a></div>'
+      // TODO: This is hack to keep videos clickable, but they do not work in the lightbox.
+      // Need to find alternative to magnific popup
+      if (media.type === 'video') {
+        window.location.href = media.src
+      } else {
+        $.magnificPopup.open(
+          {
+            items: this.mfpItems,
+            image: {
+              titleSrc(item) {
+                return '<div><a href="' + item.src + '"><small>Download</small></a></div>'
+              }
+            },
+            gallery: {
+              // options for gallery
+              enabled: true,
+              preload: [0, 2]
             }
           },
-          gallery: {
-            // options for gallery
-            enabled: true,
-            preload: [0, 2]
-          }
-        },
-        this.mfpItems.findIndex((i) => i.filename === media.filename)
-      )
+          this.mfpItems.findIndex((i) => i.filename === media.filename)
+        )
+      }
     }
   },
   head() {
