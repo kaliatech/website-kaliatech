@@ -119,7 +119,7 @@ export default {
     let indexJsonUrl = this.photosUrl.endsWith('index.json') ? '' : this.photosUrl + 'index.json'
 
     // Break cache until correct s3/cloudfront cache-controls headers are in place
-    indexJsonUrl += '?noCache=' + new Date().getTime() / 1000 / 3600
+    indexJsonUrl += '?noCache=' + Math.floor(new Date().getTime() / 1000 / 3600)
 
     this.$axios.get(indexJsonUrl, opts).then((resp) => {
       // let modifiedHtml = resp.data.replace('../static', 'http://localhost:8080/static')
