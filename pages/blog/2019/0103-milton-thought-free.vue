@@ -1,5 +1,5 @@
 <template>
-  <BlogPost date="2019-07-13" title="They Thought They Were Free">
+  <BlogPost date="2019-01-03" title="They Thought They Were Free">
     <div class="row">
       <div class="col">
         <blockquote class="blockquote">
