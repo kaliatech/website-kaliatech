@@ -22,7 +22,7 @@
           :key="media.filename"
           @click="showLightbox(media)"
           class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3"
-          style="cursor:pointer"
+          style="cursor: pointer;"
           v-for="media in medias"
         >
           <img :alt="media.filename" :src="photosUrl + media.thumbnail" :title="media.title" height="210" width="280" />

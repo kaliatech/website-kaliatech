@@ -15,7 +15,7 @@
         allowtransparency="true"
         frameborder="0"
         src="https://open.spotify.com/embed/playlist/6jm9Nj0cRTe5wgziSHUMZR"
-        style="height: 50rem; width:100%"
+        style="height: 50rem; width: 100%;"
       ></iframe>
     </div>
   </div>

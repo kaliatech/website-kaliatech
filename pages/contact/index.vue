@@ -64,7 +64,7 @@
             frameborder="0"
             height="480"
             src="https://www.google.com/maps/d/u/0/embed?mid=1TEsi5IaoFPmjnznqwtNBm1w95vwimlqv"
-            style="border:0"
+            style="border: 0;"
             width="640"
           />
         </div>

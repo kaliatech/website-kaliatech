@@ -19,7 +19,7 @@
         <p>
           I get attached to my hardware. I suppose it won’t be missed, but it was definitely part of my history.
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center;">
           <img class="rounded" src="~assets/i/blog/2011/P10001662s.jpg" />
         </p>
       </div>

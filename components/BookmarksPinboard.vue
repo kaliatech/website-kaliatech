@@ -20,7 +20,7 @@ export default {
       jsonObj: null
     }
   },
-  //https://api.pinboard.in/v1/posts/recent
+  // https://api.pinboard.in/v1/posts/recent
   mounted() {
     const opts = {
       headers: { 'X-API-Key': 'xrph7k7VHW2AmPP3wsTKU2t3HdzBNrbS71pJhxeh' }

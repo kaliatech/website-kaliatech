@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-12">
           <div :key="vid.title" class="mt-2" v-for="vid in videos">
-            <a :href="vid.url"><span v-text="vid.title"/></a>
+            <a :href="vid.url"><span v-text="vid.title" /></a>
             - <span v-text="vid.artist" />
             <!-- eslint-disable-next-line -->
             <span v-html="vid.comment" v-if="vid.comment" /> <br v-if="vid.break" />
@@ -35,6 +35,11 @@ export default {
   data() {
     return {
       videos: [
+        {
+          title: "I Feel Like I'm Drowning",
+          artist: 'Two Feet',
+          url: 'https://www.youtube.com/watch?v=i_WTHkBuqbg'
+        },
         {
           title: 'Ze Huilt Maar Ze Lacht',
           artist: 'Maan',
