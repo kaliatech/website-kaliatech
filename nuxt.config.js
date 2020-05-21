@@ -1,5 +1,5 @@
-// const basePhotosUrl = 'https://localhost:8443'
-const basePhotosUrl = 'https://photos.kaliatech.com'
+const basePhotosUrl = 'https://localhost:8443'
+// const basePhotosUrl = 'https://photos.kaliatech.com'
 export default {
   mode: 'universal',
   env: {
@@ -34,19 +34,20 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: "~/plugins/global.js" }
-  ],
+  plugins: [{ src: '~/plugins/global.js' }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-8344371-5',
-      dev: false
-    }]
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-8344371-5',
+        dev: false
+      }
+    ]
   ],
   router: {
     extendRoutes(routes, resolve) {
@@ -63,7 +64,7 @@ export default {
    */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    //'bootstrap-vue/nuxt'
+    // 'bootstrap-vue/nuxt'
     ['bootstrap-vue/nuxt', { css: false }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
@@ -77,12 +78,12 @@ export default {
   fontawesome: {
     component: 'fa',
     imports: [
-      //import whole set
+      // import whole set
       // {
       //   set: '@fortawesome/free-solid-svg-icons',
       //   icons: ['fas']
       // },
-      //import 2 icons from set
+      // import 2 icons from set
       {
         set: '@fortawesome/free-solid-svg-icons',
         icons: ['faGlobe']
@@ -100,7 +101,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-    }
+    extend(config, ctx) {}
   }
 }
