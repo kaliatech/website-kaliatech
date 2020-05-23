@@ -8,15 +8,19 @@
             A Gentleman in Moscow
           </a>
           &quot;, a novel by
-          <a href="https://en.wikipedia.org/wiki/Amor_Towles">Amor Towles</a>. It was excellent and goes in to my top
-          list of all time. That makes two books in the top list in one year. The other being &quot;
+          <a href="https://en.wikipedia.org/wiki/Amor_Towles">Amor Towles</a>. It was excellent. That makes three
+          excellent finds in the past year. The others being &quot;
           <a href="https://www.goodreads.com/book/show/1232.The_Shadow_of_the_Wind">
             The Shadow of the Wind
           </a>
           &quot; by <a href="https://en.wikipedia.org/wiki/Carlos_Ruiz_Zaf%C3%B3n">Carlos Ruiz Zafón</a> with Lucia
-          Graves as translator.
+          Graves as translator, and &quot;
+          <a href="https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing">
+            Where the Crawdads Sing
+          </a>
+          &quot; by <a href="https://en.wikipedia.org/wiki/Delia_Owens">Delia Owens</a>.
         </p>
-        <p>A few favorite passages from the book are below. Includes minor spoilers.</p>
+        <p>A few of my highlights from &quot;A Gentleman in Moscow&quot; are below. Includes minor spoilers.</p>
         <hr />
         <div class="quote-block">
           <p class="quote">
