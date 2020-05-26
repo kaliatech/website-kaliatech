@@ -1,5 +1,5 @@
-const basePhotosUrl = 'https://localhost:8443'
-// const basePhotosUrl = 'https://photos.kaliatech.com'
+// const basePhotosUrl = 'https://localhost:8443'
+const basePhotosUrl = 'https://photos.kaliatech.com'
 export default {
   mode: 'universal',
   env: {
