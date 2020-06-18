@@ -61,7 +61,13 @@ export default {
       .get('https://vxn7vzwjpj.execute-api.us-east-1.amazonaws.com/default/pinboard-recent?count=50', opts)
       .then((resp) => {
         this.jsonObj = resp.data
-        this.pinboardPosts = JSON.parse(resp.data).posts
+        // TODO: This is  temporary workaround. Sometime in 2020-06, the JSON response parsing started failing, apparently
+        //       due to the UTF-8 BOM marker. I don't know what changed, and only obvious culprit is the Pinboard API.
+        // eslint-disable-next-line
+        if (this.jsonObj.charCodeAt(0) === 0xFEFF) {
+          this.jsonObj = this.jsonObj.slice(1)
+        }
+        this.pinboardPosts = JSON.parse(this.jsonObj).posts
       })
 
     // {
