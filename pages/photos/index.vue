@@ -82,10 +82,9 @@ export default {
     return {
       title: 'Photos | Kaliatech',
       script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', defer: '', body: true },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', body: true },
         {
           src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js',
-          defer: '',
           body: true,
         },
       ],
