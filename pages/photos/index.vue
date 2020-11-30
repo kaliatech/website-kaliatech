@@ -1,5 +1,10 @@
 <template>
   <div class="container">
+    <script2 src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script2>
+    <script2
+      src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+    ></script2>
+
     <h1 v-if="breadcrumbs.length === 0">Photos</h1>
     <p class="lead" v-if="breadcrumbs.length === 0">Random photos and videos</p>
     <b-breadcrumb :items="breadcrumbs" v-if="breadcrumbs.length > 0" />
@@ -78,16 +83,8 @@ export default {
     }
   },
   head() {
-    // Using non-minified version of magnific-popup causes issues with nuxt when photos page is not the first load
     return {
       title: 'Photos | Kaliatech',
-      script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', body: true },
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js',
-          body: true,
-        },
-      ],
       link: [
         {
           rel: 'stylesheet',

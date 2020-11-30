@@ -28,11 +28,14 @@ export default {
   css: ['~/assets/scss/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/global.js' },
+    { src: '~/plugins/vue-script2.js' }
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
-  
+
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
@@ -57,10 +60,10 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    
+
     // https://go.nuxtjs.dev/bootstrap
-    ['bootstrap-vue/nuxt', {css: false}],
-    
+    ['bootstrap-vue/nuxt', { css: false }],
+
     'nuxt-fontawesome',
   ],
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

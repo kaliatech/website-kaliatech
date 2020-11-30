@@ -22,7 +22,8 @@
     "bootstrap-vue": "^2.19.0",
     "nuxt": "^2.14.7",
     "nuxt-fontawesome": "^0.4.0",
-    "prismjs": "^1.22.0"
+    "prismjs": "^1.22.0",
+    "vue-script2": "^2.1.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
