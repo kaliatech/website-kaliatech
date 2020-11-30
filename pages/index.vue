@@ -23,9 +23,11 @@
             <div class="home-btns">
               <b-btn class="home-btns" to="/bookmarks/" variant="primary">Bookmarks </b-btn>
             </div>
-            <div class="home-btns">
-              <b-btn class="home-btns" to="/archive/" variant="primary">Archive </b-btn>
-            </div>
+            <!--
+              <div class="home-btns">
+                <b-btn class="home-btns" to="/archive/" variant="primary">Archive </b-btn>
+              </div>
+            -->
             <div class="home-btns">
               <b-btn class="home-btns" to="/contact/" variant="primary">Contact </b-btn>
             </div>
