@@ -9,14 +9,22 @@
 $ npm install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ nuxt dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+# build for production
+$ nuxt generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+## Nuxt Dev
+```bash
+docker build -f /mnt/c/Projects/kaliatech-utils/dockers/nuxt-dev/Dockerfile .
+
+cd /projects/website-jgstechnical-nuxt2
+docker run -p 3000:3000 -u $(id -u ${USER}):$(id -g ${USER})  -v ${PWD}:/app -it 765 /bin/bash
+
+export NUXT_HOST=0.0.0.0
+npm run dev
+```
+

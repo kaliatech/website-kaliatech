@@ -1,15 +1,12 @@
 // const basePhotosUrl = 'https://localhost:8443'
 const basePhotosUrl = 'https://photos.kaliatech.com'
 export default {
-  mode: 'universal',
   env: {
     /* This did not work, even when NODE_ENV was set.  AFAICT, there's currently no solution for multiple envs in Nuxt. */
     /* NUXT_ENV_PHOTOSURL: process.env.NODE_ENV !== 'production' ? 'https://localhost:8443' : 'https://photos.kaliatech.com' */
     NUXT_ENV_PHOTOSURL: basePhotosUrl
   },
-  /*
-   ** Headers of the page
-   */
+  // Headers of the page
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -21,33 +18,30 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
+
+
+  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['~/assets/scss/main.scss'],
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [{ src: '~/plugins/global.js' }],
-  /*
-   ** Nuxt.js dev-modules
-   */
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  plugins: [],
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+  
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
+    // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: 'UA-8344371-5',
-        dev: false
-      }
-    ]
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-8344371-5',
+      dev: false
+    }],
+
   ],
   router: {
     extendRoutes(routes, resolve) {
@@ -59,21 +53,17 @@ export default {
     }
   },
 
-  /*
-   ** Nuxt.js modules
-   */
+  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // Doc: https://bootstrap-vue.js.org
-    // 'bootstrap-vue/nuxt'
-    ['bootstrap-vue/nuxt', { css: false }],
-    // Doc: https://axios.nuxtjs.org/usage
+    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'nuxt-fontawesome'
+    
+    // https://go.nuxtjs.dev/bootstrap
+    ['bootstrap-vue/nuxt', {css: false}],
+    
+    'nuxt-fontawesome',
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
   fontawesome: {
     component: 'fa',
@@ -101,6 +91,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
   }
 }

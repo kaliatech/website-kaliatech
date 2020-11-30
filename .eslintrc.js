@@ -7,7 +7,13 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  extends: ['@nuxtjs', 'prettier', 'prettier/vue', 'plugin:prettier/recommended', 'plugin:nuxt/recommended'],
+  extends: [
+    '@nuxtjs',
+    'prettier',
+    'prettier/vue',
+    'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
+  ],
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
@@ -20,7 +26,7 @@ module.exports = {
       'warn',
       {
         ignoreWhenEmpty: true,
-        ignores: ['a', 'h1', 'div', 'b-navbar-brand', 'b-nav-item']
+        ignores: ['a', 'h1', 'div', 'b-navbar-brand', 'b-nav-item', 'p']
       }
     ],
     'vue/multiline-html-element-content-newline': [
