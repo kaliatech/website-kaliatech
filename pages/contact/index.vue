@@ -2,9 +2,7 @@
   <div class="container">
     <h1>Contact</h1>
 
-    <p class="lead">
-      Social Links
-    </p>
+    <p class="lead">Social Links</p>
 
     <div class="row">
       <div class="col-12">
@@ -43,9 +41,7 @@
       </div>
     </div>
 
-    <p class="lead mt-3">
-      Details
-    </p>
+    <p class="lead mt-3">Details</p>
 
     <div class="row">
       <div class="col-12">
@@ -64,7 +60,7 @@
             frameborder="0"
             height="480"
             src="https://www.google.com/maps/d/u/0/embed?mid=1TEsi5IaoFPmjnznqwtNBm1w95vwimlqv"
-            style="border: 0;"
+            style="border: 0"
             width="640"
           />
         </div>
@@ -76,9 +72,9 @@
 export default {
   head() {
     return {
-      title: 'Contact | Kaliatech'
+      title: 'Contact | Kaliatech',
     }
-  }
+  },
 }
 </script>
 <style lang="scss">

@@ -22,15 +22,11 @@
       <a href="/i/projects/2017/photon/P1080779-1920.jpg">
         <figure class="figure">
           <img class="figure-img img-fluid rounded" src="/i/projects/2017/photon/P1080779-1920.jpg" />
-          <figcaption class="figure-caption text-center">
-            Photon breadboarded with RHT03 and RGB LED Stick
-          </figcaption>
+          <figcaption class="figure-caption text-center">Photon breadboarded with RHT03 and RGB LED Stick</figcaption>
         </figure>
       </a>
     </div>
-    <p>
-      All programming, compiling, and updates were done using the browser based IDE:
-    </p>
+    <p>All programming, compiling, and updates were done using the browser based IDE:</p>
     <div class="text-center">
       <a href="/i/projects/2017/photon/particle-build-001.png">
         <figure class="figure">

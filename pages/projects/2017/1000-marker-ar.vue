@@ -30,8 +30,6 @@
       <del>The demo does not work with current iOS browsers, but it might be able to work in iOS 11.</del>
       <strong> UPDATE:[2017-10-21] Confirmed this does now work with iOS 11 Safari browser. </strong>
     </p>
-    <p>
-      This video was done as a live youtube stream from a foscam pan/tilt webcam, streamed using VLC.
-    </p>
+    <p>This video was done as a live youtube stream from a foscam pan/tilt webcam, streamed using VLC.</p>
   </ProjectDetail>
 </template>

@@ -13,13 +13,9 @@
           closed. (This was before the laptop manufacturers got wise and started putting rubber stoppers to prevent
           keyboards from rubbing screen.)
         </p>
-        <p>
-          I just didn’t need it any more, nor did I know anyone else that could use it.
-        </p>
-        <p>
-          I get attached to my hardware. I suppose it won’t be missed, but it was definitely part of my history.
-        </p>
-        <p style="text-align: center;">
+        <p>I just didn’t need it any more, nor did I know anyone else that could use it.</p>
+        <p>I get attached to my hardware. I suppose it won’t be missed, but it was definitely part of my history.</p>
+        <p style="text-align: center">
           <img class="rounded" src="~assets/i/blog/2011/P10001662s.jpg" />
         </p>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p class="text-muted small" style="text-align: center;">
+      <p class="text-muted small" style="text-align: center">
         email
         <a href="mailto:info@jgstechnical.com" title="Email Josh">info@jgstechnical.com</a>
         <br />

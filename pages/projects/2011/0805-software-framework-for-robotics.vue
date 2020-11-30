@@ -1,8 +1,6 @@
 <template>
   <ProjectDetail date="2018-08-05" title="Software Framework for Robotics">
-    <p class="lead">
-      Basis for experimentation around interfacing a computer to the physical world.
-    </p>
+    <p class="lead">Basis for experimentation around interfacing a computer to the physical world.</p>
 
     <p>
       This post describes the current state a software framework I have been working on randomly over the past year. It
@@ -51,9 +49,7 @@
       I had hoped for.
     </p>
 
-    <h2>
-      Controller/Keyboard
-    </h2>
+    <h2>Controller/Keyboard</h2>
 
     <div class="row">
       <div class="col-9">
@@ -276,7 +272,7 @@
       </figure>
     </a>
 
-    <p style="text-align: left;">
+    <p style="text-align: left">
       The Propellor design does not use interrupts which is a big difference as compared to many other microcontrollers.
       The cog design is similar to having 8 CPUs each being given a slice of (real)time to operate with relatively safe
       access to shared resources. I have used this capability to simplify the programming such that one cog handles

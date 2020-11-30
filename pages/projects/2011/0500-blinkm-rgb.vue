@@ -74,8 +74,6 @@
       <li>Stick Y-Axis: BLUE component</li>
       <li>Trigger Button: Decreases BLUE component by one-half</li>
     </ul>
-    <p>
-      I did the video mainly to experiment shooting video in the dark.
-    </p>
+    <p>I did the video mainly to experiment shooting video in the dark.</p>
   </ProjectDetail>
 </template>

@@ -98,9 +98,7 @@
       </li>
       <li>
         <a href="http://jamal.khadkevich.org">http://jamal.khadkevich.org</a>&nbsp;/&nbsp;
-        <a href="https://github.com/hutm/JAMAL">
-          https://github.com/hutm/JAMAL
-        </a>
+        <a href="https://github.com/hutm/JAMAL"> https://github.com/hutm/JAMAL </a>
       </li>
     </ul>
     <h3>Additional Research</h3>

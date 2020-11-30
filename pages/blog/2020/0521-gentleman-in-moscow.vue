@@ -4,28 +4,20 @@
       <div class="col">
         <p>
           I recently finished reading &quot;
-          <a href="https://www.goodreads.com/book/show/34066798-a-gentleman-in-moscow">
-            A Gentleman in Moscow
-          </a>
+          <a href="https://www.goodreads.com/book/show/34066798-a-gentleman-in-moscow"> A Gentleman in Moscow </a>
           &quot;, a novel by
           <a href="https://en.wikipedia.org/wiki/Amor_Towles">Amor Towles</a>. It was excellent. That makes three
           excellent finds in the past year. The others being &quot;
-          <a href="https://www.goodreads.com/book/show/1232.The_Shadow_of_the_Wind">
-            The Shadow of the Wind
-          </a>
+          <a href="https://www.goodreads.com/book/show/1232.The_Shadow_of_the_Wind"> The Shadow of the Wind </a>
           &quot; by <a href="https://en.wikipedia.org/wiki/Carlos_Ruiz_Zaf%C3%B3n">Carlos Ruiz Zafón</a> with Lucia
           Graves as translator, and &quot;
-          <a href="https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing">
-            Where the Crawdads Sing
-          </a>
+          <a href="https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing"> Where the Crawdads Sing </a>
           &quot; by <a href="https://en.wikipedia.org/wiki/Delia_Owens">Delia Owens</a>.
         </p>
         <p>A few of my highlights from &quot;A Gentleman in Moscow&quot; are below. Includes minor spoilers.</p>
         <hr />
         <div class="quote-block">
-          <p class="quote">
-            For rather than being tools of self-discovery, mirrors tended to be tools of self-deceit.
-          </p>
+          <p class="quote">For rather than being tools of self-discovery, mirrors tended to be tools of self-deceit.</p>
         </div>
         <hr />
         <div class="quote-block">

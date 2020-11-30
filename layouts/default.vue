@@ -12,7 +12,7 @@ import MainNavbar from '~/components/MainNavbar'
 import MainFooter from '~/components/MainFooter'
 
 export default {
-  components: { MainNavbar, MainFooter }
+  components: { MainNavbar, MainFooter },
 }
 </script>
 <style lang="scss">

@@ -18,9 +18,9 @@ export default {
   },
   head() {
     return {
-      title: 'Blog - 2011 | Kaliatech'
+      title: 'Blog - 2011 | Kaliatech',
     }
-  }
+  },
 }
 </script>
 <style lang="scss"></style>

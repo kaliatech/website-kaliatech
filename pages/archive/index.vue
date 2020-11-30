@@ -3,12 +3,8 @@
     <div class="row">
       <div class="col-12">
         <h1>Archive</h1>
-        <p class="lead">
-          Old websites & projects.
-        </p>
-        <p>
-          Most of these are snapshots in time, so not all links and functionality will work.
-        </p>
+        <p class="lead">Old websites & projects.</p>
+        <p>Most of these are snapshots in time, so not all links and functionality will work.</p>
       </div>
     </div>
     <div class="row">
@@ -57,12 +53,12 @@ export default {
   data() {
     return {}
   },
-  mounted() {},
   head() {
     return {
-      title: 'Archive | Kaliatech'
+      title: 'Archive | Kaliatech',
     }
-  }
+  },
+  mounted() {},
 }
 </script>
 <style lang="scss">

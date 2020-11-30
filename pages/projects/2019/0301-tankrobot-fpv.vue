@@ -1,11 +1,7 @@
 <template>
   <ProjectDetail date="2019-03-01" title="Tank Robot - FPV Edition">
-    <p>
-      Simple tracked robot with accurate speed controls and responsive first-person-view (FPV) for remote control.
-    </p>
-    <p>
-      Components:
-    </p>
+    <p>Simple tracked robot with accurate speed controls and responsive first-person-view (FPV) for remote control.</p>
+    <p>Components:</p>
     <ul>
       <li>
         <a href="https://www.amazon.com/MOUNTAIN_ARK-Tracked-Platform-Aluminum-Raspberry/dp/B0746FYXYQ">
@@ -18,17 +14,13 @@
         </a>
       </li>
       <li>
-        <a href="https://www.pololu.com/product/2572>">
-          Pololu Adjustable 4-12V Step-Up/Step-Down Voltage Regulator
-        </a>
+        <a href="https://www.pololu.com/product/2572>"> Pololu Adjustable 4-12V Step-Up/Step-Down Voltage Regulator </a>
       </li>
       <li>
         <a href="https://www.amazon.com/gp/product/B01N1I1LXH/">3.3V Regulator Step Down, 4.75V-12V to 3.3V 800mA</a>
       </li>
       <li>
-        <a href="https://www.amazon.com/gp/product/B07FMX42VG">
-          Foxeer Predator V3 FPV Camera, 1.8mm Lens
-        </a>
+        <a href="https://www.amazon.com/gp/product/B07FMX42VG"> Foxeer Predator V3 FPV Camera, 1.8mm Lens </a>
         <ul>
           <li>
             <a href="https://www.amazon.com/gp/product/B07CJ5S7XP/">
@@ -43,9 +35,7 @@
         </a>
       </li>
       <li>
-        <a href="https://www.amazon.com/gp/product/B072FW3DDQ/">
-          3.3 - 5V Cooling Fan
-        </a>
+        <a href="https://www.amazon.com/gp/product/B072FW3DDQ/"> 3.3 - 5V Cooling Fan </a>
       </li>
       <li>
         <a href="https://www.amazon.com/gp/product/B01H36AIGY/">Wolfwhoop WR832 5.8GHz 40CH Wireless FPV Receiver</a>
@@ -64,16 +54,12 @@
       </li>
       <li>
         <s>
-          <a href="https://www.raspberrypi.org/products/raspberry-pi-zero-w/">
-            Raspberry Pi Zero W
-          </a>
+          <a href="https://www.raspberrypi.org/products/raspberry-pi-zero-w/"> Raspberry Pi Zero W </a>
         </s>
         - not needed for the FPV variant
       </li>
     </ul>
-    <p>
-      Chassis platform and mounts 3D printed. More images and video coming soon.
-    </p>
+    <p>Chassis platform and mounts 3D printed. More images and video coming soon.</p>
     <div>
       <img class="img-fluid rounded" src="~assets/i/projects/2019/0301-tankrobot-fpv/tank-robot-001.jpg" />
     </div>

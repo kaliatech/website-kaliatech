@@ -1,9 +1,9 @@
 <template>
   <div class="container mt-0">
     <div class="jumbotron">
-      <img alt="spaceman" src="~/assets/i/spaceman.gif" style="float: left; margin-left: 0rem;" width="117" />
+      <img alt="spaceman" src="~/assets/i/spaceman.gif" style="float: left; margin-left: 0rem" width="117" />
 
-      <div style="margin-left: 150px;">
+      <div style="margin-left: 150px">
         <h1 class="display-4">Kaliatech</h1>
         <p class="lead">Online space for Josh's random interests.</p>
 
@@ -40,13 +40,13 @@ export default {
   data() {
     return {}
   },
-  mounted() {},
   head() {
     return {
       title: 'Kaliatech',
-      meta: [{ hid: 'description', name: 'description', content: 'Online space.' }]
+      meta: [{ hid: 'description', name: 'description', content: 'Online space.' }],
     }
-  }
+  },
+  mounted() {},
 }
 </script>
 <style lang="scss">

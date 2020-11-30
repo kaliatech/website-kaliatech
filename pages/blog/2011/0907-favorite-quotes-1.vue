@@ -7,12 +7,8 @@
     <div class="row">
       <div class="col">
         <div class="quote-block">
-          <p class="quote">
-            Simplicity is the outward sign and symbol of depth of thought.
-          </p>
-          <p class="quote-sig">
-            — Lin Yutang
-          </p>
+          <p class="quote">Simplicity is the outward sign and symbol of depth of thought.</p>
+          <p class="quote-sig">— Lin Yutang</p>
         </div>
 
         <hr />
@@ -26,20 +22,14 @@
             If there are no gods, then you will be gone, but will have lived a noble life that will live on in the
             memories of your loved ones.
           </p>
-          <p class="quote-sig">
-            — Marcus Aurelius
-          </p>
+          <p class="quote-sig">— Marcus Aurelius</p>
         </div>
 
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            Things are not as they appear to be, nor are they otherwise.
-          </p>
-          <p class="quote-sig">
-            — The Lankavatara Sutra or Surangama Sutra
-          </p>
+          <p class="quote">Things are not as they appear to be, nor are they otherwise.</p>
+          <p class="quote-sig">— The Lankavatara Sutra or Surangama Sutra</p>
         </div>
 
         <hr />
@@ -49,9 +39,7 @@
             The opposite of the religious fanatic is not the fanatical atheist but the gentle cynic who cares not
             whether there is a god or not.
           </p>
-          <p class="quote-sig">
-            — Eric Hoffer
-          </p>
+          <p class="quote-sig">— Eric Hoffer</p>
         </div>
 
         <hr />
@@ -63,9 +51,7 @@
             I’ll solve your problem for you the best way I know how. And you use it or not. That’s up to you. You’re the
             client. But you pay me.” And there was a clarity about the relationship that was refreshing.
           </p>
-          <p class="quote-sig">
-            — Steve Jobs regarding working with designer Paul Rand on the NeXT logo
-          </p>
+          <p class="quote-sig">— Steve Jobs regarding working with designer Paul Rand on the NeXT logo</p>
         </div>
 
         <hr />
@@ -77,20 +63,14 @@
             the world is full of educated derelicts. Persistence and determination alone are omnipotent. The slogan
             ‘Press On’ has solved and always will solve the problems of the human race.
           </p>
-          <p class="quote-sig">
-            — Calvin Coolidge
-          </p>
+          <p class="quote-sig">— Calvin Coolidge</p>
         </div>
 
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            Cynicism is a sorry kind of wisdom.
-          </p>
-          <p class="quote-sig">
-            — Barack Obama
-          </p>
+          <p class="quote">Cynicism is a sorry kind of wisdom.</p>
+          <p class="quote-sig">— Barack Obama</p>
         </div>
 
         <hr />
@@ -100,9 +80,7 @@
             Anti-intellectualism has been a constant thread winding its way through our political and cultural life,
             nurtured by the false notion that democracy means that ‘my ignorance is just as good as your knowledge.’
           </p>
-          <p class="quote-sig">
-            — Isaac Asimov
-          </p>
+          <p class="quote-sig">— Isaac Asimov</p>
         </div>
 
         <hr />
@@ -118,9 +96,7 @@
             Is he neither able nor willing?<br />
             &nbsp;&nbsp;Then why call him God?
           </p>
-          <p class="quote-sig">
-            — Epicurus
-          </p>
+          <p class="quote-sig">— Epicurus</p>
         </div>
 
         <hr />
@@ -133,9 +109,7 @@
             can’t even conceive of your life without it? Perhaps four, or five times more? Perhaps? not even that. How
             many more times will you watch the full moon rise? Perhaps twenty. And yet it all seems limitless.
           </p>
-          <p class="quote-sig">
-            — Paul Bowles – The Sheltering Sky
-          </p>
+          <p class="quote-sig">— Paul Bowles – The Sheltering Sky</p>
         </div>
 
         <hr />
@@ -146,9 +120,7 @@
             even comprehend what I am? What are you, compared to me?’ And when you know enough science, you can just
             smile up at the universe and reply, ‘Dude, I am you.’
           </p>
-          <p class="quote-sig">
-            — “philhellenes” on YouTube
-          </p>
+          <p class="quote-sig">— “philhellenes” on YouTube</p>
         </div>
 
         <hr />
@@ -163,20 +135,14 @@
             reading software manuals, or Cisco Router manuals, or sitting in my house testing and comparing new
             technologies, but that’s a topic for another blog post.
           </p>
-          <p class="quote-sig">
-            — Mark Cuban
-          </p>
+          <p class="quote-sig">— Mark Cuban</p>
         </div>
 
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            You have enemies? Good. That means you’ve stood up for something, sometime in your life.
-          </p>
-          <p class="quote-sig">
-            — Winston Churchill
-          </p>
+          <p class="quote">You have enemies? Good. That means you’ve stood up for something, sometime in your life.</p>
+          <p class="quote-sig">— Winston Churchill</p>
         </div>
 
         <hr />
@@ -184,9 +150,7 @@
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            May the bridges I burn light the way.
-          </p>
+          <p class="quote">May the bridges I burn light the way.</p>
           <p class="quote-sig">
             — Marko Rakar, a Croatian data activist <br />
             (But used previously by others, including Bass Clef & Dylan on the TV show 90210)
@@ -201,9 +165,7 @@
             Japanese car companies build cars with the car in mind.<br />
             American car companies build cars with themselves in mind.
           </p>
-          <p class="quote-sig">
-            — Unknown
-          </p>
+          <p class="quote-sig">— Unknown</p>
         </div>
 
         <hr />
@@ -228,12 +190,8 @@
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            I like men who have a future and women who have a past.
-          </p>
-          <p class="quote-sig">
-            — Oscar Wilde
-          </p>
+          <p class="quote">I like men who have a future and women who have a past.</p>
+          <p class="quote-sig">— Oscar Wilde</p>
         </div>
 
         <hr />
@@ -242,9 +200,7 @@
           <p class="quote">
             I have little doubt that when St. George had killed the dragon he was heartily afraid of the princess.
           </p>
-          <p class="quote-sig">
-            — G.K. Chesterton
-          </p>
+          <p class="quote-sig">— G.K. Chesterton</p>
         </div>
 
         <hr />
@@ -253,17 +209,13 @@
           <p class="quote">
             You know you’re in love when you can’t fall asleep because reality is finally better than your dreams.
           </p>
-          <p class="quote-sig">
-            — Dr. Seuss
-          </p>
+          <p class="quote-sig">— Dr. Seuss</p>
         </div>
 
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            Life is simply shades of grey. War is the greyest conceivable shade.
-          </p>
+          <p class="quote">Life is simply shades of grey. War is the greyest conceivable shade.</p>
           <p class="quote-sig">
             — Iain<br />
             (A commentor on James Altucher’s blog post “Name a Single War that was Worth It”.)
@@ -273,23 +225,15 @@
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            Remember: Write a wise saying, and your name will be remembered forever.
-          </p>
-          <p class="quote-sig">
-            — Anonymous
-          </p>
+          <p class="quote">Remember: Write a wise saying, and your name will be remembered forever.</p>
+          <p class="quote-sig">— Anonymous</p>
         </div>
 
         <hr />
 
         <div class="quote-block">
-          <p class="quote">
-            Things don’t have to change the world to be important.
-          </p>
-          <p class="quote-sig">
-            — Steve Jobs
-          </p>
+          <p class="quote">Things don’t have to change the world to be important.</p>
+          <p class="quote-sig">— Steve Jobs</p>
         </div>
 
         <hr />

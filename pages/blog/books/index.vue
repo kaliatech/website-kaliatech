@@ -58,9 +58,9 @@ export default {
   },
   head() {
     return {
-      title: 'Books | Kaliatech'
+      title: 'Books | Kaliatech',
     }
-  }
+  },
 }
 </script>
 <style lang="scss">

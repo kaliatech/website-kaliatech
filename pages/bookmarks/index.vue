@@ -9,9 +9,7 @@
       <a href="https://pinboard.in/u:kaliatech">https://pinboard.in/u:kaliatech</a>
       .
     </p>
-    <p v-if="!pinboardPosts">
-      Loading...
-    </p>
+    <p v-if="!pinboardPosts">Loading...</p>
 
     <div class="list-group">
       <a
@@ -47,14 +45,19 @@ export default {
   data() {
     return {
       pinboardPosts: null,
-      jsonObj: null
+      jsonObj: null,
+    }
+  },
+  head() {
+    return {
+      title: 'Bookmarks | Kaliatech',
     }
   },
   mounted() {
     document.querySelector('body').style['overflow-y'] = 'scroll'
 
     const opts = {
-      headers: { 'X-API-Key': 'xrph7k7VHW2AmPP3wsTKU2t3HdzBNrbS71pJhxeh' }
+      headers: { 'X-API-Key': 'xrph7k7VHW2AmPP3wsTKU2t3HdzBNrbS71pJhxeh' },
     }
     // https://api.pinboard.in/v1/posts/recent
     this.$axios
@@ -64,7 +67,7 @@ export default {
         // TODO: This is  temporary workaround. Sometime in 2020-06, the JSON response parsing started failing, apparently
         //       due to the UTF-8 BOM marker. I don't know what changed, and only obvious culprit is the Pinboard API.
         // eslint-disable-next-line
-        if (this.jsonObj.charCodeAt(0) === 0xFEFF) {
+        if (this.jsonObj.charCodeAt(0) === 0xfeff) {
           this.jsonObj = this.jsonObj.slice(1)
         }
         this.pinboardPosts = JSON.parse(this.jsonObj).posts
@@ -86,10 +89,5 @@ export default {
     //   ]
     // }
   },
-  head() {
-    return {
-      title: 'Bookmarks | Kaliatech'
-    }
-  }
 }
 </script>

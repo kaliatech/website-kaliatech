@@ -7,9 +7,7 @@
 
       <b-collapse id="nav_collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item exact to="/">
-            Home
-          </b-nav-item>
+          <b-nav-item exact to="/"> Home </b-nav-item>
           <b-nav-item to="/blog/">Blog</b-nav-item>
           <b-nav-item to="/projects/">Projects</b-nav-item>
           <b-nav-item to="/photos/">Photos</b-nav-item>
@@ -44,13 +42,13 @@ export default {
   components: {},
   data() {
     return {
-      routes: []
+      routes: [],
     }
   },
   created() {
     // const currentLink = this.$page.path
     this.routes = this.$router.options.routes
-  }
+  },
 }
 </script>
 <style lang="scss"></style>

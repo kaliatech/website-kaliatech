@@ -14,12 +14,12 @@ export default {
   props: {
     year: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data() {
     return {
-      blogPages: []
+      blogPages: [],
     }
   },
   created() {
@@ -35,7 +35,7 @@ export default {
         if (fsCount > (this.year ? '0' : 1) && title.trim().length > 0 && !title.endsWith('/')) {
           this.blogPages.push({
             path: routeOption.path,
-            title
+            title,
           })
           this.blogPages.sort((a, b) => {
             const A = a.title.toUpperCase()
@@ -51,7 +51,7 @@ export default {
         }
       }
     })
-  }
+  },
 }
 </script>
 <style lang="scss">

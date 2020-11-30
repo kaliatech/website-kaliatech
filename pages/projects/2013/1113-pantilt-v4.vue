@@ -1,8 +1,6 @@
 <template>
   <ProjectDetail date="2013-11-15" title="Pan/Tilt Servo Control (v4)">
-    <p class="lead">
-      Remote servo controlled pan/tilt and video.
-    </p>
+    <p class="lead">Remote servo controlled pan/tilt and video.</p>
     <p>
       A few photos and brief video showing showing new interface and latest iteration of my custom pan/tilt video
       system. This is a small experiment inside of a larger software framework for interacting with physical devices.

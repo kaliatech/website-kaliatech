@@ -1,8 +1,6 @@
 <template>
   <BlogPost date="2010-12-06" title="SQL to select filename component of path">
-    <p>
-      The following works on MySQL to extract base filename component of a complete file path.
-    </p>
+    <p>The following works on MySQL to extract base filename component of a complete file path.</p>
 
     <pre class="line-numbers">
         <code class="language-sql">
@@ -24,14 +22,6 @@ import '~/node_modules/prismjs/plugins/line-numbers/prism-line-numbers'
 import '~/node_modules/prismjs/components/prism-sql'
 
 export default {
-  mounted() {
-    // setTimeout(() => {
-    //   Prism.highlightAll();
-    // });
-    this.$nextTick(() => {
-      Prism.highlightAll()
-    })
-  },
   head() {
     return {
       // script: [
@@ -50,7 +40,15 @@ export default {
       //   }
       // ]
     }
-  }
+  },
+  mounted() {
+    // setTimeout(() => {
+    //   Prism.highlightAll();
+    // });
+    this.$nextTick(() => {
+      Prism.highlightAll()
+    })
+  },
 }
 </script>
 <style>

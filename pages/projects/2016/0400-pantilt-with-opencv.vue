@@ -1,8 +1,6 @@
 <template>
   <ProjectDetail date="2016-04" title="Pan/Tilt with OpenCV">
-    <p class="lead">
-      Face Tracking to a Drive Pan/Tilt
-    </p>
+    <p class="lead">Face Tracking to a Drive Pan/Tilt</p>
     <p>
       This was an ad hoc project using OpenCV to detect faces in real-time and drive a simple pan/tilt platform with a
       camera attached.
@@ -45,9 +43,7 @@
       might be quieter.
     </p>
 
-    <h4>
-      Additional Face Tracking Tests
-    </h4>
+    <h4>Additional Face Tracking Tests</h4>
     <p>
       These videos show experiments using OpenCV to track a face in a typical single performer stage performance. The
       green circles are from using a haar frontal classifier and the blue circles are from using a haar profile

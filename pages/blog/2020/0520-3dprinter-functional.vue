@@ -67,44 +67,44 @@ export default {
           title: 'Tripod Handle',
           descr: 'Printed in TPU (soft and rubbery). The original had disintegrated.',
           srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-grip-alibre-b.jpg',
-          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-grip.jpg'
+          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-grip.jpg',
         },
         {
           title: 'Coffee Spoon Holder',
           descr: 'Created early on as a simple, and sort-of funny, test. It turned out to be quite useful.',
           srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-spoon-holder-fusion.jpg',
-          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-spoon-holder.jpg'
+          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-spoon-holder.jpg',
         },
         {
           title: 'Tripod Shoe with Ball Attachment Point',
           descr:
             'Useful for phone cameras and similar. Required a few iterations to strengthen ball mount post enough to stop breaking every time I dropped it. Switching to PETG helped.',
           srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-tripod-shoe-fusion.jpg',
-          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-tripod-shoe.jpg'
+          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-tripod-shoe.jpg',
         },
         {
           title: 'Hitec 5055 Servo Mounts',
           descr:
             'Mini servos can be difficult to mount. This one is being used for <a href="https://hitecrcd.com/products/servos/micro-and-mini-servos/digital-micro-and-mini-servos/hs-5055mg-economy-metal-gear-feather-servo/product">Hitec-5055MG</a> servos on <a href="/projects/2019/0301-tankrobot-fpv/">TankRobot-FPV</a>',
           srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-hitec5055-mount-fusion.jpg',
-          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-hitec5055-mount.jpg'
+          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-hitec5055-mount.jpg',
         },
         {
           title: 'Bicycle Post Holders',
           descr: '',
           srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-bikeholder-fusion.jpg',
-          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-bikeholder.jpg'
+          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-bikeholder.jpg',
         },
         {
           title: 'PPE Head Bands',
           descr:
             'Visor headbands for Personal Protective Equipment shields intended for emergency medical staff, first responders, and similar.  <a href="https://3dprint.nih.gov/discover/3dpx-013306">NIH approved model</a> by 3DVerkstan. My impressive neighbor, <a href="https://musings.danlj.org/about/">Michael K. Johnson</a>, was the organizer for our area. He handled assembly and shipping of everything I sent him, in addition to doing a serious amount of his own printing using his customized 3D printer(s).',
           srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-ppeheadband-slicer.jpg',
-          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-ppeheadband.jpg'
-        }
-      ]
+          srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-ppeheadband.jpg',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 <style>

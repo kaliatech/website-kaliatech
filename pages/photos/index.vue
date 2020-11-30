@@ -1,14 +1,10 @@
 <template>
   <div class="container">
     <h1 v-if="breadcrumbs.length === 0">Photos</h1>
-    <p class="lead" v-if="breadcrumbs.length === 0">
-      Random photos and videos
-    </p>
+    <p class="lead" v-if="breadcrumbs.length === 0">Random photos and videos</p>
     <b-breadcrumb :items="breadcrumbs" v-if="breadcrumbs.length > 0" />
 
-    <div v-if="!album">
-      loading...
-    </div>
+    <div v-if="!album">loading...</div>
 
     <div id="photos-container" v-if="album">
       <div class="row">
@@ -22,7 +18,7 @@
           :key="media.filename"
           @click="showLightbox(media)"
           class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3"
-          style="cursor: pointer;"
+          style="cursor: pointer"
           v-for="media in medias"
         >
           <img :alt="media.filename" :src="photosUrl + media.thumbnail" :title="media.title" height="210" width="280" />
@@ -78,7 +74,27 @@ export default {
       photosUrl: basePhotosUrl,
       album: null,
       medias: [],
-      subalbums: []
+      subalbums: [],
+    }
+  },
+  head() {
+    // Using non-minified version of magnific-popup causes issues with nuxt when photos page is not the first load
+    return {
+      title: 'Photos | Kaliatech',
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', defer: '', body: true },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js',
+          defer: '',
+          body: true,
+        },
+      ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css',
+        },
+      ],
     }
   },
   mounted() {
@@ -94,7 +110,7 @@ export default {
         if (idx === 1) {
           this.breadcrumbs.push({
             text: 'Photos',
-            to: { name: 'photos' }
+            to: { name: 'photos' },
           })
           return
         }
@@ -102,7 +118,7 @@ export default {
         path += '/' + token + '/'
         this.breadcrumbs.push({
           text: token,
-          to: path
+          to: path,
         })
       })
 
@@ -169,7 +185,7 @@ export default {
         return {
           filename: media.filename,
           src: this.photosUrl + media.filename,
-          type: media.type
+          type: media.type,
           // src: $('<img src="' + this.photosUrl + media.filename + '"/><a class="download" href="' + this.photosUrl + media.filename + '">Download me</a>'),
           // type: 'inline'
         }
@@ -189,39 +205,19 @@ export default {
             image: {
               titleSrc(item) {
                 return '<div><a href="' + item.src + '"><small>Download</small></a></div>'
-              }
+              },
             },
             gallery: {
               // options for gallery
               enabled: true,
-              preload: [0, 2]
-            }
+              preload: [0, 2],
+            },
           },
           this.mfpItems.findIndex((i) => i.filename === media.filename)
         )
       }
-    }
+    },
   },
-  head() {
-    // Using non-minified version of magnific-popup causes issues with nuxt when photos page is not the first load
-    return {
-      title: 'Photos | Kaliatech',
-      script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js', defer: '', body: true },
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js',
-          defer: '',
-          body: true
-        }
-      ],
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'
-        }
-      ]
-    }
-  }
 }
 </script>
 <style lang="scss">

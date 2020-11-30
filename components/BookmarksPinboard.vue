@@ -1,8 +1,6 @@
 <template>
   <div>
-    <p v-if="!pinboardPosts">
-      Loading...
-    </p>
+    <p v-if="!pinboardPosts">Loading...</p>
     <div>
       <ul class="list-group">
         <li :key="post.time" class="list-group-item" v-for="post in pinboardPosts">{{ post.description }}</li>
@@ -17,13 +15,13 @@ export default {
   data() {
     return {
       pinboardPosts: null,
-      jsonObj: null
+      jsonObj: null,
     }
   },
   // https://api.pinboard.in/v1/posts/recent
   mounted() {
     const opts = {
-      headers: { 'X-API-Key': 'xrph7k7VHW2AmPP3wsTKU2t3HdzBNrbS71pJhxeh' }
+      headers: { 'X-API-Key': 'xrph7k7VHW2AmPP3wsTKU2t3HdzBNrbS71pJhxeh' },
     }
     axios.get('https://vxn7vzwjpj.execute-api.us-east-1.amazonaws.com/default/pinboard-recent', opts).then((resp) => {
       this.jsonObj = resp.data
@@ -45,6 +43,6 @@ export default {
     //     }
     //   ]
     // }
-  }
+  },
 }
 </script>

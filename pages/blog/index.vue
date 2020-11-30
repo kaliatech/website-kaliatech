@@ -3,9 +3,7 @@
     <div class="row">
       <div class="col-12">
         <h1>Blog</h1>
-        <p class="lead">
-          Required reading, IMO
-        </p>
+        <p class="lead">Required reading, IMO</p>
       </div>
     </div>
     <blog-posts />
@@ -44,12 +42,12 @@ export default {
   data() {
     return {}
   },
-  mounted() {},
   head() {
     return {
-      title: 'Blog | Kaliatech'
+      title: 'Blog | Kaliatech',
     }
-  }
+  },
+  mounted() {},
 }
 </script>
 <style lang="scss" scoped="true">

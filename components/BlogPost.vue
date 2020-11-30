@@ -19,18 +19,18 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'blog'
+      default: 'blog',
     },
     date: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   head() {
     return {
-      title: this.title + ' | Kaliatech'
+      title: this.title + ' | Kaliatech',
     }
-  }
+  },
 }
 </script>
 <style lang="scss">
