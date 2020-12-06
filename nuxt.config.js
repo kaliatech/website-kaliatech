@@ -4,7 +4,7 @@ export default {
   env: {
     /* This did not work, even when NODE_ENV was set.  AFAICT, there's currently no solution for multiple envs in Nuxt. */
     /* NUXT_ENV_PHOTOSURL: process.env.NODE_ENV !== 'production' ? 'https://localhost:8443' : 'https://photos.kaliatech.com' */
-    NUXT_ENV_PHOTOSURL: basePhotosUrl
+    NUXT_ENV_PHOTOSURL: basePhotosUrl,
   },
   // Headers of the page
   head: {
@@ -15,23 +15,17 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['~/assets/scss/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    { src: '~/plugins/global.js' },
-    { src: '~/plugins/vue-script2.js' }
-  ],
+  plugins: [{ src: '~/plugins/global.js' }, { src: '~/plugins/filters.js' }, { src: '~/plugins/vue-script2.js' }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -40,26 +34,31 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-8344371-5',
-      dev: false
-    }],
-
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-8344371-5',
+        dev: false,
+      },
+    ],
   ],
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'photos-catch-all',
         path: '/photos/*',
-        component: resolve(__dirname, '~/pages/photos/index.vue')
+        component: resolve(__dirname, '~/pages/photos/index.vue'),
       })
-    }
+    },
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+
+    // https://content.nuxtjs.org/
+    '@nuxt/content',
 
     // https://go.nuxtjs.dev/bootstrap
     ['bootstrap-vue/nuxt', { css: false }],
@@ -79,13 +78,22 @@ export default {
       // import 2 icons from set
       {
         set: '@fortawesome/free-solid-svg-icons',
-        icons: ['faGlobe']
+        icons: ['faGlobe'],
       },
       {
         set: '@fortawesome/free-brands-svg-icons',
-        icons: ['faLinkedin', 'faGithub', 'faStackOverflow', 'faTwitter']
-      }
-    ]
+        icons: ['faLinkedin', 'faGithub', 'faStackOverflow', 'faTwitter'],
+      },
+    ],
+  },
+
+  // https://content.nuxtjs.org/configuration
+  content: {
+    markdown: {
+      prism: {
+        theme: 'node_modules/prismjs/themes/prism-tomorrow.css',
+      },
+    },
   },
   /*
    ** Build configuration
@@ -101,9 +109,9 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
-    }
-  }
+    },
+  },
 }

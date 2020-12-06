@@ -1,12 +1,25 @@
 <template>
-  <div class="container">
+  <div class="container blog-posts">
     <div class="row">
       <div class="col-12">
         <h1>Blog</h1>
         <p class="lead">Required reading, IMO</p>
       </div>
     </div>
-    <blog-posts />
+
+    <div class="col-12">
+      <div v-for="year in blogPostYears" :key="`blogPosts-${year}`">
+        <h4 class="mt-0">{{ year }}</h4>
+        <ul v-if="blogPostsByYear[year].length">
+          <li v-for="blogPost of blogPostsByYear[year]" :key="blogPost.slug">
+            <nuxt-link :to="{ path: '/blog/' + blogPost.slug }">
+              {{ blogPost.title }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="col-12 mt-3">
       <h4>Miscellaneous</h4>
       <ul>
@@ -34,23 +47,41 @@
     </div>
   </div>
 </template>
-<script>
-import BlogPosts from '~/components/BlogPosts'
 
+<script>
+import groupBy from 'lodash.groupby'
 export default {
-  components: { BlogPosts },
+  async asyncData({ $content, params }) {
+    const blogPosts = await $content({ path: 'blogposts', deep: true })
+      .only(['title', 'slug', 'path', 'createdAt'])
+      .sortBy('createdAt', 'desc')
+      // .limit(12)
+      // .search(query)
+      .fetch()
+
+    blogPosts.forEach((el) => {
+      el.createdAtYear = new Date(el.createdAt).getFullYear()
+    })
+
+    const blogPostsByYear = groupBy(blogPosts, 'createdAtYear')
+    const blogPostYears = Object.keys(blogPostsByYear).sort().reverse()
+
+    return { blogPostYears, blogPostsByYear }
+  },
   data() {
-    return {}
+    return {
+      blogPostYears: [],
+      blogPostsByYear: {},
+    }
   },
   head() {
     return {
       title: 'Blog | Kaliatech',
     }
   },
-  mounted() {},
 }
 </script>
-<style lang="scss" scoped="true">
+<style lang="scss" scoped>
 a:link,
 .blog-posts a:visited {
   font-weight: bold;
