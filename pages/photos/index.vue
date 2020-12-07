@@ -217,15 +217,15 @@ export default {
 }
 </script>
 <style lang="scss">
-@import 'assets/scss/stacked-effect.sass';
+@use 'assets/scss/stacked-effect.sass' as stackedeffect;
 
 html,
 body {
 }
 
 .album {
-  box-shadow: sheets-effect();
-  @include border-radius(3px);
+  box-shadow: stackedeffect.sheets-effect();
+  @include stackedeffect.border-radius(3px);
 }
 
 /*#photos-container {*/
