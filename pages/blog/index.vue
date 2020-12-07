@@ -11,10 +11,13 @@
       <div v-for="year in blogPostYears" :key="`blogPosts-${year}`">
         <h4 class="mt-0">{{ year }}</h4>
         <ul v-if="blogPostsByYear[year].length">
-          <li v-for="blogPost of blogPostsByYear[year]" :key="blogPost.slug">
+          <li v-for="blogPost of blogPostsByYear[year]" :key="blogPost.slug" class="mb-3">
             <nuxt-link :to="{ path: '/blog/' + blogPost.slug }">
               {{ blogPost.title }}
             </nuxt-link>
+            <p>
+              {{ blogPost.description }}
+            </p>
           </li>
         </ul>
       </div>
@@ -53,7 +56,7 @@ import groupBy from 'lodash.groupby'
 export default {
   async asyncData({ $content, params }) {
     const blogPosts = await $content({ path: 'blogposts', deep: true })
-      .only(['title', 'slug', 'path', 'createdAt'])
+      .only(['title', 'slug', 'path', 'description', 'createdAt'])
       .sortBy('createdAt', 'desc')
       // .limit(12)
       // .search(query)

@@ -3,9 +3,9 @@
     <div class="container blog-post">
       <div class="row">
         <div class="col-xl-10">
+          <h1 class="mb-0">{{ blogPost.title }}</h1>
           <small class="dateline">{{ blogPost.createdAt | date }}</small>
-          <h1 class="mb-3">{{ blogPost.title }}</h1>
-          <nuxt-content :document="blogPost" />
+          <nuxt-content class="mt-3" :document="blogPost" />
         </div>
       </div>
     </div>
@@ -32,12 +32,36 @@ export default {
     const page = await ctx.$content('blogposts', { deep: true }).where({ slug: ctx.params.pathMatch }).fetch()
 
     if (!page.length > 0) {
-      throw ctx.error({ statusCode: 404, message: 'Blog post not found' })
+      ctx.error({ statusCode: 404, message: 'Blog post not found' })
     }
 
     return {
       blogPost: page[0],
     }
+  },
+  data() {
+    return {
+      blogPost: null,
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.blogPost.description },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.title },
+        { hid: 'og:description', property: 'og:description', content: this.blogPost.description },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: this.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.blogPost.description },
+      ],
+    }
+  },
+  computed: {
+    title() {
+      return this.blogPost.title + ' | Blog | Kaliatech'
+    },
   },
   mounted() {
     Prism.highlightAll()

@@ -1,6 +1,7 @@
 ---
 title: George Orwell on Nationalism
 createdAt: 2018-10-17
+description: Passage from "Notes on Nationalism".
 ---
 > &ldquo;A nationalist is one who thinks solely, or mainly, in terms of competitive prestige. He may be a
 > positive or a negative nationalist—that is, he may use his mental energy either in boosting or in

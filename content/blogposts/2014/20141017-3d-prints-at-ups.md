@@ -1,6 +1,7 @@
 ---
 title: 3D Printing at the UPS Store
 createdAt: 2014-10-17
+description: 3D printing test using service at UPS store.
 ---
 <div class="row">
   <div class="col mb-3">
