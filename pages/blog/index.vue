@@ -7,12 +7,14 @@
       </div>
     </div>
 
+    <div v-if="error" class="alert alert-danger" role="alert">{{ error }}</div>
+
     <div class="col-12">
       <div v-for="year in blogPostYears" :key="`blogPosts-${year}`">
         <h4 class="mt-0">{{ year }}</h4>
         <ul v-if="blogPostsByYear[year].length">
           <li v-for="blogPost of blogPostsByYear[year]" :key="blogPost.slug" class="mb-3">
-            <nuxt-link :to="{ path: '/blog/' + blogPost.slug }">
+            <nuxt-link :to="{ path: `/blog/${year}/` + abbrSlug(blogPost.slug) }">
               {{ blogPost.title }}
             </nuxt-link>
             <p>
@@ -75,12 +77,18 @@ export default {
     return {
       blogPostYears: [],
       blogPostsByYear: {},
+      error: this.$route.query.error,
     }
   },
   head() {
     return {
       title: 'Blog | Kaliatech',
     }
+  },
+  methods: {
+    abbrSlug(blogSlug) {
+      return blogSlug.substr(blogSlug.indexOf('-') + 1)
+    },
   },
 }
 </script>

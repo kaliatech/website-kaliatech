@@ -9,9 +9,8 @@
         </div>
       </div>
     </div>
-    <div class="container mt-5">
-      <nuxt-link to="/blog">&lt;&lt; back to index</nuxt-link>
-    </div>
+
+    <blog-prev-next :prev="prevBlogPost" :next="nextBlogPost"></blog-prev-next>
   </div>
 </template>
 
@@ -29,14 +28,31 @@ export default {
   },
   async asyncData(ctx) {
     // const page = await ctx.$content('blog/' + ctx.params.pathMatch).fetch()
-    const page = await ctx.$content('blogposts', { deep: true }).where({ slug: ctx.params.pathMatch }).fetch()
+    // const page = await ctx.$content('blogposts', { deep: true }).where({ slug: ctx.params.pathMatch }).fetch()
+    const page = await ctx
+      .$content('blogposts', { deep: true })
+      .where({ slug: { $regex: `.*${ctx.params.pathMatch.split('/').pop()}` } })
+      .sortBy('createdAt', 'desc')
+      .fetch()
 
     if (!page.length > 0) {
+      // ctx.redirect('/blog', { error: `Blog post not found.` })
       ctx.error({ statusCode: 404, message: 'Blog post not found' })
     }
 
+    const blogPost = page[0]
+
+    const [prevBlogPost, nextBlogPost] = await ctx
+      .$content('blogposts', { deep: true })
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(blogPost.slug)
+      .fetch()
+
     return {
-      blogPost: page[0],
+      blogPost,
+      prevBlogPost,
+      nextBlogPost,
     }
   },
   data() {
