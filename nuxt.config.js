@@ -99,6 +99,9 @@ export default {
    ** Build configuration
    */
   build: {
+    parallel: true,
+    hardSource: true,
+    cache: true,
     /*
      ** You can extend webpack config here
      */
