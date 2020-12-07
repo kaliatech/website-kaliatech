@@ -2,6 +2,8 @@
 title: A Gentleman in Moscow
 createdAt: 2020-05-21
 description: 'Book reviews and favorite quotes.'
+category: quotes
+
 ---
 <div class="row">
   <div class="col">

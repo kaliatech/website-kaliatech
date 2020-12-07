@@ -2,6 +2,7 @@
 title: 3D Printer - Functional Prints
 createdAt: 2020-05-20
 description: Photos of recent functional prints.
+category: 3dprinting
 
 photos: [
 {

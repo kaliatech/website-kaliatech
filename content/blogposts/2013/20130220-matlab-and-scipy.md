@@ -2,6 +2,7 @@
 title: Matlab Integration and SciPy
 createdAt: 2013-02-20
 description: Notes on Matlab and SciPy integration with Java, etc.
+category: misc
 ---
 
 <p>

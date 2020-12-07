@@ -3,7 +3,7 @@
     <div class="container blog-post">
       <div class="row">
         <div class="col-xl-10">
-          <h1 class="mb-0">{{ blogPost.title }}</h1>
+          <h1 class="mb-0"><span v-if="blogPost.category === 'projects'">Project: </span>{{ blogPost.title }}</h1>
           <small class="dateline">{{ blogPost.createdAt | date }}</small>
           <nuxt-content class="mt-3" :document="blogPost" />
         </div>

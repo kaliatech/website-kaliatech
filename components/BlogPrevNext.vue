@@ -1,5 +1,6 @@
 <template>
   <div class="container mt-5">
+    <hr />
     <div class="row">
       <div class="col-4">
         <div v-if="prev">

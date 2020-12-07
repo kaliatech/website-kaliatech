@@ -2,6 +2,7 @@
 title: 'Favorite Quotes #1'
 createdAt: 2011-09-07
 description: Miscellaneous quotes collected over years.
+category: quotes
 ---
 
 Collected over the past 20 years.

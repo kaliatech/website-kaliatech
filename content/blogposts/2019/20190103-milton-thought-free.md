@@ -2,6 +2,7 @@
 title: They Thought They Were Free
 createdAt: 2019-01-03
 description: Passage from "They Thought They Were Free" on how one thing leads to another.
+category: quotes
 ---
 
 > &#8220; ...Each act, each occasion, is worse than the last, but only a little worse. You wait for the next

@@ -2,6 +2,7 @@
 title: 3D Printer - Update
 createdAt: 2019-05-21
 description: 'More photos from printing with Prusa MK3.'
+category: 3dprinting
 
 photos: [
 {
