@@ -38,6 +38,7 @@ export default {
     if (!page.length > 0) {
       // ctx.redirect('/blog', { error: `Blog post not found.` })
       ctx.error({ statusCode: 404, message: 'Blog post not found' })
+      return
     }
 
     const blogPost = page[0]
