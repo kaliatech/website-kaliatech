@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-12">
         <h1>
-          Blog<span v-if="currCategory.code !== 'all'"> - {{ currCategory.name }}</span>
+          Blog
+          <span v-show="currCategory.code !== 'all'"> - {{ currCategory.name }}</span>
         </h1>
         <p class="lead">Required reading, IMO</p>
       </div>
@@ -17,7 +18,7 @@
           <ul v-if="blogPostsByYear[year].length">
             <li v-for="blogPost of blogPostsByYear[year]" :key="blogPost.slug" class="mb-3">
               <nuxt-link :to="{ path: `/blog/${year}/` + abbrSlug(blogPost.slug) }">
-                <span v-if="blogPost.category === 'projects'">Project: </span>
+                <span v-show="blogPost.category === 'projects'">Project: </span>
                 {{ blogPost.title }}
               </nuxt-link>
               <p>
@@ -34,7 +35,7 @@
           <ul>
             <li v-for="category in categories" :key="category.code">
               <nuxt-link
-                :to="{ path: '/blog', query: { category: category.code } }"
+                :to="{ path: '/blog/', query: { category: category.code } }"
                 class="text-nowrap"
                 :class="category.code === queryCategoryCode ? 'disabled' : ''"
               >
