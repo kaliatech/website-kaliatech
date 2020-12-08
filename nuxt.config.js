@@ -1,6 +1,7 @@
 // const basePhotosUrl = 'https://localhost:8443'
 const basePhotosUrl = 'https://photos.kaliatech.com'
 export default {
+  target: 'static',
   env: {
     /* This did not work, even when NODE_ENV was set.  AFAICT, there's currently no solution for multiple envs in Nuxt. */
     /* NUXT_ENV_PHOTOSURL: process.env.NODE_ENV !== 'production' ? 'https://localhost:8443' : 'https://photos.kaliatech.com' */
