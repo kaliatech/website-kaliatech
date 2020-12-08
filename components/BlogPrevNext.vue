@@ -1,5 +1,8 @@
 <template>
   <div class="container mt-5">
+    <span v-if="category" class="category-link">
+      category: <nuxt-link :to="`/blog/?category=${category}`">{{ category }}</nuxt-link>
+    </span>
     <hr />
     <div class="row">
       <div class="col-4">
@@ -32,6 +35,10 @@
 <script>
 export default {
   props: {
+    category: {
+      type: String,
+      default: '',
+    },
     prev: {
       type: Object,
       default: () => null,
@@ -59,3 +66,9 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.category-link a:link,
+.category-link a:visited {
+  font-weight: bold;
+}
+</style>

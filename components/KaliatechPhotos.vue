@@ -25,6 +25,7 @@
         v-for="(lightBoxImg, thumbIndex) in lightBoxImages"
         :key="thumbIndex"
         @click="lightBoxImageIdx = thumbIndex"
+        style="cursor: pointer"
       >
         <img class="img-fluid" :src="lightBoxImg.thumbnailUrl" style="width: 100%" />
         <div class="text-center mb-4">

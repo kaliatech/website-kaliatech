@@ -1,11 +1,11 @@
 ---
 title: AR Experiments on Android
 createdAt: 2018-10-31
-description: Videos showing early personal experiments with ARCore.
+description: Videos showing early experiments with ARCore.
 category: projects
 ---
 
-Rough videos showing early personal experiments with ARCore. Native android development using
+Rough videos showing early experiments with ARCore. Native android development using
 <a href="https://developers.google.com/ar/">ARCore</a>
 ,
 <a href="https://developers.google.com/ar/develop/java/sceneform/">Sceneform</a>

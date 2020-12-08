@@ -18,9 +18,9 @@
           <ul v-if="blogPostsByYear[year].length">
             <li v-for="blogPost of blogPostsByYear[year]" :key="blogPost.slug" class="mb-3">
               <nuxt-link :to="{ path: `/blog/${year}/` + abbrSlug(blogPost.slug) }">
-                <span v-show="blogPost.category === 'projects'">Project: </span>
                 {{ blogPost.title }}
               </nuxt-link>
+              <!-- <small v-show="blogPost.category === 'projects'">(project)</small> -->
               <p>
                 {{ blogPost.description }}
               </p>
