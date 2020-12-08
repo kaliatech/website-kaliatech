@@ -27,7 +27,7 @@ srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-tripod-shoe.jpg',
 {
 title: 'Hitec 5055 Servo Mounts',
 descr:
-'Mini servos can be difficult to mount. This one is being used for <a href="https://hitecrcd.com/products/servos/micro-and-mini-servos/digital-micro-and-mini-servos/hs-5055mg-economy-metal-gear-feather-servo/product">Hitec-5055MG</a> servos on <a href="/projects/2019/0301-tankrobot-fpv/">TankRobot-FPV</a>',
+'Mini servos can be difficult to mount. This one is being used for <a href="https://hitecrcd.com/products/servos/micro-and-mini-servos/digital-micro-and-mini-servos/hs-5055mg-economy-metal-gear-feather-servo/product">Hitec-5055MG</a> servos on <a href="/blog/2020/tankrobot-fpv">TankRobot-FPV</a>',
 srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-hitec5055-mount-fusion.jpg',
 srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-hitec5055-mount.jpg',
 },

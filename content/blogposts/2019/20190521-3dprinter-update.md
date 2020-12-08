@@ -99,12 +99,12 @@ photos: [
 },
 {
   caption:
-    "<a href='https://www.autodesk.com/products/fusion-360'>Fusion360</a> screenshot of <a href='/projects/2019/0301-tankrobot-fpv'>TankRobot</a> model. I'm not an Autodesk fan and I would've liked to continue using <a href='https://www.alibre.com/'>Alibre</a>, but I can't justify continually paying ~$500 year when Fusion360 is currently free for my purposes. I expect this could come back to bite me some day.",
+    "<a href='https://www.autodesk.com/products/fusion-360'>Fusion360</a> screenshot of <a href='/blog/2020/tankrobot-fpv'>TankRobot</a> model. I'm not an Autodesk fan and I would've liked to continue using <a href='https://www.alibre.com/'>Alibre</a>, but I can't justify continually paying ~$500 year when Fusion360 is currently free for my purposes. I expect this could come back to bite me some day.",
   src: '/i/blog/2019/0521-3dprinter-update/fusion-tank-assembly.png',
 },
 {
   caption:
-    "Screenshot of <a href='/projects/2019/0301-tankrobot-fpv'>TankRobot</a> base sliced in <a href='https://www.prusa3d.com/slic3r-prusa-edition/'>Slicr PE</a>.",
+    "Screenshot of <a href='/blog/2020/tankrobot-fpv'>TankRobot</a> base sliced in <a href='https://www.prusa3d.com/slic3r-prusa-edition/'>Slicr PE</a>.",
   src: '/i/blog/2019/0521-3dprinter-update/slicr-screenshot.png',
 },
 ]
