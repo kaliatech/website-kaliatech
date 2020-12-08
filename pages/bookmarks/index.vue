@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Bookmarks</h1>
     <p class="lead">
-      Running list of items on the Internet I've found interesting for whatever reason. Most recent at the top.
+      Running list of Internet links I've saved or found interesting for whatever reason. Most recent at the top.
     </p>
     <p>
       To search and filter entire set, use
@@ -11,29 +11,43 @@
     </p>
     <p v-if="!pinboardPosts">Loading...</p>
 
-    <div class="list-group">
-      <a
-        :href="post.href"
-        :key="post.time"
-        class="list-group-item flex-column align-items-start mb-1"
-        v-for="post in pinboardPosts"
-      >
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{ post.description }}</h5>
-          <small>
-            <span :key="tag" class="badge badge-light p-1 mr-1" v-for="tag in post.tags.split(' ')">
-              <a :href="'https://pinboard.in/u:kaliatech/t:' + tag">{{ tag }}</a>
-            </span>
-          </small>
+    <div v-for="post in pinboardPosts" :key="post.time" class="row no-gutters">
+      <div class="col-9 col-lg-10 bookmark-col" style="border-top-left-radius: 8px; border-bottom-left-radius: 8px">
+        <div class="p-3">
+          <a :href="post.href" class="align-items-start mb-1" :title="post.description">
+            <div class="w-100 justify-content-between">
+              <h5 class="mb-0 text-truncate pr-3">{{ post.description }}</h5>
+            </div>
+            <small class="d-block text-truncate">
+              {{ post.href }}
+            </small>
+          </a>
+          <p
+            class="small-xx mt-1 mb-0"
+            v-if="post.extended"
+            v-text="post.extended ? post.extended.replace('<blockquote>', '').replace('</blockquote>', '') : ''"
+          />
         </div>
-        <p
-          class="small-xx mb-0"
-          v-if="post.extended"
-          v-text="post.extended ? post.extended.replace('<blockquote>', '').replace('</blockquote>', '') : ''"
-        />
-      </a>
+      </div>
+
+      <div
+        class="col-3 col-lg-2 text-right bookmark-col"
+        style="border-top-right-radius: 8px; border-bottom-right-radius: 8px"
+      >
+        <div class="pt-3 pr-3 pb-0">
+          <a :href="`https://pinboard.in/u:kaliatech/t:${tag}`">
+            <div
+              :key="tag"
+              class="p-2 ml-1 mb-1 btn btn-light btn-link btn-sm text-nowrap"
+              v-for="tag in post.tags.split(' ')"
+            >
+              {{ tag }}
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-    <div>
+    <div class="row">
       <a href="https://pinboard.in/u:kaliatech">
         <button class="btn btn-primary">More</button>
       </a>
@@ -91,3 +105,10 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.bookmark-col {
+  background-color: #eceeef;
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+</style>
