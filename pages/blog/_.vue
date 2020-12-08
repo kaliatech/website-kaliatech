@@ -57,7 +57,13 @@ export default {
   },
   data() {
     return {
-      blogPost: null,
+      blogPost: {
+        title: '',
+        description: '',
+        createdAt: '',
+        category: '',
+        slug: '',
+      },
     }
   },
   head() {
