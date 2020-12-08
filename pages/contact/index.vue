@@ -11,19 +11,19 @@
             <span class="icon">
               <fa :icon="['fab', 'linkedin']" />
             </span>
-            LinkedIn Profile
+            LinkedIn
           </a>
           <a class="btn btn-primary" href="https://stackoverflow.com/users/123378/kaliatech">
             <span class="icon">
               <fa :icon="['fab', 'stack-overflow']" />
             </span>
-            StackOverflow Profile
+            StackOverflow
           </a>
           <a class="btn btn-primary" href="https://github.com/kaliatech">
             <span class="icon">
               <fa :icon="['fab', 'github']" />
             </span>
-            GitHub Profile
+            GitHub
           </a>
           <a class="btn btn-primary" href="https://twitter.com/jgstech">
             <span class="icon">
@@ -35,7 +35,7 @@
             <span class="icon">
               <fa :icon="['fas', 'globe']" />
             </span>
-            Professional Website
+            JGS Technical
           </a>
         </div>
       </div>
@@ -98,7 +98,7 @@ a svg {
 }
 
 .social-btns-cont a.btn {
-  width: 11rem;
+  width: 8.5rem;
   text-align: left;
   margin: 0 0.5rem 0.5rem 0;
 }
