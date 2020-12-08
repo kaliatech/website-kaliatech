@@ -26,7 +26,13 @@
           style="cursor: pointer"
           v-for="media in medias"
         >
-          <img :alt="media.filename" :src="photosUrl + media.thumbnail" :title="media.title" height="210" width="280" />
+          <img
+            :alt="media.filename"
+            :src="basePhotosUrl + media.thumbnail"
+            :title="media.title"
+            height="210"
+            width="280"
+          />
         </div>
       </div>
 
@@ -45,7 +51,7 @@
             <nuxt-link :to="subalbum.urlModified">
               <img
                 :alt="subalbum.name"
-                :src="photosUrl + subalbum.thumbnail"
+                :src="basePhotosUrl + subalbum.thumbnail"
                 :title="subalbum.name"
                 class="album"
                 height="210"
@@ -67,16 +73,11 @@
   </div>
 </template>
 <script>
-/* eslint-env jquery */
-const basePhotosUrl = process.env.NUXT_ENV_PHOTOSURL
-
 export default {
-  // The script defer/body properties are an attempt to make sure scripts always get loaded in correct order. Seemed
-  // to be random otherwise.
   data() {
     return {
       breadcrumbs: [],
-      photosUrl: basePhotosUrl,
+      basePhotosUrl: this.$config.basePhotosUrl,
       album: null,
       medias: [],
       subalbums: [],
@@ -118,17 +119,17 @@ export default {
         })
       })
 
-      this.photosUrl = basePhotosUrl + this.$route.path.replace('/photos', '')
+      this.basePhotosUrl = this.basePhotosUrl + this.$route.path.replace('/photos', '')
     }
     const opts = {
       // responseType: 'json'
     }
 
-    if (!this.photosUrl.endsWith('/')) {
-      this.photosUrl += '/'
+    if (!this.basePhotosUrl.endsWith('/')) {
+      this.basePhotosUrl += '/'
     }
 
-    let indexJsonUrl = this.photosUrl.endsWith('index.json') ? '' : this.photosUrl + 'index.json'
+    let indexJsonUrl = this.basePhotosUrl.endsWith('index.json') ? '' : this.basePhotosUrl + 'index.json'
 
     // Break cache until correct s3/cloudfront cache-controls headers are in place
     indexJsonUrl += '?noCache=' + Math.floor(new Date().getTime() / 1000 / 3600)
@@ -180,7 +181,7 @@ export default {
       this.mfpItems = this.medias.map((media) => {
         return {
           filename: media.filename,
-          src: this.photosUrl + media.filename,
+          src: this.basePhotosUrl + media.filename,
           type: media.type,
           // src: $('<img src="' + this.photosUrl + media.filename + '"/><a class="download" href="' + this.photosUrl + media.filename + '">Download me</a>'),
           // type: 'inline'
@@ -195,6 +196,7 @@ export default {
       if (media.type === 'video') {
         window.location.href = media.src
       } else {
+        // eslint-disable-next-line no-undef
         $.magnificPopup.open(
           {
             items: this.mfpItems,

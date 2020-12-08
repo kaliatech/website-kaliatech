@@ -1,12 +1,7 @@
-// const basePhotosUrl = 'https://localhost:8443'
-const basePhotosUrl = 'https://photos.kaliatech.com'
+const PHOTOS_URL_DEV = 'https://localhost:8443'
+const PHOTOS_URL_PROD = 'https://photos.kaliatech.com'
 export default {
   target: 'static',
-  env: {
-    /* This did not work, even when NODE_ENV was set.  AFAICT, there's currently no solution for multiple envs in Nuxt. */
-    /* NUXT_ENV_PHOTOSURL: process.env.NODE_ENV !== 'production' ? 'https://localhost:8443' : 'https://photos.kaliatech.com' */
-    NUXT_ENV_PHOTOSURL: basePhotosUrl,
-  },
   // Headers of the page
   head: {
     title: process.env.npm_package_name || '',
@@ -27,6 +22,11 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [{ src: '~/plugins/global.js' }, { src: '~/plugins/filters.js' }, { src: '~/plugins/vue-script2.js' }],
+
+  publicRuntimeConfig: {
+    // baseURL: process.env.BASE_URL || 'https://nuxtjs.org',
+    basePhotosUrl: process.env.NODE_ENV !== 'production' ? PHOTOS_URL_DEV : PHOTOS_URL_PROD,
+  },
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -90,6 +90,7 @@ export default {
 
   // https://content.nuxtjs.org/configuration
   content: {
+    liveEdit: false, // bug as of 2020-12 with nuxt/content prevents component registration with liveEdit
     markdown: {
       prism: {
         theme: 'node_modules/prismjs/themes/prism-tomorrow.css',

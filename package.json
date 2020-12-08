@@ -8,7 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "NODE_ENV=production nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "npm run lint:js"
   },
@@ -27,6 +27,7 @@
     "nuxt": "^2.14.7",
     "nuxt-fontawesome": "^0.4.0",
     "prismjs": "^1.22.0",
+    "vue-light-gallery": "^1.0.1",
     "vue-script2": "^2.1.0"
   },
   "devDependencies": {

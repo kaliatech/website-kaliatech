@@ -2,7 +2,7 @@
   <div>
     <div class="container blog-post">
       <div class="row">
-        <div class="col-xl-10">
+        <div class="col-12">
           <h1 class="mb-0"><span v-if="blogPost.category === 'projects'">Project: </span>{{ blogPost.title }}</h1>
           <small class="dateline">{{ blogPost.createdAt | date }}</small>
           <nuxt-content class="mt-3" :document="blogPost" />
@@ -19,19 +19,26 @@ import Prism from 'prismjs'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 import 'prismjs/components/prism-sql.js'
 
+// Make components available to content markdown pages (without making the components global)
 import BlogPostPhotos from '~/components/BlogPostPhotos'
+import BlogPostPhotosSimple from '~/components/BlogPostPhotosSimple'
+import KaliatechPhotos from '~/components/KaliatechPhotos'
 
 export default {
   components: {
     // eslint-disable-next-line vue/no-unused-components
     'blog-post-photos': BlogPostPhotos,
+    // eslint-disable-next-line vue/no-unused-components
+    'blog-post-photos-simple': BlogPostPhotosSimple,
+    // eslint-disable-next-line vue/no-unused-components
+    'kaliatech-photos': KaliatechPhotos,
   },
   async asyncData(ctx) {
     // const page = await ctx.$content('blog/' + ctx.params.pathMatch).fetch()
     // const page = await ctx.$content('blogposts', { deep: true }).where({ slug: ctx.params.pathMatch }).fetch()
     const page = await ctx
       .$content('blogposts', { deep: true })
-      .where({ slug: { $regex: `.*${ctx.params.pathMatch.split('/').pop()}` } })
+      .where({ slug: { $regex: `.*${ctx.params.pathMatch.split('/').pop()}$` } })
       .sortBy('createdAt', 'desc')
       .fetch()
 
