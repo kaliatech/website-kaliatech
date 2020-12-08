@@ -9,7 +9,6 @@
         <b-navbar-nav>
           <b-nav-item exact to="/"> Home </b-nav-item>
           <b-nav-item to="/blog/">Blog</b-nav-item>
-          <b-nav-item to="/projects/">Projects</b-nav-item>
           <b-nav-item to="/photos/">Photos</b-nav-item>
           <b-nav-item to="/bookmarks/">Bookmarks</b-nav-item>
           <!-- <b-nav-item to="/archive/">Archive</b-nav-item> -->

@@ -1,7 +1,7 @@
 ---
 title: A Gentleman in Moscow
 createdAt: 2020-05-21
-description: 'Book reviews and favorite quotes.'
+description: 'Book recommendations and a few passages.'
 category: quotes
 
 ---

@@ -35,6 +35,7 @@
             <li v-for="category in categories" :key="category.code">
               <nuxt-link
                 :to="{ path: '/blog', query: { category: category.code } }"
+                class="text-nowrap"
                 :class="category.code === queryCategoryCode ? 'disabled' : ''"
               >
                 {{ category.name }}

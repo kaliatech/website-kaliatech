@@ -15,9 +15,6 @@
               <b-btn class="home-btns" to="/blog/" variant="primary">Blog </b-btn>
             </div>
             <div class="home-btns">
-              <b-btn class="home-btns" to="/projects/" variant="primary">Projects </b-btn>
-            </div>
-            <div class="home-btns">
               <b-btn class="home-btns" to="/photos/" variant="primary">Photos </b-btn>
             </div>
             <div class="home-btns">
