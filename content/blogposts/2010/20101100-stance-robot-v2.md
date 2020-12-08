@@ -58,6 +58,12 @@ years, and while the case study is no longer online, images of my robot continue
 
 <br/>
 
-### Photos
+### v2
 
 <blog-post-photos-simple :photos=photos></blog-post-photos-simple>
+
+
+### v1
+First iteration using the original chassis and controller from Lynxmotion.
+
+<kaliatech-photos :photos-path="'/Projects/RobotWalker1'"></kaliatech-photos>
