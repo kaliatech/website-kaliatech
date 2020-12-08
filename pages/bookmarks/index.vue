@@ -48,9 +48,11 @@
       </div>
     </div>
     <div class="row">
-      <a href="https://pinboard.in/u:kaliatech">
-        <button class="btn btn-primary">More</button>
-      </a>
+      <div class="col mt-3">
+        <a href="https://pinboard.in/u:kaliatech">
+          <button class="btn btn-primary">More...</button>
+        </a>
+      </div>
     </div>
   </div>
 </template>
