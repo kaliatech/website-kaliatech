@@ -35,12 +35,8 @@
         style="border-top-right-radius: 8px; border-bottom-right-radius: 8px"
       >
         <div class="pt-3 pr-3 pb-0">
-          <a :href="`https://pinboard.in/u:kaliatech/t:${tag}`">
-            <div
-              :key="tag"
-              class="p-2 ml-1 mb-1 btn btn-light btn-link btn-sm text-nowrap"
-              v-for="tag in post.tags.split(' ')"
-            >
+          <a :href="`https://pinboard.in/u:kaliatech/t:${tag}`" v-for="tag in post.tags.split(' ')" :key="tag">
+            <div class="p-2 ml-1 mb-1 btn btn-light btn-link btn-sm text-nowrap">
               {{ tag }}
             </div>
           </a>
