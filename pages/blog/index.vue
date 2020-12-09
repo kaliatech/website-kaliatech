@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-sm-9 blog-posts">
         <div v-for="year in blogPostYears" :key="`blogPosts-${year}`">
-          <h4 class="mt-0">{{ year }}</h4>
+          <h2 class="mt-0">{{ year }}</h2>
           <ul v-if="blogPostsByYear[year].length">
             <li v-for="blogPost of blogPostsByYear[year]" :key="blogPost.slug" class="mb-3">
               <nuxt-link :to="{ path: `/blog/${year}/` + abbrSlug(blogPost.slug) }">

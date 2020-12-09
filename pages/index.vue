@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-0">
+  <div class="container mt-3">
     <div class="jumbotron">
       <img alt="spaceman" src="~/assets/i/spaceman.gif" style="float: left; margin-left: 0rem" width="117" />
 

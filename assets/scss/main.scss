@@ -1,5 +1,12 @@
 $font-size-base: 0.8rem;
 
+$h1-font-size:                $font-size-base * 1.5 !default;
+$h2-font-size:                $font-size-base * 1.25 !default;
+$h3-font-size:                $font-size-base * 1 !default;
+$h4-font-size:                $font-size-base * .9 !default;
+$h5-font-size:                $font-size-base * .75 !default;
+$h6-font-size:                $font-size-base !default;
+
 $theme-colors: (
   "primary": #2c4256
 );
@@ -24,6 +31,11 @@ p a {
   text-decoration: underline;
 }
 
+h2 {
+  margin-top: 2rem;
+}
+
+
 h4 {
   margin-top: 2rem;
 }
@@ -42,6 +54,18 @@ h4 {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.figure-img {
+  margin-top:.25rem;
+}
+
+.media-caption {
+  font-size: small;
+  text-align: center;
+  margin-top: -.75rem;
+  margin-bottom:  2rem;
+  color: $gray-600;
 }
 
 //.project-page a:link, .project-page a:visited {

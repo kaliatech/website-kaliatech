@@ -14,7 +14,7 @@ Rough videos showing early experiments with ARCore. Native android development u
 . Demos below were running on a Pixel 2.
 
 
-<h4>Translucency, Interaction, & Animation</h4>
+<h2>Translucency, Interaction, & Animation</h4>
 <div class="video-responsive">
   <iframe
     allowfullscreen
@@ -25,7 +25,7 @@ Rough videos showing early experiments with ARCore. Native android development u
   ></iframe>
 </div>
 
-<h4>Outdoor Tracking &amp; Shadows</h4>
+<h2>Outdoor Tracking &amp; Shadows</h4>
 <div class="video-responsive">
   <iframe
     allowfullscreen
@@ -36,10 +36,10 @@ Rough videos showing early experiments with ARCore. Native android development u
   ></iframe>
 </div>
 
-<h4>
+<h2>
   More Balloons!
   <small>&amp; Multiple Planar Surfaces</small>
-</h4>
+</h2>
 <div class="video-responsive">
   <iframe
     allowfullscreen
@@ -50,10 +50,10 @@ Rough videos showing early experiments with ARCore. Native android development u
   ></iframe>
 </div>
 
-<h4>
+<h2>
   Outdoor Screenshot
   <small>of more balloons</small>
-</h4>
+</h2>
 <div>
   <img class="img-fluid rounded" src="/i/projects/2018/1031-android-ar/ar-balloons-scrshot.png" />
 </div>
