@@ -25,12 +25,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@use 'assets/scss/stacked-effect.sass';
+@use '~/assets/scss/stacked-effect.sass' as stackedeffect;
+
 div.notfoundbg {
   min-height: 50rem;
   background-image: url('~@/assets/i/404-top-1080.jpg');
   background-size: contain;
   background-repeat: no-repeat;
-  @include stacked-effect.border-radius(3px);
+  @include stackedeffect.border-radius(3px);
 }
 </style>

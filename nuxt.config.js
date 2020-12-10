@@ -1,4 +1,5 @@
-const PHOTOS_URL_DEV = 'https://localhost:8443'
+// const PHOTOS_URL_DEV = 'http://localhost:8080'
+const PHOTOS_URL_DEV = 'http://photos:8080'
 const PHOTOS_URL_PROD = 'https://photos.kaliatech.com'
 export default {
   target: 'static',
@@ -35,14 +36,34 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: 'UA-8344371-5',
-        dev: false,
-      },
-    ],
+
+    // https://github.com/nuxt-community/style-resources-module/
+    '@nuxtjs/style-resources',
+
+    // https://google-analytics.nuxtjs.org/
+    '@nuxtjs/google-analytics',
   ],
+
+  googleAnalytics: {
+    id: 'UA-8344371-5',
+    dev: process.env.NODE_ENV !== 'production',
+  },
+
+  styleResources: {
+    // your settings here
+    sass: [],
+    scss: [
+      // './assets/scss/_uses.scss',
+      // 'bootstrap/scss/_functions.scss',
+      // 'bootstrap/scss/_variables.scss',
+      // 'bootstrap/scss/_mixins.scss',
+      // 'bootstrap-vue/src/_variables.scss',
+      // './assets/scss/_variables.scss',
+    ],
+    less: [],
+    stylus: [],
+  },
+
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
@@ -62,7 +83,7 @@ export default {
     '@nuxt/content',
 
     // https://go.nuxtjs.dev/bootstrap
-    ['bootstrap-vue/nuxt', { css: false }],
+    ['bootstrap-vue/nuxt'],
 
     'nuxt-fontawesome',
   ],
@@ -87,7 +108,10 @@ export default {
       },
     ],
   },
-
+  bootstrapVue: {
+    bootstrapCSS: false,
+    bootstrapVueCSS: false,
+  },
   // https://content.nuxtjs.org/configuration
   content: {
     liveEdit: false, // bug as of 2020-12 with nuxt/content prevents component registration with liveEdit

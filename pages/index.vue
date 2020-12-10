@@ -49,8 +49,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '~/assets/scss/main.scss';
-
 .bg {
   background-color: rgb(90, 90, 100);
 }
