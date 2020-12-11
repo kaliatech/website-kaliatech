@@ -93,7 +93,7 @@ h4 {
 
 @include media-breakpoint-down(sm) {
   .jumbotron h1.display-4 {
-    font-size: $display4-size * 0.9;
+    font-size: $display4-size * 0.75;
   }
 }
 
