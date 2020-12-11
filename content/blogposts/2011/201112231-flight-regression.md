@@ -54,29 +54,34 @@ to <a href="https://killedbygoogle.com/">killedbygoogle</a>.
 
 These videos show software I developed before "single-page-application" was a common term. 
 
-<div class="video-responsive">
-    <iframe
-        allowfullscreen
-        width="640"
-        height="360"
-        src="https://www.youtube.com/embed/u4M-bm_V9wU"
-        style="border:none"
-        allow="autoplay; encrypted-media; picture-in-picture">
-    </iframe>
+<div class="video-container">
+    <div class="video-responsive">
+        <iframe
+            allowfullscreen
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/u4M-bm_V9wU"
+            style="border:none"
+            allow="autoplay; encrypted-media; picture-in-picture">
+        </iframe>
+    </div>
+    <div class="media-caption">Custom browser developed browser based app. Used google earth plugin.</div>
 </div>
-<div class="media-caption">Custom browser developed browser based app. Used google earth plugin.</div>
 
-<div class="video-responsive">
-    <iframe
-        allowfullscreen
-        width="640"
-        height="360"
-        src="https://www.youtube.com/embed/ASHVUUbhFNM"
-        style="border:none"
-        allow="autoplay; encrypted-media; picture-in-picture">
-    </iframe>
+<div class="video-container">
+    <div class="video-responsive">
+        <iframe
+            allowfullscreen
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/ASHVUUbhFNM"
+            style="border:none"
+            allow="autoplay; encrypted-media; picture-in-picture">
+        </iframe>
+    </div>
+    <div class="media-caption">In this accident there were three relevant aircraft.</div>
 </div>
-<div class="media-caption">In this accident there were three relevant aircraft.</div>
+
 
 
 

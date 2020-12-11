@@ -11,21 +11,23 @@ category: projects
   <a href="https://www.sparkfun.com/products/8579">BlinkM RGB LED</a>
   using its I2C interface.
 </p>
-<div class="video-responsive">
-  <iframe
-    allowfullscreen
-    height="360"
-    src="https://www.youtube.com/embed/5S2rIXL9E-w?feature=oembed"
-    width="640"
-    style="border:none"
-  ></iframe>
+<div class="video-container">
+    <div class="video-responsive">
+      <iframe
+        allowfullscreen
+        height="360"
+        src="https://www.youtube.com/embed/5S2rIXL9E-w?feature=oembed"
+        width="640"
+        style="border:none"
+      ></iframe>
+    </div>
+    <div class="media-caption">
+      I also created a
+      <a href="https://www.youtube.com/watch?v=bumZ124N_Jc&feature=youtu.be&hd=1">much longer explanation video</a>
+      . It even has a background soundtrack. I finished it, watched it, and then realized it was so boring and inane
+      that I would feel bad asking anyone to watch it.
+    </div>
 </div>
-<p class="small">
-  I also created a
-  <a href="https://www.youtube.com/watch?v=bumZ124N_Jc&feature=youtu.be&hd=1">much longer explanation video</a>
-  . It even has a background soundtrack. I finished it, watched it, and then realized it was so boring and inane
-  that I would feel bad asking anyone to watch it.
-</p>
 
 <h2>Photos</h2>
 <div class="row">

@@ -15,39 +15,45 @@ Rough videos showing early experiments with ARCore. Native android development u
 
 
 <h2>Translucency, Interaction, & Animation</h4>
-<div class="video-responsive">
-  <iframe
-    allowfullscreen
-    frameborder="0"
-    height="360"
-    src="https://www.youtube.com/embed/ijGqoRWVDBU?feature=oembed&rel=0&modestbranding=1"
-    width="640"
-  ></iframe>
+<div class="video-container">
+    <div class="video-responsive">
+      <iframe
+        allowfullscreen
+        frameborder="0"
+        height="360"
+        src="https://www.youtube.com/embed/ijGqoRWVDBU?feature=oembed&rel=0&modestbranding=1"
+        width="640"
+      ></iframe>
+    </div>
 </div>
 
 <h2>Outdoor Tracking &amp; Shadows</h4>
-<div class="video-responsive">
-  <iframe
-    allowfullscreen
-    frameborder="0"
-    height="360"
-    src="https://www.youtube.com/embed/T1brLcj5EKc?feature=oembed&rel=0&modestbranding=1"
-    width="640"
-  ></iframe>
+<div class="video-container">
+    <div class="video-responsive">
+      <iframe
+        allowfullscreen
+        frameborder="0"
+        height="360"
+        src="https://www.youtube.com/embed/T1brLcj5EKc?feature=oembed&rel=0&modestbranding=1"
+        width="640"
+      ></iframe>
+    </div>
 </div>
 
 <h2>
   More Balloons!
   <small>&amp; Multiple Planar Surfaces</small>
 </h2>
-<div class="video-responsive">
-  <iframe
-    allowfullscreen
-    frameborder="0"
-    height="360"
-    src="https://www.youtube.com/embed/M3w2ZxQ_RUk?feature=oembed&rel=0&modestbranding=1"
-    width="640"
-  ></iframe>
+<div class="video-container">
+    <div class="video-responsive">
+      <iframe
+        allowfullscreen
+        frameborder="0"
+        height="360"
+        src="https://www.youtube.com/embed/M3w2ZxQ_RUk?feature=oembed&rel=0&modestbranding=1"
+        width="640"
+      ></iframe>
+    </div>
 </div>
 
 <h2>

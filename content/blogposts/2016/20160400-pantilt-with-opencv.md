@@ -15,32 +15,32 @@ attached.
 A built-in laptop webcam ran the face detection and controlled the pan/tilt servos. A separate webcam attached to the
 pan/tilt platform did the actual recording.
 
+Adobe Media Encoder and YouTube Live (in beta at the time) were used to stream the webcam while simultaneously recording
+it. The delay between live and streaming was 20+ seconds, but a benefit was that it was watchable on all devices,
+including iOS.
 
-Adobe Media Encoder and YouTube Live (in beta at the time) were used to stream the webcam while simultaneously
-recording it. The delay between live and streaming was 20+ seconds, but a benefit was that it was watchable on all
-devices, including iOS.
+## Behind the Scenes
 
-## Behind the Scenes 
-
-<div class="video-responsive">
-  <iframe
-    allowfullscreen
-    height="360"
-    src="https://www.youtube.com/embed/An6dyd8HZPk?feature=oembed"
-    width="640"
-    style="border:none"
-  ></iframe>
+<div class="video-container">
+    <div class="video-responsive">
+      <iframe
+        allowfullscreen
+        height="360"
+        src="https://www.youtube.com/embed/An6dyd8HZPk"
+        width="640"
+        style="border:none"
+      ></iframe>
+    </div>
+    <div class="media-caption">
+        Resulting video from webcam:
+          <a href="https://youtu.be/3FT468u_prM">https://youtu.be/3FT468u_prM</a> 
+    </div>
 </div>
 
-<strong>Resulting video from webcam:
-  <a href="https://youtu.be/3FT468u_prM">https://youtu.be/3FT468u_prM</a>
-</strong>
-
-To improve on this, servo movements could be smoothed and averaging applied to the face detection results. Also,
-these particular servos were really noisy, especially when working to hold a position. In a real world scenario, a
+To improve on this, servo movements could be smoothed and averaging applied to the face detection results. Also, these
+particular servos were really noisy, especially when working to hold a position. In a real world scenario, a
 <a href="https://www.trossenrobotics.com/p/WidowX-robot-turret.aspx">Dynamixel based pan/tilt platform</a>
 might be quieter.
-
 
 <h4>Additional Face Tracking Tests</h4>
 <p>
