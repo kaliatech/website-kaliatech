@@ -90,7 +90,7 @@ export default {
     if (this.$route.name === 'photos-catch-all') {
       const tokens = this.$route.path.split('/')
 
-      let path = '/photos'
+      let path = '/photos/'
 
       tokens.forEach((token, idx) => {
         if (!token) {
@@ -104,7 +104,7 @@ export default {
           return
         }
 
-        path += '/' + token + '/'
+        path += token + '/'
         this.breadcrumbs.push({
           text: token,
           to: path,
