@@ -27,7 +27,7 @@
     "nuxt": "^2.14.11",
     "nuxt-fontawesome": "^0.4.0",
     "prismjs": "^1.22.0",
-    "vue-light-gallery": "^1.0.1",
+    "vue-light-gallery": "kaliatech/vue-light-gallery",
     "vue-script2": "^2.1.0"
   },
   "devDependencies": {
