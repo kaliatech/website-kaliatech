@@ -26,13 +26,7 @@
           style="cursor: pointer"
           v-for="media in medias"
         >
-          <img
-            :alt="media.filename"
-            :src="basePhotosUrl + media.thumbnail"
-            :title="media.title"
-            height="210"
-            width="280"
-          />
+          <img :alt="media.filename" :src="basePhotosUrl + media.thumbnail" :title="media.title" class="img-fluid" />
         </div>
       </div>
 
@@ -53,9 +47,7 @@
                 :alt="subalbum.name"
                 :src="basePhotosUrl + subalbum.thumbnail"
                 :title="subalbum.name"
-                class="album"
-                height="210"
-                width="280"
+                class="album img-fluid"
               />
             </nuxt-link>
           </div>
@@ -165,17 +157,19 @@ export default {
         this.subalbums = []
         this.subalbums.push(subalbumsJson.find((el) => el.name === 'Random'))
         this.subalbums.push(subalbumsJson.find((el) => el.name === 'Rides'))
-        this.subalbums.push(subalbumsJson.find((el) => el.name === 'Projects'))
+        this.subalbums.push(subalbumsJson.find((el) => el.name === 'Favorites'))
       } else {
         this.subalbums = subalbumsJson
       }
 
-      this.subalbums.forEach((album, idx) => {
+      this.subalbums = this.subalbums.filter((a) => a != null)
+
+      this.subalbums.forEach((subAlbum, idx) => {
         let basePath = '/photos' + this.$route.path.replace('/photos', '')
         if (!basePath.endsWith('/')) {
           basePath += '/'
         }
-        this.subalbums[idx].urlModified = basePath + album.url
+        this.subalbums[idx].urlModified = basePath + subAlbum.url
       })
 
       this.mfpItems = this.medias.map((media) => {
@@ -219,8 +213,7 @@ export default {
 }
 </script>
 <style lang="scss">
-@use 'assets/scss/stacked-effect.sass' as stackedeffect;
-
+@use '~/assets/scss/stacked-effect.sass' as stackedeffect;
 html,
 body {
 }
