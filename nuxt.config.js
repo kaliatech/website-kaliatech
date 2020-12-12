@@ -3,6 +3,9 @@ const PHOTOS_URL_DEV = 'http://photos:8080'
 const PHOTOS_URL_PROD = 'https://photos.kaliatech.com'
 export default {
   target: 'static',
+  generate: {
+    fallback: '404.html',
+  },
   // Headers of the page
   head: {
     title: process.env.npm_package_name || '',
