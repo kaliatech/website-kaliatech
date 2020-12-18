@@ -115,6 +115,10 @@ div.functionalPrintEntry img {
 .blog-post .dateline {
 }
 
+.blog-post ul li:last-child {
+  margin-bottom: 1rem;
+}
+
 div.quote-block {
   p.quote {
     font-style: italic;
