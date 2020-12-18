@@ -124,13 +124,21 @@ export default {
       },
     },
   },
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-watchers  
+  // Needed to prevent strange problems in AmazonLinux2/Cloud9/Docker environment.
+  watchers: {
+    webpack: {
+      aggregateTimeout: 2000,
+      poll: 2000
+    }
+  },
   /*
    ** Build configuration
    */
   build: {
-    parallel: true,
-    hardSource: true,
-    cache: true,
+//   parallel: true,
+//   hardSource: true,
+//    cache: true,
     /*
      ** You can extend webpack config here
      */
