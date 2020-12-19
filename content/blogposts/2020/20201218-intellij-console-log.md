@@ -46,8 +46,6 @@ console.log('$EXPR$', $EXPR$)
 * [Postfix code completion](https://www.jetbrains.com/help/idea/2020.3/auto-completing-code.html#postfix_completion) 
 * [Live Templates](https://www.jetbrains.com/help/idea/2020.3/using-live-templates.html)
   * [Live Template Variables](https://www.jetbrains.com/help/idea/2020.3/template-variables.html)
-  * [Live Template Variables](https://www.jetbrains.com/help/idea/2020.3/template-variables.html)
-
 
 
 ## Additional Research
