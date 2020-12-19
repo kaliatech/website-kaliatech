@@ -1,6 +1,6 @@
 ---
 title: A Gentleman in Moscow
-createdAt: 2020-05-21
+createdAt: 2020-05-20
 description: 'Book recommendations and a few passages.'
 category: quotes
 
@@ -19,7 +19,7 @@ category: quotes
       <a href="https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing"> Where the Crawdads Sing </a>
       &quot; by <a href="https://en.wikipedia.org/wiki/Delia_Owens">Delia Owens</a>.
     </p>
-    <p>A few of my highlights from &quot;A Gentleman in Moscow&quot; are below. Includes minor spoilers.</p>
+    <p>A few highlights from &quot;A Gentleman in Moscow&quot; are below. Includes minor spoilers.</p>
     <hr />
     <div class="quote-block">
       <p class="quote">For rather than being tools of self-discovery, mirrors tended to be tools of self-deceit.</p>

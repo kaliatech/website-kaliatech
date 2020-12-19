@@ -115,8 +115,12 @@ div.functionalPrintEntry img {
 .blog-post .dateline {
 }
 
-.blog-post ul li:last-child {
+.nuxt-content > ul > li {
   margin-bottom: 1rem;
+}
+
+.nuxt-content > ul li p {
+  margin-bottom: 0;
 }
 
 div.quote-block {
