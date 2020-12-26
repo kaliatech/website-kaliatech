@@ -128,8 +128,8 @@ export default {
   // Needed to prevent strange problems in AmazonLinux2/Cloud9/Docker environment.
   watchers: {
     webpack: {
-      aggregateTimeout: 3000,
-      poll: 2000
+      aggregateTimeout: 300,
+      poll: 1000
     }
   },
   /*
