@@ -187,7 +187,7 @@ export default {
         },
         {
           url: 'https://www.youtube.com/watch?v=1tw06GEwR-I',
-          title: 'I Took A Pill In Ibiza',
+          title: 'I Took A Pill In Ibiza (original)',
           artist: 'Mike Posner',
           comment: '(original, performed on Conan)',
         },
@@ -433,7 +433,7 @@ export default {
         },
         {
           url: 'http://www.vevo.com/watch/robin-thicke/blurred-lines-unrated-version/USUV71300526',
-          title: 'Blurred Lines',
+          title: 'Blurred Lines (nsfw)',
           artist: 'Robin Thicke ft. Pharrell Williams & T.I  (Unrated, NSFW) *',
         },
         {

@@ -13,20 +13,20 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@nuxt/content": "^1.11.1",
-    "@nuxtjs/axios": "^5.12.4",
-    "bootstrap": "^4.5.3",
-    "bootstrap-vue": "^2.21.1",
+    "@nuxtjs/axios": "^5.12.5",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "date-fns": "^2.16.1",
     "lodash.groupby": "^4.6.0",
     "lodash.truncate": "^4.4.2",
     "nuxt": "^2.14.12",
     "nuxt-fontawesome": "^0.4.0",
-    "prismjs": "^1.22.0",
+    "prismjs": "^1.23.0",
     "vue-light-gallery": "github:kaliatech/vue-light-gallery",
     "vue-script2": "^2.1.0"
   },
@@ -36,13 +36,13 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.16.0",
-    "eslint-config-prettier": "^7.1.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
-    "sass": "^1.30.0",
-    "sass-loader": "^10.1.0"
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1"
   }
 }
