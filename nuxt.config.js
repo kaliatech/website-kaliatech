@@ -1,5 +1,7 @@
-// const PHOTOS_URL_DEV = 'http://localhost:8080'
-const PHOTOS_URL_DEV = 'http://photos:8080'
+const PHOTOS_URL_DEV = 'http://localhost:8080'
+//const PHOTOS_URL_DEV = 'http://photos:8080'
+//const PHOTOS_URL_DEV = 'http://3.239.46.94:8080'
+//const PHOTOS_URL_DEV = 'http://3.239.46.94:8080'
 const PHOTOS_URL_PROD = 'https://photos.kaliatech.com'
 export default {
   target: 'static',
@@ -124,21 +126,21 @@ export default {
       },
     },
   },
-  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-watchers  
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-watchers
   // Needed to prevent strange problems in AmazonLinux2/Cloud9/Docker environment.
   watchers: {
     webpack: {
       aggregateTimeout: 300,
-      poll: 1000
-    }
+      poll: 1000,
+    },
   },
   /*
    ** Build configuration
    */
   build: {
-//   parallel: true,
-//   hardSource: true,
-//    cache: true,
+    //   parallel: true,
+    //   hardSource: true,
+    //    cache: true,
     /*
      ** You can extend webpack config here
      */
