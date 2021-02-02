@@ -11,6 +11,18 @@
     </div>
 
     <blog-prev-next :prev="prevBlogPost" :next="nextBlogPost" :category="blogPost.category"></blog-prev-next>
+
+    <client-only>
+      <div class="container mt-5">
+        <hr />
+        <h2>Comments</h2>
+        <div class="row">
+          <div class="col-12">
+            <fast-comments-vue :config="{ tenantId: '9R8olmXD_' }" />
+          </div>
+        </div>
+      </div>
+    </client-only>
   </div>
 </template>
 
@@ -18,6 +30,8 @@
 import Prism from 'prismjs'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 import 'prismjs/components/prism-sql.js'
+
+import FastCommentsVue from 'fastcomments-vue'
 
 // Make components available to content markdown pages (without making the components global)
 import BlogPostPhotos from '~/components/BlogPostPhotos'
@@ -32,6 +46,7 @@ export default {
     'blog-post-photos-simple': BlogPostPhotosSimple,
     // eslint-disable-next-line vue/no-unused-components
     'kaliatech-photos': KaliatechPhotos,
+    'fast-comments-vue': FastCommentsVue,
   },
   async asyncData(ctx) {
     // const page = await ctx.$content('blog/' + ctx.params.pathMatch).fetch()
