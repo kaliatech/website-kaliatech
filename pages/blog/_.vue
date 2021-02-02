@@ -34,12 +34,15 @@ import 'prismjs/components/prism-sql.js'
 import FastCommentsVue from 'fastcomments-vue'
 
 // Make components available to content markdown pages (without making the components global)
+import BlogPostToc from '~/components/BlogPostToc'
 import BlogPostPhotos from '~/components/BlogPostPhotos'
 import BlogPostPhotosSimple from '~/components/BlogPostPhotosSimple'
 import KaliatechPhotos from '~/components/KaliatechPhotos'
 
 export default {
   components: {
+    // eslint-disable-next-line vue/no-unused-components
+    'blog-post-toc': BlogPostToc,
     // eslint-disable-next-line vue/no-unused-components
     'blog-post-photos': BlogPostPhotos,
     // eslint-disable-next-line vue/no-unused-components

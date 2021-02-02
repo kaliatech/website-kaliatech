@@ -36,6 +36,25 @@ h4 {
   margin-top: 2rem;
 }
 
+div.blog-post ul.toc li a:link {
+  text-decoration: none;
+}
+
+div.blog-post ul.toc li.toc2 {
+
+}
+
+div.blog-post ul.toc li.toc3 {
+  margin-left: 1rem;
+  list-style-type: circle;
+}
+
+div.blog-post ul.toc li.toc4 {
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+
+
 .video-container {
   margin-bottom: 2rem;
 }

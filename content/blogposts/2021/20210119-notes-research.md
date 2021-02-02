@@ -53,13 +53,7 @@ caption: 'Notes on obese bird/duck/chicken aerodynamics. Quack.'
 
 ---
 ## Contents
- * [Background](#background) 
- * [Options](#options)
-   * [Text Files with synchronization](#text-files-with-synchronization)
-   * [Wikis](#wikis)
-   * [Standard Notes](#standard-notes-appservice)
-   * [Joplin](#joplin)
-   * [Evernote](#evernote) 
+<blog-post-toc :toc=toc></blog-post-toc>
 
 ## Background
 I am a prolific acquirer and creator of information. Much of it is useless, but still, I'm prolific. While I believe many people spend too much time acquiring vs. doing, myself included, I find that the act of taking notes and writing things down is in itself of value. Also, I can be scattered brained and having a place to store short and long term items is important to me.
@@ -112,7 +106,7 @@ These are the options I eventually narrowed down and considered seriously for _m
 
 My notes on each are below, written here, so I can refer back to it a year or two from now when I will likely go through this again.
 
-## Text Files with synchronization
+### Text Files with synchronization
 
 ---
 
@@ -129,7 +123,7 @@ A quick summary of the plain text options I researched:
 
 In the end, as much as a like simple text files, I like certain higher level conveniences more. I'll probably check out Obsidian again in the future after the mobile apps are released. 
 
-## Wikis
+### Wikis
 
 ---
 
@@ -140,7 +134,7 @@ Quick summary of the wiki options I like:
  * [Confluence](https://www.atlassian.com/software/confluence) - I wouldn't be averse to playing for a hosted confluence instance. I actually like Confluence for organized business wiki purposes. It just seemed overly heavy for personal notes, and there's no obvious offline option.
  * [DokuWiki](https://www.dokuwiki.org/) - Decent, but I don't want to self host if I can avoid it. I don't think I'd chose it over Confluence if I was going straight wiki for my notes. If I needed portable wiki then maybe, but then I'd probably choose TiddlyWiki.
 
-## Standard Notes App/Service
+### Standard Notes
 
 ---
 
@@ -156,7 +150,7 @@ Things I did not like:
  * There's no way to select multiple notes at one time. i.e. Batch retagging or deleting. According to [this issue](https://github.com/standardnotes/forum/issues/138), It's been an outstanding request for a few years. This, though seemingly non-important, is probably the main reason I decided to avoid Standard Notes. That seems like such as basic function that the developers do not feel the need to address.
 
 
-## Joplin
+### Joplin
 
 ---
 
@@ -169,10 +163,10 @@ So why didn't select it?
  * The mobile apps are a bit clunky. This is probably the main reason I decide not to go with Joplin. For now. I will revisit in the future.
     * In particular, I could find no way to access an attached photo on mobile devices, Android or iOS. So while I could view a photo attached to a note in Joplin, there was no obvious way to open or otherwise make use of it. Because Joplin is open source, I started going about setting up a dev environment to try fixing this...but then I realized, that was not simplifying my life.
 
-### Joplin's Evernote Import
+#### Joplin's Evernote Import
 As an aside, Joplin supports importing Evernote .enex files. It has the option to partially transform Evernote's strange markup in to markdown while importing. It worked well in my testing. Joplin can then export the notes back out as markdown files and other formats. It's probably the best way, at this time, to export evernote data for long term storage. Again, it's an impressive feature for a free tool.
 
-## Evernote
+### Evernote
 
 ---
 
