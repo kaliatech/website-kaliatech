@@ -9,7 +9,7 @@
       />
     </client-only>
     <template v-for="(photo, photoIdx) in photos">
-      <div :key="photo.src" class="col" v-if="center"></div>
+      <div :key="'l' + photo.src" class="col" v-if="center"></div>
       <div :key="photo.src" :class="'col-sm-' + colWidth">
         <figure class="figure">
           <a :href="photo.src" @click="onMediaClick(photoIdx, $event)">
@@ -30,7 +30,7 @@
           </figcaption>
         </figure>
       </div>
-      <div :key="photo.src" class="col" v-if="center"></div>
+      <div :key="'r' + photo.src" class="col" v-if="center"></div>
     </template>
   </div>
 </template>

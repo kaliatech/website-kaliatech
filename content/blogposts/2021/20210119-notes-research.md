@@ -74,15 +74,15 @@ However, I moved to fully paperless sometime around 2010. In general, I try to s
    My primary notes app, used for all daily to do items, short term references, longer term references, code snippets, command line references, scanned PDF documents, random ideas and thoughts, etc.
 
  * [Noteshelf](https://www.noteshelf.net/) <br/>
-   For handwritten notes using a stylus. I use this for free form thoughts, diagrams, sketches, etc. Especially useful when thinking away from a computer. The app is only available on iOS, but it automatically syncs PDF versions of the notes to an Evernote notebook so that I have them in read only, searchable, form everywhere.
+   For handwritten notes using a stylus. I use this for free-form thoughts, diagrams, sketches, etc. Especially useful when thinking away from a computer. The app is only available on iOS, but it automatically syncs PDF versions of the notes to an Evernote notebook so that I have them in read only, searchable, form everywhere.
 
 <blog-post-photos-simple :lightbox="true" :col-width="4" :photos=photosNoteshelf></blog-post-photos-simple>
 
  * [Dropbox](https://www.dropbox.com/) / [Sync](https://www.sync.com/) / [S3](https://aws.amazon.com/s3/) <br/>
-   I generally use a separate service for storing and synchronizing files, PDF documents, etc. When needed, I annotate PDFs using [GoodReader](https://goodreader.com/) on iPad. Although file attachments can be stored and annotated in Evernote, it gets unwieldy and I've never used it extensively for that purpose. I stopped using Dropbox a while ago when they started incorporating so many dark patterns around their upsells, but they do have some nice features. I now use sync.com. Similar, but more secure and not as feature rich. Another good option for many would be [Google Drive](https://drive.google.com) or [Microsoft OneDrive](https://onedrive.live.com). But for me, Google and Microsoft already have access to way more than enough of my digital life.
+   I generally use a separate service for storing and synchronizing files, PDF documents, etc. When needed, I annotate PDFs using [GoodReader](https://goodreader.com/) on iPad. Although file attachments can be stored and annotated in Evernote, it gets unwieldy. I've never used it extensively for that purpose. I stopped using Dropbox a while ago when they started incorporating so many dark patterns around their upsells, but they do have some nice features. I now use sync.com. Similar, but more secure and not as feature rich. Another good option for many would be [Google Drive](https://drive.google.com) or [Microsoft OneDrive](https://onedrive.live.com). Google and Microsoft already have access to way more than enough of my digital life.
    
  * [Pinboard.in](https://pinboard.in) <br/>
-   Used for storing bookmarks, along with short notes that go with those bookmarks. The owner, [Maciej Cegłowski](https://en.wikipedia.org/wiki/Maciej_Ceg%C5%82owski), is an interesting person. Pinboard will go down the day he gets hit by a bus, but that's a risk I'm willing to take with bookmarks.
+   Used for storing bookmarks, along with short notes that go with those bookmarks. The owner, [Maciej Cegłowski](https://en.wikipedia.org/wiki/Maciej_Ceg%C5%82owski), is an interesting person. Pinboard will go down the day he gets [hit by a bus](https://twitter.com/pinboard/status/1350962218632937474), but that's a risk I'm willing to take with bookmarks.
    
  * [iThoughts](https://www.toketaware.com/) <br/>
    Cross platform mind mapping. Very useful for initial ideas, organization of larger concepts, and prioritization. At one time I thought of using mindmapping software for all of my notes. "[The Brain](https://www.thebrain.com/)" is especially well suited towards doing this. However, it never felt right to me. Mind mapping causes my brain to try thinking too much when all I want to do is jot down or review a quick note. 
@@ -133,7 +133,7 @@ In the end, as much as a like simple text files, I like certain higher level con
 
 ---
 
-Using a wiki for notes seems a little heavy handed by some, but I've used wikis so much for years that I think it would be fine for me, and I've seriously considered this option for all my notes a few times over the years. 
+Using a wiki for notes seems a little heavy handed by some, but I've used wikis so much for years that I think it would be fine for me, and I've seriously considered this option for all my notes a few times. 
 
 Quick summary of the wiki options I like:
  * [TiddlyWiki](https://tiddlywiki.com/) - TiddlyWiki is amazing and I spent more time trying to find a complete solution using it than I did with anything else. The newer TW5 version supports a server hosted variant (with node) that solved a lot of the problems I previously had with using TW as complete notes solution, especially on mobile. However, it needs to be hosted and I'm trying to simplify my life. So, less servers is better. The editing experience is not great on mobile, though doable. There was no obvious way to use it safely offline with the hosted server version, although the [TW5-Bob](https://github.com/OokTech/TW5-Bob) project added some of the missing pieces (along with 100 other pieces I did not want). In the end, I probably could make TW work, but would be too much work. It's so flexible, easy to extend, and customize. Truth is, it really appeals to my inner developer ...and I wasted so much time on it.
@@ -144,7 +144,7 @@ Quick summary of the wiki options I like:
 
 ---
 
-I really liked [Standard Notes](https://standardnotes.org/) and almost purchaed a 5-year subscription. Things I liked:
+I really liked [Standard Notes](https://standardnotes.org/) and almost purchased a 5-year subscription. Things I liked:
  * The developer's views and [longevity statements](https://standardnotes.org/longevity) resonate with me.
  * Simple, clean interfaces on desktop and mobile apps.
  * Supports simple editors with excellent markdown support
@@ -191,9 +191,9 @@ Positive:
 The downsides of Evernote:
  * The company's stability has come in to question in recent years.
  * Editor has always been buggy, usually around simple things in my experience. i.e. Soft returns in bulleted lists. Every major release I've been through with Evernote fixes some things while it breaks others.
- * The editor is WYSISYG only (sort-of... see notes below on v10)
+ * The editor is WYSISWYG only and has limited text commands for formatting (although has improved, see notes below on v10)
  * I would never trust Evernote with private information. Early versions were especially slack on security and privacy.
- * Export options are somewhat limited (especially in v10)
+ * Export options are somewhat limited. In current v10, only the .enex format is supported. (Text based XML. Easy to parse, but sometimes has uses strange formatting markup.)
 
 
 What started me looking at alternatives again was the v10 release. When first released, the performance on an iPad made it almost unuseable. It would take multiple seconds to load, frequently crashed, and a required few seconds just to start creating a blank new note. Many months later it has improved... somewhat. The v10 version is still quite slow on all my devices. I believe it uses Electron underneath, but that's not an excuse. Other Electron based apps do not have this overall sluggishness. I'm not really sure what they are doing that makes it so slow, and why they can't fix it. The fact that it took multiple months to make the iPad version somewhat useable again is concerning. It doesn't point to a technical dev team that knows what they are doing. Specifically, that there might be problems with the underlying architecture or tech choices. The UI is nice....but that's only half the app.
@@ -209,7 +209,7 @@ It's important to note that I never store truly sensitive information in Evernot
 
 Evernote has a feature I really liked for quickly encrypting a block of highlighted text. It prompts for a password and requires that password to be entered in order to decrypt at some later time. It ~is~ *was* a really nice feature for storing sensitive data alongside relevant notes, without having to encrypt the entire note. I haven't seen another note taking app that does this.
 
-<blog-post-photos-simple :lightbox="true" :col-width="6" center=true :photos=photosEvernoteEncrypted></blog-post-photos-simple>
+<blog-post-photos-simple :lightbox="true" :col-width="6" :center=true :photos=photosEvernoteEncrypted></blog-post-photos-simple>
 
 The current implementation of it in v10 is not great. Specifically, once encrypted, it's no longer possible to add/modify text within the encrypted block. Hopefully they'll address that eventually. Regardless, I've moved away from using the feature frequently for two reasons:
 - There is some period of time between when you enter text, and encrypt it, where the note could be sync'd to other devices. This is especially true now with the v10 limitation.
