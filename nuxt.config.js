@@ -121,6 +121,10 @@ export default {
   content: {
     liveEdit: false, // bug as of 2020-12 with nuxt/content prevents component registration with liveEdit
     markdown: {
+      // remarkPlugins: ['remark-mermaid'],
+      // mermaid: {
+      //   simple: true,
+      // },
       prism: {
         theme: 'node_modules/prismjs/themes/prism-tomorrow.css',
       },
