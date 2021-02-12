@@ -32,11 +32,13 @@ Small tracks is an experimental website and service for designing custom tank tr
 ## Background 
 I was originally doing calculations by hand to make alternative tracks for my small [FPV robot](https://www.kaliatech.com/blog/2020/tankrobot-fpv). I had already determined that printing these types of tracks with [TPU](https://www.3dnatives.com/en/tpu-3d-printing-040620204/) works well. However, calculating the correct size to print these is difficult, especially when there are multiple sprocket-and-cog configurations along the track.
 
-There are not many off-the-shelf options and they are limited in their configuration.  One example: 
+There are not many off-the-shelf options for small tracks, and they are limited in their configuration.  Some examples: 
 
- * [Robot Car Crawler Tank Treads Tracks with Gear for Robot Tank DIY](https://www.amazon.com/Robot-Crawler-Tank-Treads-Tracks/dp/B07HBSWR1D)
+ * [Pololu - Miniature Tracks](https://www.pololu.com/category/232/tracks)
+ * [Amazon - Robot Car Crawler Tank Tracks with Gear](https://www.amazon.com/Robot-Crawler-Tank-Treads-Tracks/dp/B07HBSWR1D)
+ * [SZDOIT -  Metal/Plastic Tank Chassis Tracks Conveyor Belt](https://www.vvdoit.com/szdoit-metalplastic-tank-chassis-tracks-conveyor-belt-for-rc-crawler-robot-vehicle-parts-p2756036.html)
 
-Single width and the treads are hard plastic.  [SDRobots]([https://sdrobots.com/](https://sdrobots.com/)) previously provided custom length rubber tracks in ~3-4” width:  
+ [SDRobots]([https://sdrobots.com/](https://sdrobots.com/)) previously provided custom length rubber tracks in ~3-4” width:  
 
  * [SDRobotics - Custom Track Service]([https://sdrobots.com/custom-track-service/](https://sdrobots.com/custom-track-service/))
  
@@ -44,7 +46,7 @@ However, that service seems to be discontinued. Their current preconfigured trac
 
  * [SDRobotics - Molded Track Set - 2 inch Wide x 25mm pitch x 43 links](https://www.superdroidrobots.com/shop/item.aspx/mlt-molded-track-set-2-inch-wide-x-25mm-pitch-x-43-links/2866/)
 
-*(An aside: SDRobots is located 10 minutes from my home! ...however, I still haven’t been able to convince them to invite me for a tour of the facilities.)*
+*(An aside: SDRobots is located 10 minutes from me! ...however, I haven’t been able to convince them to invite me over for a tour.)*
   
 I needed much smaller tracks, and the sprocket-and-cog configuration on my FPV chassis was complex. (Admittedly, most people would probably change their sprockets to match the belt vs designing a belt to match the sprockets. But, what fun is that?)
 
@@ -147,7 +149,7 @@ Only a proof-of-concept and initial copy is complete as of 2021-02-20. Remaining
  * [X] Proof of concept 3D visualization
  * [X] Proof of concept 2D visualization
  * [X] Website homepage
- * [ ] Verify STL export works
+ * [X] Verify STL export works
  
 <br />
 
@@ -160,16 +162,18 @@ Only a proof-of-concept and initial copy is complete as of 2021-02-20. Remaining
     * [ ] Add cog calculations and holes
  * [ ] Next iteration of 3D visualization
     * [ ] Make interactive, for instance clicking an axle to select, drag-and-drop to adjust, etc
- * [ ] Next iteration of 2D visualization
+ * [ ] Next iteration of 2D visualization (worthwhile?)
 
 
 <br />
 
- * [ ] Add documentation and diagrams
- * [ ] Add functionality to save/load parameters
- * [ ] Add export functionality
+* [ ] Add export functionality 
+* [ ] Add documentation and diagrams
+* [ ] Add account/authentication  
+* [ ] Add functionality to save/load tracks
+ 
 
 <br />
 
- * [ ] Add order supporting (TBD)
+* [ ] Add order support (TBD)
  
