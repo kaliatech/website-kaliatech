@@ -124,6 +124,11 @@ export default {
           url: 'https://www.rottentomatoes.com/m/american_beauty',
         },
         {
+          title: 'The Book of Life',
+          artist: '2014',
+          url: 'https://www.rottentomatoes.com/m/the_book_of_life_2014',
+        },
+        {
           title: 'Wallace and Gromit - A Grand Day Out',
           artist: '1989',
           url: 'https://www.rottentomatoes.com/m/a_grand_day_out_with_wallace_and_gromit',
