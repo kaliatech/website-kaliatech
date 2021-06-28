@@ -27,7 +27,7 @@
     "lodash.truncate": "^4.4.2",
     "nuxt": "^2.15.4",
     "nuxt-fontawesome": "^0.4.0",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.0",
     "vue-light-gallery": "github:kaliatech/vue-light-gallery",
     "vue-script2": "^2.1.0"
   },
