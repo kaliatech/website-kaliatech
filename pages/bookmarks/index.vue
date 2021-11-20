@@ -16,7 +16,7 @@
         <div class="p-3">
           <a :href="post.href" class="align-items-start mb-1" :title="post.description">
             <div class="w-100 justify-content-between">
-              <span class="mb-0 text-truncate pr-3" style="font-weight: bold">{{ post.description }}</span>
+              <div class="mb-0 text-truncate pr-3" style="font-weight: bold">{{ post.description }}</div>
             </div>
             <small class="d-block text-truncate">
               {{ post.href }}
