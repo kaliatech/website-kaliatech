@@ -34,20 +34,22 @@ I was originally doing calculations by hand to make alternative tracks for my sm
 
 There are not many off-the-shelf options for small tracks, and they are limited in their configuration.  Some examples: 
 
+ * [goBILDA - Tracks](https://www.gobilda.com/tracks/)
+ * [SuperDroid Robots - Molded Track Set - 2 inch Wide x 25mm pitch x 43 links](https://www.superdroidrobots.com/shop/item.aspx/mlt-molded-track-set-2-inch-wide-x-25mm-pitch-x-43-links/2866/)
+ * [SuperDroid Robots - DIY Wheels, Tracks and Treads](https://www.superdroidrobots.com/mechanical-parts/Treads-Tracks/DIY-Wheels-Tracks-Treads)
  * [Pololu - Miniature Tracks](https://www.pololu.com/category/232/tracks)
  * [Amazon - Robot Car Crawler Tank Tracks with Gear](https://www.amazon.com/Robot-Crawler-Tank-Treads-Tracks/dp/B07HBSWR1D)
  * [SZDOIT -  Metal/Plastic Tank Chassis Tracks Conveyor Belt](https://www.vvdoit.com/szdoit-metalplastic-tank-chassis-tracks-conveyor-belt-for-rc-crawler-robot-vehicle-parts-p2756036.html)
 
- [SDRobots]([https://sdrobots.com/](https://sdrobots.com/)) previously provided custom length rubber tracks in ~3-4” width:  
+<!---
+SuperDroid Robots previously provided custom length rubber tracks in ~3-4” width:  
 
- * [SDRobotics - Custom Track Service]([https://sdrobots.com/custom-track-service/](https://sdrobots.com/custom-track-service/))
+ * [SDRobots - Custom Track Service](https://sdrobots.com/custom-track-service/)
  
-However, that service seems to be discontinued. Their current preconfigured tracks start at ~2” width and have ~1100mm circumference. Example:
+ -->
 
- * [SDRobotics - Molded Track Set - 2 inch Wide x 25mm pitch x 43 links](https://www.superdroidrobots.com/shop/item.aspx/mlt-molded-track-set-2-inch-wide-x-25mm-pitch-x-43-links/2866/)
+*(An aside: SDRobots is located ~15 minutes from me!)*
 
-*(An aside: SDRobots is located 10 minutes from me! ...however, I haven’t been able to convince them to invite me over for a tour.)*
-  
 I needed much smaller tracks, and the sprocket-and-cog configuration on my FPV chassis was complex. (Admittedly, most people would probably change their sprockets to match the belt vs designing a belt to match the sprockets. But, what fun is that?)
 
 The Prusa i3 MK3, and seemingly most 3D printing service bureaus, will support  printing up to a ~600mm outside circumference track. The track is printed on its edge, in a circle. The track width is limited only by the height of the printer (usually ~200mm), although I expect printing thinner tracks at higher heights gets problematic with TPU.
