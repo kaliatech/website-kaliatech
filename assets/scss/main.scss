@@ -23,10 +23,6 @@ p a {
   text-decoration: underline;
 }
 
-div.blog-post li a {
-   text-decoration: underline;
-}
-
 h2 {
   margin-top: 2rem;
 }
@@ -54,6 +50,14 @@ div.blog-post ul.toc li.toc4 {
   list-style-type: disc;
 }
 
+
+div.blog-post ul li {
+  margin-bottom: 0.15rem;
+}
+
+div.blog-post a {
+  text-decoration: none;
+}
 
 .video-container {
   margin-bottom: 2rem;
