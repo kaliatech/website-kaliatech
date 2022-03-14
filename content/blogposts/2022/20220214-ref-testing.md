@@ -1,13 +1,13 @@
 ---
 title: "Reference: Software Testing"
 createdAt: 2022-02-14
-description: Informal notes for software dev team testing.
+description: Informal notes for software development testing.
 category: misc
 ---
 
 # Thoughts on testing.
 
-These are of my own notes regarding software testing. I've written some variant of these notes for multiple companies,
+These are my own notes regarding software testing. I've written some variant of these notes for multiple companies,
 and I decided to post here for future reference. These are informal, include some opinions, and some arbitrary
 nomenclature. These are meant only as guidelines to facilitate discussion, because every environment and team is
 different.
