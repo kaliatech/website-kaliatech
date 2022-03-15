@@ -143,6 +143,9 @@ export default {
    ** Build configuration
    */
   build: {
+    babel: {
+      compact: true,
+    },
     //   parallel: true,
     //   hardSource: true,
     //    cache: true,
