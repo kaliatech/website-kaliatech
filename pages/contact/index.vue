@@ -60,7 +60,6 @@
             frameborder="0"
             height="480"
             src="https://www.google.com/maps/d/u/0/embed?mid=1TEsi5IaoFPmjnznqwtNBm1w95vwimlqv"
-            style="border: 0"
             width="640"
           />
         </div>
@@ -77,29 +76,3 @@ export default {
   },
 }
 </script>
-<style lang="scss">
-a svg {
-  margin-right: 0.5rem;
-}
-
-.map-responsive {
-  overflow: hidden;
-  padding-bottom: 480px;
-  position: relative;
-  height: 0;
-  margin: 2rem 0;
-}
-
-.map-responsive iframe {
-  left: 0;
-  top: 0;
-  width: 100%;
-  position: absolute;
-}
-
-.social-btns-cont a.btn {
-  width: 8.5rem;
-  text-align: left;
-  margin: 0 0.5rem 0.5rem 0;
-}
-</style>

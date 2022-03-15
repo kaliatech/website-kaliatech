@@ -45,13 +45,3 @@ export default {
   },
 }
 </script>
-<style>
-.mermaid {
-  width: 100%;
-  height: auto;
-}
-svg[id^='mermaid-'] {
-  height: 100%;
-  width: 100%;
-}
-</style>

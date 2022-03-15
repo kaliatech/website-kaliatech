@@ -142,3 +142,38 @@ blockquote {
     font-size: $display4-size * 0.75;
   }
 }
+
+.mermaid {
+  width: 100%;
+  height: auto;
+}
+.mermaid svg {
+  height: 100%;
+  width: 100%;
+}
+
+div.social-btns-cont a svg {
+  margin-right: 0.5rem;
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 480px;
+  position: relative;
+  height: 0;
+  margin: 2rem 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  width: 100%;
+  border: 0;
+  position: absolute;
+}
+
+.social-btns-cont a.btn {
+  width: 8.5rem;
+  text-align: left;
+  margin: 0 0.5rem 0.5rem 0;
+}
