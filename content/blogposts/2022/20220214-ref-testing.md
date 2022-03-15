@@ -7,10 +7,10 @@ category: misc
 
 # Thoughts on testing.
 
-These are my own notes regarding software testing. I've written some variant of these notes for multiple companies,
-and I decided to post here for future reference. These are informal, include some opinions, and some arbitrary
-nomenclature. These are meant only as guidelines to facilitate discussion, because every environment and team is
-different.
+These are my notes regarding a breakdown of software testing contexts. I've written some variant of these notes for
+multiple companies, and I decided to post here for future reference. Smaller development teams do not need this level of
+breakdown. And even in larger teams, with dedicated testing groups, I usually do not see every layer here clearly
+defined. These are meant only as guidelines to facilitate discussion.
 
 ## Contents
 
@@ -24,18 +24,23 @@ different.
    intentionally and with purpose. Tests that serve no useful purpose should be removed. Tests must be maintained
    similar to how code must be maintained, and often with almost as much cost.
 4. Higher level tests are sometimes written and executed by non-developers. The point is not for developers to shirk
-   responsibility. Rather, having non-developers write tests provides a way to incorporate a different view in to a
-   system. One that often more closely aligns to the customer and business views of the system. However, developers
-   should not gain mindset where they build things and then let someone else tell them if it works or not.
-5. Tests should be automated whenever possible. Most tests should be part of automatic continuous integration.
-6. For some projects, with experienced teams, continuous deployment should be considered, in which case automated
-   testing is a fundamental requirement.
+   responsibility. Rather, having non-developers write tests provides a way to incorporate a different view in to
+   testing a system. One that often more closely aligns to the customer and business views of the system. Regardless,
+   developers should not build a mindset where they build things expecting someone else to tell them if it works or not.
+5. Tests should be automated whenever possible. Most tests should be part of an automatic continuous integration
+   pipeline.
+6. For some projects, with experienced teams, continuous deployment should be considered. When automatically deploying
+   to a production environment, comprehensive automated testing is a fundamental requirement.
 7. Use separated environment(s) for integration testing. It should be possible to easily and quickly reset environments
    that are dedicated to testing.
-8. Track bugs _and_ their resolutions.
-9. Considering using acceptance tests to help flush out requirements, and then to later verify that those requirements
-   have been met.
-10. Keep metrics and logs of all errors found in production. Consider that many bugs and issues are never reported by
+8. Consider persistent data to a part of the testing domain. It's common for teams to deploy to PROD and find issues
+   because data in PROD is unlike data in their early stage environments. This is also requires security to be
+   considered when testing. (i.e. PII data should be not be leaked by tests, emails should be handled carefully while
+   testing, etc)
+9. Considering using higher level acceptance tests to help flush out requirements, and then to later verify that those
+   requirements have been met.
+10. Track bugs _and_ their resolutions.
+11. Keep metrics and logs of all errors found in production. Consider that many bugs and issues are never reported by
     end users.
 
 ## Levels of Testing
@@ -88,10 +93,12 @@ another way, the "Who" in the breakdown below, is sometimes always "Developers".
 
 * **Who:**<br/>Testers
 * **Purpose:**<br/>Ensure that newer changes do not cause problems with existing releases and deployments. Often
-  includes testing of any upgrade (and possibly downgrade) procedures.
+  includes testing of any upgrade procedures (and possibly downgrade procedures).
 * **Time:**<br/>Time consuming. Not easy to automate.
 * **When:**<br/>Should minimally be run before promoting to PROD, or before distributing new releases to existing
   customers.
+* **Note:**<br/>Regression/upgrade testing requires including real data as part of the testing, and that usually adds to
+  the complexity.
 
 ### User Acceptance Testing
 
@@ -135,13 +142,15 @@ There are numerous other layers and possible organization of testing concerns. S
   
 ## Physical Hardware and Testing
 
-Projects involving hardware require additional considerations for testing. Examples include:
- * Mobile devices (android and ios)
- * Microcontrollers
- * Embedded firmware
- * Networks
- * FPGA and PLC based automation machines
- * Etc
+Projects involving native devices or other hardware require additional considerations for testing. Examples include:
 
-Simulators and emulators can be helpful and a worthwhile investment when considering testing needs. Many scenarios, _that
-should be tested_, are difficult to replicate in a real world environments without some level of simulation/emulation.
+* Mobile devices (android and ios)
+* Microcontrollers
+* Embedded firmware
+* Networks
+* FPGA and PLC based automation machines
+* Etc
+
+Simulators and emulators can be helpful and a worthwhile investment when considering hardware testing needs. Many
+scenarios, _that should be tested_, are difficult to replicate in a real world environments without some level of
+simulation or emulation.

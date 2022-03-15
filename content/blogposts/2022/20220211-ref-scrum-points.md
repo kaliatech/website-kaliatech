@@ -5,13 +5,12 @@ description: Informal notes for software development scrum.
 category: misc
 ---
 
-# Thoughts on Scrum
+There are my notes regarding Scrum processes for software development. I've written some variant of these notes for
+multiple companies, primarily to establish guidelines around point estimates for teams that are new to Scrum.
 
-These are my own notes regarding scrum processes for software development. I am not an expert on Agile or Scrum
-practices. I've written some variant of these notes for multiple companies, and I decided to post here for future
-reference. These are informal, include some opinions, and some arbitrary nomenclature. These are meant only as
-guidelines to facilitate discussion, because every environment and team is different. Some teams will be fine with
-coarse, sprint long, stories, and other teams will need subtask granularity.
+I am not an expert on Agile or Scrum practices. Every team and project is different. I believe that software dev teams
+should strive for self-management and keep ceremony to a minimum. But, it takes time for a team to learn to work
+together, and guidelines like these can help get started.
 
 ## Contents
 
@@ -21,17 +20,18 @@ coarse, sprint long, stories, and other teams will need subtask granularity.
 
 Reasons for estimating with points:
 
-* As developers, we want to make sure we generally agree between ourselves on the level of effort needed to complete a
-  given story.
-* As managers and planners, point related metrics will eventually be useful to estimate and prioritize the work a team
-  can get done in upcoming sprints and future projects.
+* As developers, there should be a general agreement on the level of effort that will be needed to complete a given
+  story. Agreement helps with estimation accuracy and making sure the story is sufficiently defined.
+* As managers and planners, point related metrics will become useful for estimating and prioritizing future work.
 
-Point values, velocity, & capacity are relative to a team and have little meaning outside of that team. I am providing
-my suggestions here as a starting point for point values, but these are only suggestions. I like the Fibonacci
-sequence (
-or a doubling sequence) because it helps me remember that the point values are completely relative. Point values should
-be representation of complexity and effort for the team to complete. They do not always map to time-to-complete, but in
-practice, that's usually the most useful way to estimate.
+Point values, velocity, & capacity are relative to a team and have little meaning outside that team. I am providing
+my suggestions here as a starting point for point values, but these are only suggestions.
+
+I like using the Fibonacci sequence (or a doubling sequence) because it helps to remember that the point values are
+completely relative. Point values should be representation of complexity and effort for the team to complete. They do
+not always map to time-to-complete, but in practice, that's usually the most useful way to estimate.
+
+These guidelines assume 2-week sprints.
 
 ### 1 Point
 
@@ -40,7 +40,8 @@ questions.
 
 ### 2 Points
 
-Not 1 and not 3. Should only take a few minutes. Many teams don't bother using 2 point values in Fibonacci.
+Not 1 and not 3. Should only take a few minutes. Many teams don't bother using 2 point values when using Fibonacci
+scale.
 
 ### 3 Points
 
@@ -64,12 +65,12 @@ might develop after work begins.
 ### 21 points
 
 Expect it will take the entire sprint. Might involve more than one person. Probably has risks and more questions once
-work begins. However, this could also simply be an effort-intensive development task that needs the full sprint.
+work begins. However, this could also simply be an effort-intensive development task that will need the full sprint.
 
 ### 21+
 
 Generally unused. If team can not estimate a story at 21 or less, then the story should be researched and/or broken down
-further before being moved in to sprint.
+further before being moved in to the sprint.
 
 ### {SPIKE}
 
@@ -154,22 +155,40 @@ User stories should almost always use the format:
 
 * "As a [persona], I [want to], [so that]."
 
-If it's not written out explicitly, it should be easily inferred. Many teams do not do this and I've seen that it often
-leads to confusion due to different viewpoints and expectations. This is especially true for people new to Scrum.
+If it's not written out explicitly, it should be easily inferred. Many teams do not do this, and I've seen that it often
+leads to confusion due to different contexts and expectations. This is especially true for teams that are new to Scrum.
 
 A personal practice is to use this even for technical enablement stories. For example:
 
 * "As a DevOp, I want a CI/CD pipeline into Alpha, so that I have a shared environment for automated builds and unit
   tests."
 
+Stories are _generally_ not meant to be Tasks, To Do Items, or Checklists. Generally, a story should describe the
+requirement, enhancement, feature, or bug. The team estimates what it would take to resolve the story. A sprint board is
+not meant to be a list of tasks to be done for that sprint. It's a list of stories that will be resolved in that sprint,
+but the actual work (tasks) it takes to do so does not always need to be part of sprint planning beyond understanding
+things well enough to be able to roughly estimate effort required. (Sometimes that does mean developers need to think
+through all the required tasks first, but not always.)
+
 ### Change is Inevitable
 
-Constant change is inevitable and reacting to it quickly is a good thing. Expect the process to have problems keeping
-up.
+Unexpected change is inevitable in software development. Sometimes that is due to external requirements changing,
+sometimes it due to new information, and sometimes it's simply due to unforeseen events. Most often it's because
+requirements couldn't be fully understood until work had progressed to some point. A software dev team that expects, and
+can react quickly, to change and new information is a good thing.
+
+Processes and tools can cause friction when there is a lot of change. Teams should be frequently assessing and weighing
+the pros and cons of any methodology being used. That assessment should be made from the view point of _all_
+constituents though. Developers sometimes forget that methodology/process/estimating/planning is important to higher
+level business concerns. Management sometimes forget that software development has non-obvious complexities that can
+make it hard to estimate or handle changes.
 
 ## Common Questions
 
-Common questions to be answered when a team adopts a scum approach.
+Below are some common questions to be answered when a team adopts a scum approach. Scrum has answers for all of these
+when in larger teams and there are dedicated people assigned to all roles. But in smaller teams, these tend to be useful
+questions. It's easy to answer "Product Owner" for most of them, but in my experience, the more a product owner can
+delegate, the better.
 
 Q) Who can/should create new stories in the backlog?
 
@@ -186,12 +205,16 @@ Q) What is the agreed upon hierarchy for epics, stories, tasks, and subtasks?
 
 Q) Can the team add stories/bugs to an active sprint? Should the team modify sprint to reflect actual work?<br/>
 _(My recommendation is that changes to active sprint be made infrequently if possible, with high priority bugs being an
-exception)_
+exception.)_
+
+_(However, a team should avoid the mindset of "We know it would be best if this was worked on immediately, but it's
+not in the current sprint, therefore we'll have to wait."  A team should never let the process get in the way of
+doing the right thing. However, developers in more formal teams should also recognize that sometimes the coach/manager
+has non-obvious reasons for certain priorities. As always... communication is key.)_
 
 Q) Can we change point values of an active sprint story when new information becomes available?<br/>
 _(My recommendation is that this is done rarely.)_
 
 Q) When a sprint ends and story is not yet complete, will we move it forward to the next sprint and keep the point value
 the same?<br/>
-_(My recommendation is, yes, unless new information becomes available. Averages over multiple sprints are what matter.
-When there are significant changes, generally better to break in to a new story instead.)_
+_(My recommendation is, yes, unless new information became available that changed the story significantly. Averages over multiple sprints are what matter. And when there are significant changes that will extend beyond a sprint, it's generally better to break in to new story (or stories).)_

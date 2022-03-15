@@ -36,7 +36,7 @@ export default {
         startOnLoad: false,
         theme: 'default',
         flowchart: {
-          useMaxWidth: false,
+          useMaxWidth: true,
         },
       })
       m.init()

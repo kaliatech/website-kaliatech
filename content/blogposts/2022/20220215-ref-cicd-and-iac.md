@@ -1,16 +1,16 @@
 ---
-title: 'Reference: CI/CD and Infrastructure-as-Code'
+title: 'Reference: DevOps, CICD, & IaC'
 createdAt: 2022-02-15
-description: Informal notes for CI/CD, IaC, and other development best-practices.
+description: Informal notes for software development concerns.
 category: misc
 ---
 
-# Thoughts on development
+These are my notes regarding software development related to DevOps, CI/CD, and IaC type concerns. I've written some
+variant of these notes for multiple companies, and I decided to post here for future reference. Much of this is
+constantly changing and even some of the below is becoming dated already.
 
-These are my own notes regarding software development. I've written some variant of these notes for multiple companies,
-and I decided to post here for future reference. These are informal, include a few opinions, and some arbitrary
-nomenclature. These are meant only as guidelines to facilitate discussion, because every environment and team is
-different.
+The notes below include opinions and arbitrary nomenclature. These are meant only as guidelines to facilitate
+discussion. Every environment and team is different.
 
 ## Contents
 
@@ -19,44 +19,44 @@ different.
 ## Overview
 
 An all encompassing approach to build pipelines and environments organization that fits all types of projects is not
-possible. My notes here _generally_ assume a project that is:
+possible. My notes here _generally_ assume a project that :
 
-* A SaaS web type project that can be deployed.
-    * Different pipelines are needed for desktop executables, native mobile apps, hardware integration libraries, etc.
+* Is a SaaS web type project that can be deployed.
+    * Different pipelines are needed for desktop apps, mobile apps, firmware, reusable libraries, etc.
 * Has a CI pipeline that will compile, run unit tests, assemble a complete package, and then deploy or upload that
-  package somewhere it can be accessed.
-* Has some level of continuous deployment. It's project dependent on how automatic and extensive the continuous deploy
-  process can be.
-* Has multiple feature branches are being worked on simultaneously by multiple developers.
-* Deployments to PROD that will usually require a manual approval.
-* Require supporting multiple previous versions of components alongside the latest version.
+  package somewhere that it can be accessed.
+* Has some level of continuous deployment. It's project dependent as to how extensive a continuous deployment process
+  can be.
+* Has multiple feature branches being worked on simultaneously by multiple developers.
+* Has deployments to PROD that will _usually_ require a manual review and approval. (And so is not 100% continuously
+  deployed)
 
 Many of my thoughts follow the [12-factor app principles](https://12factor.net/), and if not familiar, I strongly
-suggest reading through it even if it is becoming dated.
+suggest reading through it even though it is becoming dated.
 
-Everything should be managed in version control except for secrets and large binaries. This includes all configuration
-variables across environments (that aren't secrets), code-as-infrastructure, container creations, and possibly even the
-pipelines themselves (more on that below).
+All source of a project should be managed in version control except for secrets and large binaries. This includes the
+non-secret configuration variables for all environments, code-as-infrastructure source, container definitions, and
+possibly even the CI/CD pipelines themselves (more on that below).
 
-All configuration should be externalized such that a given runtime artifact can be configured to run in another
+Most configuration should be externalized such that a given runtime artifact can be configured to run in another
 environment without a recompile.
 
 ## Development Workstations
 
-Most Saas type projects should be able to be developed on OSX, Windows, Windows with WSL, Linux, etc. It should
-generally be developer choice and preference. Making build processes and developer tools work across all platforms
-sometimes takes a little extra effort, but I have found that it tends to result in more robust dev environments and
-better CI/CD pipelines.
+Most SaaS type projects should be able to be developed on OS X, Windows, Windows with WSL, Linux, etc. It should
+generally be an individual developer choice and preference. Making build processes and developer tools work across all
+platforms sometimes takes a little extra effort, but I have found that it tends to result in more robust dev
+environments and makes for CI/CD pipelines that are more closely aligned to developer setups.
 
 There are exceptions to this depending on project and team. For example:
 
-- Use of docker for development environments can almost make workstation choice irrelevant. (But, using docker for dev
-  can have some downsides too.)
-- Similarly, the use of cloud based dev environments can make local workstation choice irrelevant.
+- Use of docker in development teams can make workstation choice less irrelevant. However, using docker for a
+  completely contained dev setup has significant downsides, and I usually do not recommend.
+- Similarly, the use of cloud based development environments can make local workstation choice less relevant.
 - Certain projects are inherently platform specific. i.e. Native iOS development, native Windows graphics development,
   etc.
 - The availability of WSL on Windows makes Windows specific support in build tools less important. Many teams can/should
-  now expect Windows workstation developers do all build activities in WSL (or docker)
+  now expect Windows workstation developers do all build activities in WSL.
 
 ## Build Artifacts
 
@@ -65,18 +65,18 @@ built automatically, ideally by an automated CI/CD pipeline, resulting in a vers
 is then promoted up through the environments or referenced via dependency management. Built artifacts should not be
 managed with source control.
 
-Some environments will make use of dependency management systems. In those environments, teams should often consider
+Some teams will make use of dependency management systems. Those teams should consider
 setting up a private repository for managing and sharing internally built dependencies.
-i.e. [AWS CodeArtifact](https://aws.amazon.com/codeartifact/)
+e.g. [AWS CodeArtifact](https://aws.amazon.com/codeartifact/)
 , [JFrog Artifactory](https://jfrog.com/artifactory/), etc.
 
 ## Versioning and Releases
 
 Every build package should be [semantically versioned](https://semver.org/). i.e. MAJOR.MINOR.PATCH. How that actually
 works is dependent on team and tech stack. I often put an incremental BUILD-NUMBER in place of PATCH, but there are
-multiple options. The assigned build version should always be evident somehow and ideally encoded in to the package
+other options. The assigned build version should always be evident somehow and ideally encoded in to the package
 name. If there's a UI component, the version should be visible in the UI. It should always be relatively easy for
-anyone, even non-technical types, to say "I did/saw/experienced this while using **version X.Y.Z**". And all automatic
+anyone, even non-developers, to say "I did/saw/experienced this while using **version X.Y.Z**". And all automatic
 logging, error reporting, etc. should be able to include the version number.
 
 There are various conventions that work, but roughly:
@@ -102,7 +102,8 @@ specifically, to disable Git's insane default line ending handling.
 This is controversial to a few still, but [most would agree](https://stackoverflow.com/a/2361321/123378) that early Git
 versions made a mistake by setting the default line ending handling to be "auto". This default makes working on code
 across multiple platforms very frustrating, and it can be a hard to diagnose and later fix problem. In modern times,
-all (non-windows-specific) source files should be using LF line endings. Every modern IDE supports it without issue.
+all source files should be using LF line endings, except for Windows specific files. Every modern IDE supports LF line
+endings without issue.
 
 This:
 
@@ -128,13 +129,18 @@ Some teams expect developers to configure their git install appropriately with `
 ## Code Formatting and Conventions
 
 It's my belief that most modern development environment setups should be able to automatically format and lint code
-according to a configuration shared by everyone on the team. For instance, on my JavaScript/TypeScript projects, I will
-usually add to source control the configuration files for prettier and eslint. Both VS Code and Intellij IDEA know how
-to use them and can even be configured to automatically reformat upon save. The same rules can be applied at build time.
-Some teams will even make running prettier/eslint a part of their PR approval process.
+according to a configuration shared by everyone on the team. On my JavaScript/TypeScript projects, I will add to source
+control the configuration files for [Prettier](https://prettier.io/), [ESLint](https://eslint.org/),
+and [EditorConfig](https://editorconfig.org/). Both VS Code and Intellij IDEA know how to use them and they can even be
+configured to automatically reformat/lint using those tools upon save. The same rules can be applied at build time. Some
+teams will even make running prettier/eslint a part of their PR approval process.
+
+Whether IDE specific project files should be added to source control is project and team specific. Often times, it makes
+sense to share certain project files when multiple developers are using the same IDE. But whenever possible, IDE choice
+should be up to the individual developer.
 
 Code formatting and convention choices are almost a religious topic to some developers. Having worked across multiple
-projects and teams over the years, I've become totally ambivalent. My only suggestions:
+projects and teams over the years, I've become mostly ambivalent. My only suggestions:
 
 - Automate the formatting and any important rules enforcement as much as possible. But try not to over do it. Over
   bearing rules can have quickly diminishing returns and cause frustration.
@@ -142,19 +148,23 @@ projects and teams over the years, I've become totally ambivalent. My only sugge
   one from scratch. Alternatively, specify team specific conventions only as exceptions to any of the default and common
   industry standard rules for the language/platform being used.
 
+The ideal setup allows for project-wide automatic formatting at any time. This results in less formatting-only diffs as
+different developers work on the same code over time.
+
 ## Branching Patterns
 
 The development world is generally heading towards a set of common patterns, so some of this might seem obvious. Other
-parts are very arbitrary with multiple differing opinions that are almost religious.
+parts are very arbitrary with multiple differing opinions.
 
 I previously used GitFlow heavily, but gitflow can be complex to use, and is overkill for many projects. It's now
-considered a legacy git workflow by most teams and there are multiple alternatives, with their own trade-offs. Git Flow
-still has a place though for teams needing to support multiple product versions simultaneously.
+considered a legacy git branching strategy by most teams and there are multiple alternatives, most with their own
+trade-offs. Git Flow still has a place though for teams needing to support multiple product versions simultaneously, and
+I consider it a sort-of superset of most other strategies.
 
 * https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf
 
-This an area where being clear about the distinctions between Cloud vs. Product vs. Continuous-Deployment best practices
-and needs is important.
+This an area where being clear about the distinctions between SaaS vs On-premise, Cloud vs. Product, and
+Continuous-Deployment best practices is important because it changes the recommended git branching strategy for a team.
 
 The general procedure though (for gitflow):
 
@@ -179,21 +189,23 @@ The general procedure though (for gitflow):
 * Developer can then close and delete PR. Most teams will delete the branch at that point, or soon after, too.
 
 Any merge to the `/develop` branch is automatically versioned and built/unit-tested/deployed to the ALPHA environment.
+It might also be automatically deployed to a TEST environment where it becomes accessible to others (usually non-public)
+with some subset of data preloaded allowing for internal review.
 
 Every build package should generally be available for some period of time. Release builds should be available until
 there's no chance of them ever being referenced again.
 
-A separate procedure is used by QA and/or release managers to promote a build to `TEST/BETA/PROD`. The version promoted
+A separate procedure is used by QA and/or release managers to promote a build to `BETA` and/or `PROD`. The version promoted
 will have already been deployed to `ALPHA` first. There is no separate or new version made for releases. Part of the
 formal release `PROD` procedure should result in the MINOR version getting incremented, and the BUILDNUM/PATCH reset to
-0, for whatever comes next on the `/develop` branch. i.e. v1.0.325 gets released to customers, and at the same time, the
+0, for whatever comes next on the `/develop` branch. i.e. A v1.0.325 gets released to customers, and at the same time, the
 develop branch version gets incremented to 1.1.0.
 
 ## Continuous Integration(CI) and Continuous Deployment (CD)
 
 The basic idea for CI is that every incoming unit-of-work from developers is automatically built/tested then made
 available for upstream usages. A Jenkins server was commonly used for this in the past, but most modern solutions are
-cloud based and much easier to work with. Some popular choices (the first two being ones I'm most familiar with):
+cloud based and easier to work with. Some popular choices (the first two being ones I'm most familiar with):
 
 * [GitHub Actions](https://github.com/features/actions),
 * [AWS CodeBuild](https://aws.amazon.com/codebuild/) / [CodePipeline](https://aws.amazon.com/codepipeline/)
@@ -206,18 +218,17 @@ cloud based and much easier to work with. Some popular choices (the first two be
 
 Continuous deployment goes further and says that every incoming unit-of-work will get automatically deployed. Generally
 teams that refer to CD mean automatically deployment all the way to production, assuming the build passes all the
-automated tests along the way. It requires robust automated testing and an experienced team. A worthwhile goal, but not
-easy, or common. Continuous deployment, in its truest sense, generally only makes sense for centralized cloud systems.
-However, it can also make sense for on-premise products if those products include some sort of automatic built-in update
-routine. Again, a worthwhile goal, but not easy, or common.
+automated tests along the way. It requires robust automated testing and an experienced team. It can get complex for team
+that need to do upgrades and have minimal, to no, downtime. It generally only makes sense for centralized cloud systems
+where the dev team is in complete control of the rollout. However, it can also make sense for on-premise products
+if those products include some sort of automatic built-in update routine.
 
-There are many in-between scenarios for CD. A common one being CI/CD up to a certain stage, but deployment to production
-still gate checked by human operator.
+There are many in-between scenarios for CD. A common one being to have CI/CD up to a certain stage, but with deployment
+to production still gate checked by human operator deciding if/when/which releases to actually put in to production.
 
 ## Infrastructure as Code (IaC)
 
 Definition:
-
 
 > &ldquo;Infrastructure as code, also referred to as IaC, is a type of IT setup wherein developers or operations teams automatically manage and provision the technology stack for an application through software, rather than using a manual process to configure discrete hardware devices and operating systems. Infrastructure as code is sometimes referred to as programmable or software-defined infrastructure.
 >
@@ -228,11 +239,11 @@ Definition:
   <cite title="Stephen J. Bigelow"> Stephen J. Bigelow </cite></a>
 </footer>
 
-I find the biggest differences between a collection of bash scripts, and an IaC approach, is the level of verboseness
-and the repeatability. IaC approaches tend to be less verbose. But, not always. IaC tends to allow repeatability in that
-the IaC toolset is responsible for setting things up in a way that the devops team specifies declaratively.
+IaC approaches tend to be less verbose than more procedural scripted approaches, but aren't always. IaC tends to allow
+repeatability in that the IaC toolset is responsible for setting things up in a way that the devops team specifies
+declaratively.
 
-IaC generally has an emphasis on cloud type environments. Common IaC choices:
+IaC has an emphasis on server and cloud based systems. Common IaC choices:
 
 * [CloudFormation](https://aws.amazon.com/cloudformation/) (but only makes sense for AWS)
 * [AWS CDK](https://aws.amazon.com/cdk/) (my favorite...but only for AWS)
@@ -257,88 +268,158 @@ of projects. For example, when building custom linux images/firmware:
 ## Local, Cloud, and Serverless
 
 Many modern projects have components that exist only in the cloud. i.e. AWS Lambdas, DynamoDB, API Gateway, etc. Development
-and testing around these types of components can be cumbersome. There are emerging solutions like [LocalStack](https://github.com/localstack/localstack), [aws-sdk-mock](https://github.com/dwyl/aws-sdk-mock), etc.
+and testing with these types of components can be cumbersome. There are emerging solutions like [LocalStack](https://github.com/localstack/localstack), [aws-sdk-mock](https://github.com/dwyl/aws-sdk-mock), etc.
 
-However, with a smart CDK based pipeline, another option is for developers to create _developer specific_ environments
-as needed. I find this approach preferable to most mocking type solutions because it avoids the inevitable mismatch
-between the facades and reality.
+However, with a smart CDK based pipeline, another option is for developers to create _developer specific_ environments,
+or even complete pipelines, as needed. I find this approach preferable to most mocking type solutions because it avoids
+the inevitable mismatch between the facades and reality.
 
-Most serverless architectures do this somewhat inherently. i.e [Serverless](https://www.serverless.com/)
+Most serverless architectures provide for this concept somewhat inherently. i.e [Serverless](https://www.serverless.com/)
 , [AWS Amplify](https://aws.amazon.com/amplify/), etc.
 
 ## Containers
 
 Containers have changed the modern development and deployment landscape. Modern teams should be well versed in the
 advantages of using Docker, Docker Compose, and similar technologies for development, and testing, and deployment.
+
 DevOps teams at operating at a larger scale will also want to be familiar with Kubernetes.
 
 ## Application Source vs IaC Source vs Pipeline Source
 Consider that for a modern SaaS project, there might be three logical code bases:
- * **Application Source**
-   * The source that gets compiled for an application bundle. Configurable at runtime per environment.
- * **Environment IaC**
-   * The IaC for setting up an "environment". Often configurable for changing infrastructure size, costs, security, etc.
- * **Pipeline IaC**
-   * The IaC for setting up a CI/CD pipeline. Perhaps multiple variants of a pipeline, or perhaps multiple pipelines. 
+
+* **Application Source**
+    * The source that gets compiled and packaged in to an application bundle. Configurable at runtime per environment.
+* **Environment IaC**
+    * The IaC for setting up a server or "environment". Often, it's configurable for changing the resulting
+      infrastructure size, costs, security, etc.
+* **Pipeline IaC**
+    * The IaC for setting up a CI/CD pipeline. Perhaps multiple variants of a pipeline, or perhaps multiple pipelines.
 
 Many projects will put all of these in a single repository, and many more combine the environment and pipeline IaC (if
-they use IaC for the pipeline), but they can be considered logically distinct code bases. One reason for considering
-them distinct is that versioning and deployment aspects are sometimes different. For example, sometimes infrastructure
-changes will be one-way only and destructive.
+they use IaC for the pipeline), but they can be considered as logically distinct code bases.
+
+One reason for considering them distinct is that versioning and deployment aspects are sometimes different. For example,
+sometimes infrastructure changes will be one-way only and destructive.
+
+The environment IaC might, or might not, deploy the application bundle, instead of the pipeline doing it. That tends to be
+team and project dependent.
 
 ## Stages vs Environments vs Regions/Zones
 
-This is my personal nomenclature because I don't know the industry standard naming around much of this. I'm not really a
-DevOps expert, and I would generally recommend using naming according to the tools being used. I know that AWS CDK has a
-specific nomenclature. i.e. Constructs, Stacks, Apps, Environments, etc. The AWS CDK notion of "environment" does not
-map one-to-one with my naming of environment here.
+This is my personal nomenclature because I don't know the industry standard naming around much of this. I would
+generally recommend using naming according to the tools being used. For example, AWS CDK has specific nomenclature. i.e.
+Constructs, Stacks, Apps, Environments, etc. The AWS CDK notion of "environment" does not map one-to-one with my naming
+of environment here.
 
 **Stage**
 
-A stage represents high level state in the sequence of a pipeline. A pipeline is implemented with steps that move a build
-through stages. Example stages:
+A stage represents logical state in the sequence of a pipeline. A pipeline is implemented with steps that move a build
+through stages and do actions at each stage. Example stages:
 
-<mermaid cols="col-10 col-md-7" height="5rem" :center="false">
+<mermaid cols="col-10 col-md-7" height="7rem" :center="false">
 %%{init: {'theme': 'forest' } }%%
-graph LR
+flowchart LR
   BUILD --> ALPHA
   ALPHA --> INTEGRATION
-  INTEGRATION --> BETA
-  BETA --> PROD
-</mermaid>
-
-**Environments**
-
-An environment represents a complete and contained setup of a project, generally live and running. There will be often
-be an almost one-to-one correspondence between pipeline stages and environments, but not always. Example environments:
-<mermaid cols="col-12 col-md-9" height="5rem" :center="false">
-%%{init: {'theme': 'forest' } }%%
-graph LR
-  DEV --> dc[DEV-CLOUD]
-  dc --> ALPHA
-  ALPHA --> TEST
+  INTEGRATION --> TEST 
   TEST --> BETA
   BETA --> PROD
 </mermaid>
 
-Advanced IaC setups allow for easy and creation (and teardown) of arbitrary new environments, such that perhaps each
-developer will have their own DEV-CLOUD environment. Testers can create their own environments as needed, etc.
+
+A complete pipeline might look something like this:
+
+<!-- subgraph_padding workaround comes from here: https://github.com/mermaid-js/mermaid/issues/1209 -->
+<mermaid cols="col-12 col-md-9" height="100%" :center="false">
+%%{init: {'theme': 'forest' } }%%
+flowchart LR
+  classDef subgraph_padding fill:none,stroke:none
+subgraph pipeline
+direction LR
+    subgraph BGRAPH["BUILD"]
+      subgraph 1 [ ]
+      direction TB
+      S[(SOURCE)] --- BUILD       
+      BUILD --> UNITTEST
+      UNITTEST --> PACKAGE
+      end
+    end
+    BGRAPH --> ALPHAGRAPH
+    subgraph ALPHAGRAPH["ALPHA_INTEGRATION"]
+        subgraph 2 [ ]
+        ALPHA_INFRA --> ALPHA_DEPLOY        
+        ALPHA_DEPLOY --> AUTO_INTEGRATION_TESTS
+        end
+    end
+    ALPHAGRAPH --> TESTGRAPH
+    subgraph TESTGRAPH["USER_TEST"]
+        subgraph 3 [ ]
+        TEST_INFRA --> TEST_DB_RESET         
+        TEST_DB_RESET --> TEST_DEPLOY        
+        end
+    end
+    TESTGRAPH --> BETAGRAPH
+    subgraph BETAGRAPH["BETA"]
+        subgraph 4 [ ]
+        BETA_INFRA --> BETA_DB_SNAP
+        BETA_DB_SNAP --> BETA_DEPLOY        
+        end
+    end
+    BETAGRAPH --> pd{"release?"}
+    pd --> PRODGRAPH
+    subgraph PRODGRAPH["PROD"]
+        subgraph 5 [ ]
+        PROD_BACKUP --> PROD_INFRA        
+        PROD_INFRA --> PROD_DEPLOY        
+        end
+    end
+end
+class 1 subgraph_padding
+class 2 subgraph_padding
+class 3 subgraph_padding
+class 4 subgraph_padding
+class 5 subgraph_padding
+</mermaid>
+
+<br>
+<br>
+
+**Environments**
+
+An deployment environment represents a complete and contained setup of a project, generally live and running. There will often be
+an almost one-to-one correspondence between pipeline stages and environments, but not always. Example environments:
+<mermaid cols="col-12 col-md-9" height="10rem" :center="false">
+%%{init: {'theme': 'forest' } }%%
+flowchart LR
+  DEV-LOCAL --> B
+  dc[DEV-CLOUD] --> B
+  B[[BUILD]] --> ALPHA
+  subgraph "deploy environments"
+  ALPHA --> TEST
+  TEST --> BETA
+  BETA --> PROD
+  end
+</mermaid>
+
+Advanced IaC based teams cab allow for fast and easy creation (and teardown) of arbitrary new environments, such that perhaps each
+developer will have their own DEV-CLOUD environment per branch, testers can create their own environments as needed, etc.
 
 **Regions/Zones**
 
-Related: distribution groups, rollout targets, availability zones, etc. At larger scales and for projects with uptime
+See also: distribution groups, blue/green, rollout targets, availability zones, blast radius, etc. At larger scales and for projects with uptime
 requirements, redundancy needs, etc., a logical environment (i.e. PROD) might contain multiple subgroups organized by
-region, spread, and other possibilities. An example regional organization:
+region, blast radius, and other possibilities. An example of regional organization:
 
 <mermaid cols="col-10 col-sm-9" height="20rem" :center="false">
 %%{init: {'theme': 'forest' } }%%
-graph LR
-    A[PROD] -->|Deploy1| B(North America)
-    B --> G{Precheck}
+flowchart LR
+    A[PROD] -->|1| B(North America)
+    B --> CHECK{Check}
     B --> C[West Coast]
     B --> D[East Coast]
-    A -->|Deploy2| E(Europe)
-    A -->|Deploy3| F(Asia)
+    A -->|2| E(Europe)
+    A -->|3| F(Asia)
+    A -->|4| G(India)
 </mermaid>
 
 ## AWS Account Management
@@ -347,7 +428,7 @@ Environments can be organized multiple ways in AWS. Examples:
 
 * All environments in a single AWS account
 * One AWS account per environment
-* Multiple environments in a shared AWS account, but PROD in its own AWS account
+* Multiple environments in a single shared AWS account, but PROD in its own AWS account
 * Accounts (and environments) created on demand (perhaps for developer or load testing)
 
 In general, my recommendation is to use one AWS account per environment when the environment will be long-lived and
@@ -359,8 +440,14 @@ shared. And then one AWS account per developer/tester. reasons:
 * Giving each developer/tester their own account provides a lot of freedom and flexibility, while still maintaining
   accountability.
 
-Managing multiple environments in AWS has become much easier over the years, and is now generally considered a best
-practice for most teams. Useful AWS services, with the first two being the ones I have the most experience with:
+Managing multiple AWS accounts has become much easier over the years, and is now generally considered
+a[best practice](https://docs.aws.amazon.com/cdk/v2/guide/best-practices.html) for most teams. It can quickly get
+overly [complex](https://aws.amazon.com/organizations/getting-started/best-practices/) if not careful though, and there
+are
+many [in-between options and recommendations](https://serverless-stack.com/chapters/structure-environments-across-aws-accounts.html)
+.
+
+Useful AWS services, with the first two being the ones I have the most experience with:
 
 * [AWS Organizations](https://aws.amazon.com/organizations/)
 * [AWS Single Sign-On](https://aws.amazon.com/single-sign-on/)
