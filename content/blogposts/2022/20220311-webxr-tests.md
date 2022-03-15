@@ -232,7 +232,7 @@ I have seen some impressive experiments around bringing a browser view in to a W
 best.
 
 - https://threejs.org/docs/#examples/en/renderers/CSS3DRenderer
-- https://forum.babylonjs.com/t/html-in-3d-space-part-2-bjs-way-to-matrix-transform/3214
+- https://forum.babylonjs.com/t/how-write-html-in-babylon-gui-rectangle/28415/3
 - https://forum.babylonjs.com/t/the-babylonjs-scene-explorer-and-inspector-in-realtime-in-3d-with-two-way-event-binding/23857/17
     - <- uses WebRTC to bring in to 3D, and very impressive for what it is.
 
