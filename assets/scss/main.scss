@@ -59,6 +59,21 @@ div.blog-post a {
   text-decoration: none;
 }
 
+div.blog-post blockquote {
+  margin-left: 2rem;
+  font-size: $font-size-base;
+  font-style: italic;
+}
+
+div.blog-post .blockquote-footer {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+blockquote {
+  @extend .blockquote;
+}
+
 .video-container {
   margin-bottom: 2rem;
 }
@@ -126,8 +141,4 @@ div.blog-post a {
   .jumbotron h1.display-4 {
     font-size: $display4-size * 0.75;
   }
-}
-
-blockquote {
-  @extend .blockquote;
 }
