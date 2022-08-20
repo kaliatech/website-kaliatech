@@ -64,6 +64,11 @@ export default {
           url: 'https://www.rottentomatoes.com/m/the_secret_of_kells',
         },
         {
+          title: 'RRR',
+          artist: '2022',
+          url: 'https://www.rottentomatoes.com/m/rrr',
+        },        
+        {
           title: 'Interstellar',
           artist: '2014',
           url: 'https://www.rottentomatoes.com/m/interstellar_2014',
@@ -102,6 +107,11 @@ export default {
           title: 'Gladiator',
           artist: '2000',
           url: 'https://www.rottentomatoes.com/m/gladiator/',
+        },
+        {
+          title: 'Starship Troopers',
+          artist: '1997',
+          url: 'https://www.rottentomatoes.com/m/starship_troopers',
         },
         {
           title: 'Up in the Air',
