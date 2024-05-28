@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/BaseLayout.astro'
+import MapChart from '../components-client/ContactMap/ContactMap'
+
+import iconLinkedIn from '../assets/i/icons/linkedin.svg?raw'
+import iconSo from '../assets/i/icons/stackoverflow.svg?raw'
+import iconGithub from '../assets/i/icons/github.svg?raw'
+import iconGlobe from '../assets/i/icons/globe.svg?raw'
+import SocialIcon from '../components/contact/SocialIcon.astro'
+---
+
+<Layout title="Contact | Kaliatech">
+  <div class="my-4">
+    <h1>Contact</h1>
+    <h2 class="my-4">Social Links</h2>
+    <div class="flex flex-wrap gap-4">
+      <SocialIcon
+        name="LinkedIn"
+        iconSvg={iconLinkedIn}
+        url="https://www.linkedin.com/in/jgsanderson/"
+      />
+      <SocialIcon
+        name="StackOverflow"
+        iconSvg={iconSo}
+        url="https://stackoverflow.com/users/123378/kaliatech"
+      />
+      <SocialIcon name="GitHub" iconSvg={iconGithub} url="https://github.com/kaliatech" />
+      <SocialIcon name="JGS Technical" iconSvg={iconGlobe} url="https://jgstechnical.com" />
+    </div>
+  </div>
+  <div class="my-8">
+    <h2 class="my-4">Details</h2>
+
+    <div class="my-4 flex flex-col">
+      <div>
+        email <a class="link" href="mailto:info@jgstechnical.com">info@jgstechnical.com</a>
+      </div>
+      <div>
+        phone <a class="link" href="tel:+1-814-359-9317">+1 814.359.9317 USA</a>
+      </div>
+      <!--<div>© 2024</div>-->
+    </div>
+  </div>
+
+  <div class="flex min-h-1 min-w-1">
+    <MapChart client:only="react" />
+  </div>
+</Layout>

@@ -1,34 +1,23 @@
 # website-kaliatech
 
-> Personal website of Josh S.
+> Personal website for Josh S.
 
 ## Build Setup
 
-``` bash
+```shell
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
-$ nuxt dev
+# develop with HMR at http://localhost:4321
+$ npm run dev
 
-# build for production
-$ nuxt generate
+# build static for deploy
+$ npm run build
 ```
 
+## History
 
-## Nuxt Dev with Docker
-```bash
-docker-compose -f /mnt/c/Projects/kaliatech-utils/dockers/kaliatech-websites/docker-compose.yaml up -d
+### 2024-05-25
 
-// Run nuxt
-docker exec -it localdev-kaliatech-websites_nuxt_1 /bin/bash
-npm run dev
-
-// Generate images
-docker exec -it localdev-kaliatech-websites_sigal_1 /bin/bash
-sigal build
-
-// Teardown
-docker-compose -f /mnt/c/Projects/kaliatech-utils/dockers/kaliatech-websites/docker-compose.yaml down
-
-```
+- Switched from Nuxt build to Astro build
+- Switched from bootstrap CSS to tailwind css

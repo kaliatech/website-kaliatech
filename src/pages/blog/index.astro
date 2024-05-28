@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/BaseLayout.astro'
+
+import { getCollection, getEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+
+const allBlogPosts = await getCollection('blog')
+const blogPostsSorted = allBlogPosts.sort((a, b) => {
+  return new Date(b.data.createdAt) - new Date(a.data.createdAt)
+})
+
+const blogPostsByYear = new Map<number, CollectionEntry<'blog'>>()
+blogPostsSorted.forEach((post) => {
+  const year = new Date(post.data.createdAt).getFullYear()
+  if (!blogPostsByYear.has(year)) {
+    blogPostsByYear.set(year, [])
+  }
+  blogPostsByYear.get(year).push(post)
+})
+
+// const allBlogPosts = await getCollection('blog').sort((a, b) => {
+//   return new Date(b.createdAt) - new Date(a.createdAt)
+// })
+
+//console.log('allBlogPosts', allBlogPosts)
+---
+
+<Layout title="Kaliatech">
+  <div class="my-4">
+    <h1>Blog</h1>
+    <p>Required reading, IMO.</p>
+  </div>
+  {
+    Array.from(blogPostsByYear.keys()).map((year) => (
+      <div class="mb-8">
+        <h2>{year}</h2>
+        <ul class="ml-8 list-disc space-y-4">
+          {blogPostsByYear.get(year).map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}`} class="font-bold">
+                {post.data.title}
+              </a>
+              <br />
+              {post.data.description}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</Layout>
