@@ -13,7 +13,6 @@ Rough videos showing early experiments with ARCore. Native android development u
 <a href="https://kotlinlang.org/">Kotlin</a>
 . Demos below were running on a Pixel 2.
 
-
 <h2>Translucency, Interaction, & Animation</h4>
 <div class="video-container">
     <div class="video-responsive">

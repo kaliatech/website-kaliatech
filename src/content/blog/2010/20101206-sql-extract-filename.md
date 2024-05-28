@@ -4,6 +4,7 @@ createdAt: 2010-12-06
 description: A test for syntax coloring on this blog.
 category: misc
 ---
+
 The following works on MySQL to extract base filename component of a complete file path.
 
 ```sql

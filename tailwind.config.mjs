@@ -36,17 +36,26 @@ export default {
           950: '#05080A',
         },
       },
-      // fontFamily: {
-      //   sans: ['Raleway Variable', ...defaultTheme.fontFamily.sans],
-      // },
+      fontFamily: {
+        sans: ['"Open Sans Variable"', ...defaultTheme.fontFamily.sans],
+      },
       typography: {
         DEFAULT: {
           css: {
             //maxWidth: '80ch', // add required value here
             maxWidth: 'none', // add required value here
-          }
-        }
-      }
+            h2: {
+              fontSize: '1.25rem',
+              fontWeight: 600,
+            },
+            p: {
+              'p > li': {
+                border: '2px solid red',
+              },
+            },
+          },
+        },
+      },
     },
   },
   extend: {},
@@ -66,14 +75,14 @@ export default {
       {
         light: {
           ...require('daisyui/src/theming/themes')['light'],
-          primary: '#233443',
+          primary: '#2C4256',
           // secondary: 'teal',
           //['base-100']: 'oklch(var(--b1))',
           //'base-100': 'rgb(20,20,20)',
         },
         dark: {
           ...require('daisyui/src/theming/themes')['dark'],
-          primary: '#678DB1',
+          primary: '#637487',
           // secondary: 'teal',
         },
       },

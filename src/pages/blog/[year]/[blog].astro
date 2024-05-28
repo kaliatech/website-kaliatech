@@ -24,81 +24,108 @@ const { post } = Astro.props
 
 const allBlogPosts = await getCollection('blog')
 const blogPostsSorted = allBlogPosts.sort((a, b) => {
-  return new Date(b.data.createdAt) - new Date(a.data.createdAt)
+  return new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()
 })
 const blogPostsArr = Array.from(blogPostsSorted)
 const currIdx = blogPostsArr.findIndex((post) => post.slug === `${year}/${blogId}`)
-console.log('currIdx', currIdx)
 
 const prevPost = currIdx > 0 ? blogPostsArr[currIdx - 1] : null
 const nextPost = currIdx < blogPostsArr.length - 1 ? blogPostsArr[currIdx + 1] : null
 
-const { Content, headings } = await post.render()
+const { Content } = await post.render()
 ---
 
 <BaseLayout title={`${post.data.title} | Blog | Kaliatech`}>
-  <div class="my-4">
+  <div class="mb-8 mt-4">
     <h1>{post.data.title}</h1>
     <small class="dateline">{formatUtcDate(post.data.createdAt)}</small>
   </div>
   <!--<p>{post.content}</p>-->
-  <Prose>
-    <Content />
-    <div class="mt-8">
-      category: {post.data.category}
-      <hr class="my-2" />
-      <div class="flex">
-        <div class="flex-1 flex-grow justify-start">
-          {
-            prevPost && (
-              <>
-                <a href={`/blog/${prevPost.slug}`}>&lt;&lt; previous</a>
-                <br />
-                {prevPost.data.title}
-              </>
-            )
-          }
-        </div>
-        <div class="flex-1 flex-grow justify-center text-center">
-          <a href="/blog">^ Up ^</a><br />
-          Blog Index
-        </div>
-        <div class="flex-1 flex-grow justify-end text-right">
-          {
-            nextPost && (
-              <>
-                <a href={`/blog/${nextPost.slug}`}>next &gt;&gt;</a>
-                <br />
-                {nextPost.data.title}
-              </>
-            )
-          }
+  <div class="blog">
+    <Prose class="blog">
+      <Content />
+      <div class="mt-8">
+        category: {post.data.category}
+        <hr class="my-2" />
+        <div class="flex">
+          <div class="flex-1 flex-grow justify-start">
+            {
+              prevPost && (
+                <>
+                  <a href={`/blog/${prevPost.slug}`}>&lt;&lt; previous</a>
+                  <br />
+                  {prevPost.data.title}
+                </>
+              )
+            }
+          </div>
+          <div class="flex-1 flex-grow justify-center text-center">
+            <a href="/blog">^ Up ^</a><br />
+            Blog Index
+          </div>
+          <div class="flex-1 flex-grow justify-end text-right">
+            {
+              nextPost && (
+                <>
+                  <a href={`/blog/${nextPost.slug}`}>next &gt;&gt;</a>
+                  <br />
+                  {nextPost.data.title}
+                </>
+              )
+            }
+          </div>
         </div>
       </div>
-    </div>
-  </Prose>
+    </Prose>
+  </div>
 </BaseLayout>
 <style is:global>
-  figure {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  .blog {
+    figure {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
 
     a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      font-weight: 600;
     }
-  }
-  .figure-img {
-    border-radius: 12px;
-    max-width: 100%;
-    margin: 0;
-  }
 
-  @media (min-width: 1024px) {
     .figure-img {
-      max-width: 66%;
+      border-radius: 12px;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .prose p:has(+ ul) {
+      margin-top: 1.25em;
+      margin-bottom: 0;
+    }
+
+    .prose ul,
+    .prose ol {
+      margin: 0 0 1.25em;
+    }
+    .prose li {
+      margin: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .prose .figure-img {
+        max-width: 66%;
+      }
+    }
+
+    .prose p {
+      line-height: 22px;
+      font-size: 13px;
+      font-weight: 500;
     }
   }
 </style>

@@ -3,8 +3,8 @@ title: A Gentleman in Moscow
 createdAt: 2020-05-20
 description: 'Book recommendations and a few passages.'
 category: quotes
-
 ---
+
 <div class="row">
   <div class="col">
     <p>

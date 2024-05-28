@@ -6,7 +6,7 @@ import iconLinkedIn from '../assets/i/icons/linkedin.svg?raw'
 import iconSo from '../assets/i/icons/stackoverflow.svg?raw'
 import iconGithub from '../assets/i/icons/github.svg?raw'
 import iconGlobe from '../assets/i/icons/globe.svg?raw'
-import SocialIcon from '../components/contact/SocialIcon.astro'
+import { LinkButton } from '../components/buttons/LinkButton'
 ---
 
 <Layout title="Contact | Kaliatech">
@@ -14,18 +14,30 @@ import SocialIcon from '../components/contact/SocialIcon.astro'
     <h1>Contact</h1>
     <h2 class="my-4">Social Links</h2>
     <div class="flex flex-wrap gap-4">
-      <SocialIcon
-        name="LinkedIn"
+      <LinkButton
+        label="LinkedIn"
         iconSvg={iconLinkedIn}
-        url="https://www.linkedin.com/in/jgsanderson/"
+        href="https://www.linkedin.com/in/jgsanderson/"
+        width="10rem"
       />
-      <SocialIcon
-        name="StackOverflow"
+      <LinkButton
+        label="StackOverflow"
         iconSvg={iconSo}
-        url="https://stackoverflow.com/users/123378/kaliatech"
+        href="https://stackoverflow.com/users/123378/kaliatech"
+        width="10rem"
       />
-      <SocialIcon name="GitHub" iconSvg={iconGithub} url="https://github.com/kaliatech" />
-      <SocialIcon name="JGS Technical" iconSvg={iconGlobe} url="https://jgstechnical.com" />
+      <LinkButton
+        label="GitHub"
+        iconSvg={iconGithub}
+        href="https://github.com/kaliatech"
+        width="10rem"
+      />
+      <LinkButton
+        label="JGS Technical"
+        href="https://jgstechnical.com"
+        iconSvg={iconGlobe}
+        width="10rem"
+      />
     </div>
   </div>
   <div class="my-8">

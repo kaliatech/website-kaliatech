@@ -1,5 +1,5 @@
 ---
-title: "Reference: Scrum points"
+title: 'Reference: Scrum points'
 createdAt: 2022-02-11
 description: Informal notes for software development scrum.
 category: misc
@@ -20,9 +20,9 @@ together, and guidelines like these can help get started.
 
 Reasons for estimating with points:
 
-* As developers, there should be a general agreement on the level of effort that will be needed to complete a given
+- As developers, there should be a general agreement on the level of effort that will be needed to complete a given
   story. Agreement helps with estimation accuracy and making sure the story is sufficiently defined.
-* As managers and planners, point related metrics will become useful for estimating and prioritizing future work.
+- As managers and planners, point related metrics will become useful for estimating and prioritizing future work.
 
 Point values, velocity, & capacity are relative to a team and have little meaning outside that team. I am providing
 my suggestions here as a starting point for point values, but these are only suggestions.
@@ -153,14 +153,14 @@ actually get done in a sprint.
 
 User stories should almost always use the format:
 
-* "As a [persona], I [want to], [so that]."
+- "As a [persona], I [want to], [so that]."
 
 If it's not written out explicitly, it should be easily inferred. Many teams do not do this, and I've seen that it often
 leads to confusion due to different contexts and expectations. This is especially true for teams that are new to Scrum.
 
 A personal practice is to use this even for technical enablement stories. For example:
 
-* "As a DevOp, I want a CI/CD pipeline into Alpha, so that I have a shared environment for automated builds and unit
+- "As a DevOp, I want a CI/CD pipeline into Alpha, so that I have a shared environment for automated builds and unit
   tests."
 
 Stories are _generally_ not meant to be Tasks, To Do Items, or Checklists. Generally, a story should describe the
@@ -201,14 +201,14 @@ Q) What is the agreed upon hierarchy for epics, stories, tasks, and subtasks?
 **Epic** - Estimated with t-shirt sizes<br/>
 &nbsp;&nbsp;**Story** - Estimated with points<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**Tasks** - Not estimated. Used to show todos/acceptance-criterias/requirements, and sometimes to show progress within a story. Sometimes useful for handling finer-grained pre-requisite relationships and blockers<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Subtasks** - Not used for any planning purposes.<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Subtasks** - Not used for any planning purposes.<br/>
 
 Q) Can the team add stories/bugs to an active sprint? Should the team modify sprint to reflect actual work?<br/>
 _(My recommendation is that changes to active sprint be made infrequently if possible, with high priority bugs being an
 exception.)_
 
 _(However, a team should avoid the mindset of "We know it would be best if this was worked on immediately, but it's
-not in the current sprint, therefore we'll have to wait."  A team should never let the process get in the way of
+not in the current sprint, therefore we'll have to wait." A team should never let the process get in the way of
 doing the right thing. However, developers in more formal teams should also recognize that sometimes the coach/manager
 has non-obvious reasons for certain priorities. As always... communication is key.)_
 

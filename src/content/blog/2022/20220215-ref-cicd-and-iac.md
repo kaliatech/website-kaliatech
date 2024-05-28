@@ -21,14 +21,14 @@ discussion. Every environment and team is different.
 An all encompassing approach to build pipelines and environments organization that fits all types of projects is not
 possible. My notes here _generally_ assume a project that :
 
-* Is a SaaS web type project that can be deployed.
-    * Different pipelines are needed for desktop apps, mobile apps, firmware, reusable libraries, etc.
-* Has a CI pipeline that will compile, run unit tests, assemble a complete package, and then deploy or upload that
+- Is a SaaS web type project that can be deployed.
+  - Different pipelines are needed for desktop apps, mobile apps, firmware, reusable libraries, etc.
+- Has a CI pipeline that will compile, run unit tests, assemble a complete package, and then deploy or upload that
   package somewhere that it can be accessed.
-* Has some level of continuous deployment. It's project dependent as to how extensive a continuous deployment process
+- Has some level of continuous deployment. It's project dependent as to how extensive a continuous deployment process
   can be.
-* Has multiple feature branches being worked on simultaneously by multiple developers.
-* Has deployments to PROD that will _usually_ require a manual review and approval. (And so is not 100% continuously
+- Has multiple feature branches being worked on simultaneously by multiple developers.
+- Has deployments to PROD that will _usually_ require a manual review and approval. (And so is not 100% continuously
   deployed)
 
 Many of my thoughts follow the [12-factor app principles](https://12factor.net/), and if not familiar, I strongly
@@ -81,11 +81,11 @@ logging, error reporting, etc. should be able to include the version number.
 
 There are various conventions that work, but roughly:
 
-* Every shared build gets an incremental BUILDNUM (or incremented PATCH).
-* Every "release" results in the MINOR getting incremented. What constitutes a release is dependent on project, but
+- Every shared build gets an incremental BUILDNUM (or incremented PATCH).
+- Every "release" results in the MINOR getting incremented. What constitutes a release is dependent on project, but
   usually after something gets pushed to PROD, or is made available to customers, then the working source gets a version
   bump in prep for the next release.
-* Very large feature changes, or large backwards incompatible or API breaking changes, should result in MAJOR getting
+- Very large feature changes, or large backwards incompatible or API breaking changes, should result in MAJOR getting
   incremented.
 
 Note that products might be versioned separately from their components in more complex projects and organizations.
@@ -107,19 +107,19 @@ endings without issue.
 
 This:
 
-```gitattributes
+```
 *     text eol=lf
 ```
 
 or _maybe_ this:
 
-```gitattributes
+```
 *     text=input
 ```
 
 but never this (which is the default):
 
-```gitattributes
+```
 *     text=auto
 ```
 
@@ -161,32 +161,32 @@ considered a legacy git branching strategy by most teams and there are multiple 
 trade-offs. Git Flow still has a place though for teams needing to support multiple product versions simultaneously, and
 I consider it a sort-of superset of most other strategies.
 
-* https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf
+- https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf
 
 This an area where being clear about the distinctions between SaaS vs On-premise, Cloud vs. Product, and
 Continuous-Deployment best practices is important because it changes the recommended git branching strategy for a team.
 
 The general procedure though (for gitflow):
 
-* A `/main` branch holds the gold copy of source. It generally represents the latest release. It should always be
+- A `/main` branch holds the gold copy of source. It generally represents the latest release. It should always be
   confidently deployable/releasable.
 
-* A `/develop` branch holds the latest code changes shared by developers. Any merge to `/develop` will immediately and
+- A `/develop` branch holds the latest code changes shared by developers. Any merge to `/develop` will immediately and
   automatically be built/tested and then deployed to `ALPHA`.
-* When needed (for long-lived releases and products), a `/release-x.y.z` branch is created for managing hotfixes, etc.
+- When needed (for long-lived releases and products), a `/release-x.y.z` branch is created for managing hotfixes, etc.
   This allows work to be done on a release without holding up ongoing development.
-* Developers work on `/feature/xxx` and `/bugfix/xxx` branches.
-* When a developer completes their unit of work, they submit a PR against `/develop`.
-    * Some organizations will automatically run CI and unit tests against the PR when it is created. Many open source
-      projects do this on Github.
-* When it makes sense, the developer submitting the PR can assign it for review to a specific person. When there is no
+- Developers work on `/feature/xxx` and `/bugfix/xxx` branches.
+- When a developer completes their unit of work, they submit a PR against `/develop`.
+  - Some organizations will automatically run CI and unit tests against the PR when it is created. Many open source
+    projects do this on Github.
+- When it makes sense, the developer submitting the PR can assign it for review to a specific person. When there is no
   one specific person that should review it (which is ideal on an agile team), then anyone on the team should review
   when they have some time. It becomes a shared responsibility, and usually works well in small teams.
-* Reviewer can supply comments, questions, suggestions on the PR. Sometimes a response from the developer is required,
+- Reviewer can supply comments, questions, suggestions on the PR. Sometimes a response from the developer is required,
   sometimes not.
-* If/when reviewer feels it's acceptable to merge the PR, then they give a simple :thumbsup. At that point, developer
+- If/when reviewer feels it's acceptable to merge the PR, then they give a simple :thumbsup. At that point, developer
   can merge in with whatever way makes the most sense. (Sometimes as merge, sometimes as a rebase.)
-* Developer can then close and delete PR. Most teams will delete the branch at that point, or soon after, too.
+- Developer can then close and delete PR. Most teams will delete the branch at that point, or soon after, too.
 
 Any merge to the `/develop` branch is automatically versioned and built/unit-tested/deployed to the ALPHA environment.
 It might also be automatically deployed to a TEST environment where it becomes accessible to others (usually non-public)
@@ -207,14 +207,14 @@ The basic idea for CI is that every incoming unit-of-work from developers is aut
 available for upstream usages. A Jenkins server was commonly used for this in the past, but most modern solutions are
 cloud based and easier to work with. Some popular choices (the first two being ones I'm most familiar with):
 
-* [GitHub Actions](https://github.com/features/actions),
-* [AWS CodeBuild](https://aws.amazon.com/codebuild/) / [CodePipeline](https://aws.amazon.com/codepipeline/)
-* [Gitlab](https://gitlab.com)
-* [TravisCI](https://travis-ci.org/)
-* [CircleCI](https://circleci.com/)
-* [Atlassian Bamboo](https://www.atlassian.com/software/bamboo)
-* [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
-* [Jenkins](https://jenkins.io/)
+- [GitHub Actions](https://github.com/features/actions),
+- [AWS CodeBuild](https://aws.amazon.com/codebuild/) / [CodePipeline](https://aws.amazon.com/codepipeline/)
+- [Gitlab](https://gitlab.com)
+- [TravisCI](https://travis-ci.org/)
+- [CircleCI](https://circleci.com/)
+- [Atlassian Bamboo](https://www.atlassian.com/software/bamboo)
+- [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+- [Jenkins](https://jenkins.io/)
 
 Continuous deployment goes further and says that every incoming unit-of-work will get automatically deployed. Generally
 teams that refer to CD mean automatically deployment all the way to production, assuming the build passes all the
@@ -245,12 +245,12 @@ declaratively.
 
 IaC has an emphasis on server and cloud based systems. Common IaC choices:
 
-* [CloudFormation](https://aws.amazon.com/cloudformation/) (but only makes sense for AWS)
-* [AWS CDK](https://aws.amazon.com/cdk/) (my favorite...but only for AWS)
-* [Terraform](https://www.terraform.io/)
-* [Ansible](https://www.ansible.com/)
-* [Puppet](https://puppet.com/)
-* [Chef](https://www.chef.io/)
+- [CloudFormation](https://aws.amazon.com/cloudformation/) (but only makes sense for AWS)
+- [AWS CDK](https://aws.amazon.com/cdk/) (my favorite...but only for AWS)
+- [Terraform](https://www.terraform.io/)
+- [Ansible](https://www.ansible.com/)
+- [Puppet](https://puppet.com/)
+- [Chef](https://www.chef.io/)
 
 From past experience, I would avoid Puppet and Chef. They are heavy-handed and require significant expertise. I don't
 know Terraform or Ansible well enough to have strong opinions.
@@ -285,15 +285,16 @@ advantages of using Docker, Docker Compose, and similar technologies for develop
 DevOps teams at operating at a larger scale will also want to be familiar with Kubernetes.
 
 ## Application Source vs IaC Source vs Pipeline Source
+
 Consider that for a modern SaaS project, there might be three logical code bases:
 
-* **Application Source**
-    * The source that gets compiled and packaged in to an application bundle. Configurable at runtime per environment.
-* **Environment IaC**
-    * The IaC for setting up a server or "environment". Often, it's configurable for changing the resulting
-      infrastructure size, costs, security, etc.
-* **Pipeline IaC**
-    * The IaC for setting up a CI/CD pipeline. Perhaps multiple variants of a pipeline, or perhaps multiple pipelines.
+- **Application Source**
+  - The source that gets compiled and packaged in to an application bundle. Configurable at runtime per environment.
+- **Environment IaC**
+  - The IaC for setting up a server or "environment". Often, it's configurable for changing the resulting
+    infrastructure size, costs, security, etc.
+- **Pipeline IaC**
+  - The IaC for setting up a CI/CD pipeline. Perhaps multiple variants of a pipeline, or perhaps multiple pipelines.
 
 Many projects will put all of these in a single repository, and many more combine the environment and pipeline IaC (if
 they use IaC for the pipeline), but they can be considered as logically distinct code bases.
@@ -325,7 +326,6 @@ flowchart LR
   TEST --> BETA
   BETA --> PROD
 </mermaid>
-
 
 A complete pipeline might look something like this:
 
@@ -391,14 +391,14 @@ an almost one-to-one correspondence between pipeline stages and environments, bu
 <mermaid cols="col-12 col-md-9" height="10rem" :center="false">
 %%{init: {'theme': 'forest' } }%%
 flowchart LR
-  DEV-LOCAL --> B
-  dc[DEV-CLOUD] --> B
-  B[[BUILD]] --> ALPHA
-  subgraph "deploy environments"
-  ALPHA --> TEST
-  TEST --> BETA
-  BETA --> PROD
-  end
+DEV-LOCAL --> B
+dc[DEV-CLOUD] --> B
+B[[BUILD]] --> ALPHA
+subgraph "deploy environments"
+ALPHA --> TEST
+TEST --> BETA
+BETA --> PROD
+end
 </mermaid>
 
 Advanced IaC based teams cab allow for fast and easy creation (and teardown) of arbitrary new environments, such that perhaps each
@@ -426,18 +426,18 @@ flowchart LR
 
 Environments can be organized multiple ways in AWS. Examples:
 
-* All environments in a single AWS account
-* One AWS account per environment
-* Multiple environments in a single shared AWS account, but PROD in its own AWS account
-* Accounts (and environments) created on demand (perhaps for developer or load testing)
+- All environments in a single AWS account
+- One AWS account per environment
+- Multiple environments in a single shared AWS account, but PROD in its own AWS account
+- Accounts (and environments) created on demand (perhaps for developer or load testing)
 
 In general, my recommendation is to use one AWS account per environment when the environment will be long-lived and
 shared. And then one AWS account per developer/tester. reasons:
 
-* It's easier to keep track of costs per environment (and per person) that way.
-* Sometimes environments will have external dependencies, integrations, or differing infosec requirements that limit
+- It's easier to keep track of costs per environment (and per person) that way.
+- Sometimes environments will have external dependencies, integrations, or differing infosec requirements that limit
   what an environment can contain.
-* Giving each developer/tester their own account provides a lot of freedom and flexibility, while still maintaining
+- Giving each developer/tester their own account provides a lot of freedom and flexibility, while still maintaining
   accountability.
 
 Managing multiple AWS accounts has become much easier over the years, and is now generally considered
@@ -449,10 +449,10 @@ many [in-between options and recommendations](https://serverless-stack.com/chapt
 
 Useful AWS services, with the first two being the ones I have the most experience with:
 
-* [AWS Organizations](https://aws.amazon.com/organizations/)
-* [AWS Single Sign-On](https://aws.amazon.com/single-sign-on/)
-* [AWS Control Tower](https://aws.amazon.com/controltower/)
-* [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
+- [AWS Organizations](https://aws.amazon.com/organizations/)
+- [AWS Single Sign-On](https://aws.amazon.com/single-sign-on/)
+- [AWS Control Tower](https://aws.amazon.com/controltower/)
+- [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
 
 ## Autoscaling, Metrics, and Logging
 

@@ -8,6 +8,7 @@ category: projects
 Simple tracked robot with accurate speed controls and responsive first-person-view (FPV) for remote control.
 
 Components:
+
 <ul>
   <li>
     <a href="https://www.amazon.com/MOUNTAIN_ARK-Tracked-Platform-Aluminum-Raspberry/dp/B0746FYXYQ">

@@ -4,6 +4,7 @@ createdAt: 2011-05-01
 description: Joystick control of a BlinkM RGB LED.
 category: projects
 ---
+
 <p>
   The PC reads the joystick position and communicates messages to a
   <a href="https://www.parallax.com/catalog/microcontrollers/propeller">Parallax Propellor microcontroller</a>

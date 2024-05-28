@@ -21,7 +21,6 @@ category: quotes
 > patterns will repeat themselves in the succeeding government. There’s so much talk about the system. And so
 > little understanding.&rdquo;
 
-
 <footer class="blockquote-footer">
 Robert M Pirsiq in
 <a href="https://en.wikipedia.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance">

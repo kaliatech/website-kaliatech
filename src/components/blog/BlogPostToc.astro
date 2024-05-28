@@ -1,0 +1,41 @@
+---
+import { getEntry } from 'astro:content'
+
+const params = Astro.params
+
+// TODO: This is empty when component is used from an mdx, but why?
+//const { post } = Astro.props
+// console.log('params', params)
+// console.log('post', post)
+
+// Because of that, we have to retrieve/render a second time just to get the list of headings
+const blogPost = await getEntry('blog', `${params.year}/${params.blog}`)
+if (!blogPost) {
+  return {
+    status: new Response(null, { status: 404 }),
+  }
+}
+const { headings } = await blogPost.render()
+
+const tocHeadings = headings.map((heading) => {
+  return {
+    depth: heading.depth,
+    text: heading.text,
+    slug: heading.slug,
+  }
+})
+---
+
+<div>
+  <ul>
+    {
+      tocHeadings
+        .filter((heading) => heading.text !== 'Contents')
+        .map((heading) => (
+          <li style={`margin-left:${(heading.depth - 2) * 2}rem`}>
+            <a href={`#${heading.slug}`}>{heading.text}</a>
+          </li>
+        ))
+    }
+  </ul>
+</div>

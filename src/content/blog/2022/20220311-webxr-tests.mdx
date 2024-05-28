@@ -3,10 +3,14 @@ title: WebXR Tests & Notes
 createdAt: 2022-03-11T00:00:00Z
 description: Browser based VR tests using Babylon.js and a Meta Quest 2.
 category: projects
+#params: () => JSON.stringify(Astro.params)
 ---
 
+import BlogPostToc from '../../../components/blog/BlogPostToc.astro'
+
 ## Contents
-<blog-post-toc :toc=toc></blog-post-toc>
+
+<BlogPostToc />
 
 ## Overview
 
@@ -27,21 +31,16 @@ Most of the functionality will seem to work across all browsers and devices, inc
 are meant to be viewed within a VR headset. I did not optimize for mobile or desktop interactions. Testing was done with
 a Meta Quest 2.
 
-<div class="row">
-  <div class="col col-md-2"></div>
-  <div class="col-12 col-md-8 align-self-center">
-    <figure class="figure">
-      <a href="https://webxr-tests-3.kaliatech.com/test4">
-        <img src="/i/blog/2022/webxr-tests/webxr-test-4-falls.jpg" class="figure-img"/>
-      </a>
-      <figcaption class="figure-caption text-center">
-        <!-- eslint-disable-next-line -->
-        <span>360° photo from <a href="https://webxr-tests-3.kaliatech.com/test4">Test 4</a></span>
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col col-md-2"></div>  
-</div>
+<figure class="figure">
+  <a href="https://webxr-tests-3.kaliatech.com/test4">
+    <img src="/i/blog/2022/webxr-tests/webxr-test-4-falls.jpg" class="figure-img" />
+  </a>
+  <figcaption class="figure-caption text-center">
+    <span>
+      360° photo from <a href="https://webxr-tests-3.kaliatech.com/test4">Test 4</a>
+    </span>
+  </figcaption>
+</figure>
 
 ## Why WebXR
 
@@ -80,7 +79,7 @@ Meta announced support for PWAs on Oculus in October 2021. The initial example P
 is fully supported.
 
 - [Get started developing Progressive Web Apps](https://developer.oculus.com/pwa/) - Oculus
-    - Video: [Bringing 2D Apps to VR's Infinite Screen](https://www.facebook.com/watch/?v=4637130066326723)
+  - Video: [Bringing 2D Apps to VR's Infinite Screen](https://www.facebook.com/watch/?v=4637130066326723)
 - [PWAs on Oculus Quest 2](https://web.dev/pwas-on-oculus-2/) - Thomas Steiner
 
 A key point is that Meta is making these PWAs discoverable on the Oculus store alongside native apps.
@@ -125,8 +124,8 @@ standardization and documentation around VR180 format handling is surprising. Th
 is that there are so few examples of 3D 180° video, especially at higher resolutions.
 
 The best examples of higher quality 180° video, within WebXR, are currently seen only in the adult industry, afaik. (
-If anyone knows of good public examples elsewhere, please let me know! It would be great to link to them.)  A leader in
-that space _seems_ to be a company called [Dreamcam](https://dreamcamtrue.com/). They sell their live VR video
+If anyone knows of good public examples elsewhere, please let me know! It would be great to link to them.) A leader in
+that space _seems_ to be a company called [Dreamcam](https://hub.dreamcam.com/en/wiki). They sell their live VR video
 streaming/chat services to adult sites as a white label provider. The UIs being used once you enter the XR space are
 some of the best I've seen in real world WebXR applications to-date. I'm not sure what the apps are being developed
 with, but I would like to know. I've seen two different versions, both very well done.
@@ -139,12 +138,13 @@ my own demos to work. One difficultly in building custom demos though is finding
 If anyone wants to send me a Canon camera and VR lens, please do.
 
 See also:
+
 - [How to - VR 180 Video Files by John Daro](https://www.johndaro.com/blog/2021/9/11/vr-180-video-files)
 - [Hugh Hou's YouTube Video Channel](https://www.youtube.com/c/HughHouFilm/videos)
-    - The best source for experiencing high quality immersive video and seeing latest camera options. He also releases
-      to Oculus TV.
+  - The best source for experiencing high quality immersive video and seeing latest camera options. He also releases
+    to Oculus TV.
 - [Encoding High-Resolution 360 and 180 Video for Oculus Quest](https://creator.oculus.com/blog/encoding-high-resolution-360-and-180-video-for-oculus-go/)
-    - Somewhat outdated and not 100% applicable to video in WebXR.
+  - Somewhat outdated and not 100% applicable to video in WebXR.
 
 ## Live Video Streaming
 
@@ -210,7 +210,7 @@ optimization is referred to as Multiview. For more info:
 - https://immersive-web.github.io/webxr-samples/layers-samples/proj-multiview.html
 
 Babylon.js 5 has support for enabling the multiview extension, but as of 5.0.0-rc.2, enabling it causes problems with
-anti-aliasing. A lot of this is still emerging and is not specific to Babylon.js. Relevant discussion: [WebGL Issue #2912 - Multisampled multiview support](https://github.com/KhronosGroup/WebGL/issues/2912). 
+anti-aliasing. A lot of this is still emerging and is not specific to Babylon.js. Relevant discussion: [WebGL Issue #2912 - Multisampled multiview support](https://github.com/KhronosGroup/WebGL/issues/2912).
 
 Once it's fully supported, it should improve performance. I don't know if there will be other ramifications though. For
 example, I believe shaders must be written carefully to work with multiview.
@@ -242,9 +242,9 @@ best.
 - [CSS3DRenderer](https://threejs.org/docs/#examples/en/renderers/CSS3DRenderer) (has been [sort-of ported to Babylon.js](https://forum.babylonjs.com/t/html-in-3d-space-part-2-bjs-way-to-matrix-transform/3214))
 - [Potential ways to get HTML in a Babyon.js Texture](https://forum.babylonjs.com/t/how-write-html-in-babylon-gui-rectangle/28415/3) - @carolhmj
 - [Explorer and Inspector in realtime in 3D with two way event binding](https://forum.babylonjs.com/t/the-babylonjs-scene-explorer-and-inspector-in-realtime-in-3d-with-two-way-event-binding/23857/17) - @roland
-    - Uses WebRTC to bring in to 3D. 
-    - Has some level of input interaction support.
-    - I don't think could be used for DOM layer in a generic sense, but still, very impressive.
+  - Uses WebRTC to bring in to 3D.
+  - Has some level of input interaction support.
+  - I don't think could be used for DOM layer in a generic sense, but still, very impressive.
 
 The Unity ecosystem has components to bring in full webviews to the XR space. This can be seen in various
 meeting and social apps that allow placing and interacting with a web browser. Example:
@@ -257,7 +257,7 @@ intuitive, has limitations, and generally does not allow for interactivity.
 
 ## Download Size
 
-For reference, the total package size of the entire webxr-tests-3 site is <3MB (700k gzipped), not including the 3D
+For reference, the total package size of the entire webxr-tests-3 site is &lt;3MB (700k gzipped), not including the 3D
 models (glTF) and textures. As would be expected, the majority of that package size (~2.5MB) comes from a tree shaken
 babylon.js bundle which is shared across all pages. This is substantially less than the minimal size of a Unity app.
 
@@ -265,7 +265,7 @@ The compact size was achieved by using
 the [ES6 module variant](https://doc.babylonjs.com/divingDeeper/developWithBjs/treeShaking) of Babylon, explicit
 imports, and Vite's tree shaking.
 
-A simpler WebXR experience can be even smaller, especially if not needing Babylon's GUI modules. I believe <1MB if not
+A simpler WebXR experience can be even smaller, especially if not needing Babylon's GUI modules. I believe &lt;1MB if not
 needing to support loading the higher fidelity WebXR device controller models which are glTF models and textures that
 get loaded over the Internet from
 the [WebXR Input Profiles Registry](https://immersive-web.github.io/webxr-input-profiles/) whenever WebXR is
@@ -277,30 +277,30 @@ Personal thoughts:
 
 - Unity
 
-    - Currently is the most feature complete VR development environment.
-    - Supports doing almost anything that can be imagined in VR, up to device hardware limitations.
-    - Asset store has some useful components. For
-      example, [Auto Hand](https://assetstore.unity.com/packages/tools/physics/auto-hand-vr-physics-interaction-165323)
-      is amazing.
-    - Performance and graphics fidelity can be very good, but requires knowledge and experience. Not always easy yet.
-      i.e Compositor Layers, aka WebXR Layers
-    - Some frustrations:
-        - Ongoing changes and attempts to move to industry standardizations are making things confusing. A lot of
-          documentation is out-of-date and versions are mismatched. (i.e XR plugin vs Oculus plugin)
-        - There is ongoing work regarding how best to support VR development in Unity, and it has been changing from
-          2021.x to 2022.x. For example, hot reloading changes on android/oculus.
-        - The multiple rendering pipeline options of Unity can be confusing and problematic, especially when targeting
-          devices like Meta Quest 2. The newer pipeline has impressive quality and generally seems to work on Quest, but
-          afaik, there still aren't best practices or recommendations. At least, none that aren't out-of-date.
+  - Currently is the most feature complete VR development environment.
+  - Supports doing almost anything that can be imagined in VR, up to device hardware limitations.
+  - Asset store has some useful components. For
+    example, [Auto Hand](https://assetstore.unity.com/packages/tools/physics/auto-hand-vr-physics-interaction-165323)
+    is amazing.
+  - Performance and graphics fidelity can be very good, but requires knowledge and experience. Not always easy yet.
+    i.e Compositor Layers, aka WebXR Layers
+  - Some frustrations:
+    - Ongoing changes and attempts to move to industry standardizations are making things confusing. A lot of
+      documentation is out-of-date and versions are mismatched. (i.e XR plugin vs Oculus plugin)
+    - There is ongoing work regarding how best to support VR development in Unity, and it has been changing from
+      2021.x to 2022.x. For example, hot reloading changes on android/oculus.
+    - The multiple rendering pipeline options of Unity can be confusing and problematic, especially when targeting
+      devices like Meta Quest 2. The newer pipeline has impressive quality and generally seems to work on Quest, but
+      afaik, there still aren't best practices or recommendations. At least, none that aren't out-of-date.
 
 - Unreal Engine 4/5
 
-    - I prefer the Unreal IDE and architecture over Unity for a few reasons, but its VR support still seems well behind
-      Unity's. I'm hopeful that will change with the impending release of UE5 and there are some signs that it will.
-    - The achievable performance and graphics fidelity when using Unreal _should_ be better than with unity. That has
-      yet to be shown, _in a Quest app_ though, afaik. And even though Unreal can be better, I suspect it will often
-      come with a development/complexity cost.
-    - It's unclear to me if/how UE will handle faster developer iterations for VR development.
+  - I prefer the Unreal IDE and architecture over Unity for a few reasons, but its VR support still seems well behind
+    Unity's. I'm hopeful that will change with the impending release of UE5 and there are some signs that it will.
+  - The achievable performance and graphics fidelity when using Unreal _should_ be better than with unity. That has
+    yet to be shown, _in a Quest app_ though, afaik. And even though Unreal can be better, I suspect it will often
+    come with a development/complexity cost.
+  - It's unclear to me if/how UE will handle faster developer iterations for VR development.
 
 ## Aside: Insta360 ONE X2 Vulnerabilities
 
@@ -309,7 +309,7 @@ experiment with. While researching ways to do extra low latency live-streaming, 
 available SDK. I then started noticing some apparent vulnerabilities, and about that same time, someone on reddit
 confirmed those vulnerabilities and more:
 
-* [Egregious vulnerabilities of Insta360 ONE X2](https://www.reddit.com/r/Insta360/comments/scsue6/really_cool_insta360_one_x2_hidden_feature/)
+- [Egregious vulnerabilities of Insta360 ONE X2](https://www.reddit.com/r/Insta360/comments/scsue6/really_cool_insta360_one_x2_hidden_feature/)
 
 Summarized, anyone in wifi range can access a turned on Insta360 ONE 2 to view captured videos, start recordings, etc.
 No hacking is needed if you know the _globally hardcoded password_. It's hard to believe until you see it.

@@ -8,13 +8,16 @@ category: projects
 Examples demonstrating how to dynamically load down-sampled data, while zooming and panning, without modifying dygraphs.
 
 **Documentation**
-* https://kaliatech.github.io/dygraphs-dynamiczooming-example/example1.html
+
+- https://kaliatech.github.io/dygraphs-dynamiczooming-example/example1.html
 
 **Examples**
- * https://kaliatech.github.io/dygraphs-dynamiczooming-example/
+
+- https://kaliatech.github.io/dygraphs-dynamiczooming-example/
 
 **Source**
-* https://github.com/kaliatech/dygraphs-dynamiczooming-example
+
+- https://github.com/kaliatech/dygraphs-dynamiczooming-example
 
 **Screenshot**
 

@@ -17,7 +17,6 @@ category: quotes
 > privately to your colleagues, some of whom certainly feel as you do; but what do they say? They say, 'It's
 > not so bad' or 'You're seeing things' or 'You're an alarmist.'
 
-
 > And you are an alarmist. You are saying that this must lead to this, and you can't prove it. These are the
 > beginnings, yes; but how do you know for sure when you don't know the end, and how do you know, or even
 > surmise, the end? On the one hand, your enemies, the law, the regime, the Party, intimidate you. On the
@@ -31,7 +30,6 @@ category: quotes
 > '33. But of course this isn't the way it happens. In between come all the hundreds of little steps, some of
 > them imperceptible, each of them preparing you not to be shocked by the next. Step C is not so much worse
 > than Step B, and, if you did not make a stand at Step B, why should you at Step C? And so on to Step D.
-
 
 > And one day, too late, your principles, if you were ever sensible of them, all rush in upon you. The burden
 > of self-deception has grown too heavy, and some minor incident, in my case my little boy, hardly more than a

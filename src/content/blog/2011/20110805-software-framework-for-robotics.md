@@ -1,10 +1,8 @@
 ---
-
-title: "Software Framework for Robotics"
+title: 'Software Framework for Robotics'
 createdAt: 2011-08-05
 description: Framework for interfacing a computer to the physical world.
 category: projects
-
 ---
 
 <p class="lead">Basis for experimentation around interfacing a computer to the physical world.</p>

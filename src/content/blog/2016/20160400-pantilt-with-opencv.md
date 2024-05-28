@@ -1,10 +1,8 @@
 ---
-
-title: "Pan/Tilt with OpenCV"
+title: 'Pan/Tilt with OpenCV'
 createdAt: 2016-04-01
 description: Using face detection to drive pan/tilt camera.
 category: projects
-
 ---
 
 <p class="lead">Face tracking to drive a Pan/Tilt</p>

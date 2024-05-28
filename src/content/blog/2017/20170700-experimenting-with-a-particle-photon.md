@@ -5,7 +5,6 @@ description: Demo of the particle.io photon MCU and platform.
 category: projects
 ---
 
-
 The
 <a href="https://www.particle.io/products/hardware/photon-wifi-dev-kit">Photon</a>
 , made by
@@ -32,6 +31,7 @@ connected:
 </div>
 
 All programming, compiling, and updates were done using the browser based IDE:
+
 <div class="text-center">
   <a href="/static/i/projects/2017/photon/particle-build-001.png">
     <figure class="figure">
@@ -81,4 +81,3 @@ accessible anywhere there&#8217;s cellular coverage. Very cool.
 
 The Photon and Electron are great matches for Internet-of-Things (IoT) type ideas. IoT might be a buzzword, but even so,
 the related platforms and devices coming about to support IoT are opening up a whole new level of possibilities.
-

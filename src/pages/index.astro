@@ -1,45 +1,45 @@
 ---
 import Layout from '../layouts/BaseLayout.astro'
-import ExpertiseCard from '../components/home/ExpertiseCard.astro'
-
 import { Image } from 'astro:assets'
-import bgMain3b from '../assets/bg-main-kt-001.jpg'
-import ExperienceSection from '../components/home/ExperienceSection.astro'
+//import bgMain3b from '../assets/bg-main-kt-001.jpg'
 //const bgMain3bStyle = `background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(138,38,38,0.8), rgba(38,38,38,1)), url('${bgMain3b.src}');`
-const bgMain3bStyleSrc = bgMain3b.src
-const bgImgUrl = bgMain3bStyleSrc
+//const bgMain3bStyleSrc = bgMain3b.src
+//const bgImgUrl = bgMain3bStyleSrc
 
 import spacemanImg from '../assets/i/spaceman.gif'
+import { LinkButton } from '../components/buttons/LinkButton'
 ---
 
 <Layout title="Kaliatech">
   <div class="bg1 flex items-center overflow-hidden bg-cover bg-center bg-no-repeat">
     <!-- Note the blur filter also somewhat blurs the text. Hard to notice. backdrop-blur-sm-->
     <div
-      class="mt-4 flex-grow rounded-2xl bg-opacity-50 bg-gradient-to-b from-theme-400/50 to-theme-900/50 px-16 pb-20 pt-14 backdrop-blur-sm dark:bg-theme-700 dark:bg-opacity-50"
+      class="mt-4 flex-grow rounded-2xl bg-gray-200 px-16 pb-20 pt-14 backdrop-blur-sm dark:bg-theme-700 dark:bg-opacity-50"
     >
       <div class="relative flex">
-        <Image src={spacemanImg} alt="spaceman" class="ml-[-24px] max-h-[250px] w-auto pr-8 pt-8" />
+        <Image src={spacemanImg} alt="spaceman" class="ml-[-24px] mt-2 max-h-[200px] w-auto pr-8" />
 
-        <div>
+        <div class="w-full">
           <span
-            class="absolute mx-auto box-content flex w-fit select-none border-none bg-white bg-clip-text py-4 pb-3 text-center text-5xl font-light text-transparent blur-md md:text-[5.5rem]"
+            class="invisible absolute mx-auto box-content flex w-fit select-none border-none bg-clip-text py-4 pb-3 text-center text-5xl font-light text-transparent blur-md md:text-[4rem] dark:visible dark:bg-white"
           >
             Kaliatech
           </span>
           <h1
-            class="relative top-0 flex h-auto w-fit select-auto bg-clip-text py-4 pb-3 text-center text-5xl font-light text-white md:text-[5.5rem]"
+            class="relative top-0 flex h-auto w-fit select-auto bg-clip-text py-4 pb-3 text-center text-5xl font-light text-theme-off_black md:text-[4rem] dark:text-white"
           >
             Kaliatech
           </h1>
           <!--<h1 class="pb-3 pl-2 text-5xl font-light text-white md:text-[5.5rem]">Kaliatech</h1>-->
-          <h2 class="py-3 font-extralight text-white">Online space for Josh's random interests.</h2>
-          <hr class="mb-4 mt-4" />
+          <h2 class="w-100 py-1 font-light text-theme-off_black dark:text-white">
+            Online space for Josh's random interests.
+          </h2>
+          <hr class="mb-6 mt-4 border-theme-off_black opacity-20 dark:border-white" />
           <div class="flex flex-wrap gap-2">
-            <a href="/blog" class="btn w-[8rem]">Blog</a>
-            <a href="/photos" class="btn w-[8rem]">Photos</a>
-            <a href="/bookmarks" class="btn w-[8rem]">Bookmarks</a>
-            <a href="/contact" class="btn w-[8rem]">Contact</a>
+            <LinkButton label="Blog" href="/blog" />
+            <LinkButton label="Photos" href="/photos" />
+            <LinkButton label="Bookmarks" href="/Bookmarks" />
+            <LinkButton label="Contact" href="/Contact" />
           </div>
         </div>
       </div>

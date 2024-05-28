@@ -10,11 +10,11 @@ at a time when the web audio recording API implementation in Safari/iOS was new 
 
 **Client**
 
-* https://kaliatech.github.io/web-audio-recording-tests/dist/
+- https://kaliatech.github.io/web-audio-recording-tests/dist/
 
 **Source**
 
-* https://github.com/kaliatech/web-audio-recording-tests
+- https://github.com/kaliatech/web-audio-recording-tests
 
 **Screenshot**
 

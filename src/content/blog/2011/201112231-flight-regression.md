@@ -52,7 +52,7 @@ to <a href="https://killedbygoogle.com/">killedbygoogle</a>.
 
 ## Demonstration Videos
 
-These videos show software I developed before "single-page-application" was a common term. 
+These videos show software I developed before "single-page-application" was a common term.
 
 <div class="video-container">
     <div class="video-responsive">
@@ -82,14 +82,12 @@ These videos show software I developed before "single-page-application" was a co
     <div class="media-caption">In this accident there were three relevant aircraft.</div>
 </div>
 
-
-
-
 ## Screenshots and Brochures
+
 <blog-post-photos-simple :photos=photos></blog-post-photos-simple>
 
 ## Defunct Website
-* http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html
+
+- http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html
 
 Most of this website is no longer functional, but it still gives some sense to how things worked.
-

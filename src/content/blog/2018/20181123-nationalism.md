@@ -4,6 +4,7 @@ createdAt: 2018-10-17
 description: Passage from "Notes on Nationalism".
 category: quotes
 ---
+
 > &ldquo;A nationalist is one who thinks solely, or mainly, in terms of competitive prestige. He may be a
 > positive or a negative nationalist—that is, he may use his mental energy either in boosting or in
 > denigrating—but at any rate his thoughts always turn on victories, defeats, triumphs and humiliations. He
@@ -20,4 +21,3 @@ George Orwell in
   <cite title="Notes on Nationalism"> Notes on Nationalism </cite></a
 >
 </footer>
-
