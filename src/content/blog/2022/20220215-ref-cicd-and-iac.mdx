@@ -5,6 +5,9 @@ description: Informal notes for software development concerns.
 category: misc
 ---
 
+import BlogPostToc from '../../../components/blog/BlogPostToc.astro'
+import { MermaidBlock } from '../../../components-client/MermaidBlock.tsx'
+
 These are my notes regarding software development related to DevOps, CI/CD, and IaC type concerns. I've written some
 variant of these notes for multiple companies, and I decided to post here for future reference. Much of this is
 constantly changing and even some of the below is becoming dated already.
@@ -14,7 +17,7 @@ discussion. Every environment and team is different.
 
 ## Contents
 
-<blog-post-toc :toc=toc></blog-post-toc>
+<BlogPostToc />
 
 ## Overview
 
@@ -22,7 +25,7 @@ An all encompassing approach to build pipelines and environments organization th
 possible. My notes here _generally_ assume a project that :
 
 - Is a SaaS web type project that can be deployed.
-  - Different pipelines are needed for desktop apps, mobile apps, firmware, reusable libraries, etc.
+- Different pipelines are needed for desktop apps, mobile apps, firmware, reusable libraries, etc.
 - Has a CI pipeline that will compile, run unit tests, assemble a complete package, and then deploy or upload that
   package somewhere that it can be accessed.
 - Has some level of continuous deployment. It's project dependent as to how extensive a continuous deployment process
@@ -177,8 +180,8 @@ The general procedure though (for gitflow):
   This allows work to be done on a release without holding up ongoing development.
 - Developers work on `/feature/xxx` and `/bugfix/xxx` branches.
 - When a developer completes their unit of work, they submit a PR against `/develop`.
-  - Some organizations will automatically run CI and unit tests against the PR when it is created. Many open source
-    projects do this on Github.
+- Some organizations will automatically run CI and unit tests against the PR when it is created. Many open source
+  projects do this on Github.
 - When it makes sense, the developer submitting the PR can assign it for review to a specific person. When there is no
   one specific person that should review it (which is ideal on an agile team), then anyone on the team should review
   when they have some time. It becomes a shared responsibility, and usually works well in small teams.
@@ -230,13 +233,14 @@ to production still gate checked by human operator deciding if/when/which releas
 
 Definition:
 
-> &ldquo;Infrastructure as code, also referred to as IaC, is a type of IT setup wherein developers or operations teams automatically manage and provision the technology stack for an application through software, rather than using a manual process to configure discrete hardware devices and operating systems. Infrastructure as code is sometimes referred to as programmable or software-defined infrastructure.
+> Infrastructure as code, also referred to as IaC, is a type of IT setup wherein developers or operations teams automatically manage and provision the technology stack for an application through software, rather than using a manual process to configure discrete hardware devices and operating systems. Infrastructure as code is sometimes referred to as programmable or software-defined infrastructure.
 >
-> The concept of infrastructure as code is similar to programming scripts, which are used to automate IT processes. However, scripts are primarily used to automate a series of static steps that must be repeated numerous times across multiple servers. Infrastructure as code uses higher-level or descriptive language to code more versatile and adaptive provisioning and deployment processes.&rdquo;
+> The concept of infrastructure as code is similar to programming scripts, which are used to automate IT processes. However, scripts are primarily used to automate a series of static steps that must be repeated numerous times across multiple servers. Infrastructure as code uses higher-level or descriptive language to code more versatile and adaptive provisioning and deployment processes.
 
 <footer class="blockquote-footer">
-<a href="https://searchitoperations.techtarget.com/definition/Infrastructure-as-Code-IAC">
-  <cite title="Stephen J. Bigelow"> Stephen J. Bigelow </cite></a>
+  <a href="https://searchitoperations.techtarget.com/definition/Infrastructure-as-Code-IAC">
+    <cite title="Stephen J. Bigelow"> Stephen J. Bigelow </cite>
+  </a>
 </footer>
 
 IaC approaches tend to be less verbose than more procedural scripted approaches, but aren't always. IaC tends to allow
@@ -289,12 +293,12 @@ DevOps teams at operating at a larger scale will also want to be familiar with K
 Consider that for a modern SaaS project, there might be three logical code bases:
 
 - **Application Source**
-  - The source that gets compiled and packaged in to an application bundle. Configurable at runtime per environment.
+- The source that gets compiled and packaged in to an application bundle. Configurable at runtime per environment.
 - **Environment IaC**
-  - The IaC for setting up a server or "environment". Often, it's configurable for changing the resulting
-    infrastructure size, costs, security, etc.
+- The IaC for setting up a server or "environment". Often, it's configurable for changing the resulting
+  infrastructure size, costs, security, etc.
 - **Pipeline IaC**
-  - The IaC for setting up a CI/CD pipeline. Perhaps multiple variants of a pipeline, or perhaps multiple pipelines.
+- The IaC for setting up a CI/CD pipeline. Perhaps multiple variants of a pipeline, or perhaps multiple pipelines.
 
 Many projects will put all of these in a single repository, and many more combine the environment and pipeline IaC (if
 they use IaC for the pipeline), but they can be considered as logically distinct code bases.
@@ -317,92 +321,98 @@ of environment here.
 A stage represents logical state in the sequence of a pipeline. A pipeline is implemented with steps that move a build
 through stages and do actions at each stage. Example stages:
 
-<mermaid cols="col-10 col-md-7" height="7rem" :center="false">
-%%{init: {'theme': 'forest' } }%%
+<MermaidBlock
+  client:only="react"
+  diagram={`
+%%\{init: \{'theme': 'forest' \} \}%%
 flowchart LR
   BUILD --> ALPHA
   ALPHA --> INTEGRATION
-  INTEGRATION --> TEST 
+  INTEGRATION --> TEST
   TEST --> BETA
-  BETA --> PROD
-</mermaid>
+  BETA --> PROD`}
+/>
 
 A complete pipeline might look something like this:
 
-<!-- subgraph_padding workaround comes from here: https://github.com/mermaid-js/mermaid/issues/1209 -->
-<mermaid cols="col-12 col-md-9" height="100%" :center="false">
-%%{init: {'theme': 'forest' } }%%
+<MermaidBlock
+  client:only="react"
+  diagram={`
+%%\{init: \{'theme': 'forest' \} \}%%
 flowchart LR
-  classDef subgraph_padding fill:none,stroke:none
+classDef subgraph_padding fill:none,stroke:none
 subgraph pipeline
 direction LR
-    subgraph BGRAPH["BUILD"]
-      subgraph 1 [ ]
-      direction TB
-      S[(SOURCE)] --- BUILD       
-      BUILD --> UNITTEST
-      UNITTEST --> PACKAGE
-      end
-    end
-    BGRAPH --> ALPHAGRAPH
-    subgraph ALPHAGRAPH["ALPHA_INTEGRATION"]
-        subgraph 2 [ ]
-        ALPHA_INFRA --> ALPHA_DEPLOY        
-        ALPHA_DEPLOY --> AUTO_INTEGRATION_TESTS
-        end
-    end
-    ALPHAGRAPH --> TESTGRAPH
-    subgraph TESTGRAPH["USER_TEST"]
-        subgraph 3 [ ]
-        TEST_INFRA --> TEST_DB_RESET         
-        TEST_DB_RESET --> TEST_DEPLOY        
-        end
-    end
-    TESTGRAPH --> BETAGRAPH
-    subgraph BETAGRAPH["BETA"]
-        subgraph 4 [ ]
-        BETA_INFRA --> BETA_DB_SNAP
-        BETA_DB_SNAP --> BETA_DEPLOY        
-        end
-    end
-    BETAGRAPH --> pd{"release?"}
-    pd --> PRODGRAPH
-    subgraph PRODGRAPH["PROD"]
-        subgraph 5 [ ]
-        PROD_BACKUP --> PROD_INFRA        
-        PROD_INFRA --> PROD_DEPLOY        
-        end
-    end
+subgraph BGRAPH["BUILD"]
+subgraph 1 [ ]
+direction TB
+S[(SOURCE)] --- BUILD
+BUILD --> UNITTEST
+UNITTEST --> PACKAGE
+end
+end
+BGRAPH --> ALPHAGRAPH
+subgraph ALPHAGRAPH["ALPHA_INTEGRATION"]
+subgraph 2 [ ]
+ALPHA_INFRA --> ALPHA_DEPLOY
+ALPHA_DEPLOY --> AUTO_INTEGRATION_TESTS
+end
+end
+ALPHAGRAPH --> TESTGRAPH
+subgraph TESTGRAPH["USER_TEST"]
+subgraph 3 [ ]
+TEST_INFRA --> TEST_DB_RESET
+TEST_DB_RESET --> TEST_DEPLOY
+end
+end
+TESTGRAPH --> BETAGRAPH
+subgraph BETAGRAPH["BETA"]
+subgraph 4 [ ]
+BETA_INFRA --> BETA_DB_SNAP
+BETA_DB_SNAP --> BETA_DEPLOY
+end
+end
+BETAGRAPH --> pd{"release?"}
+pd --> PRODGRAPH
+subgraph PRODGRAPH["PROD"]
+subgraph 5 [ ]
+PROD_BACKUP --> PROD_INFRA
+PROD_INFRA --> PROD_DEPLOY
+end
+end
 end
 class 1 subgraph_padding
 class 2 subgraph_padding
 class 3 subgraph_padding
 class 4 subgraph_padding
-class 5 subgraph_padding
-</mermaid>
+class 5 subgraph_padding`}
+/>
 
-<br>
-<br>
+<br />
+<br />
 
 **Environments**
 
 An deployment environment represents a complete and contained setup of a project, generally live and running. There will often be
 an almost one-to-one correspondence between pipeline stages and environments, but not always. Example environments:
-<mermaid cols="col-12 col-md-9" height="10rem" :center="false">
-%%{init: {'theme': 'forest' } }%%
-flowchart LR
-DEV-LOCAL --> B
-dc[DEV-CLOUD] --> B
-B[[BUILD]] --> ALPHA
-subgraph "deploy environments"
-ALPHA --> TEST
-TEST --> BETA
-BETA --> PROD
-end
-</mermaid>
 
-Advanced IaC based teams cab allow for fast and easy creation (and teardown) of arbitrary new environments, such that perhaps each
-developer will have their own DEV-CLOUD environment per branch, testers can create their own environments as needed, etc.
+<MermaidBlock
+  client:only="react"
+  diagram={`
+      %%\{init: \{'theme': 'forest' \} \}%%
+    flowchart LR
+    DEV-LOCAL --> B
+    dc[DEV-CLOUD] --> B
+    B[[BUILD]] --> ALPHA
+    subgraph "deploy environments"
+    ALPHA --> TEST
+    TEST --> BETA
+    BETA --> PROD
+    end`}
+/>
+Advanced IaC based teams cab allow for fast and easy creation (and teardown) of arbitrary new environments,
+such that perhaps each developer will have their own DEV-CLOUD environment per branch, testers can create
+their own environments as needed, etc.
 
 **Regions/Zones**
 
@@ -410,17 +420,19 @@ See also: distribution groups, blue/green, rollout targets, availability zones, 
 requirements, redundancy needs, etc., a logical environment (i.e. PROD) might contain multiple subgroups organized by
 region, blast radius, and other possibilities. An example of regional organization:
 
-<mermaid cols="col-10 col-sm-9" height="20rem" :center="false">
-%%{init: {'theme': 'forest' } }%%
-flowchart LR
-    A[PROD] -->|1| B(North America)
-    B --> CHECK{Check}
-    B --> C[West Coast]
-    B --> D[East Coast]
-    A -->|2| E(Europe)
-    A -->|3| F(Asia)
-    A -->|4| G(India)
-</mermaid>
+<MermaidBlock
+  client:only="react"
+  diagram={`
+%%\{init: \{'theme': 'forest' \} \}%%
+  flowchart LR
+  A[PROD] -->|1| B(North America)
+  B --> CHECK{Check}
+  B --> C[West Coast]
+  B --> D[East Coast]
+  A -->|2| E(Europe)
+  A -->|3| F(Asia)
+  A -->|4| G(India)`}
+/>
 
 ## AWS Account Management
 

@@ -5,7 +5,7 @@ description: Passage from "Notes on Nationalism".
 category: quotes
 ---
 
-> &ldquo;A nationalist is one who thinks solely, or mainly, in terms of competitive prestige. He may be a
+> A nationalist is one who thinks solely, or mainly, in terms of competitive prestige. He may be a
 > positive or a negative nationalist—that is, he may use his mental energy either in boosting or in
 > denigrating—but at any rate his thoughts always turn on victories, defeats, triumphs and humiliations. He
 > sees history, especially contemporary history, as the endless rise and decline of great power units and
@@ -13,7 +13,7 @@ category: quotes
 > rival is on the downgrade. But finally, it is important not to confuse nationalism with mere worship of
 > success. The nationalist does not go on the principle of simply ganging up with the strongest side. On the
 > contrary, having picked his side, he persuades himself that it is the strongest and is able to stick to his
-> belief even when the facts are overwhelmingly against him.&rdquo;
+> belief even when the facts are overwhelmingly against him.
 
 <footer class="blockquote-footer">
 George Orwell in

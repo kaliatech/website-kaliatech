@@ -22,7 +22,7 @@ is connected to the Photon. There&#8217;s also a
 connected:
 
 <div class="text-center">
-  <a href="/static/i/projects/2017/photon/P1080779-1920.jpg">
+  <a href="/i/projects/2017/photon/P1080779-1920.jpg">
     <figure class="figure">
       <img class="figure-img img-fluid rounded" src="/i/projects/2017/photon/P1080779-1920.jpg" />
       <figcaption class="figure-caption text-center">Photon breadboarded with RHT03 and RGB LED Stick</figcaption>
@@ -33,7 +33,7 @@ connected:
 All programming, compiling, and updates were done using the browser based IDE:
 
 <div class="text-center">
-  <a href="/static/i/projects/2017/photon/particle-build-001.png">
+  <a href="/i/projects/2017/photon/particle-build-001.png">
     <figure class="figure">
       <img class="figure-img img-fluid rounded" src="/i/projects/2017/photon/particle-build-001.png" />
       <figcaption class="figure-caption text-center">Particle Build IDE</figcaption>
@@ -46,7 +46,7 @@ console. Particle provides a generic browser based UI to view these variables an
 functions are also accessible via a simple HTTP API for integration with other software.
 
 <div class="text-center">
-  <a href="/static/i/projects/2017/photon/particle-console-001.png">
+  <a href="/i/projects/2017/photon/particle-console-001.png">
     <figure class="figure">
       <img class="figure-img img-fluid rounded" src="/i/projects/2017/photon/particle-console-001.png" />
       <figcaption class="figure-caption text-center">Particle Console WebUI</figcaption>

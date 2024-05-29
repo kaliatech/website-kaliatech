@@ -21,9 +21,8 @@ category: projects
 
 <h3>Layers</h3>
 
-<div class="text-center">
   <figure class="figure">
-    <a href="/static/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png">
+    <a href="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png">
       <img
         class="figure-img img-fluid rounded"
         src="/i/projects/2011/robotics-framework/RoboticControlLayers-20110802.png"
@@ -31,10 +30,8 @@ category: projects
     <figcaption class="figure-caption text-center">
       Graphic created on the iPad using
       <a href="https://www.omnigroup.com/omnigraffle/ios/">Omnigraffle</a>
-      .)
     </figcaption>
   </figure>
-</div>
 
 <h3>Purpose</h3>
 
@@ -55,21 +52,15 @@ category: projects
 
 <h2>Controller/Keyboard</h2>
 
-<div class="row">
-  <div class="col-9">
-    <p>
-      A controller could be a joystick, a mouse, a
-      <a href="https://www.google.com/search?q=belkin+n52te&source=lnms&tbm=isch">Belkin Nostroma n52te</a>
-      , a test computer keyboard, or any combination. The controller layer could also eventually include a head
-      tracking device like the
-      <a href="http://www.naturalpoint.com/trackir/">Natural Point TrackIR</a>
-      .
-    </p>
-  </div>
-  <div class="col-3">
-    <img class="figure-img img-fluid rounded" src="/i/projects/2011/robotics-framework/Belkin-n52te.png" />
-  </div>
-</div>
+A controller could be a joystick, a mouse, a
+<a href="https://www.google.com/search?q=belkin+n52te&source=lnms&tbm=isch">Belkin Nostroma n52te</a>
+, a test computer keyboard, or any combination. The controller layer could also eventually include a head
+tracking device like the
+<a href="http://www.naturalpoint.com/trackir/">Natural Point TrackIR</a>.
+
+  <figure class="figure">
+    <img class="figure-img" src="/i/projects/2011/robotics-framework/Belkin-n52te.png" />
+  </figure>
 
 <h2>User Interface</h2>
 <p>
@@ -153,11 +144,11 @@ category: projects
   <a href="http://think-async.com/">Boost::ASIO library</a>
   ). Everything in Boost is impressive, but the ASIO library especially strikes me as being written by the elite of
   C++ craftsmen.) If you want to get a feel for the type of programming involved, you can see snippets of my code in
-  a question I posted to StackOverflow while working on this a while ago: &ldquo;<a
+  a question I posted to StackOverflow while working on this a while ago: <a
     href="http://stackoverflow.com/questions/4466573/how-should-i-delete-a-child-object-from-within-a-parents-slot-possibly-boosta"
   >
     How should I delete a child from parent’s slot? </a
-  >&rdquo;.
+  >.
 </p>
 <p>
   The C++ server is very generic in its base from. As part of the initial setup protocol when a client connects (all
@@ -227,7 +218,7 @@ category: projects
 <div class="row">
   <div class="col-6 offset-3">
     <figure class="figure">
-      <a href="/static/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg">
+      <a href="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg">
         <img
           class="figure-img img-fluid rounded img-thumbnail"
           src="/i/projects/2011/robotics-framework/PropStickUSB-32210-L.jpg"
@@ -242,7 +233,7 @@ category: projects
   a microcontroller), easy to program (via USB), and yet is smaller than most dedicated servo controllers.
 </p>
 
-<a href="/static/i/projects/2011/robotics-framework/CustomPropBoard.jpg">
+<a href="/i/projects/2011/robotics-framework/CustomPropBoard.jpg">
   <figure class="figure">
     <img
       class="figure-img img-fluid rounded img-thumbnail"
@@ -263,7 +254,7 @@ category: projects
   programming:
 </p>
 
-<a href="/static/i/projects/2011/robotics-framework/PropellerBlock-L.jpg">
+<a href="/i/projects/2011/robotics-framework/PropellerBlock-L.jpg">
   <figure class="figure">
     <img
       class="figure-img img-fluid rounded img-thumbnail"

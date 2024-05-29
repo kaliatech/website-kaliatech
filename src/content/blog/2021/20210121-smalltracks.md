@@ -58,28 +58,20 @@ The Prusa i3 MK3, and seemingly most 3D printing service bureaus, will support p
 
 I believe larger commerical rubber tracks are formed in molds, and then cog holes are cut/punched out. 3D printing in TPU allows for nearly infinite customization without having to build up molds first. TPU is harder than most rubber compounds, but more flexible than hard plastic. The tread pattern can be adapted for smooth or aggressive traction needs as long as some consideration is given to 3D printing overhang limitations and support needs.
 
-<div class="row">
-<div class="col-sm-9">
-
 I thought an interactive tool might be useful, and I had been wanting to experiment with [Babylon.js](https://www.babylonjs.com/) for 3D visualization in the browser. I believe there are potential business opportunities around incorporating more visual and interactive product configurators. Separately, I believe there are new opportunities forming from 3D printing service bureaus offering APIs with integrated product fulfillment. An example business around these ideas that I think was executed superbly is [Hero Forge](https://www.heroforge.com/).
 
 My intent was to use this project to learn more about the 3D print service bureau integration options, such as the APIs from [Shapeways](https://developers.shapeways.com/) and [i.materialise](https://i.materialise.com/api). Ultimately, the idea is to allow anyone to easily design custom tracks from a few key measurements, and then behind the scenes allow submitting the designs to a 3rd party service for printing and shipping.
 
 While working on this, it also occurred to me that with only a little more work, these tracks can be used as v-belts, timing belts, gear chains, and similar. The only difference between tracks and belts is that tracks have an outside tread pattern, and belts usually do not. A v-belt simply has a v-shaped track profile on the inside surface. I suspect that there are more off-the-shelf options available for small belts than there are for small tracks, but it seems worthwhile to support these options regardless.
 
-</div>
-
-<div class="col-sm-3 text-center">
-  <figure class="figure">
+  <figure>
     <a href="/i/blog/2021/smalltracks/smalltracks-triangles.webp">
-      <img src="/i/blog/2021/smalltracks/smalltracks-triangles.webp" class="figure-img img-fluid rounded" style="max-height: 30rem"/>
+      <img src="/i/blog/2021/smalltracks/smalltracks-triangles.webp" class="figure-img" style="max-height: 35rem"/>
     </a>
     <figcaption class="figure-caption text-center">
       <span>Triangles vs. Paperless</span>
     </figcaption>
   </figure>
-</div>
-</div>
 
 ## Calculations and Considerations
 
@@ -130,18 +122,10 @@ Another option might be to print in-house. That would probably be doable for _ve
 - [Vue.js (v3)](https://vuejs.org/) - Client side framework
 - [Bootstrap (v5)](https://getbootstrap.com/) - UI/CSS
 - [Vite (v2)](https://vitejs.dev/) - Client side build and packaging
-
-<br/>
-
 - [Babylon.js](https://www.babylonjs.com/) - 3D/WebGL
 - [PixiJS](https://www.pixijs.com/) - 2D/Canvas
 
-<br/>
-
 - [Lodash](https://lodash.com/) - JS Utilities
-
-<br/>
-
 - [AWS Amplify](https://aws.amazon.com/amplify/) - CI/CD and hosting
 
 # Status and Remaining Tasks (as of 2021-01)

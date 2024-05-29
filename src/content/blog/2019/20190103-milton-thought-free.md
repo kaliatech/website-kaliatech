@@ -5,7 +5,7 @@ description: Passage from "They Thought They Were Free" on how one thing leads t
 category: quotes
 ---
 
-> &#8220; ...Each act, each occasion, is worse than the last, but only a little worse. You wait for the next
+> ...Each act, each occasion, is worse than the last, but only a little worse. You wait for the next
 > and the next. You wait for one great shocking occasion, thinking that others, when such a shock comes, will
 > join with you in resisting somehow. You don't want to act, or even talk, alone; you don't want to 'go out of
 > your way to make trouble.' Why not?-Well, you are not in the habit of doing it. And it is not just fear,
@@ -41,7 +41,7 @@ category: quotes
 > a world of hate and fear, and the people who hate and fear do not even know it themselves; when everyone is
 > transformed, no one is transformed. Now you live in a system which rules without responsibility even to God.
 > The system itself could not have intended this in the beginning, but in order to sustain itself it was
-> compelled to go all the way.&rdquo;
+> compelled to go all the way.
 
 <footer class="blockquote-footer">
 Milton Mayer in

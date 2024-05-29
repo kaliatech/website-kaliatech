@@ -81,7 +81,7 @@ const { Content } = await post.render()
 </BaseLayout>
 <style is:global>
   .blog {
-    figure {
+    .prose figure {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -97,7 +97,7 @@ const { Content } = await post.render()
       font-weight: 600;
     }
 
-    .figure-img {
+    .prose .figure-img {
       border-radius: 12px;
       max-width: 100%;
       margin: 0;
@@ -126,6 +126,22 @@ const { Content } = await post.render()
       line-height: 22px;
       font-size: 13px;
       font-weight: 500;
+    }
+
+    .prose .photo-img {
+      border-radius: 4px;
+    }
+
+    .prose .photo-img {
+      margin: 0;
+    }
+
+    .prose .blockquote-footer:before {
+      content: '— ';
+    }
+
+    .prose .quote-block .quote {
+      font-style: italic;
     }
   }
 </style>

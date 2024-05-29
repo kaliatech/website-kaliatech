@@ -5,6 +5,8 @@ description: Informal notes for software development testing.
 category: misc
 ---
 
+import BlogPostToc from '../../../components/blog/BlogPostToc.astro'
+
 # Thoughts on testing.
 
 These are my notes regarding a breakdown of software testing contexts. I've written some variant of these notes for
@@ -14,7 +16,7 @@ defined. These are meant only as guidelines to facilitate discussion.
 
 ## Contents
 
-<blog-post-toc :toc=toc></blog-post-toc>
+<BlogPostToc />
 
 ## Summary
 
@@ -78,7 +80,7 @@ another way, the "Who" in the breakdown below, is sometimes always "Developers".
 ### Functional/Systems Testing
 
 - **Who:**<br/>Testers (and Developers)
-- **Purpose:**</br>Ensure components and configurations work together as expected. Validates live system functionality in a "clean room" type environment.
+- **Purpose:**<br/>Ensure components and configurations work together as expected. Validates live system functionality in a "clean room" type environment.
 - **Time:**<br/>Takes some effort to setup. Takes a while to run entire suite.
 - **When:**<br/>Should always be run ahead of any significant releases and before promoting to a BETA\GAMMA type
   environment. Probably automatically run when deploying to any TEST environment.
@@ -119,7 +121,7 @@ another way, the "Who" in the breakdown below, is sometimes always "Developers".
 ## Production Support, Debugging, Reporting
 
 - **Who:**<br/>Testers and Support
-- **Purpose:**<br/>Customer support, identifying issues, reporting/logging issues, full-cycle issue resolu tion,
+- **Purpose:**<br/>Customer support, identifying issues, reporting/logging issues, full-cycle issue resolution,
   customer feedback, product enhancement, future work prioritization.
 
 ## Testing outside of CI/CD

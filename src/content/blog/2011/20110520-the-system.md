@@ -5,7 +5,7 @@ description: Passage from "Zen and the Art of Motorcycle Maintenance".
 category: quotes
 ---
 
-> &ldquo;To speak of certain government and establishment institutions as “the system” is to speak correctly.
+> To speak of certain government and establishment institutions as “the system” is to speak correctly.
 > … They are sustained by structural relationships even when they have lost all other meaning and purpose.
 > People arrive at a factory and perform a totally meaningless task from eight to five without question
 > because the structure demands that it be that way. There’s no villain, no “mean guy” who wants them to live
@@ -19,7 +19,7 @@ category: quotes
 > standing, then that rationality will simply produce another factory. If a revolution destroys a systematic
 > government, but the systematic patterns of thought that produced that government are left intact, then those
 > patterns will repeat themselves in the succeeding government. There’s so much talk about the system. And so
-> little understanding.&rdquo;
+> little understanding.
 
 <footer class="blockquote-footer">
 Robert M Pirsiq in

@@ -39,11 +39,15 @@ export default {
       fontFamily: {
         sans: ['"Open Sans Variable"', ...defaultTheme.fontFamily.sans],
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
+            //'--tw-prose-captions': '#ff0000',
             //maxWidth: '80ch', // add required value here
             maxWidth: 'none', // add required value here
+            figcaption: {
+              color: theme('colors.gray[500]'),
+            },
             h2: {
               fontSize: '1.25rem',
               fontWeight: 600,
@@ -55,7 +59,7 @@ export default {
             },
           },
         },
-      },
+      }),
     },
   },
   extend: {},

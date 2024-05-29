@@ -1,0 +1,36 @@
+---
+import { BASE_PHOTOS_URL } from './BlogContants'
+
+interface Props {
+  name: string
+  showName?: boolean
+  basePhotosUrl?: string
+  photosPath: string
+}
+
+const { name, showName = true, basePhotosUrl = BASE_PHOTOS_URL, photosPath } = Astro.props
+
+const galleryObj = await fetch(`${basePhotosUrl}${photosPath}/index.json`).then((res) => res.json())
+
+// NOTE: I originally added error handling, but then remembered this is all at build time for SSG.
+// let errorMsg = ''
+// try {
+//   galleryObj = await fetch(`${basePhotosUrl}${photosPath}/index.json2`).then((res) => {
+//     if (res.status !== 200) {
+//       throw new Error('Invalid response: ' + res.status)
+//     }
+//     return res.json()
+//   })
+// } catch (err) {
+//   errorMsg = 'Unable to load photos. Reason: ' + err.message
+// }
+//
+// {errorMsg && <AlertError msg={errorMsg} />}
+//
+//
+---
+
+<div>
+  {showName && <h2 class="font-light">{name}</h2>}
+  <pre>{JSON.stringify(galleryObj, null, 2)}</pre>
+</div>

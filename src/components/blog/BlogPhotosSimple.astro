@@ -1,0 +1,26 @@
+---
+import { type SimplePhoto } from './SimplePhoto'
+const photos = Astro.props.photos as SimplePhoto[]
+---
+
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+  {
+    photos.map((photo) => {
+      return (
+        <figure class="figure m-0 w-full p-0">
+          <a href={photo.src}>
+            {photo.type === 'video' && (
+              <video src={photo.src} autoplay class="photo-img" loop muted playsinline />
+            )}
+            {photo.type !== 'video' && <img src={photo.src} class="photo-img" />}
+          </a>
+          {photo.caption && (
+            <figcaption class="photo-caption mb-6 text-center">
+              <Fragment set:html={photo.caption} />
+            </figcaption>
+          )}
+        </figure>
+      )
+    })
+  }
+</div>

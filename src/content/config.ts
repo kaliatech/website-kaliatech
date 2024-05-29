@@ -1,4 +1,5 @@
 // 1. Import utilities from `astro:content`
+// eslint-disable-next-line
 import { z, defineCollection } from 'astro:content'
 
 // 2. Define a `type` and `schema` for each collection
