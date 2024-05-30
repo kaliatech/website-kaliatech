@@ -322,6 +322,7 @@ A stage represents logical state in the sequence of a pipeline. A pipeline is im
 through stages and do actions at each stage. Example stages:
 
 <MermaidBlock
+  id="cicd-pipeline"
   client:only="react"
   diagram={`
 %%\{init: \{'theme': 'forest' \} \}%%
@@ -336,6 +337,7 @@ flowchart LR
 A complete pipeline might look something like this:
 
 <MermaidBlock
+  id="cicd-pipeline-complete"
   client:only="react"
   diagram={`
 %%\{init: \{'theme': 'forest' \} \}%%
@@ -397,6 +399,7 @@ An deployment environment represents a complete and contained setup of a project
 an almost one-to-one correspondence between pipeline stages and environments, but not always. Example environments:
 
 <MermaidBlock
+  id="cicd-deployment"
   client:only="react"
   diagram={`
       %%\{init: \{'theme': 'forest' \} \}%%
@@ -421,6 +424,7 @@ requirements, redundancy needs, etc., a logical environment (i.e. PROD) might co
 region, blast radius, and other possibilities. An example of regional organization:
 
 <MermaidBlock
+  id="cicd-dist"
   client:only="react"
   diagram={`
 %%\{init: \{'theme': 'forest' \} \}%%
