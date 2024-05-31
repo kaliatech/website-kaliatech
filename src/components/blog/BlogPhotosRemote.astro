@@ -2,7 +2,7 @@
 import { BASE_PHOTOS_URL } from './BlogContants'
 
 import BlogPhotosSimple from './BlogPhotosSimple.astro'
-import { SimplePhotoMeta } from './SimplePhoto'
+import { type SimplePhotoMeta } from './SimplePhoto'
 
 interface Props {
   name: string
@@ -10,6 +10,12 @@ interface Props {
   basePhotosUrl?: string
   photosPath: string
   photoMetas: SimplePhotoMeta[]
+}
+
+interface Media {
+  filename: string
+  descr: string
+  type: string
 }
 
 const { name, showName = true, basePhotosUrl = BASE_PHOTOS_URL, photosPath } = Astro.props
@@ -37,7 +43,7 @@ const galleryObj = await fetch(`${basePhotosUrl}${photosPath}/index.json`).then(
 //
 // console.log('photoMetas', Astro.props.photoMetas)
 
-const photos = galleryObj.medias?.map((media) => {
+const photos = galleryObj.medias?.map((media: Media) => {
   const meta = Astro.props.photoMetas?.find((meta) => meta.filename === media.filename)
 
   return {
