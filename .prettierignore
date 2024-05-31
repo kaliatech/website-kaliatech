@@ -1,2 +1,6 @@
 **/build
 **/dist
+
+# Considered disabling until prettier formats supports newer MDX version. As it is, prettier sometimes breaks
+# things because of newer MDX parsing. Most often, easiest fix is to change from HTML/JSX to standard markdown.
+# **/src/content/*.mdx

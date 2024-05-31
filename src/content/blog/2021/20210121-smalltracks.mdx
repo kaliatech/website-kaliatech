@@ -4,27 +4,19 @@ createdAt: 2021-01-21
 description: Custom design small tank tracks for 3D printing.
 category: projects
 
-photos: [
-{
-src: '/i/blog/2021/smalltracks/tanktreads-2021019-bw.webp',
-caption: 'Example trank tracks',
-},
-{
-src: '/i/blog/2021/smalltracks/3dprint2-180-bw.webp',
-caption: 'Printed in flexible TPU',
-},
-{
-src: '/i/blog/2021/smalltracks/scrshot-20210119-bw.webp',
-caption: 'Interactive 3D Visualization',
-},
-{
-src: '/i/blog/2021/smalltracks/scrshot-20210119-b-bw.webp',
-caption: 'Multiple parameters',
-},
-]
+photos:
+  [
+    { src: '/i/blog/2021/smalltracks/tanktreads-2021019-bw.webp', caption: 'Example trank tracks' },
+    { src: '/i/blog/2021/smalltracks/3dprint2-180-bw.webp', caption: 'Printed in flexible TPU' },
+    {
+      src: '/i/blog/2021/smalltracks/scrshot-20210119-bw.webp',
+      caption: 'Interactive 3D Visualization',
+    },
+    { src: '/i/blog/2021/smalltracks/scrshot-20210119-b-bw.webp', caption: 'Multiple parameters' },
+  ]
 ---
-import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
 
+import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
 
 ## Overview
 
@@ -45,12 +37,12 @@ There are not many off-the-shelf options for small tracks, and they are limited 
 - [Amazon - Robot Car Crawler Tank Tracks with Gear](https://www.amazon.com/Robot-Crawler-Tank-Treads-Tracks/dp/B07HBSWR1D)
 - [SZDOIT - Metal/Plastic Tank Chassis Tracks Conveyor Belt](https://www.vvdoit.com/szdoit-metalplastic-tank-chassis-tracks-conveyor-belt-for-rc-crawler-robot-vehicle-parts-p2756036.html)
 
-{/*
+{/\*
 SuperDroid Robots previously provided custom length rubber tracks in ~3-4” width:
 
- * [SDRobots - Custom Track Service](https://sdrobots.com/custom-track-service/)
+- [SDRobots - Custom Track Service](https://sdrobots.com/custom-track-service/)
 
- */}
+\*/}
 
 _(An aside: SDRobots is located ~15 minutes from me!)_
 
@@ -68,7 +60,11 @@ While working on this, it also occurred to me that with only a little more work,
 
 <figure>
   <a href="/i/blog/2021/smalltracks/smalltracks-triangles.webp">
-    <img src="/i/blog/2021/smalltracks/smalltracks-triangles.webp" class="figure-img" style="max-height: 35rem"/>
+    <img
+      src="/i/blog/2021/smalltracks/smalltracks-triangles.webp"
+      class="figure-img"
+      style="max-height: 35rem"
+    />
   </a>
   <figcaption class="figure-caption text-center">
     <span>Triangles vs. Paperless</span>

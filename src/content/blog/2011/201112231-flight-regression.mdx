@@ -4,43 +4,43 @@ createdAt: 2011-12-31
 description: Flight accident visualization with Google Earth.
 category: projects
 
-photos: [
-{
-caption: 'Old Brochure',
-src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page3.webp',
-},
-{
-caption: 'Old Brochure',
-src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page4.webp',
-},
-{
-caption: 'Old Brochure',
-src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page5.webp',
-},
-{
-caption: 'Old Brochure',
-src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page6.webp',
-},
-{
-caption: 'Old Brochure',
-src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page7.webp',
-},
-{
-caption: 'Old Brochure',
-src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page8.webp',
-},
-{
-caption: 'Early radar analysis GUI',
-src: '/i/projects/2011/flight-regression/fr2-scrshot-1.jpg',
-},
-{
-caption: 'Early satellite image GUI (pre google earth). Extremely large images. Had to use Java Advanced Imaging to tile.',
-src: '/i/projects/2011/flight-regression/fr2-scrshot-2.jpg',
-},
-]
-
-
+photos:
+  [
+    {
+      caption: 'Old Brochure',
+      src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page3.webp',
+    },
+    {
+      caption: 'Old Brochure',
+      src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page4.webp',
+    },
+    {
+      caption: 'Old Brochure',
+      src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page5.webp',
+    },
+    {
+      caption: 'Old Brochure',
+      src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page6.webp',
+    },
+    {
+      caption: 'Old Brochure',
+      src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page7.webp',
+    },
+    {
+      caption: 'Old Brochure',
+      src: '/i/projects/2011/flight-regression/fr3-brochure-scrshot_Page8.webp',
+    },
+    {
+      caption: 'Early radar analysis GUI',
+      src: '/i/projects/2011/flight-regression/fr2-scrshot-1.jpg',
+    },
+    {
+      caption: 'Early satellite image GUI (pre google earth). Extremely large images. Had to use Java Advanced Imaging to tile.',
+      src: '/i/projects/2011/flight-regression/fr2-scrshot-2.jpg',
+    },
+  ]
 ---
+
 import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
 
 Flight Regression was a small consulting business around taking raw data from general aviation flight accidents,
@@ -58,23 +58,26 @@ transcript synchronized to audio. It was a single-page-application before SPA wa
 great google account purge of early 2020, I lost access to the account and Google subsequently deleted all of my
 videos. Lessons learned.
 
-{/*
+{/\*
 These videos show software I developed before "single-page-application" was a common term.
-<div class="video-responsive">
-    <iframe
-        allowfullscreen
-        src="https://www.youtube.com/embed/u4M-bm_V9wU"
-        allow="autoplay; encrypted-media; picture-in-picture">
-    </iframe>
-</div>
-<div class="media-caption">Custom browser developed browser based app. Used google earth plugin.</div>
 
 <div class="video-responsive">
-    <iframe
-      allowFullScreen
-        src="https://www.youtube.com/embed/ASHVUUbhFNM"
-        allow="autoplay; encrypted-media; picture-in-picture">
-    </iframe>
+  <iframe
+    allowfullscreen
+    src="https://www.youtube.com/embed/u4M-bm_V9wU"
+    allow="autoplay; encrypted-media; picture-in-picture"
+  ></iframe>
+</div>
+<div class="media-caption">
+  Custom browser developed browser based app. Used google earth plugin.
+</div>
+
+<div class="video-responsive">
+  <iframe
+    allowFullScreen
+    src="https://www.youtube.com/embed/ASHVUUbhFNM"
+    allow="autoplay; encrypted-media; picture-in-picture"
+  ></iframe>
 </div>
 <div class="media-caption">In this accident there were three relevant aircraft.</div>
 */}
@@ -82,4 +85,3 @@ These videos show software I developed before "single-page-application" was a co
 ## Screenshots and Brochures
 
 <BlogPhotosSimple photos={frontmatter.photos} />
-

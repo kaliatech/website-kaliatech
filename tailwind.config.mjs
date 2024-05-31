@@ -16,7 +16,7 @@ export default {
     {
       pattern: /grid-cols-\d+/,
       variants: ['md', 'lg'],
-    }
+    },
   ],
   theme: {
     extend: {

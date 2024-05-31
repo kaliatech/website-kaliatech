@@ -4,6 +4,7 @@ createdAt: 2018-08-30
 description: Using augmented images & AR for positioning.
 category: projects
 ---
+
 import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
 
 <p>
@@ -23,15 +24,13 @@ which I believe uses similar techniques.
 <h2>Augmented Images</h2>
 
 <p>
-  First, if not familiar with native AR libraries, know that both Google (
-  <a href="https://developers.google.com/ar/">ARCore</a>) and Apple(
-  <a href="https://developer.apple.com/arkit/">ARkit</a>) include
-  <a href="https://developers.google.com/ar/develop/java/augmented-images/">
-    augmented image capabilities
-  </a>
-  . This allows detection of an image, similar to standard computer vision capabilities that have been
-  around for a while now. But in addition to image detection, the augmented part also establishes, and
-  then tracks, the coordinates of that image within the AR space.
+  First, if not familiar with native AR libraries, know that both Google
+  ([ARCore](https://developers.google.com/ar/) and Apple
+  [ARkit](https://developer.apple.com/arkit/)) include [augmented image
+  capabilities](https://developers.google.com/ar/develop/java/augmented-images/). This allows
+  detection of an image, similar to standard computer vision capabilities that have been around for
+  a while now. But in addition to image detection, the augmented part also establishes, and then
+  tracks, the coordinates of that image within the AR space.
 </p>
 
 <p>
@@ -88,16 +87,15 @@ which I believe uses similar techniques.
 <p>
   An idea I would've liked to experiment with is if it is possible to dynamically register
   "augmented images" by taking pictures as part of the setup, instead of using predefined 2D poster
-  type images. I am wondering if Google is doing something similar in their
-  <a href="https://www.theverge.com/2019/2/10/18219325/google-maps-augmented-reality-ar-feature-app-prototype-test">recent AR navigation experiments</a>
+  type images. I am wondering if Google is doing something similar in their [recent AR navigation
+  experiments](https://www.theverge.com/2019/2/10/18219325/google-maps-augmented-reality-ar-feature-app-prototype-test)
   since the documentation says street view imagery is required for it.
 </p>
 <p>
-  Separately, Apple has an interesting capability in ARKit2 whereby they are
-  <a href="https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects">detecting 3D objects</a>,
-  not just 2D images. I haven't used it enough to say how well it works.
+  Separately, Apple has an interesting capability in ARKit2 whereby they are [detecting 3D
+  objects](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects), not
+  just 2D images. I haven't used it enough to say how well it works.
 </p>
-
 
 <h2>Note on AR for Browser & Cross Platform</h2>
 <p>
@@ -123,11 +121,11 @@ which I believe uses similar techniques.
 
 export const photos = [
   {
-    src: '/i/projects/2018/0830-ar-nav/webxr-1.png'
+    src: '/i/projects/2018/0830-ar-nav/webxr-1.png',
   },
   {
-    src: '/i/projects/2018/0830-ar-nav/webxr-2.png'
-  }
+    src: '/i/projects/2018/0830-ar-nav/webxr-2.png',
+  },
 ]
 
 <BlogPhotosSimple photos={photos} />

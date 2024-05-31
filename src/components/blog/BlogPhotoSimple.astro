@@ -11,7 +11,6 @@ interface Props {
 const photo = Astro.props.photo as SimplePhoto
 
 const maxWidth = Astro.props.maxWidth ?? '100%'
-
 ---
 
 <figure class="figure m-0 w-full justify-center p-0">
@@ -21,7 +20,11 @@ const maxWidth = Astro.props.maxWidth ?? '100%'
         <video src={photo.src} autoplay class="photo-img" loop muted playsinline />
       )
     }
-    {photo.type !== 'video' && <img src={photo.src} class="photo-img" style=`max-width: ${maxWidth}`/>}
+    {
+      photo.type !== 'video' && (
+        <img src={photo.src} class="photo-img" style={`max-width: ${maxWidth}`} alt={photo.src} />
+      )
+    }
   </a>
   {
     photo.caption && (

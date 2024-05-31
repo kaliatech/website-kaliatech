@@ -5,6 +5,12 @@ description: Framework for interfacing a computer to the physical world.
 category: projects
 ---
 
+**UPDATE [2018]** - _This was written up a long time ago. Things have evolved. Myself included. I often wondered why
+I didn't mention why I chose not to use [ROS](http://www.ros.org/) when I wrote this. My latest evolution of this
+idea was started in 2017 and is named [R7](https://github.com/kaliatech/r7)._
+
+---
+
 <p class="lead">Basis for experimentation around interfacing a computer to the physical world.</p>
 
 <p>
@@ -280,22 +286,4 @@ tracking device like the
   microcontroller brokers all of these devices to the higher level layers of the framework. Common protocols and
   related terms at this level include PWM, I2C, RS232, RS485, TTL, SPI, 2-wire, Relays, H-Bridges, MOSFET, ESCs,
   BECs, etc.
-</p>
-
-<h2>Next</h2>
-<p>
-  <em>
-    UPDATE [2018] - This was written up a long time ago. Things have evolved. Myself included. I often wondered why
-    I didn't mention why I chose not to use
-    <a href="http://www.ros.org/">ROS</a>
-    when I wrote this.
-  </em>
-</p>
-
-<p>
-  <em>
-    My latest evolution of this idea was started in 2017 and is named
-    <a href="https://github.com/kaliatech/r7">R7</a>
-    .
-  </em>
 </p>
