@@ -23,12 +23,14 @@ caption: 'Multiple parameters',
 },
 ]
 ---
+import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
+
 
 ## Overview
 
 Small tracks is an experimental website and service for designing custom tank tracks. The results can be 3D printed.
 
-<blog-post-photos-simple :photos=photos></blog-post-photos-simple>
+<BlogPhotosSimple photos={frontmatter.photos} />
 
 ## Background
 
@@ -43,12 +45,12 @@ There are not many off-the-shelf options for small tracks, and they are limited 
 - [Amazon - Robot Car Crawler Tank Tracks with Gear](https://www.amazon.com/Robot-Crawler-Tank-Treads-Tracks/dp/B07HBSWR1D)
 - [SZDOIT - Metal/Plastic Tank Chassis Tracks Conveyor Belt](https://www.vvdoit.com/szdoit-metalplastic-tank-chassis-tracks-conveyor-belt-for-rc-crawler-robot-vehicle-parts-p2756036.html)
 
-<!---
+{/*
 SuperDroid Robots previously provided custom length rubber tracks in ~3-4” width:
 
  * [SDRobots - Custom Track Service](https://sdrobots.com/custom-track-service/)
 
- -->
+ */}
 
 _(An aside: SDRobots is located ~15 minutes from me!)_
 
@@ -64,26 +66,26 @@ My intent was to use this project to learn more about the 3D print service burea
 
 While working on this, it also occurred to me that with only a little more work, these tracks can be used as v-belts, timing belts, gear chains, and similar. The only difference between tracks and belts is that tracks have an outside tread pattern, and belts usually do not. A v-belt simply has a v-shaped track profile on the inside surface. I suspect that there are more off-the-shelf options available for small belts than there are for small tracks, but it seems worthwhile to support these options regardless.
 
-  <figure>
-    <a href="/i/blog/2021/smalltracks/smalltracks-triangles.webp">
-      <img src="/i/blog/2021/smalltracks/smalltracks-triangles.webp" class="figure-img" style="max-height: 35rem"/>
-    </a>
-    <figcaption class="figure-caption text-center">
-      <span>Triangles vs. Paperless</span>
-    </figcaption>
-  </figure>
+<figure>
+  <a href="/i/blog/2021/smalltracks/smalltracks-triangles.webp">
+    <img src="/i/blog/2021/smalltracks/smalltracks-triangles.webp" class="figure-img" style="max-height: 35rem"/>
+  </a>
+  <figcaption class="figure-caption text-center">
+    <span>Triangles vs. Paperless</span>
+  </figcaption>
+</figure>
 
 ## Calculations and Considerations
 
 Calculating track length, features, and a final layout for printing is deceptively complicated. Key measurements and parameters that must be entered:
 
 - **Axles**
-  - X/Y Position - A track wraps around sprockets that are located at each axle.
+- X/Y Position - A track wraps around sprockets that are located at each axle.
 - **Sprockets** (also known as wheels, gears, or pulleys)
-  - Z Position - More complex configurations can have multiple sprockets per axle. i.e. An inside and an outside sprocket.
-  - Width - Sprockets can have different widths and cog configurations.
+- Z Position - More complex configurations can have multiple sprockets per axle. i.e. An inside and an outside sprocket.
+- Width - Sprockets can have different widths and cog configurations.
 - **Cogs** (as known as gear teeth)
-  - Pitch - Used for calculating “per tread” lengths and holes
+- Pitch - Used for calculating “per tread” lengths and holes
 - **Track Width**
 - **Outside Tread Profile**
 - **Inside Tread Profile**
@@ -140,15 +142,15 @@ Only a proof-of-concept and initial copy is complete as of 2021-02-20. Remaining
 
 <br />
 
-- [ ] Rework UI, especially the parameters UI <--- until this is done, I'm almost embarrased to show the site
+- [ ] Rework UI, especially the parameters UI &lt;--- until this is done, I'm almost embarrassed to show the site
 - [ ] Add parameter validations
 
 <br />
 
 - [ ] Finish track calculations
-  - [ ] Add cog calculations and holes
+- [ ] Add cog calculations and holes
 - [ ] Next iteration of 3D visualization
-  - [ ] Make interactive, for instance clicking an axle to select, drag-and-drop to adjust, etc
+- [ ] Make interactive, for instance clicking an axle to select, drag-and-drop to adjust, etc
 - [ ] Next iteration of 2D visualization (worthwhile?)
 
 <br />

@@ -44,8 +44,10 @@ const { Content } = await post.render()
   <div class="blog">
     <Prose class="blog">
       <Content />
-      <div class="mt-8">
-        category: {post.data.category}
+      <div class="mt-16">
+        <div class="flex justify-end">
+          tags: &nbsp;<a href=`/blog/tags/${post.data.category}`>{post.data.category}</a>
+        </div>
         <hr class="my-2" />
         <div class="flex">
           <div class="flex-1 flex-grow justify-start">
@@ -94,6 +96,7 @@ const { Content } = await post.render()
     }
 
     a {
+      display: inline-flex;
       font-weight: 600;
     }
 
@@ -142,6 +145,15 @@ const { Content } = await post.render()
 
     .prose .quote-block .quote {
       font-style: italic;
+    }
+
+    .prose .video-responsive {
+      iframe {
+        aspect-ratio: 16 / 9;
+        height: 100%;
+        width: 100%;
+        border: none;
+      }
     }
   }
 </style>

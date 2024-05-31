@@ -1,0 +1,33 @@
+---
+import clsx from 'clsx'
+import { type SimplePhoto } from './SimplePhoto'
+
+interface Props {
+  photo: SimplePhoto
+  center?: boolean
+  maxWidth?: string
+}
+
+const photo = Astro.props.photo as SimplePhoto
+
+const maxWidth = Astro.props.maxWidth ?? '100%'
+
+---
+
+<figure class="figure m-0 w-full justify-center p-0">
+  <a href={photo.src}>
+    {
+      photo.type === 'video' && (
+        <video src={photo.src} autoplay class="photo-img" loop muted playsinline />
+      )
+    }
+    {photo.type !== 'video' && <img src={photo.src} class="photo-img" style=`max-width: ${maxWidth}`/>}
+  </a>
+  {
+    photo.caption && (
+      <figcaption class="photo-caption mb-6 text-center">
+        <Fragment set:html={photo.caption} />
+      </figcaption>
+    )
+  }
+</figure>

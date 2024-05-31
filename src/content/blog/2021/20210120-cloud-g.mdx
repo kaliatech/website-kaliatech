@@ -5,9 +5,11 @@ description: Notes to self on cloud gaming
 category: misc
 ---
 
-## Contents
+import BlogPostToc from '../../../components/blog/BlogPostToc.astro'
 
-<blog-post-toc :toc=toc></blog-post-toc>
+## Contents
+<BlogPostToc />
+
 
 ## Background
 
@@ -89,8 +91,8 @@ One detail with Paperspace, is that while they do not charge a fee for stopped i
 
 Using AWS two weeks ago, I was able to get a `g4dn.2xlarge` (8 vCPU) as a spot instance with persistence setting. The persistence setting should have let me stop the instance when I was done using it to avoid additional charges, and then restart it whenever I wanted (assuming spot instances were available at my requested max price). It ended up that I was not able to restart due to changes in AWS limits and policy changes around spot instance handling for smaller accounts. When I had the spot instance, it was running about $0.50/hr. (There would also be some small bandwidth charges on top of that.) Now that I have to use on-demand instance, it will run ~$1.10/hr for the same size.
 
-<!--
 
+{/*
 ## Getting in to the slither.io Top 10
 Anyone that understands modern gaming will laugh at this, but my initial test for these cloud gaming setups was [slither.io](https://slither.io). If you are not familiar with it, I recommend you do not check it out if you are at all inclined to getting addicted to blinky lights like I am.
 
@@ -118,44 +120,43 @@ I ordered the 4k display (3840x2160) for this laptop, but I generally use an att
 I'm not sure the actual hiccups are even graphics related, at least directly. That's where things start getting complex. Is it graphics card related? Graphics driver related? Windows 10 related? Is it Chrome? Is it network bandwidth? My network adapter? My network router? Motherboard limitations? Is it my USB hub? I started thinking through all the possible layers and came up with this:
 
 * Slither.io Code
-  * Perhaps there is something in the code itself that triggers poor handling on my laptop for whatever reason. Unlikely, but possible.
+* Perhaps there is something in the code itself that triggers poor handling on my laptop for whatever reason. Unlikely, but possible.
 * Browser (Chrome/Firefox/Etc)
-  * JavaScript Engine
-  * WebGL Implementation
+* JavaScript Engine
+* WebGL Implementation
 * Windows 10
-  * NVidia Driver
-  * Onboard vs. discrete pipeline
-      * Software switch previously handled by nVidia, now handled by Windows 10
-  * Compositor
-      * A complex subject, but at some point Windows must composite graphics from various sources for rendering to the displays.
+* NVidia Driver
+* Onboard vs. discrete pipeline
+  * Software switch previously handled by nVidia, now handled by Windows 10
+* Compositor
+  * A complex subject, but at some point Windows must composite graphics from various sources for rendering to the displays.
 * Video/Graphics bus
-  * I don't know how the bus is handled between onboard and discrete in the motherboard. At some point, there has to be choke point as things get composited and go out to the displays.  In the past, this technology was culprit for many problems, and in older laptops I would disable it in bios to only use onboard *or* discrete at any given time. Reboots required.
+* I don't know how the bus is handled between onboard and discrete in the motherboard. At some point, there has to be choke point as things get composited and go out to the displays.  In the past, this technology was culprit for many problems, and in older laptops I would disable it in bios to only use onboard *or* discrete at any given time. Reboots required.
 * Attached Screen vs External Screen
-  * There are different pathways for the onboard screen and external displays. My 4k external display is currently attached via HDMI port.  In the past, I have had situations were graphics card performance on external display was not the same as graphics card performance on attached display. Similarly, differences in performance when connecting via HDMI vs USB-C.
+* There are different pathways for the onboard screen and external displays. My 4k external display is currently attached via HDMI port.  In the past, I have had situations were graphics card performance on external display was not the same as graphics card performance on attached display. Similarly, differences in performance when connecting via HDMI vs USB-C.
 * Motherboard
-  * Minimally, modern laptops impair performance when the heat starts to rise.
+* Minimally, modern laptops impair performance when the heat starts to rise.
 * Virtualization
-  * I am often running mulitple WSL2 instances, Docker containers, etc.  I expect they want some of that sweet CPU periodically too. I've read that next version of WSL2 is going to allow direct access to the GPU. That will be another level of complexity.
+* I am often running mulitple WSL2 instances, Docker containers, etc.  I expect they want some of that sweet CPU periodically too. I've read that next version of WSL2 is going to allow direct access to the GPU. That will be another level of complexity.
 * Motherboard USB Controller(s)
-  * Important to consider because most modern laptops no longer have onboard ethernet ports. Mine included. (Thanks Apple. :|)  As a result, I have to use an external USB ethernet dongle for wired network.  The motherboard USB controller only has so much bandwidth and in the past I have seen cases where simply plugging in to different USB ports (assuming different internal controllers) made a difference in performance. None of this is ever documented.
+* Important to consider because most modern laptops no longer have onboard ethernet ports. Mine included. (Thanks Apple. :|)  As a result, I have to use an external USB ethernet dongle for wired network.  The motherboard USB controller only has so much bandwidth and in the past I have seen cases where simply plugging in to different USB ports (assuming different internal controllers) made a difference in performance. None of this is ever documented.
 * Wifi
-  * If not using wired network, then the wifi hardware comes in to play.  And in my experience, everything about wifi is non-deterministic. Goodluck hunting down the root cause of unreliable, slow, or randomly intermittent wifi problems. It can be nearly impossible.
+* If not using wired network, then the wifi hardware comes in to play.  And in my experience, everything about wifi is non-deterministic. Goodluck hunting down the root cause of unreliable, slow, or randomly intermittent wifi problems. It can be nearly impossible.
 * USB Network Dongle
-  * I now have five different ethernet dongles. Not all of them work. Not all of them are reliable. There is no way to know if the one I'm currently using doesn't cause network slowness or hiccups.
+* I now have five different ethernet dongles. Not all of them work. Not all of them are reliable. There is no way to know if the one I'm currently using doesn't cause network slowness or hiccups.
 * USB Hub
-  * USB hubs are considered commodities. And yet, I have multiple because not all of them work. Not all of them are reliable. There is no way to know if the one I'm currently using doesn't cause network slowness or hiccups.  I hate the state of this industry right now.
-  * My preference is to use a combined hub that provides powered USB ports and a built-in gigabit ethernet port. With one of these I've tried, I noticed that while trying to use network at same time as an attached 7200rpm harddrive, the network would simply pause after a few megabytes. That shouldn't happen.
+* USB hubs are considered commodities. And yet, I have multiple because not all of them work. Not all of them are reliable. There is no way to know if the one I'm currently using doesn't cause network slowness or hiccups.  I hate the state of this industry right now.
+* My preference is to use a combined hub that provides powered USB ports and a built-in gigabit ethernet port. With one of these I've tried, I noticed that while trying to use network at same time as an attached 7200rpm harddrive, the network would simply pause after a few megabytes. That shouldn't happen.
 * Network Router
-  * Again, one might simply assume that a high end network router just works. And yet, I have found recently with my latest $300 router, that simply restarting it will sometimes cause my networks (wired and wifi) to perform better.  It also crashes every few weeks.
+* Again, one might simply assume that a high end network router just works. And yet, I have found recently with my latest $300 router, that simply restarting it will sometimes cause my networks (wired and wifi) to perform better.  It also crashes every few weeks.
 * Network Components
-  * I have a 5-port gigabit ethernet switch on my network. A true commodity device, right?  I have had to unplug/replug to reset it twice after it seemingly locked up.  I bought this one after the previous one had 3 failing ports. Any chance the switch is causing some intermittent network problems? Unlikely, but...
+* I have a 5-port gigabit ethernet switch on my network. A true commodity device, right?  I have had to unplug/replug to reset it twice after it seemingly locked up.  I bought this one after the previous one had 3 failing ports. Any chance the switch is causing some intermittent network problems? Unlikely, but...
 * Internet Service Provider Hardware
-  * I always buy my own modems because the ones ISPs provide are so terrible. But, who is to say the one I bought is much better? I bought it at Walmart. The ISP constantly upgrades and reconfigures it without my knowledge. Perhaps it introduces network issues?
+* I always buy my own modems because the ones ISPs provide are so terrible. But, who is to say the one I bought is much better? I bought it at Walmart. The ISP constantly upgrades and reconfigures it without my knowledge. Perhaps it introduces network issues?
 * Internet Service
-  * A complex topic with one hundred other potential points of random failure across the Internet.
+* A complex topic with one hundred other potential points of random failure across the Internet.
 * Game Servers
-  * When a multiplayer game is running slow or there's lag, it could simply be that the game providers servers/networks are overloaded. Or it depending on how game is coded, it could even be one or more of the other players (each with the complete stack of potential problem areas listed above).
+* When a multiplayer game is running slow or there's lag, it could simply be that the game providers servers/networks are overloaded. Or it depending on how game is coded, it could even be one or more of the other players (each with the complete stack of potential problem areas listed above).
 
 ...so when experiencing lag or poor performance, which of the above items is the reason?  I didn't even mention the actual CPU/GPU power.
-
--->
+*/}

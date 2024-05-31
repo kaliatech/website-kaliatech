@@ -22,8 +22,6 @@ src: '/i/projects/2010/stance-robot-v2/stancev2-005.jpg',
 },
 {
 src: '/i/projects/2010/stance-robot-v2/stancev2-006.jpg',
-},{
-src: '/i/projects/2010/stance-robot-v2/stancev2-007.jpg',
 },
 {
 src: '/i/projects/2010/stance-robot-v2/stancev2-008.png',
@@ -32,7 +30,12 @@ src: '/i/projects/2010/stance-robot-v2/stancev2-008.png',
 src: '/i/projects/2010/stance-robot-v2/stancev2-009.png',
 },
 ]
+
+# src: '/i/projects/2010/stance-robot-v2/stancev2-007.jpg
+
 ---
+import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
+import BlogPhotosRemote from '../../../components/blog/BlogPhotosRemote.astro'
 
 A write-up of the software stack I've been developing around this robot is located here:
 
@@ -57,14 +60,12 @@ The 3D modeling was done with Alibre, and the renderings were done with Hypersho
 out of lexan. Alibre interviewed me for one of their case studies. Alibre has gone through a couple owners over the
 years, and while the case study is no longer online, images of my robot continue to show up on their marketing pieces.
 
-<br/>
+## v2
 
-### v2
+<BlogPhotosSimple photos={frontmatter.photos} />
 
-<blog-post-photos-simple :photos=photos></blog-post-photos-simple>
-
-### v1
+## v1
 
 First iteration using the original chassis and controller from Lynxmotion.
 
-<kaliatech-photos :photos-path="'/Projects/RobotWalker1'"></kaliatech-photos>
+<BlogPhotosRemote name="Robot Walk v1" photosPath={'/Projects/RobotWalker1'} showName={false} />

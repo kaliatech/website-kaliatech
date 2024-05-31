@@ -1,10 +1,14 @@
 ---
-title: Note Taking Software and Services 
+title: Note Taking Software and Services
 createdAt: 2021-01-19
 description: Research around note taking and synchronization software.
 category: misc
+---
+import BlogPostToc from '../../../components/blog/BlogPostToc.astro'
+import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
+import BlogPhotoSimple from '../../../components/blog/BlogPhotoSimple.astro'
 
-photosNotebooks: [
+export const photosNotebooks = [
 {
   src: '/i/blog/2021/notes-research/notes-0.webp',
   caption: 'Old school - 15 years worth'
@@ -19,7 +23,7 @@ caption: 'In pencil!'
 },
 ]
 
-photosNoteshelf: [
+export const photosNoteshelf = [
 {
 src: '/i/blog/2021/notes-research/notes-4.webp',
 caption: 'Handwritten notes with Noteshelf'
@@ -30,12 +34,12 @@ caption: 'Another page'
 },
 {
 src: '/i/blog/2021/notes-research/notes-evernoteshelf.webp',
-caption: 'Sync''d to Evernote'
+caption: 'Sync\'d to Evernote'
 },
 ]
 
 
-photosEvernoteEncrypted: [
+export const photosEvernoteEncrypted = [
 {
 src: '/i/blog/2021/notes-research/notes-evernote-encrypted.webp',
 caption: 'Encrypted text feature'
@@ -43,7 +47,7 @@ caption: 'Encrypted text feature'
 ]
 
 
-photosQuack: [
+export const photosQuack = [
 {
 src: '/i/blog/2021/notes-research/notes-7.webp',
 caption: 'Notes on obese bird/duck/chicken aerodynamics. Quack.'
@@ -51,11 +55,9 @@ caption: 'Notes on obese bird/duck/chicken aerodynamics. Quack.'
 ]
 
 
----
-
 ## Contents
+<BlogPostToc />
 
-<blog-post-toc :toc=toc></blog-post-toc>
 
 ## Background
 
@@ -63,7 +65,8 @@ I am a prolific acquirer and creator of information. Much of it is useless, but 
 
 Two decades ago, I would carry paper journals with me everywhere. I still have a stack of them. In some ways, I miss those days.
 
-<blog-post-photos-simple :lightbox="true" :col-width="4" :photos=photosNotebooks></blog-post-photos-simple>
+<BlogPhotosSimple photos={photosNotebooks} cols={3} />
+
 
 However, I moved to fully paperless sometime around 2010. In general, I try to stay platform agnostic and make sure I can create/retrieve my notes on any device. In recent years I've been using a combination of these apps and services:
 
@@ -73,7 +76,7 @@ However, I moved to fully paperless sometime around 2010. In general, I try to s
 - [Noteshelf](https://www.noteshelf.net/) <br/>
   For handwritten notes using a stylus. I use this for free-form thoughts, diagrams, sketches, etc. Especially useful when thinking away from a computer. The app is only available on iOS, but it automatically syncs PDF versions of the notes to an Evernote notebook so that I have them in read only, searchable, form everywhere.
 
-<blog-post-photos-simple :lightbox="true" :col-width="4" :photos=photosNoteshelf></blog-post-photos-simple>
+<BlogPhotosSimple photos={photosNoteshelf} cols={3} />
 
 - [Dropbox](https://www.dropbox.com/) / [Sync](https://www.sync.com/) / [S3](https://aws.amazon.com/s3/) <br/>
   I generally use a separate service for storing and synchronizing files, PDF documents, etc. When needed, I annotate PDFs using [GoodReader](https://goodreader.com/) on iPad. Although file attachments can be stored and annotated in Evernote, it gets unwieldy. I've never used it extensively for that purpose. I stopped using Dropbox a while ago when they started incorporating so many dark patterns around their upsells, but they do have some nice features. I now use sync.com. Similar, but more secure and not as feature rich. Another good option for many would be [Google Drive](https://drive.google.com) or [Microsoft OneDrive](https://onedrive.live.com). Google and Microsoft already have access to way more than enough of my digital life.
@@ -209,7 +212,7 @@ It's important to note that I never store truly sensitive information in Evernot
 
 Evernote has a feature I really liked for quickly encrypting a block of highlighted text. It prompts for a password and requires that password to be entered in order to decrypt at some later time. It ~is~ _was_ a really nice feature for storing sensitive data alongside relevant notes, without having to encrypt the entire note. I haven't seen another note taking app that does this.
 
-<blog-post-photos-simple :lightbox="true" :col-width="6" :center=true :photos=photosEvernoteEncrypted></blog-post-photos-simple>
+<BlogPhotoSimple photo={photosEvernoteEncrypted[0]} maxWidth={'35rem'} />
 
 The current implementation of it in v10 is not great. Specifically, once encrypted, it's no longer possible to add/modify text within the encrypted block. Hopefully they'll address that eventually. Regardless, I've moved away from using the feature frequently for two reasons:
 
@@ -226,4 +229,4 @@ And I recently discovered that the v10 editor supports markdown like formatting 
 
 Evernote. For now. Imperfect, but maybe it will get better. If it doesn't, there are other options that will probably as good, if not better, soon.
 
-<blog-post-photos-simple :lightbox="true" :col-width="6" :center="true" :photos=photosQuack></blog-post-photos-simple>
+<BlogPhotoSimple photo={photosQuack[0]} maxWidth={'80%'} />

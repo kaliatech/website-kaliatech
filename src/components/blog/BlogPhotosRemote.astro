@@ -1,11 +1,15 @@
 ---
 import { BASE_PHOTOS_URL } from './BlogContants'
 
+import BlogPhotosSimple from './BlogPhotosSimple.astro'
+import { SimplePhotoMeta } from './SimplePhoto'
+
 interface Props {
   name: string
   showName?: boolean
   basePhotosUrl?: string
   photosPath: string
+  photoMetas: SimplePhotoMeta[]
 }
 
 const { name, showName = true, basePhotosUrl = BASE_PHOTOS_URL, photosPath } = Astro.props
@@ -28,9 +32,23 @@ const galleryObj = await fetch(`${basePhotosUrl}${photosPath}/index.json`).then(
 // {errorMsg && <AlertError msg={errorMsg} />}
 //
 //
+
+// console.log('media', galleryObj.medias[0])
+//
+// console.log('photoMetas', Astro.props.photoMetas)
+
+const photos = galleryObj.medias?.map((media) => {
+  const meta = Astro.props.photoMetas?.find((meta) => meta.filename === media.filename)
+
+  return {
+    src: `${basePhotosUrl}${photosPath}/${media.filename}`,
+    caption: meta?.caption ?? media.descr,
+    type: media.type,
+  }
+})
 ---
 
 <div>
-  {showName && <h2 class="font-light">{name}</h2>}
-  <pre>{JSON.stringify(galleryObj, null, 2)}</pre>
+  {showName && name && <h2 class="font-light">{name}</h2>}
+  <BlogPhotosSimple photos={photos} />
 </div>

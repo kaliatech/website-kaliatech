@@ -57,16 +57,11 @@ functions are also accessible via a simple HTTP API for integration with other s
 In this case, the neopixel was connected for visual effect only. It is simply cycling through colors. The neopixel
 products are interesting because each LED can be individually addressed to display any RGB color and brightness.
 
-<div class="video-container">
-    <div class="video-responsive">
-      <iframe
-        allowfullscreen
-        style="border:none"
-        height="360"
-        src="https://www.youtube.com/embed/RCFIziTKojM?feature=oembed"
-        width="640"
-      ></iframe>
-    </div>
+<div class="video-responsive">
+  <iframe
+    allowFullScreen
+    src="https://www.youtube.com/embed/RCFIziTKojM?feature=oembed"
+  ></iframe>
 </div>
 
 ## Where&#8217;s my Internet connected toaster?

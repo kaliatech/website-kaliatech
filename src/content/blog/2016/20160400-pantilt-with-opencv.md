@@ -19,20 +19,15 @@ including iOS.
 
 ## Behind the Scenes
 
-<div class="video-container">
-    <div class="video-responsive">
-      <iframe
-        allowfullscreen
-        height="360"
-        src="https://www.youtube.com/embed/An6dyd8HZPk"
-        width="640"
-        style="border:none"
-      ></iframe>
-    </div>
-    <div class="media-caption">
-        Resulting video from webcam:
-          <a href="https://youtu.be/3FT468u_prM">https://youtu.be/3FT468u_prM</a> 
-    </div>
+<div class="video-responsive">
+  <iframe
+    allowFullScreen
+    src="https://www.youtube.com/embed/An6dyd8HZPk"
+  ></iframe>
+</div>
+<div class="text-center">
+    Resulting video from webcam:
+      <a href="https://youtu.be/3FT468u_prM">https://youtu.be/3FT468u_prM</a> 
 </div>
 
 To improve on this, servo movements could be smoothed and averaging applied to the face detection results. Also, these

@@ -41,6 +41,7 @@ src: '/i/projects/2011/flight-regression/fr2-scrshot-2.jpg',
 
 
 ---
+import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
 
 Flight Regression was a small consulting business around taking raw data from general aviation flight accidents,
 applying computer analysis to that data, and then generating multimedia reconstructions.
@@ -52,42 +53,33 @@ to <a href="https://killedbygoogle.com/">killedbygoogle</a>.
 
 ## Demonstration Videos
 
+I previously had YouTube videos showing the 3D GoogleEarth software in action. It included a animated flight path and
+transcript synchronized to audio. It was a single-page-application before SPA was a common term. However, during the
+great google account purge of early 2020, I lost access to the account and Google subsequently deleted all of my
+videos. Lessons learned.
+
+{/*
 These videos show software I developed before "single-page-application" was a common term.
-
-<div class="video-container">
-    <div class="video-responsive">
-        <iframe
-            allowfullscreen
-            width="640"
-            height="360"
-            src="https://www.youtube.com/embed/u4M-bm_V9wU"
-            style="border:none"
-            allow="autoplay; encrypted-media; picture-in-picture">
-        </iframe>
-    </div>
-    <div class="media-caption">Custom browser developed browser based app. Used google earth plugin.</div>
+<div class="video-responsive">
+    <iframe
+        allowfullscreen
+        src="https://www.youtube.com/embed/u4M-bm_V9wU"
+        allow="autoplay; encrypted-media; picture-in-picture">
+    </iframe>
 </div>
+<div class="media-caption">Custom browser developed browser based app. Used google earth plugin.</div>
 
-<div class="video-container">
-    <div class="video-responsive">
-        <iframe
-            allowfullscreen
-            width="640"
-            height="360"
-            src="https://www.youtube.com/embed/ASHVUUbhFNM"
-            style="border:none"
-            allow="autoplay; encrypted-media; picture-in-picture">
-        </iframe>
-    </div>
-    <div class="media-caption">In this accident there were three relevant aircraft.</div>
+<div class="video-responsive">
+    <iframe
+      allowFullScreen
+        src="https://www.youtube.com/embed/ASHVUUbhFNM"
+        allow="autoplay; encrypted-media; picture-in-picture">
+    </iframe>
 </div>
+<div class="media-caption">In this accident there were three relevant aircraft.</div>
+*/}
 
 ## Screenshots and Brochures
 
-<blog-post-photos-simple :photos=photos></blog-post-photos-simple>
+<BlogPhotosSimple photos={frontmatter.photos} />
 
-## Defunct Website
-
-- http://archive.kaliatech.com/2018/websites/www.flightregression.com/index.html
-
-Most of this website is no longer functional, but it still gives some sense to how things worked.

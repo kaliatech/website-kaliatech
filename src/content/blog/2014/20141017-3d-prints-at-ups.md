@@ -12,9 +12,9 @@ category: 3dprinting
       <a href="https://www.theupsstore.com/print/3d-printing">3D printing services</a>
       now offered at the local UPS store.
     </p>
-    <p>
-      <img src="/i/blog/2014/3dprint-L2L.jpg" width="1920" height="1080" alt="3D Prints from UPS store" />
-    </p>
+    <figure class="figure">
+      <img src="/i/blog/2014/3dprint-L2L.jpg" width="1920" height="1080" class="figure-img"" alt="3D Prints from UPS store" />
+    </figure>
     <p>
       These objects are connectors for combining Legos and Lincoln Logs. Many similar type connectors are
       available for download as part of the

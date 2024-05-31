@@ -12,6 +12,12 @@ export default {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './node_modules/@kaliatech/shared-astro-tw/src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
   ],
+  safelist: [
+    {
+      pattern: /grid-cols-\d+/,
+      variants: ['md', 'lg'],
+    }
+  ],
   theme: {
     extend: {
       container: {

@@ -3,8 +3,11 @@ title: 3D Printer - Functional Prints
 createdAt: 2020-05-20
 description: Photos of recent functional prints.
 category: 3dprinting
+---
 
-photos: [
+import BlogPhotosSideBySide from '../../../components/blog/BlogPhotosSideBySide.astro'
+
+export const photos = [
 {
 title: 'Tripod Handle',
 descr: 'Printed in TPU (soft and rubbery). The original had disintegrated.',
@@ -45,9 +48,8 @@ srcA: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-ppeheadband-slice
 srcB: '/i/blog/2020/0520-3dprint-functional/3dprint-functional-ppeheadband.jpg',
 },
 ]
----
 
 One of my favorite subreddits is <a href="https://www.reddit.com/r/functionalprint/">/r/functionalprint</a>,
 where users showcase 3D prints that are useful. Here are some of my functional prints:
 
-<blog-post-photos :photos=photos></blog-post-photos>
+<BlogPhotosSideBySide photos={photos} cols={2} />

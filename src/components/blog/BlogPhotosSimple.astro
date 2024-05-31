@@ -1,26 +1,25 @@
 ---
+import clsx from 'clsx'
 import { type SimplePhoto } from './SimplePhoto'
+import BlogPhotoSimple from './BlogPhotoSimple.astro'
+
+interface Props {
+  photos: SimplePhoto[]
+  cols?: number
+  center?: boolean
+}
+
 const photos = Astro.props.photos as SimplePhoto[]
 ---
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+<div
+  class={clsx(`grid grid-cols-1 gap-4 md:grid-cols-${Astro.props.cols ?? 2}`, {
+    ['justify-center']: Astro.props.center,
+  })}
+>
   {
     photos.map((photo) => {
-      return (
-        <figure class="figure m-0 w-full p-0">
-          <a href={photo.src}>
-            {photo.type === 'video' && (
-              <video src={photo.src} autoplay class="photo-img" loop muted playsinline />
-            )}
-            {photo.type !== 'video' && <img src={photo.src} class="photo-img" />}
-          </a>
-          {photo.caption && (
-            <figcaption class="photo-caption mb-6 text-center">
-              <Fragment set:html={photo.caption} />
-            </figcaption>
-          )}
-        </figure>
-      )
+      return <BlogPhotoSimple photo={photo} />
     })
   }
 </div>

@@ -8,18 +8,15 @@ category: quotes
 <div class="row">
   <div class="col">
     <p>
-      I recently finished reading &quot;
-      <a href="https://www.goodreads.com/book/show/34066798-a-gentleman-in-moscow"> A Gentleman in Moscow </a>
+      I recently finished reading &quot;<a href="https://www.goodreads.com/book/show/34066798-a-gentleman-in-moscow">A Gentleman in Moscow</a>
       &quot;, a novel by
       <a href="https://en.wikipedia.org/wiki/Amor_Towles">Amor Towles</a>. It was excellent. That makes three
-      excellent finds in the past year. The others being &quot;
-      <a href="https://www.goodreads.com/book/show/1232.The_Shadow_of_the_Wind"> The Shadow of the Wind </a>
+      excellent finds in the past year. The others being &quot;<a href="https://www.goodreads.com/book/show/1232.The_Shadow_of_the_Wind">The Shadow of the Wind</a>
       &quot; by <a href="https://en.wikipedia.org/wiki/Carlos_Ruiz_Zaf%C3%B3n">Carlos Ruiz Zafón</a> with Lucia
-      Graves as translator, and &quot;
-      <a href="https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing"> Where the Crawdads Sing </a>
-      &quot; by <a href="https://en.wikipedia.org/wiki/Delia_Owens">Delia Owens</a>.
+      Graves as translator, and &quot;<a href="https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing">Where the Crawdads Sing</a>
+      &quot; by <a href="https://en.wikipedia.org/wiki/Delia_Owens">Delia Owens</a>. A few highlights from &quot;A
+      Gentleman in Moscow&quot; are below. Includes minor spoilers.
     </p>
-    <p>A few highlights from &quot;A Gentleman in Moscow&quot; are below. Includes minor spoilers.</p>
     <hr />
     <div class="quote-block">
       <p class="quote">For rather than being tools of self-discovery, mirrors tended to be tools of self-deceit.</p>
@@ -41,7 +38,7 @@ category: quotes
       <p class="quote">
         “Sometimes,” Nina clarified, “everybody tells you something because they are everybody. But why should one
         listen to everybody? Did everybody write the Odyssey? Did everybody write the Aeneid?” She shook her head
-        then concluded definitively: “The only difference between everybody and nobody is all the shoes.
+        then concluded definitively: “The only difference between everybody and nobody is all the shoes.”
       </p>
     </div>
     <hr />

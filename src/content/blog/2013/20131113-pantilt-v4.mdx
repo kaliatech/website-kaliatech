@@ -1,0 +1,47 @@
+---
+title: Pan/Tilt Servo Control (v4)
+createdAt: 2013-11-15
+description: Remote servo controlled pan/tilt and video.
+category: projects
+---
+
+export const photoMetas = [
+  { filename: '00-P1060354.jpg', caption: 'Pan/Tilt View 1' },
+  { filename: '10-P1060353.jpg', caption: 'Pan/Tilt View 2' },
+  { filename: '30-P1060360.jpg', caption: 'Workspace' },
+  { filename: '20-P1060363.jpg', caption: 'Pan/Tilt View 3' },
+  { filename: '40-P1060364.jpg', caption: 'Stance and Beaglebone Black' },
+  { filename: '50-intellij-screenshot.png', caption: 'Project Organization' },
+]
+
+import BlogPhotosRemote from '../../../components/blog/BlogPhotosRemote.astro'
+
+<p class="lead">Remote servo controlled pan/tilt and video.</p>
+<p>
+  A few photos and brief video showing showing new interface and latest iteration of my custom
+  pan/tilt video system. This is a small experiment inside of a larger software framework for
+  interacting with physical devices. I’ve also been using it to test out some new UI ideas.
+</p>
+<p>
+  This is my fourth iteration creating a pan/tilt video demo to test out new software ideas. The
+  construction (and availability of the off-the-shelf components) has changed quite a bit since the
+  days of [version
+  1](https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/html/randd/roboticservo/index.html)
+  & [version
+  2](https://archive.kaliatech.com/2018/websites/www.jgstechnical.com/archive_20090412/html/randd/roboticservo2/index.html)
+  . I don’t know what happened to version 3.
+</p>
+
+<h2>Photos</h2>
+<BlogPhotosRemote
+  name="Pan/Tilt v4"
+  showName={false}
+  photosPath={'/Blog/2013/pantilt-v4'}
+  photoMetas={photoMetas}
+/>
+
+<h2>Video</h2>
+
+<div class="video-responsive">
+  <iframe allowFullScreen src="https://www.youtube.com/embed/TxmF578vKdI?feature=oembed"></iframe>
+</div>
