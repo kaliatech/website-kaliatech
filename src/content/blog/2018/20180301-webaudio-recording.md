@@ -2,7 +2,7 @@
 title: Web Audio Recording
 createdAt: 2018-03-01
 description: Web audio recording tests for all web browsers.
-category: projects
+category: [projects]
 ---
 
 Test client and code demonstrating and testing various web audio recording capabilities in browser. This was developed

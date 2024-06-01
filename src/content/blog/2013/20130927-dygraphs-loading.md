@@ -2,7 +2,7 @@
 title: Dynamic Loading w/ Dygraphs
 createdAt: 2013-09-27
 description: Loading large time series datasets while zooming.
-category: projects
+category: [projects]
 ---
 
 Examples demonstrating how to dynamically load down-sampled data, while zooming and panning, without modifying dygraphs.

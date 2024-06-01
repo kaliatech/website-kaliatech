@@ -2,7 +2,7 @@
 title: Particle.io Photon Experiments
 createdAt: 2017-07-01
 description: Demo of the particle.io photon MCU and platform.
-category: projects
+category: [projects]
 ---
 
 The

@@ -2,7 +2,7 @@
 title: AR Experiments on Android
 createdAt: 2018-10-31
 description: Videos showing early experiments with ARCore.
-category: projects
+category: [projects]
 ---
 
 Videos showing early experiments with ARCore. Native android development using

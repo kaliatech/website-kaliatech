@@ -2,7 +2,7 @@
 title: Goodbye to an Old Laptop
 createdAt: 2011-02-21
 description: Moore's Law does not consider nostalgia.
-category: misc
+category: [misc]
 ---
 
 I took kt004 to the electronics recycling plant over the weekend. This was a high-end laptop bought while

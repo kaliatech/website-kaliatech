@@ -2,7 +2,7 @@
 title: BlinkM RGB LED Controller
 createdAt: 2011-05-01
 description: Joystick control of a BlinkM RGB LED.
-category: projects
+category: [projects]
 ---
 
 <p>

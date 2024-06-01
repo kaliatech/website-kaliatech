@@ -1,0 +1,58 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content'
+import { formatUtcDate } from '../../../../.yalc/@kaliatech/shared-ts/src/utils/formatUtcDate'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import { getBlogPostsByYear } from '../_support/getBlogPosts'
+import { getUniqueTags } from '../_support/getUniqueTags'
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog')
+
+  const uniqueTags = await getUniqueTags()
+  const staticPaths = uniqueTags.map((tag) => ({
+    params: { tag: tag },
+    props: { tag: tag },
+  }))
+
+  return staticPaths
+}
+
+const tags = Astro.params?.tag?.split(',')
+const tagsStr = tags.reduce((acc, tag) => `${acc}#${tag}`, '')
+
+const blogPostsByYear = await getBlogPostsByYear(tags)
+---
+
+<BaseLayout title={`${Astro.params.tag} | Blog | Kaliatech`}>
+  <div class="my-4">
+    <h1 class="font-semibold">Blog</h1>
+    <p class="pt-3">Required reading, IMO.</p>
+  </div>
+
+  {
+    tagsStr && (
+      <div class="mb-8 mt-4">
+        <h1>{tagsStr ? `${tagsStr}` : ''}</h1>
+      </div>
+    )
+  }
+
+  {
+    Array.from(blogPostsByYear.keys()).map((year) => (
+      <div class="mb-8">
+        <h2 class="pb-2">{year}</h2>
+        <ul class="ml-12 list-disc space-y-4">
+          {blogPostsByYear.get(year)?.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}`} class="font-bold">
+                {post.data.title}
+              </a>
+              <br />
+              {post.data.description}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</BaseLayout>

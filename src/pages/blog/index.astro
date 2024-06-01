@@ -1,28 +1,14 @@
 ---
 import Layout from '../../layouts/BaseLayout.astro'
 
-import { getCollection } from 'astro:content'
-import { type CollectionEntry } from 'astro:content'
+import { getBlogPostsByYear } from './_support/getBlogPosts'
+import { getUniqueTags } from './_support/getUniqueTags'
 
-const allBlogPosts = await getCollection('blog')
-const blogPostsSorted = allBlogPosts.sort((a, b) => {
-  return new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()
-})
+const tags = Astro.params?.tags?.split(',')
 
-const blogPostsByYear = new Map<number, CollectionEntry<'blog'>[]>()
-blogPostsSorted.forEach((post) => {
-  const year = new Date(post.data.createdAt).getFullYear()
-  if (!blogPostsByYear.has(year)) {
-    blogPostsByYear.set(year, [])
-  }
-  blogPostsByYear.get(year)?.push(post)
-})
+const blogPostsByYear = await getBlogPostsByYear(tags)
 
-// const allBlogPosts = await getCollection('blog').sort((a, b) => {
-//   return new Date(b.createdAt) - new Date(a.createdAt)
-// })
-
-//console.log('allBlogPosts', allBlogPosts)
+const uniqueTags = await getUniqueTags()
 ---
 
 <Layout title="Kaliatech">
@@ -30,22 +16,40 @@ blogPostsSorted.forEach((post) => {
     <h1 class="font-semibold">Blog</h1>
     <p class="pt-3">Required reading, IMO.</p>
   </div>
-  {
-    Array.from(blogPostsByYear.keys()).map((year) => (
-      <div class="mb-8">
-        <h2 class="pb-2">{year}</h2>
-        <ul class="ml-12 list-disc space-y-4">
-          {blogPostsByYear.get(year)?.map((post) => (
+  <div class="flex flex-wrap sm:flex-nowrap">
+    <div class="grow">
+      {
+        Array.from(blogPostsByYear.keys()).map((year) => (
+          <div class="mb-8">
+            <h2 class="pb-2">{year}</h2>
+            <ul class="ml-12 list-disc space-y-4">
+              {blogPostsByYear.get(year)?.map((post) => (
+                <li>
+                  <a href={`/blog/${post.slug}`} class="font-bold">
+                    {post.data.title}
+                  </a>
+                  <br />
+                  {post.data.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <div>
+      <h2 class="pb-2">Tags</h2>
+      <ul class="ml-8 space-y-2">
+        {
+          uniqueTags.map((tag) => (
             <li>
-              <a href={`/blog/${post.slug}`} class="font-bold">
-                {post.data.title}
+              <a href={`/blog/tags/${tag}`} class="font-bold">
+                #{tag}
               </a>
-              <br />
-              {post.data.description}
             </li>
-          ))}
-        </ul>
-      </div>
-    ))
-  }
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </Layout>

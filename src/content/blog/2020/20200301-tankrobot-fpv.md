@@ -2,7 +2,7 @@
 title: Tank Robot - FPV Edition (WIP)
 createdAt: 2020-03-01
 description: Small robot with FPV setup.
-category: projects
+category: [projects]
 ---
 
 Simple tracked robot with accurate speed controls and responsive first-person-view (FPV) for remote control.

@@ -2,7 +2,7 @@
 title: The System
 createdAt: 2011-05-20
 description: Passage from "Zen and the Art of Motorcycle Maintenance".
-category: quotes
+category: [quotes]
 ---
 
 > To speak of certain government and establishment institutions as “the system” is to speak correctly.

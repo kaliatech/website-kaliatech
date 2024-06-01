@@ -2,7 +2,7 @@
 title: IntelliJ IDEA Console Log Options
 createdAt: 2020-12-18
 description: Live edit and plugin research.
-category: misc
+category: [misc]
 ---
 
 A common need is to write ``console.log(`${VAR}`)`` statements while coding JavaScript/TypeScript. Ideally one could highlight the variable and use a shortcut. I went searching for a quick method to do this on IntelliJ IDEA. There is a built-in postfix code completion and live templates. It took me a while to find the details.
