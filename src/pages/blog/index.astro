@@ -6,6 +6,7 @@ import { getUniqueTags } from './_support/getUniqueTags'
 
 const tags = Astro.params?.tags?.split(',')
 
+//const blogPostsByYear = await getBlogPostsByYear(tags, ['archived'])
 const blogPostsByYear = await getBlogPostsByYear(tags)
 
 const uniqueTags = await getUniqueTags()

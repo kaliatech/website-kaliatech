@@ -3,8 +3,9 @@ import { type CollectionEntry, getCollection } from 'astro:content'
 
 export async function getBlogPostsByYear(
   filterTags?: string[],
+  negativeFilterTags?: string[],
 ): Promise<Map<number, CollectionEntry<'blog'>[]>> {
-  const allBlogPosts = await getBlogPosts(filterTags)
+  const allBlogPosts = await getBlogPosts(filterTags, negativeFilterTags)
   const blogPostsByYear = new Map<number, CollectionEntry<'blog'>[]>()
 
   // Build map of blog posts by year
@@ -20,10 +21,11 @@ export async function getBlogPostsByYear(
   return blogPostsByYear
 }
 
-export async function getBlogPosts(filterTags?: string[]): Promise<CollectionEntry<'blog'>[]> {
+export async function getBlogPosts(
+  filterTags?: string[],
+  negativeFilterTags?: string[],
+): Promise<CollectionEntry<'blog'>[]> {
   const allBlogPosts = await getCollection('blog')
-
-  console.log('filterTags', filterTags)
 
   // Filter by tag if needed
   let blogPostsFiltered = Array.from(allBlogPosts)
@@ -33,6 +35,13 @@ export async function getBlogPosts(filterTags?: string[]): Promise<CollectionEnt
       return filterTags?.some((t) => tags?.includes(t))
     })
   }
+  if (negativeFilterTags && negativeFilterTags?.length > 0) {
+    blogPostsFiltered = blogPostsFiltered.filter((entry) => {
+      const tags = entry.data.category
+      return !negativeFilterTags?.some((t) => tags?.includes(t))
+    })
+  }
+
   return blogPostsFiltered.sort((a, b) => {
     return new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()
   })

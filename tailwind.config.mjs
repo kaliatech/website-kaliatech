@@ -43,7 +43,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Open Sans Variable"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Montserrat Variable"', ...defaultTheme.fontFamily.sans],
+        //sans: ['"Open Sans Variable"', ...defaultTheme.fontFamily.sans],
+        //sans: ['"Nunito Variable"', ...defaultTheme.fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -54,15 +56,22 @@ export default {
             figcaption: {
               color: theme('colors.gray[500]'),
             },
+            h1: {
+              fontSize: '1.5rem',
+              fontWeight: 500,
+              marginBottom: '.5rem',
+            },
             h2: {
               fontSize: '1.25rem',
-              fontWeight: 600,
+              fontWeight: 500,
+              marginBottom: '.5rem',
             },
-            p: {
-              'p > li': {
-                border: '2px solid red',
-              },
-            },
+            // p: {
+            //   fontWeight: 300,
+            //   'p > li': {
+            //     border: '2px solid red',
+            //   },
+            // },
           },
         },
       }),
