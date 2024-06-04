@@ -56,6 +56,11 @@ export default {
             figcaption: {
               color: theme('colors.gray[500]'),
             },
+            a: {
+              display: 'inline-flex',
+              fontWeight: 600,
+              color: '#20466a'
+            },
             h1: {
               fontSize: '1.5rem',
               fontWeight: 500,
