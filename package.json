@@ -27,7 +27,7 @@
     "lodash.groupby": "^4.6.0",
     "lodash.truncate": "^4.4.2",
     "mermaid": "^8.14.0",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.12.1",
     "nuxt-fontawesome": "^0.4.0",
     "prismjs": "^1.27.0",
     "vue-light-gallery": "github:kaliatech/vue-light-gallery",
