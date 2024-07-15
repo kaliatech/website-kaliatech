@@ -1,0 +1,19 @@
+div.images-stack {
+  box-shadow:
+    3px 3px 1px rgba(0, 0, 0, 0.1),
+    4px 4px 1px rgba(0, 0, 0, 0.1),
+    7px 7px 1px rgba(0, 0, 0, 0.1),
+    8px 8px 1px rgba(0, 0, 0, 0.1),
+    11px 11px 1px rgba(0, 0, 0, 0.1),
+    12px 12px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dark div.images-stack-dark {
+  box-shadow:
+    3px 3px 1px rgba(110, 110, 110, 0.3),
+    4px 4px 1px rgba(0, 0, 0, 0.3),
+    7px 7px 1px rgba(110, 110, 110, 0.3),
+    8px 8px 1px rgba(0, 0, 0, 0.3),
+    11px 11px 1px rgba(110, 110, 110, 0.3),
+    12px 12px 1px rgba(0, 0, 0, 0.3);
+}
