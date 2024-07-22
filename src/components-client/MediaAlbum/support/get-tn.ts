@@ -3,10 +3,13 @@ import type { MediaAlbum, MediaFile, MediaFileVariant } from './model.js'
 export const getTnForAlbum = (mediaAlbum: MediaAlbum): MediaFileVariant | null | undefined => {
   let tnVariant: MediaFileVariant | null | undefined
 
-  //const mediaFiles = new Map(mediaAlbum.media_files.map<[string, MediaFile]>((record) => record))
+  //const mediaFiles = new Map(mediaAlbum.media_files.map<[string, MediaFile.tsx]>((record) => record))
   let tnMediaFileRecord: [string, MediaFile] | undefined
   if (mediaAlbum.thumbnail) {
     tnMediaFileRecord = mediaAlbum.media_files.find((record) => record[0] == mediaAlbum.thumbnail)
+    // A thumbnail can also reference media file from subalbums
+    if (!tnMediaFileRecord) {
+    }
   }
   if (tnMediaFileRecord) {
     tnVariant = getTnVariant(tnMediaFileRecord[1])

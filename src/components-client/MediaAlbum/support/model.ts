@@ -13,6 +13,7 @@ export interface MediaFile {
   title: string
   ordinal: number
   last_modified: Date
+  media_type: string
   width: number
   height: number
   //variants: Map<string, MediaFileVariant>
@@ -26,7 +27,7 @@ export interface MediaAlbum {
   last_modified_dir: Date
   thumbnail: string
   //sub_albums: Map<string, MediaAlbum>
-  //media_files: Map<string, MediaFile>
+  //media_files: Map<string, MediaFile.tsx>
   sub_albums: [[string, MediaAlbum]]
   media_files: [[string, MediaFile]]
 }

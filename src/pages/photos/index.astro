@@ -2,54 +2,54 @@
 import Layout from '../../layouts/BaseLayout.astro'
 import Prose from '../../components/Prose.astro'
 
+const MEDIA_ROOT_URL = import.meta.env.PUBLIC_KALIATECH_MEDIA_ROOT_URL
+
 const mainAlbums = [
   {
     title: 'Random',
-    tn: 'https://kaliatech-media.s3.amazonaws.com/kt-processor-test1/favorites/IMG_1566.JPG/IMG_1566.640x360.avif',
+    tn: `${MEDIA_ROOT_URL}/random/2022/PXL_20220106_221018257.jpg/PXL_20220106_221018257.640x360.avif`,
     url: '/photos/random',
   },
   {
     title: 'Rides',
-    tn: 'https://kaliatech-media.s3.amazonaws.com/kt-processor-test1/rides/20070623/IMG_1074.JPG/IMG_1074.640x360.avif',
-    url: '/photos/random',
+    tn: `${MEDIA_ROOT_URL}/rides/20070623/IMG_1074.JPG/IMG_1074.640x360.avif`,
+    url: '/photos/rides',
   },
-  {
-    title: 'Projects',
-    tn: 'https://kaliatech-media.s3.amazonaws.com/kt-processor-test1/deepfile1.jpg/deepfile1.1280x720.avif',
-    url: '/photos/random',
-  },
+  // {
+  //   title: 'Blog',
+  //   tn: `${MEDIA_ROOT_URL}/blog/2013/pantilt-v4/20-P1060363.jpg/20-P1060363.640x360.avif`,
+  //   url: '/photos/blog',
+  // },
   {
     title: 'Favorites',
-    tn: 'https://kaliatech-media.s3.amazonaws.com/kt-processor-test1/deepfile1.jpg/deepfile1.1280x720.avif',
-    url: '/photos/random',
+    tn: `${MEDIA_ROOT_URL}/favorites/IMG_1566.JPG/IMG_1566.640x360.avif`,
+    url: '/photos/favorites',
   },
 ]
 ---
 
 <Layout title="Photos | Kaliatech">
   <div class="mt-4">
-    <h1>Photos</h1>
-    <h2 class="my-4">Random photos and videos</h2>
+    <h1 class="font-semibold">Photos & Videos</h1>
+    <!--<p class="pt-3">Random photos and videos</p>-->
   </div>
 
-  <Prose class="photos">
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      {
-        mainAlbums.map((album) => (
-          <div class="mr-8">
-            <h2 class="mt-4">{album.title}</h2>
-            <a href={album.url} class="m-0">
-              <div class="images-stack images-stack-dark rounded-lg">
-                <img
-                  class="mb-0 mt-0 rounded-lg border-2 border-white/50 dark:border-gray-300/50"
-                  src={album.tn}
-                  alt={album.title}
-                />
-              </div>
-            </a>
-          </div>
-        ))
-      }
-    </div>
-  </Prose>
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    {
+      mainAlbums.map((album) => (
+        <div class="mr-8">
+          <h3 class="pt-3">{album.title}</h3>
+          <a href={album.url} class="m-0">
+            <div class="images-stack images-stack-dark rounded-lg">
+              <img
+                class="mb-0 mt-0 rounded-lg border-2 border-white/50 dark:border-gray-300/50"
+                src={album.tn}
+                alt={album.title}
+              />
+            </div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
 </Layout>
