@@ -99,7 +99,7 @@ export const BookmarksList = (_props: BookmarksListProps) => {
     <>
       <div>
         {bookmarksRespData?.results?.map((bookmark: Bookmark) => (
-          <div key={bookmark.id} className="m-4 ml-0 rounded-md bg-theme-50 p-3">
+          <div key={bookmark.id} className="m-4 ml-0 rounded-md bg-theme-50 p-3 dark:bg-theme-600">
             <div className="min-w-[10rem] justify-between md:flex">
               <div className="min-w-[10rem]">
                 <a
@@ -119,7 +119,7 @@ export const BookmarksList = (_props: BookmarksListProps) => {
                   <a
                     key={tag}
                     href={`?tag=${tag}`}
-                    className="mr-1 whitespace-nowrap rounded-md bg-theme-100 px-2 py-1 font-light text-theme-900 hover:bg-theme-100/50 hover:no-underline"
+                    className="mr-1 whitespace-nowrap rounded-md bg-theme-100 px-2 py-1 font-light text-theme-900 hover:bg-theme-100/50 hover:no-underline dark:bg-theme-700 dark:hover:bg-theme-700/50"
                   >
                     #{tag}
                   </a>

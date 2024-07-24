@@ -50,6 +50,9 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            // color: 'blue',
+            // '--tw-prose-invert-links': 'black',
+            // '--tw-prose-links': 'black',
             //'--tw-prose-captions': '#ff0000',
             //maxWidth: '80ch', // add required value here
             maxWidth: 'none', // add required value here
@@ -57,7 +60,6 @@ export default {
               color: theme('colors.gray[500]'),
             },
             a: {
-              display: 'inline-flex',
               fontWeight: 600,
               color: '#20466a'
             },
@@ -79,6 +81,17 @@ export default {
             // },
           },
         },
+        invert: {
+          css: {
+            // color: 'red',
+            a: {
+              fontWeight: 600,
+              color: '#678DB1'
+//              color: theme('theme[300]')
+            },
+
+          }
+        }
       }),
     },
   },
