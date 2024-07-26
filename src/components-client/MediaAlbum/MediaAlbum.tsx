@@ -36,10 +36,10 @@ export default function MediaAlbum(props: MediaAlbumProps) {
         setError('')
         const albumJsonUrl = `${MEDIA_ROOT_URL}${subalbumPath ? subalbumPath : '/' + props.albumId}/album.json`
         const albumJsonResp = await fetch(albumJsonUrl)
-        console.log('albumId', props.albumId)
-        console.log('subalbumPath', subalbumPath)
-        console.log('albumJsonUrl', albumJsonUrl)
-        console.log('mediafile', mediafile)
+        // console.log('albumId', props.albumId)
+        // console.log('subalbumPath', subalbumPath)
+        // console.log('albumJsonUrl', albumJsonUrl)
+        // console.log('mediafile', mediafile)
 
         if (albumJsonResp.ok) {
           setMediaAlbum((await albumJsonResp.json()) as MediaAlbum)
@@ -118,7 +118,7 @@ export default function MediaAlbum(props: MediaAlbumProps) {
         {subAlbums.length > 0 && (
           <>
             <hr className={'mb-2 mt-0'} />
-            <h3>Sub Albums</h3>
+            {subAlbums.length > 0 && mediaFiles.size > 0 && <h3>Sub Albums</h3>}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
               {subAlbums.map((subAlbum) => {
                 const subAlbumPath = subAlbum.path
@@ -130,8 +130,9 @@ export default function MediaAlbum(props: MediaAlbumProps) {
                 return (
                   <div key={subAlbum.path} className="mr-8">
                     <div key={subAlbumPath}>
-                      <h2 className="mt-4">{subAlbum.title}</h2>
                       <a href={subAlbumUrl} className="m-0 w-full">
+                        <h2 className="mb-0 mt-8">{subAlbum.title}</h2>
+
                         <div className="images-stack images-stack-dark aspect-video w-full rounded-lg">
                           {subAlbumTnUrl && (
                             <img
