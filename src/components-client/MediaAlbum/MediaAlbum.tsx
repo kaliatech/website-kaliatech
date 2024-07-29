@@ -108,7 +108,7 @@ export default function MediaAlbum(props: MediaAlbumProps) {
                       >
                         <div className="rounded-lg">
                           <img
-                            className="mb-0 mt-0 rounded-lg border-2 border-white/50 dark:border-gray-300/50"
+                            className="mb-1 mt-1 rounded-lg border-2 border-white/50 dark:border-gray-300/50"
                             src={mfTnUrl}
                             alt={mediaFile.title}
                           />
