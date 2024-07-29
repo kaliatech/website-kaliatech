@@ -33,7 +33,6 @@ export const buildBreadcrumbs = (currLoc: Location, parentMediaAlbum: MediaAlbum
     bcs.push({ title: 'Favorites' })
   }
 
-  console.log('subalbumPath', subalbumPath)
   if (subalbumPath) {
     const currPaths: string[] = []
     currPaths.push(...subalbumPath.split('/'))
