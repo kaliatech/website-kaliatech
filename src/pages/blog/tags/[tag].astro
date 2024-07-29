@@ -1,13 +1,9 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content'
-import { formatUtcDate } from '../../../../.yalc/@kaliatech/shared-ts/src/utils/formatUtcDate'
 import BaseLayout from '../../../layouts/BaseLayout.astro'
 import { getBlogPostsByYear } from '../_support/getBlogPosts'
 import { getUniqueTags } from '../_support/getUniqueTags'
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog')
-
   const uniqueTags = await getUniqueTags()
   const staticPaths = uniqueTags.map((tag) => ({
     params: { tag: tag },
@@ -17,7 +13,8 @@ export async function getStaticPaths() {
   return staticPaths
 }
 
-const tags = Astro.params?.tag?.split(',')
+const tagParam = (Astro.params.tag as string) ?? ''
+const tags: string[] = tagParam.split(',')
 const tagsStr = tags.reduce((acc, tag) => `${acc}#${tag}`, '')
 
 const blogPostsByYear = await getBlogPostsByYear(tags)

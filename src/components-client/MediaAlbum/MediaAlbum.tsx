@@ -11,7 +11,6 @@ const MEDIA_ROOT_URL = import.meta.env.PUBLIC_KALIATECH_MEDIA_ROOT_URL
 
 export interface MediaAlbumProps {
   albumId: string
-  subAlbumPath: string[]
 }
 
 export default function MediaAlbum(props: MediaAlbumProps) {
@@ -56,7 +55,7 @@ export default function MediaAlbum(props: MediaAlbumProps) {
       }
     }
     loadJson()
-  }, [props.albumId, props.subAlbumPath])
+  }, [props.albumId])
 
   if (isLoading) {
     return <h2>Loading...</h2>

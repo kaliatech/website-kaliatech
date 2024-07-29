@@ -1,8 +1,8 @@
 import * as React from 'react'
 // eslint-disable-next-line import/no-named-as-default
-import Lightbox, { type Slide, type SlideImage } from 'yet-another-react-lightbox'
+import Video from 'yet-another-react-lightbox/plugins/video'
+import Lightbox, { type Slide, type SlideImage, type SlideVideo } from 'yet-another-react-lightbox'
 import Download from 'yet-another-react-lightbox/plugins/download'
-import Video, { type SlideVideo } from 'yet-another-react-lightbox/plugins/video'
 
 import 'yet-another-react-lightbox/styles.css'
 import type { MediaAlbum } from '../MediaAlbum/support/model.ts'
@@ -156,7 +156,7 @@ export default function MediaFileViewer(props: MediaFileProps) {
             if (slides[index]?.type === 'image') {
               slideSrcUrl = (slides[index] as SlideImage).src
             } else if (slides[index]?.type === 'video') {
-              slideSrcUrl = (slides[index] as SlideVideo).sources[0].src
+              slideSrcUrl = (slides[index] as SlideVideo).sources[0]?.src ?? ''
             }
 
             const mf = getMfFromUrl(

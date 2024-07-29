@@ -1,7 +1,6 @@
 ---
 import MediaAlbum from '../../components-client/MediaAlbum/MediaAlbum'
 import Layout from '../../layouts/BaseLayout.astro'
-import { BookmarksList } from '../bookmarks/_support/BookmarksList'
 import Prose from '../../components/Prose.astro'
 
 export function getStaticPaths() {
@@ -19,6 +18,6 @@ const { album } = Astro.params
 
 <Layout title=`Photos | ${album} | Kaliatech`>
   <Prose class="photos">
-    <MediaAlbum albumId={album} client:only="react" />
+    <MediaAlbum albumId={album || ''} client:only="react" />
   </Prose>
 </Layout>
