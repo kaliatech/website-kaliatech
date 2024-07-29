@@ -163,8 +163,6 @@ export default function MediaFileViewer(props: MediaFileProps) {
               props.mediaAlbum.media_files.map((mfr) => mfr[1]),
               slideSrcUrl,
             )
-            console.log('slides[index]', slides[index])
-            console.log('path', mf?.path)
 
             const url = new URL(window.location.toString())
             if (url.searchParams.get('mediafile') !== mf?.path) {

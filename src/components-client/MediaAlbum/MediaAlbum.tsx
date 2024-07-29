@@ -4,6 +4,8 @@ import type { MediaAlbum, MediaFile } from './support/model.ts'
 import { getTnForAlbum, getTnVariant } from './support/get-tn.ts'
 
 import MediaFileViewer from '../MediaFileViewer/MediaFileViewer.tsx'
+import { buildBreadcrumbs } from './support/build-breadcrumbs.ts'
+import BreadCrumbBar from './support/BreadCrumbBar.tsx'
 
 const MEDIA_ROOT_URL = import.meta.env.PUBLIC_KALIATECH_MEDIA_ROOT_URL
 
@@ -77,8 +79,11 @@ export default function MediaAlbum(props: MediaAlbumProps) {
 
   const mediaFiles = new Map(mediaAlbum.media_files.map<[string, MediaFile]>((record) => record))
 
+  const bcs = buildBreadcrumbs(window.location, mediaAlbum)
+
   return (
     <>
+      <BreadCrumbBar bcs={bcs} />
       <div className="media-gallery">
         {mediaFiles.size > 0 && (
           <>
@@ -129,7 +134,10 @@ export default function MediaAlbum(props: MediaAlbumProps) {
                 const subAlbumUrl = `../photos/${props.albumId}?subalbum=${subAlbumPath}`
                 return (
                   <div key={subAlbum.path} className="mr-8">
-                    <div key={subAlbumPath}>
+                    <div
+                      key={subAlbumPath}
+                      className="prose:hover:no-underline prose-a:hover:no-underline"
+                    >
                       <a href={subAlbumUrl} className="m-0 w-full">
                         <h2 className="mb-0 mt-8">{subAlbum.title}</h2>
 
