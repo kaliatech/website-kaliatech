@@ -5,10 +5,10 @@ import Prose from '../../components/Prose.astro'
 
 export function getStaticPaths() {
   return [
-    { params: { album: '/random' } },
-    { params: { album: '/favorites' } },
-    { params: { album: '/rides' } },
-    { params: { album: '/blog' } },
+    { params: { album: 'random' } },
+    { params: { album: 'favorites' } },
+    { params: { album: 'rides' } },
+    { params: { album: 'blog' } },
     { params: { album: undefined } },
   ]
 }

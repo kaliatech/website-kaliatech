@@ -29,13 +29,16 @@ export default function MediaAlbum(props: MediaAlbumProps) {
   useEffect(() => {
     const loadJson = async () => {
       const queryParams = new URLSearchParams(window.location.search)
-      const subalbumPath = queryParams.get('subalbum') || ''
-      const mediafile = queryParams.get('mediafile') || ''
+      const subalbumPath = queryParams.get('subalbum')
+      const mediafile = queryParams.get('mediafile') ?? undefined
 
       try {
         setIsLoading(true)
         setError('')
-        const albumJsonUrl = `${MEDIA_ROOT_URL}${subalbumPath ? subalbumPath : '/' + props.albumId}/album.json`
+
+        const rootAlbumPath = `/${props.albumId}`
+        const albumJsonUrl = `${MEDIA_ROOT_URL}${subalbumPath ? subalbumPath : rootAlbumPath}/album.json`
+
         const albumJsonResp = await fetch(albumJsonUrl)
         // console.log('albumId', props.albumId)
         // console.log('subalbumPath', subalbumPath)
