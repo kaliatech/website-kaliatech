@@ -2,7 +2,7 @@
 import { getBlogPosts } from '../_support/getBlogPosts'
 import BaseLayout from '../../../layouts/BaseLayout.astro'
 import Prose from '../../../components/Prose.astro'
-import { formatUtcDate } from '../../../../.yalc/@kaliatech/shared-ts/src/utils/formatUtcDate.ts'
+import { formatUtcDate } from '@kaliatech/shared-ts/utils/formatUtcDate.ts'
 
 export async function getStaticPaths() {
   const blogPosts = await getBlogPosts()
