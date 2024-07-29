@@ -1,0 +1,23 @@
+---
+import MediaAlbum from '../../components-client/MediaAlbum/MediaAlbum'
+import Layout from '../../layouts/BaseLayout.astro'
+import Prose from '../../components/Prose.astro'
+
+export function getStaticPaths() {
+  return [
+    { params: { album: '/random' } },
+    { params: { album: '/favorites' } },
+    { params: { album: '/rides' } },
+    { params: { album: '/blog' } },
+    { params: { album: undefined } },
+  ]
+}
+
+const { album } = Astro.params
+---
+
+<Layout title=`Photos | ${album} | Kaliatech`>
+  <Prose class="photos">
+    <MediaAlbum albumId={album || ''} client:only="react" />
+  </Prose>
+</Layout>

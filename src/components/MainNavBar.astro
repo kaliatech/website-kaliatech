@@ -1,0 +1,113 @@
+---
+import { ThemeToggle } from '@kaliatech/shared-astro-tw/components-client/ThemeToggle/ThemeToggle.tsx'
+
+import NavBarItem from '@kaliatech/shared-astro-tw/components/navbar/NavBarItem.tsx'
+//console.log('Astro.url', Astro.url)
+---
+
+<!--
+<div
+  class="text-theme-offwhite from-theme-400 to-theme-700 dark:bg-theme-900 dark:text-theme-100 bg-gradient-to-bl"
+>
+-->
+<div class="bg-theme-600 text-base-content dark:bg-theme-800">
+  <!--<div class="container mx-auto xl:px-[10rem] 2xl:px-[20rem]">-->
+  <div class="container mx-auto xl:px-[10rem] 2xl:px-[20rem]">
+    <div class="navbar z-[1000] p-0">
+      <div class="navbar-start w-fit">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost text-white sm:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"></path></svg
+            >
+          </div>
+          <ul
+            tabindex="0"
+            class="menu dropdown-content menu-sm z-[1000] mt-3 w-52 rounded-lg bg-theme-600/90 p-2 text-slate-700 shadow-lg ring-1 ring-slate-500/30 dark:bg-theme-600/90"
+          >
+            <li>
+              <a class="m-1 p-4 text-white/70 hover:bg-theme-500 hover:text-white/90" href="/"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="m-1 p-4 text-white/70 hover:bg-theme-500 hover:text-white/90" href="/blog">
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                class="m-1 p-4 text-white/70 hover:bg-theme-500 hover:text-white/90"
+                href="/photos"
+              >
+                Photos
+              </a>
+            </li>
+            <li>
+              <a
+                class="m-1 p-4 text-white/70 hover:bg-theme-500 hover:text-white/90"
+                href="/bookmarks"
+              >
+                Bookmarks
+              </a>
+            </li>
+            <li>
+              <a
+                class="m-1 p-4 text-white/70 hover:bg-theme-500 hover:text-white/90"
+                href="/contact"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="/">
+          <h1 class="whitespace-nowrap text-xl font-light text-white dark:text-theme-100/80">
+            Kaliatech
+          </h1>
+        </a>
+      </div>
+      <div class="navbar-start ml-8 hidden sm:flex sm:flex-grow">
+        <ul class="menu menu-horizontal z-[1000] flex-nowrap px-1">
+          <NavBarItem client:load title="Home" href="/" isActive={Astro.url.pathname?.length < 2} />
+          <NavBarItem
+            client:load
+            title="Blog"
+            isActive={Astro.url.pathname?.includes('/blog')}
+            href="/blog"
+          />
+          <NavBarItem
+            client:load
+            title="Photos"
+            isActive={Astro.url.pathname?.includes('/photos')}
+            href="/photos"
+          />
+          <NavBarItem
+            client:load
+            title="Bookmarks"
+            isActive={Astro.url.pathname?.includes('/bookmarks')}
+            href="/bookmarks"
+          />
+          <NavBarItem
+            client:load
+            title="Contact"
+            isActive={Astro.url.pathname?.includes('/contact')}
+            href="/contact"
+          />
+        </ul>
+      </div>
+      <div class="sm:width-auto relative flex flex-grow justify-end">
+        <ThemeToggle client:only="react" />
+      </div>
+    </div>
+  </div>
+</div>

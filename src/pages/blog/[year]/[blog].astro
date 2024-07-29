@@ -1,0 +1,167 @@
+---
+import { getBlogPosts } from '../_support/getBlogPosts'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import Prose from '../../../components/Prose.astro'
+import { formatUtcDate } from '../../../../.yalc/@kaliatech/shared-ts/src/utils/formatUtcDate.ts'
+
+export async function getStaticPaths() {
+  const blogPosts = await getBlogPosts()
+  //console.log('blogEntries', blogEntries)
+  return blogPosts.map((entry) => {
+    const year = entry.slug.split('/')[0]
+    const blogId = entry.slug.split('/')[1]
+    // console.log('year', year)
+    // console.log('blogId', blogId)
+    return {
+      params: { year: year, blog: blogId },
+      props: { post: entry },
+    }
+  })
+}
+
+const { year, blog: blogId } = Astro.params
+const { post } = Astro.props
+
+const blogPosts = await getBlogPosts()
+const currIdx = blogPosts.findIndex((post) => post.slug === `${year}/${blogId}`)
+
+const prevPost = currIdx > 0 ? blogPosts[currIdx - 1] : null
+const nextPost = currIdx < blogPosts.length - 1 ? blogPosts[currIdx + 1] : null
+
+const { Content } = await post.render()
+---
+
+<BaseLayout title={`${post.data.title} | Blog | Kaliatech`}>
+  <div class="mb-8 mt-4">
+    <h1>{post.data.title}</h1>
+    <small class="dateline">{formatUtcDate(post.data.createdAt)}</small>
+  </div>
+  <!--<p>{post.content}</p>-->
+  <div class="blog">
+    <Prose class="blog">
+      <Content />
+      <div class="mt-16">
+        <div class="flex justify-end">
+          tags: &nbsp;
+          {post.data.category && post.data.category.map((cat) => (
+            <a href=`/blog/tags/${cat}`>
+              #{cat}
+            </a>
+            <>
+              {post.data.category && cat !== post.data.category[post.data.category.length - 1] && (
+                <>,&nbsp;</>
+              )}
+              </>
+          ))}
+          </div>
+          <hr class="my-2" />
+          <div class="flex">
+            <div class="flex-1 flex-grow justify-start">
+              {
+                prevPost && (
+                  <>
+                    <a href={`/blog/${prevPost.slug}`}>&lt;&lt; previous</a>
+                    <br />
+                    {prevPost.data.title}
+                  </>
+                )
+              }
+            </div>
+            <div class="flex-1 flex-grow justify-center text-center">
+              <a href="/blog">^ Up ^</a><br />
+              Blog Index
+            </div>
+            <div class="flex-1 flex-grow justify-end text-right">
+              {
+                nextPost && (
+                  <>
+                    <a href={`/blog/${nextPost.slug}`}>next &gt;&gt;</a>
+                    <br />
+                    {nextPost.data.title}
+                  </>
+                )
+              }
+            </div>
+          </div>
+          </div>
+          </Prose>
+          </div>
+          </BaseLayout>
+          <style is:global>
+            .blog {
+              .prose figure {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                a {
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+              }
+
+/*              a {
+                display: inline-flex;
+                font-weight: 600;
+                color: #20466a;
+              }
+*/
+
+              .prose .figure-img {
+                border-radius: 12px;
+                max-width: 100%;
+                margin: 0;
+              }
+
+              .prose p:has(+ ul) {
+                margin-top: 1.25em;
+                margin-bottom: 0;
+              }
+
+              .prose ul,
+              .prose ol {
+                margin: 0 0 1.25em;
+              }
+              .prose li {
+                margin: 0;
+              }
+
+              @media (min-width: 1024px) {
+                .prose .figure-img {
+                  max-width: 66%;
+                }
+              }
+
+              .prose p {
+                line-height: 22px;
+/*                font-size: 13px;*/
+                font-weight: 400;
+              }
+
+              .prose .photo-img {
+                border-radius: 4px;
+              }
+
+              .prose .photo-img {
+                margin: 0;
+              }
+
+              .prose .blockquote-footer:before {
+                content: '— ';
+              }
+
+              .prose .quote-block .quote {
+                font-style: italic;
+              }
+
+              .prose .video-responsive {
+                iframe {
+                  aspect-ratio: 16 / 9;
+                  height: 100%;
+                  width: 100%;
+                  border: none;
+                }
+              }
+            }
+          </style>

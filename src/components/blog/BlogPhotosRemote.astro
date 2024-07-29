@@ -1,0 +1,60 @@
+---
+import { BASE_PHOTOS_URL } from './BlogContants'
+
+import BlogPhotosSimple from './BlogPhotosSimple.astro'
+import { type SimplePhotoMeta } from './SimplePhoto'
+
+interface Props {
+  name: string
+  showName?: boolean
+  basePhotosUrl?: string
+  photosPath: string
+  photoMetas: SimplePhotoMeta[]
+}
+
+interface Media {
+  filename: string
+  descr: string
+  type: string
+}
+
+const { name, showName = true, basePhotosUrl = BASE_PHOTOS_URL, photosPath } = Astro.props
+
+const galleryObj = await fetch(`${basePhotosUrl}${photosPath}/index.json`).then((res) => res.json())
+
+// NOTE: I originally added error handling, but then remembered this is all at build time for SSG.
+// let errorMsg = ''
+// try {
+//   galleryObj = await fetch(`${basePhotosUrl}${photosPath}/index.json2`).then((res) => {
+//     if (res.status !== 200) {
+//       throw new Error('Invalid response: ' + res.status)
+//     }
+//     return res.json()
+//   })
+// } catch (err) {
+//   errorMsg = 'Unable to load photos. Reason: ' + err.message
+// }
+//
+// {errorMsg && <AlertError msg={errorMsg} />}
+//
+//
+
+// console.log('media', galleryObj.medias[0])
+//
+// console.log('photoMetas', Astro.props.photoMetas)
+
+const photos = galleryObj.medias?.map((media: Media) => {
+  const meta = Astro.props.photoMetas?.find((meta) => meta.filename === media.filename)
+
+  return {
+    src: `${basePhotosUrl}${photosPath}/${media.filename}`,
+    caption: meta?.caption ?? media.descr,
+    type: media.type,
+  }
+})
+---
+
+<div>
+  {showName && name && <h2 class="font-light">{name}</h2>}
+  <BlogPhotosSimple photos={photos} />
+</div>

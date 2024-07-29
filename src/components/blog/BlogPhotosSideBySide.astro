@@ -1,0 +1,35 @@
+---
+import BlogPhotoSimple from './BlogPhotoSimple.astro'
+
+interface Props {
+  photos: any
+  cols?: number
+  center?: boolean
+}
+
+interface SideBySidePhoto {
+  title: string
+  descr: string
+  srcA: string
+  srcB: string
+}
+
+const photos = Astro.props.photos as any
+---
+
+{
+  photos.map((photo: SideBySidePhoto) => {
+    return (
+      <>
+        <h2 class="mb-0">{photo.title}</h2>
+        <p class="mb-4">
+          <Fragment set:html={photo.descr} />
+        </p>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <BlogPhotoSimple photo={{ src: photo.srcA }} />
+          <BlogPhotoSimple photo={{ src: photo.srcB }} />
+        </div>
+      </>
+    )
+  })
+}

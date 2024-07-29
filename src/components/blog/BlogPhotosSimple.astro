@@ -1,0 +1,25 @@
+---
+import clsx from 'clsx'
+import { type SimplePhoto } from './SimplePhoto'
+import BlogPhotoSimple from './BlogPhotoSimple.astro'
+
+interface Props {
+  photos: SimplePhoto[]
+  cols?: number
+  center?: boolean
+}
+
+const photos = Astro.props.photos as SimplePhoto[]
+---
+
+<div
+  class={clsx(`grid grid-cols-1 gap-4 md:grid-cols-${Astro.props.cols ?? 2}`, {
+    ['justify-center']: Astro.props.center,
+  })}
+>
+  {
+    photos.map((photo) => {
+      return <BlogPhotoSimple photo={photo} />
+    })
+  }
+</div>

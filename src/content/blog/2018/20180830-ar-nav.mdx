@@ -1,0 +1,131 @@
+---
+title: AR Based Positioning & Navigation
+createdAt: 2018-08-30
+description: Using augmented images & AR for positioning.
+category: [projects]
+---
+
+import BlogPhotosSimple from '../../../components/blog/BlogPhotosSimple.astro'
+
+<p>
+  Most of the work I've done around indoor navigation is now confidential, but I also did some early
+  research with personal projects around using AR for navigation which is shown below. The main idea
+  is to use AR, or specifically, augmented images, to establish a known fixed point so that it's
+  possible to relate the AR coordinate space to a real world coordinate. Once done, as long as AR
+  tracking can be maintained and doesn't drift overly much, the current position (and orientation)
+  is known precisely in the real world. This is a method of positioning that doesn't require
+  beacons, wifi radio mapping, WiFi-RTT (coming soon), or GPS.
+</p>
+
+Google recently promoted an
+[experimental maps navigation feature](https://www.theverge.com/2019/2/10/18219325/google-maps-augmented-reality-ar-feature-app-prototype-test),
+which I believe uses similar techniques.
+
+<h2>Augmented Images</h2>
+
+<p>
+  First, if not familiar with native AR libraries, know that both Google
+  ([ARCore](https://developers.google.com/ar/) and Apple
+  [ARkit](https://developer.apple.com/arkit/)) include [augmented image
+  capabilities](https://developers.google.com/ar/develop/java/augmented-images/). This allows
+  detection of an image, similar to standard computer vision capabilities that have been around for
+  a while now. But in addition to image detection, the augmented part also establishes, and then
+  tracks, the coordinates of that image within the AR space.
+</p>
+
+<p>
+  This video, using demo code from google, shows this clearly. When app detects either of the two
+  images I've registered, it draws a virtual frame around the image and then maintains the frame's
+  position in the AR space as I move the phone around.
+</p>
+
+<div class="video-responsive">
+  <iframe
+    allowFullScreen
+    src="https://www.youtube.com/embed/tKrP-HFN9mE?feature=oembed&rel=0"
+  ></iframe>
+</div>
+
+<p>
+  Note that these these images are not ideal for AR purposes. I was testing the limits and this was
+  an older version of ARCore. Tracking can still drift as seen in this video, but things have
+  improved.
+</p>
+
+<h2>AR Based Positioning and Navigation</h2>
+<p>
+  In this demo, the coordinate axis marker seen early on is the origin of the AR space. The origin
+  is established according to the phone/camera's position when the AR library initializes. After
+  that, all phone movement in the AR space is relative to that origin.
+</p>
+
+<p>
+  I have an augmented image hanging from the door and I've coded in the exact real world geo
+  coordinates of that image. Once image has been detected, I know exact real position and
+  orientation by transforming between the real world and AR coordinate systems. With that, I am able
+  to draw visual navigation aids directing me forward and right down the hallway to an animated
+  thingamajig.
+</p>
+<p>
+  At the bottom of the app is a 2D floor plan sketch, and the blue dot is my current position. As I
+  walk down the hallway and back, you can see the accuracy of the position.
+</p>
+
+<div class="video-responsive">
+  <iframe
+    allowFullScreen
+    src="https://www.youtube.com/embed/7TXlz-wKXb0?feature=oembed&rel=0"
+  ></iframe>
+</div>
+
+<p>
+  In this demo, the drift was relatively small. It immediately corrects itself when the augmented
+  image comes in to the camera view again. So one idea to increase the distance that this technique
+  could remain useful would be to have periodic well placed augmented images.
+</p>
+
+<p>
+  An idea I would've liked to experiment with is if it is possible to dynamically register
+  "augmented images" by taking pictures as part of the setup, instead of using predefined 2D poster
+  type images. I am wondering if Google is doing something similar in their [recent AR navigation
+  experiments](https://www.theverge.com/2019/2/10/18219325/google-maps-augmented-reality-ar-feature-app-prototype-test)
+  since the documentation says street view imagery is required for it.
+</p>
+<p>
+  Separately, Apple has an interesting capability in ARKit2 whereby they are [detecting 3D
+  objects](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects), not
+  just 2D images. I haven't used it enough to say how well it works.
+</p>
+
+<h2>Note on AR for Browser & Cross Platform</h2>
+<p>
+  The state of AR support in browsers is in flux and future unclear. I tried hard to make various AR
+  ideas work in browser, but in the end, had to give it up. The leading standard at this time is
+  <a href="https://www.w3.org/TR/webxr/">WebXR</a>, but it's not fully or consistently supported. Chrome
+  had a decent implementation for a while, but it was then removed. Firefox seems to be the current leader.
+  Who knows if/when Safari will ever support it. Regarding the premise above, the WebXR standard does
+  not yet include support for augmented images.
+</p>
+<p>
+  There are a few options for cross platform AR apps, but no good ones. The best so far seems to be
+  <a href="https://viromedia.com/viroreact">ViroReact</a>. However, my initial experiments with it were
+  frustrating, to say the least.
+</p>
+<p>
+  Screenshots from the SpawnAtCamera and Graffiti demos by
+  <a href="https://github.com/google-ar/">three.ar.js</a>
+  with the no longer maintained
+  <a href="https://github.com/google-ar/WebARonARCore">WebARonARCore</a>. I traced a path while walking
+  down a residential sidewalk using a Pixel 2 phone.
+</p>
+
+export const photos = [
+  {
+    src: '/i/projects/2018/0830-ar-nav/webxr-1.png',
+  },
+  {
+    src: '/i/projects/2018/0830-ar-nav/webxr-2.png',
+  },
+]
+
+<BlogPhotosSimple photos={photos} />

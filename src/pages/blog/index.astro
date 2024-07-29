@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/BaseLayout.astro'
+
+import { getBlogPostsByYear } from './_support/getBlogPosts'
+import { getUniqueTags } from './_support/getUniqueTags'
+
+const tags = Astro.params?.tags?.split(',')
+
+//const blogPostsByYear = await getBlogPostsByYear(tags, ['archived'])
+const blogPostsByYear = await getBlogPostsByYear(tags)
+
+const uniqueTags = await getUniqueTags()
+---
+
+<Layout title="Kaliatech">
+  <div class="my-4">
+    <h1 class="font-semibold">Blog</h1>
+    <p class="pt-3">Required reading, IMO.</p>
+  </div>
+  <div class="flex flex-wrap sm:flex-nowrap">
+    <div class="grow">
+      {
+        Array.from(blogPostsByYear.keys()).map((year) => (
+          <div class="mb-8">
+            <h2 class="pb-2">{year}</h2>
+            <ul class="ml-12 list-disc space-y-4">
+              {blogPostsByYear.get(year)?.map((post) => (
+                <li>
+                  <a href={`/blog/${post.slug}`} class="font-bold">
+                    {post.data.title}
+                  </a>
+                  <br />
+                  {post.data.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <div>
+      <h2 class="pb-2">Tags</h2>
+      <ul class="ml-8 space-y-2">
+        {
+          uniqueTags.map((tag) => (
+            <li>
+              <a href={`/blog/tags/${tag}`} class="font-bold">
+                #{tag}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/BaseLayout.astro'
+
+const MEDIA_ROOT_URL = import.meta.env.PUBLIC_KALIATECH_MEDIA_ROOT_URL
+
+const mainAlbums = [
+  {
+    title: 'Random',
+    tn: `${MEDIA_ROOT_URL}/random/2022/PXL_20220106_221018257.jpg/PXL_20220106_221018257.640x360.avif`,
+    url: '/photos/random',
+  },
+  {
+    title: 'Rides',
+    tn: `${MEDIA_ROOT_URL}/rides/20070623/IMG_1074.JPG/IMG_1074.640x360.avif`,
+    url: '/photos/rides',
+  },
+  // {
+  //   title: 'Blog',
+  //   tn: `${MEDIA_ROOT_URL}/blog/2013/pantilt-v4/20-P1060363.jpg/20-P1060363.640x360.avif`,
+  //   url: '/photos/blog',
+  // },
+  {
+    title: 'Favorites',
+    tn: `${MEDIA_ROOT_URL}/favorites/IMG_1566.JPG/IMG_1566.640x360.avif`,
+    url: '/photos/favorites',
+  },
+]
+---
+
+<Layout title="Photos | Kaliatech">
+  <div class="mt-4">
+    <h1 class="font-semibold">Photos & Videos</h1>
+    <!--<p class="pt-3">Random photos and videos</p>-->
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    {
+      mainAlbums.map((album) => (
+        <div class="mr-8">
+          <h3 class="pb-2 pt-4">{album.title}</h3>
+          <a href={album.url} class="m-0">
+            <div class="images-stack images-stack-dark rounded-lg">
+              <img
+                class="mb-0 mt-0 rounded-lg border-2 border-white/50 dark:border-gray-300/50"
+                src={album.tn}
+                alt={album.title}
+              />
+            </div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

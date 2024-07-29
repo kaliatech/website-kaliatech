@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/BaseLayout.astro'
+import Prose from '../../components/Prose.astro'
+import { BookmarksList } from './_support/BookmarksList'
+---
+
+<Layout title="Bookmarks | Kaliatech">
+  <div class="my-4">
+    <h1 class="font-semibold">Bookmarks</h1>
+    <p class="pt-3">
+      Running list of Internet links I've saved or found interesting for whatever reason. Most
+      recent at the top.
+    </p>
+  </div>
+
+  <Prose class="blog">
+    <BookmarksList client:only="react" />
+  </Prose>
+</Layout>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1024"
+   height="1024"
+   viewBox="0 0 1024 1024"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="faviicon.inkscape.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="logo-icon.svg"
+   inkscape:export-xdpi="1536"
+   inkscape:export-ydpi="1536"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="true"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showborder="true"
+     inkscape:zoom="0.1563272"
+     inkscape:cx="-7682.6042"
+     inkscape:cy="1186.6137"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="3829"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6"
+     borderlayer="true"
+     showgrid="false" />
+  <defs
+     id="defs6">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,114.78973,0,1 @ F,0,1,1,0,114.78973,0,1 @ F,0,1,1,0,114.78973,0,1 @ F,0,1,1,0,114.78973,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter25"
+       x="-0.13039307"
+       y="-0.17077953"
+       width="1.2607861"
+       height="1.3415591">
+      <feGaussianBlur
+         stdDeviation="35 35"
+         result="blur"
+         id="feGaussianBlur25" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter25-1"
+       x="-0.13039307"
+       y="-0.17077953"
+       width="1.2607861"
+       height="1.3415591">
+      <feGaussianBlur
+         stdDeviation="35 35"
+         result="blur"
+         id="feGaussianBlur25-7" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter2"
+       x="-0.010307279"
+       y="-0.013182579"
+       width="1.029204"
+       height="1.0373506">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood1" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="3.000000"
+         id="feGaussianBlur1" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="6.000000"
+         dy="6.000000"
+         id="feOffset1" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite1" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite2" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter2-1"
+       x="-0.096201272"
+       y="-0.12303741"
+       width="1.2009919"
+       height="1.2570603">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood1-1" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="3.000000"
+         id="feGaussianBlur1-5" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="6.000000"
+         dy="6.000000"
+         id="feOffset1-4" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite1-4" />
+      <feComposite
+         result="fbSourceGraphic"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite2-4" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix2" />
+      <feGaussianBlur
+         id="feGaussianBlur2"
+         stdDeviation="25 25"
+         result="blur"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter13"
+       x="-0.085893993"
+       y="-0.10985483"
+       width="1.171788"
+       height="1.2197097">
+      <feGaussianBlur
+         stdDeviation="25 25"
+         result="blur"
+         id="feGaussianBlur13" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter13-8"
+       x="-0.085893993"
+       y="-0.10985483"
+       width="1.171788"
+       height="1.2197097">
+      <feGaussianBlur
+         stdDeviation="25 25"
+         result="blur"
+         id="feGaussianBlur13-2" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter13-8-0"
+       x="-0.085893993"
+       y="-0.10985483"
+       width="1.171788"
+       height="1.2197097">
+      <feGaussianBlur
+         stdDeviation="25 25"
+         result="blur"
+         id="feGaussianBlur13-2-4" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter13-8-0-6"
+       x="-0.085893993"
+       y="-0.10985483"
+       width="1.171788"
+       height="1.2197097">
+      <feGaussianBlur
+         stdDeviation="25 25"
+         result="blur"
+         id="feGaussianBlur13-2-4-6" />
+    </filter>
+  </defs>
+  <path
+     id="rect1"
+     d="M 156.78973,42 H 867.21027 A 114.78973,114.78973 45 0 1 982,156.78973 V 867.21027 A 114.78973,114.78973 135 0 1 867.21027,982 H 156.78973 A 114.78973,114.78973 45 0 1 42,867.21027 V 156.78973 A 114.78973,114.78973 135 0 1 156.78973,42 Z"
+     style="fill:#b3b3b3;stroke-width:1.23519"
+     inkscape:path-effect="#path-effect2"
+     inkscape:original-d="M 42,42 H 982 V 982 H 42 Z" />
+  <g
+     id="g13"
+     transform="translate(-149.14868,898.7435)">
+    <text
+       xml:space="preserve"
+       style="fill:#ffffff;filter:url(#filter13)"
+       x="233.84862"
+       y="-118.76062"
+       id="text2-0-2"><tspan
+         sodipodi:role="line"
+         id="tspan2-4-0"
+         x="233.84862"
+         y="-118.76062"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:766.667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff">Kt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="fill:#ffffff;filter:url(#filter13-8)"
+       x="291.12677"
+       y="-118.31821"
+       id="text2-0-2-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-4-0-1"
+         x="291.12677"
+         y="-118.31821"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:766.667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff">Kt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="fill:#ffffff;filter:url(#filter13-8-0)"
+       x="257.93246"
+       y="-174.17151"
+       id="text2-0-2-6-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-4-0-1-7"
+         x="257.93246"
+         y="-174.17151"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:766.667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff">Kt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="fill:#ffffff;filter:url(#filter13-8-0-6)"
+       x="258.1546"
+       y="-71.857635"
+       id="text2-0-2-6-6-9"><tspan
+         sodipodi:role="line"
+         id="tspan2-4-0-1-7-1"
+         x="258.1546"
+         y="-71.857635"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:766.667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff">Kt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="fill:#b3b3b3"
+       x="255.40385"
+       y="-119.3255"
+       id="text2-0"><tspan
+         sodipodi:role="line"
+         id="tspan2-4"
+         x="255.40385"
+         y="-119.3255"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:766.667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#1a1a1a">Kt</tspan></text>
+  </g>
+</svg>
