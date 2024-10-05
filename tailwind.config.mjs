@@ -61,7 +61,7 @@ export default {
             },
             a: {
               fontWeight: 600,
-              color: '#20466a'
+              color: '#20466a',
             },
             h1: {
               fontSize: '1.5rem',
@@ -86,12 +86,11 @@ export default {
             // color: 'red',
             a: {
               fontWeight: 600,
-              color: '#678DB1'
-//              color: theme('theme[300]')
+              color: '#678DB1',
+              //              color: theme('theme[300]')
             },
-
-          }
-        }
+          },
+        },
       }),
     },
   },

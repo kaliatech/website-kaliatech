@@ -24,14 +24,14 @@ module.exports = {
   extends: ['eslint:recommended'],
 
   rules: {
-    "@typescript-eslint/no-unused-vars": [
-      "warn", // or "error"
+    '@typescript-eslint/no-unused-vars': [
+      'warn', // or "error"
       {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_"
-      }
-    ]
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+      },
+    ],
   },
 
   overrides: [
