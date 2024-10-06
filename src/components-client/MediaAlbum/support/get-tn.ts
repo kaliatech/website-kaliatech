@@ -8,8 +8,8 @@ export const getTnForAlbum = (mediaAlbum: MediaAlbum): MediaFileVariant | null |
   if (mediaAlbum.thumbnail) {
     tnMediaFileRecord = mediaAlbum.media_files.find((record) => record[0] == mediaAlbum.thumbnail)
     // A thumbnail can also reference media file from subalbums
-    if (!tnMediaFileRecord) {
-    }
+    // if (!tnMediaFileRecord) {
+    // }
   }
   if (tnMediaFileRecord) {
     tnVariant = getTnVariant(tnMediaFileRecord[1])
