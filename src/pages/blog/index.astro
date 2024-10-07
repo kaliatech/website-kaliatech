@@ -12,7 +12,7 @@ const blogPostsByYear = await getBlogPostsByYear(tags)
 const uniqueTags = await getUniqueTags()
 ---
 
-<Layout title="Kaliatech">
+<Layout title="Blog | Kaliatech">
   <div class="my-4">
     <h1 class="font-semibold">Blog</h1>
     <p class="pt-3">Required reading, IMO.</p>
@@ -39,18 +39,35 @@ const uniqueTags = await getUniqueTags()
       }
     </div>
     <div>
-      <h2 class="pb-2">Tags</h2>
-      <ul class="ml-8 space-y-2">
-        {
-          uniqueTags.map((tag) => (
-            <li>
-              <a href={`/blog/tags/${tag}`} class="font-bold">
-                #{tag}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <div>
+        <h2 class="pb-2">Tags</h2>
+        <ul class="ml-8 space-y-2">
+          {
+            uniqueTags.map((tag) => (
+              <li>
+                <a href={`/blog/tags/${tag}`} class="font-bold">
+                  #{tag}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="mt-4">
+        <h2 class="pb-2">Miscellaneous</h2>
+        <ul class="ml-8 space-y-2">
+          <li>
+            <a href={'/blog/books'} class="font-bold">Books</a>
+          </li>
+          <li>
+            <a href={'/blog/movies'} class="font-bold">Movies</a>
+          </li>
+          <li>
+            <a href={'/blog/music-videos'} class="font-bold">Music Videos</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </Layout>
