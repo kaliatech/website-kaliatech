@@ -18,7 +18,7 @@ export const LinkButton = ({ label, href, width, iconSvg }: LinkButtonProps) => 
       {iconSvg && (
         <div
           className="h-6 min-h-6 w-6 min-w-6 fill-white dark:invert"
-          dangerouslySetInnerHTML={{ __html: iconSvg }}
+          dangerouslySetInnerHTML={{ __html: iconSvg as string }}
         />
       )}
       {label}
