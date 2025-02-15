@@ -41,6 +41,7 @@
     "typescript-eslint": "^8.24.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4"
+    "@rollup/rollup-linux-x64-gnu": "^4",
+    "@esbuild/linux-x64": "^0.25.0"
   }
 }
