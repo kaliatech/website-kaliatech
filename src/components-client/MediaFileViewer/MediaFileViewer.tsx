@@ -1,7 +1,5 @@
 import * as React from 'react'
-// eslint-disable-next-line import/no-named-as-default
 import Video from 'yet-another-react-lightbox/plugins/video'
-// eslint-disable-next-line import/no-named-as-default
 import Lightbox, { type Slide, type SlideImage, type SlideVideo } from 'yet-another-react-lightbox'
 import Download from 'yet-another-react-lightbox/plugins/download'
 

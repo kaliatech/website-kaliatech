@@ -55,8 +55,9 @@ const loadBookmarks = async (offset: number, tag?: string) => {
     })
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface BookmarksListProps {}
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export const BookmarksList = (_props: BookmarksListProps) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string>()

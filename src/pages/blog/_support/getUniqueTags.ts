@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content'
 
 export async function getUniqueTags() {

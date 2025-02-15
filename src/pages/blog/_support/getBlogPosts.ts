@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import { type CollectionEntry, getCollection } from 'astro:content'
 
 export async function getBlogPostsByYear(
