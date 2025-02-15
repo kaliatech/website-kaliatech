@@ -22,7 +22,7 @@ export const MermaidBlock = (props: MermaidBlockProps) => {
     renderGraph()
   })
   return (
-    <div className="h-full min-h-[10rem] w-full">
+    <div className="h-full min-h-[10rem] w-full dark:bg-gray-400">
       <div ref={containerRef} />
     </div>
   )

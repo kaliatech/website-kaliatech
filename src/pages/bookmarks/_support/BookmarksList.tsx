@@ -110,7 +110,7 @@ export const BookmarksList = (_props: BookmarksListProps) => {
                   <h2 className="mb-0 mt-0 min-w-[10rem] truncate font-bold">
                     {bookmark.title || bookmark.website_title}
                   </h2>
-                  <small className="font-light">{bookmark.url}</small>
+                  <small className="truncate font-light">{bookmark.url}</small>
                 </a>
                 <p className="mt-0">{bookmark.description || bookmark.website_description}</p>
               </div>
@@ -133,7 +133,9 @@ export const BookmarksList = (_props: BookmarksListProps) => {
       {bookmarksRespData?.next && (
         <div className={'mr-1 flex justify-end px-3'}>
           <a
-            className={'btn btn-primary'}
+            className={
+              'btn btn-primary bg-theme-100 text-theme-900 hover:bg-theme-100/50 hover:no-underline dark:bg-theme-700 dark:hover:bg-theme-700/50'
+            }
             href={`?page=${pageParam + 1}${tagParam ? '&tag=' + tagParam : ''}`}
           >
             More
