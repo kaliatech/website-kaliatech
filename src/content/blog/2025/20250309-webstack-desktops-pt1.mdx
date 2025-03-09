@@ -1,0 +1,74 @@
+---
+title: 'Web Stack Desktops - Part 1 '
+createdAt: 2025-03-09
+description: Building desktop applications using web stack.
+category: [misc, archived]
+---
+
+
+import BlogPostToc from '../../../components/blog/BlogPostToc.astro'
+
+# Building Desktop Apps with a Web Stack
+
+- Part 1 - The options
+- Part 2 - Golang server example
+- Part 3 - Wails example
+- Part 4 - Tauri example
+- Part 5 - Electron example
+- Part 6 - Conclusion
+
+## Contents
+
+<BlogPostToc />
+
+## Who is this for?
+This blog post is oriented towards software developers. However, if you are a business owner or product manager, you might find value in having a basic understanding of these options and their tradeoffs. The most important decision criteria will be your technical team's background and experience, but any technical partner should be able to talk through all of these options and their tradeoffs with you.
+
+
+## Why
+
+Web vs native frameworks.
+
+ - [Windows Presentation Foundation (WPF)](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/) - Windows only
+ - [SwiftUI](https://developer.apple.com/xcode/swiftui/) / [AppKit](https://developer.apple.com/documentation/appkit) - Mac only
+ - [Avalonia](https://avaloniaui.net/)
+ - [Qt Framework](https://www.qt.io/product/framework) (C++) or [PyQt6](https://riverbankcomputing.com/software/pyqt/) / [PySide6](https://wiki.qt.io/Qt_for_Python) (Python)
+ - ...and many more.
+
+## Options
+
+### Frameworks
+ - [Electron](https://www.electronjs.org/)
+    - Embeds a node.js runtime and chromium engine.
+ - [NW.js](https://nwjs.io/)
+    - Similar to Electron, but with some low level [differences](https://www.electronjs.org/docs/latest/development/electron-vs-nwjs).
+ - [Multi-platform App UI (MAUI)](https://learn.microsoft.com/en-us/dotnet/maui)
+git config --global push.autoSetupRemote true - .NET based.
+ - [Tauri](https://tauri.app/)
+    - Rust based.
+    - Uses native OS webview which is usually webkit on linux/safari and chrome on Windows.
+ - [Wails](https://wails.io/)
+    - Golang based.
+    - Links a webkit engine.
+ - [Neutronjs](https://neutralino.js.org/)
+    - Exposes a websocket API for indirect integration with any language.
+    - Uses system browser.
+ - ...and others, most using native OS webview in one way or another.
+
+### Mobile First with Desktop Support
+Not web stack based, but similar programming patterns.
+ - [Flutter](https://flutter.dev/)
+ - [React Native](https://reactnative.dev/)
+
+### Alternatives
+ - [Progressive Web Apps (PWAs)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) with  [File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API) and similar
+ - Custom Golang server with [embed package](https://pkg.go.dev/embed)
+
+
+## Which one to use?
+
+This not your typical "which one to use" blog post. There is no one answer. Usually, the best option will be the one your technical team has the most experience with.
+
+## Example - Golang Server w/ Embed
+
+## Example - Electron
