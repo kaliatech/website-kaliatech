@@ -11,10 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.2.1",
-    "@astrojs/react": "^4.2.1",
-    "@astrojs/tailwind": "^6.0.1",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/tailwind": "^6.0.2",
     "@fontsource-variable/montserrat": "^5.1.1",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
@@ -22,7 +22,7 @@
     "@kaliatech/shared-ts": "^1.1.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "astro": "^5.5.4",
+    "astro": "^5.16.6",
     "daisyui": "^4.12.23",
     "mermaid": "^11.4.1",
     "yet-another-react-lightbox": "^3.21.7"
