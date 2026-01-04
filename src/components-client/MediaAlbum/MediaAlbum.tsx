@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { PlayIcon } from '@heroicons/react/16/solid'
 
 import type { MediaAlbum, MediaFile } from './support/model.ts'
 import { getTnVariant } from './support/get-tn.ts'
@@ -118,6 +119,7 @@ export default function MediaAlbum(props: MediaAlbumProps) {
                 const mfTnVariant = getTnVariant(mediaFile)
                 const mfTnUrl = mfTnVariant ? MEDIA_ROOT_URL + mfTnVariant.path : ''
                 const mfUrl = `../photos/${props.albumId}?subalbum=${mediaAlbum.path}&mediafile=${mediaFilePath}`
+                const isVideo = mediaFile.media_type === 'VIDEO'
                 return (
                   <div key={mediaFilePath} className="mr-2">
                     <a
@@ -128,12 +130,17 @@ export default function MediaAlbum(props: MediaAlbumProps) {
                         updateMediaFile(mediaFilePath)
                       }}
                     >
-                      <div className="rounded-lg">
+                      <div className="relative rounded-lg">
                         <img
                           className="mb-1 mt-1 rounded-lg border-2 border-white/50 dark:border-gray-300/50"
                           src={mfTnUrl}
                           alt={mediaFile.title}
                         />
+                        {isVideo && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <PlayIcon className="h-12 w-12 text-white opacity-70 drop-shadow-lg" />
+                          </div>
+                        )}
                       </div>
                     </a>
                   </div>

@@ -13,7 +13,7 @@ export interface MediaFile {
   title: string
   ordinal: number
   last_modified: Date
-  media_type: string
+  media_type: 'VIDEO' | 'IMAGE'
   width: number
   height: number
   //variants: Map<string, MediaFileVariant>

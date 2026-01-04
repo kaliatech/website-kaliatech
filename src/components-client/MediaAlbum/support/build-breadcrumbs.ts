@@ -57,7 +57,7 @@ export const buildBreadcrumbs = (currLoc: Location, parentMediaAlbum: MediaAlbum
         // Intermediate level - add as clickable link
         bcs.push({
           title: title,
-          url: `/photos/${albumId}?subalbum=${currentPath}`
+          url: `/photos/${albumId}?subalbum=${currentPath}`,
         })
       }
     }

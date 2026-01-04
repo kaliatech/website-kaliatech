@@ -130,7 +130,7 @@ export default function MediaFileViewer(props: MediaFileProps) {
           const slideSrcUrl =
             slide?.type === 'image'
               ? (slide as SlideImage).src
-              : (slide as SlideVideo).sources[0]?.src ?? ''
+              : ((slide as SlideVideo).sources[0]?.src ?? '')
 
           const mf = getMfFromUrl(
             props.mediaAlbum.media_files.map((mfr) => mfr[1]),
