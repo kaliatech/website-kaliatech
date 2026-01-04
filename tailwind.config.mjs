@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
-import plugin from 'tailwindcss/plugin'
 import defaultTheme from 'tailwindcss/defaultTheme'
 import daisyUiPlugin from 'daisyui'
+import daisyThemes from 'daisyui/src/theming/themes'
 
 import typographyPlugin from '@tailwindcss/typography'
 
@@ -110,14 +110,14 @@ export default {
     themes: [
       {
         light: {
-          ...require('daisyui/src/theming/themes')['light'],
+          ...daisyThemes['light'],
           primary: '#2C4256',
           // secondary: 'teal',
           //['base-100']: 'oklch(var(--b1))',
           //'base-100': 'rgb(20,20,20)',
         },
         dark: {
-          ...require('daisyui/src/theming/themes')['dark'],
+          ...daisyThemes['dark'],
           primary: '#637487',
           // secondary: 'teal',
         },

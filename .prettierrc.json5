@@ -1,0 +1,17 @@
+{
+  semi: false,
+  trailingComma: 'all',
+  singleQuote: true,
+  //https://github.com/tailwindlabs/prettier-plugin-tailwindcss/issues/424
+  //"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss", "prettier-plugin-jsdoc"],
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+  ],
+  printWidth: 100,
+}

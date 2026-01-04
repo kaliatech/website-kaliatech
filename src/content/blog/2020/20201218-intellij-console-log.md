@@ -53,11 +53,9 @@ console.log('$EXPR$', $EXPR$)
 ## Additional Research
 
 - Plugin: [Super Console Log](https://plugins.jetbrains.com/plugin/11936-super-console-log) <small>([Source](https://github.com/fernando88to/SuperConsoleLog))</small>
-
   - Doesn't show up in plugin marketplace.
 
 - Plugin: [Console Log](https://plugins.jetbrains.com/plugin/10986-console-log) <small>()[Source](https://github.com/iguissouma/intellij-console-log))</small>
-
   - Reviews indicate only partially works
 
 - Visual Code Plugin: [Turbo Console Log](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log)
