@@ -77,6 +77,8 @@ export default function MediaFileViewer(props: MediaFileProps) {
             download: `${MEDIA_ROOT_URL}${pVariant?.path}`,
           }
         } else {
+          // For video, find a thumbnail variant to use as poster
+          const thumbnailVariant = variants.find((v) => v.is_thumbnail)
           return {
             type: 'video',
             width: pVariant?.width || 0,
@@ -88,7 +90,7 @@ export default function MediaFileViewer(props: MediaFileProps) {
               type: variant.mime_type,
             })),
             download: `${MEDIA_ROOT_URL}${pVariant?.path}`,
-            poster: `${MEDIA_ROOT_URL}${pVariant?.path}`,
+            ...(thumbnailVariant && { poster: `${MEDIA_ROOT_URL}${thumbnailVariant.path}` }),
           }
         }
       })
