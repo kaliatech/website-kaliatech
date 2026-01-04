@@ -34,23 +34,32 @@ export const buildBreadcrumbs = (currLoc: Location, parentMediaAlbum: MediaAlbum
   }
 
   if (subalbumPath) {
-    const currPaths: string[] = []
-    currPaths.push(...subalbumPath.split('/'))
-    // currPaths.shift()
-    // currPaths.shift()
+    // Split the path to build breadcrumbs for each level
+    // e.g., "/random/2023/january" -> ["random", "2023", "january"]
+    const pathSegments = subalbumPath.split('/').filter(Boolean)
+    const albumId = pathSegments[0]
 
-    const albumPaths: string[] = []
-    albumPaths.push(...parentMediaAlbum.path.split('/'))
-    // albumPaths.shift()
-    // albumPaths.shift()
+    // Build breadcrumbs for each subalbum level starting from index 1
+    let currentPath = '/' + pathSegments[0]
+    for (let i = 1; i < pathSegments.length; i++) {
+      currentPath += '/' + pathSegments[i]
 
-    const mediaAlbum =
-      parentMediaAlbum.path === subalbumPath
-        ? parentMediaAlbum
-        : parentMediaAlbum.sub_albums.find(([_path, album]) => album.path === subalbumPath)?.[1]
+      // Use the path segment as the title (capitalize first letter)
+      const segmentName = pathSegments[i]
+      const title = segmentName ? segmentName.charAt(0).toUpperCase() + segmentName.slice(1) : ''
 
-    if (mediaAlbum) {
-      bcs.push({ title: mediaAlbum.title, url: subalbumPath })
+      // If this is the current page (final segment), don't make it a link
+      if (currentPath === subalbumPath) {
+        // Try to use the actual album title if this is the current album
+        const albumTitle = parentMediaAlbum.path === subalbumPath ? parentMediaAlbum.title : title
+        bcs.push({ title: albumTitle })
+      } else {
+        // Intermediate level - add as clickable link
+        bcs.push({
+          title: title,
+          url: `/photos/${albumId}?subalbum=${currentPath}`
+        })
+      }
     }
   }
 

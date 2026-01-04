@@ -1,28 +1,28 @@
-import * as React from 'react'
-import Video from 'yet-another-react-lightbox/plugins/video'
+import { useEffect, useRef, useState } from 'react'
 import Lightbox, { type Slide, type SlideImage, type SlideVideo } from 'yet-another-react-lightbox'
 import Download from 'yet-another-react-lightbox/plugins/download'
-
+import Video from 'yet-another-react-lightbox/plugins/video'
 import 'yet-another-react-lightbox/styles.css'
+
 import type { MediaAlbum } from '../MediaAlbum/support/model.ts'
-import { sortVariantsBySize } from './support/get-primary-variant.ts'
-import { useEffect, useState } from 'react'
 import { getMfFromUrl } from './support/get-mf-from-url.ts'
+import { sortVariantsBySize } from './support/get-primary-variant.ts'
 
 export interface MediaFileProps {
   mediaAlbum: MediaAlbum
   mediaFileId: string | undefined
+  onSlideChange: (mediaFilePath: string) => void
 }
 
 const MEDIA_ROOT_URL = import.meta.env.PUBLIC_KALIATECH_MEDIA_ROOT_URL
 
 const getSlideIndex = (slides: Slide[], mediaPathOrSrcUrl: string): number => {
   return slides.findIndex((slide) => {
-    if (slide.type === 'image' && slide.src.includes(mediaPathOrSrcUrl)) {
-      return true
+    if (slide.type === 'image') {
+      return slide.src.includes(mediaPathOrSrcUrl)
     }
     if (slide.type === 'video') {
-      return slide.sources.findIndex((source) => source.src.includes(mediaPathOrSrcUrl)) !== -1
+      return slide.sources.some((source) => source.src.includes(mediaPathOrSrcUrl))
     }
     return false
   })
@@ -30,29 +30,26 @@ const getSlideIndex = (slides: Slide[], mediaPathOrSrcUrl: string): number => {
 
 export default function MediaFileViewer(props: MediaFileProps) {
   const [open, setOpen] = useState(!!props.mediaFileId)
-
   const [currIndex, setCurrIndex] = useState<number>(0)
-
   const [slides, setSlides] = useState<Slide[]>([])
 
-  const [scrollPosition, setScrollPosition] = useState(0)
-
-  const ref = React.useRef(null)
-  //  const controller = useController()
+  const ref = useRef(null)
+  const lastNotifiedIndexRef = useRef<number>(-1)
+  const isInitializedRef = useRef<boolean>(false)
 
   useEffect(() => {
     if (props.mediaFileId && slides.length > 0) {
       const initIndex = getSlideIndex(slides, props.mediaFileId)
       if (initIndex !== -1) {
         setCurrIndex(initIndex)
+        lastNotifiedIndexRef.current = initIndex
+        isInitializedRef.current = false
         setOpen(true)
-        //document.documentElement.style.overflowY = 'hidden'
-        const el = document.getElementsByClassName('media-gallery').item(0) as HTMLElement
-        if (el) {
-          setScrollPosition(window.scrollY)
-          el.style.display = 'none'
-        }
       }
+    } else if (!props.mediaFileId) {
+      setOpen(false)
+      lastNotifiedIndexRef.current = -1
+      isInitializedRef.current = false
     }
   }, [props.mediaFileId, slides])
 
@@ -63,114 +60,86 @@ export default function MediaFileViewer(props: MediaFileProps) {
         const mediaFile = mediaFileRecord[1]
         const variants = sortVariantsBySize(mediaFile)
         const pVariant = variants[variants.length - 1]
-        let slide: Slide
-        if (mediaFile.media_type == 'IMAGE') {
-          slide = {
+        const nonThumbnailVariants = variants.filter((variant) => !variant.is_thumbnail)
+
+        if (mediaFile.media_type === 'IMAGE') {
+          return {
             type: 'image',
             src: `${MEDIA_ROOT_URL}${pVariant?.path}`,
             alt: mediaFile.title,
             width: pVariant?.width || 0,
             height: pVariant?.height || 0,
-            srcSet: variants
-              .filter((variant) => !variant.is_thumbnail)
-              .map((variant) => {
-                return {
-                  src: `${MEDIA_ROOT_URL}${variant.path}`,
-                  width: variant.width,
-                  height: variant.height,
-                }
-              }),
+            srcSet: nonThumbnailVariants.map((variant) => ({
+              src: `${MEDIA_ROOT_URL}${variant.path}`,
+              width: variant.width,
+              height: variant.height,
+            })),
             download: `${MEDIA_ROOT_URL}${pVariant?.path}`,
           }
         } else {
-          slide = {
+          return {
             type: 'video',
             width: pVariant?.width || 0,
             height: pVariant?.height || 0,
-            sources: variants
-              .filter((variant) => !variant.is_thumbnail)
-              .map((variant) => {
-                return {
-                  src: `${MEDIA_ROOT_URL}${variant.path}`,
-                  width: variant.width,
-                  height: variant.height,
-                  type: variant.mime_type,
-                }
-              }),
+            sources: nonThumbnailVariants.map((variant) => ({
+              src: `${MEDIA_ROOT_URL}${variant.path}`,
+              width: variant.width,
+              height: variant.height,
+              type: variant.mime_type,
+            })),
             download: `${MEDIA_ROOT_URL}${pVariant?.path}`,
             poster: `${MEDIA_ROOT_URL}${pVariant?.path}`,
           }
         }
-        return slide
       })
     setSlides(slides)
   }, [props.mediaAlbum])
 
-  useEffect(() => {
-    window.addEventListener('popstate', (_evt) => {
-      console.log('User clicked back button', window.location)
-      const url = new URL(window.location.toString())
-      const mfId = url.searchParams.get('mediafile')
-      if (mfId) {
-        console.log('mfId', decodeURIComponent(mfId || ''))
-        const slideIndex = getSlideIndex(slides, mfId)
-        console.log('slideIndex', slideIndex)
-        if (slideIndex !== currIndex) {
-          setCurrIndex(slideIndex)
-        }
-        setOpen(true)
-      } else {
-        setOpen(false)
-      }
-    })
-  }, [currIndex, slides])
-
   return (
-    <>
-      <Lightbox
-        controller={{ ref, closeOnBackdropClick: true }}
-        //on={{ click: () => ref.current?.close() }}
-        open={open}
-        close={() => {
-          //document.documentElement.style.overflowY = 'scroll'
-          const el = document.getElementsByClassName('media-gallery').item(0) as HTMLElement
-          if (el) {
-            el.style.display = 'block'
-            window.scrollTo(0, scrollPosition)
+    <Lightbox
+      controller={{ ref, closeOnBackdropClick: true }}
+      open={open}
+      close={() => {
+        setOpen(false)
+        props.onSlideChange('')
+      }}
+      slides={slides}
+      index={currIndex}
+      plugins={[Download, Video]}
+      video={{ autoPlay: true }}
+      noScroll={{ disabled: true }}
+      on={{
+        view: ({ index }) => {
+          // First view after opening/changing - just mark as initialized
+          if (!isInitializedRef.current) {
+            isInitializedRef.current = true
+            lastNotifiedIndexRef.current = index
+            return
           }
 
-          setOpen(false)
-          const url = new URL(window.location.toString())
-          url.searchParams.delete('mediafile')
-          window.history.pushState({}, '', url)
-        }}
-        slides={slides}
-        index={currIndex}
-        plugins={[Download, Video]}
-        video={{ autoPlay: true }}
-        noScroll={{ disabled: true }}
-        on={{
-          view: ({ index }) => {
-            let slideSrcUrl: string = ''
-            if (slides[index]?.type === 'image') {
-              slideSrcUrl = (slides[index] as SlideImage).src
-            } else if (slides[index]?.type === 'video') {
-              slideSrcUrl = (slides[index] as SlideVideo).sources[0]?.src ?? ''
-            }
+          // Only notify parent if the index actually changed
+          if (index === lastNotifiedIndexRef.current) {
+            return
+          }
 
-            const mf = getMfFromUrl(
-              props.mediaAlbum.media_files.map((mfr) => mfr[1]),
-              slideSrcUrl,
-            )
+          lastNotifiedIndexRef.current = index
 
-            const url = new URL(window.location.toString())
-            if (url.searchParams.get('mediafile') !== mf?.path) {
-              url.searchParams.set('mediafile', mf?.path || '')
-              window.history.pushState({}, '', url)
-            }
-          },
-        }}
-      />
-    </>
+          const slide = slides[index]
+          const slideSrcUrl =
+            slide?.type === 'image'
+              ? (slide as SlideImage).src
+              : (slide as SlideVideo).sources[0]?.src ?? ''
+
+          const mf = getMfFromUrl(
+            props.mediaAlbum.media_files.map((mfr) => mfr[1]),
+            slideSrcUrl,
+          )
+
+          if (mf?.path) {
+            props.onSlideChange(mf.path)
+          }
+        },
+      }}
+    />
   )
 }
